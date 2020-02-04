@@ -1,0 +1,21 @@
+.c-navbar {
+    @include site-container;
+
+    &__logo {
+        display: inline-block;
+        padding: 36px;
+    }
+
+    &__menu {
+        display: none;
+    }
+
+    &__navigation {
+        float: right;
+
+        & > div {
+            display: inline-block;
+            padding: 36px 34px;
+        }
+    }
+}

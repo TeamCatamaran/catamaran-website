@@ -1,7 +1,8 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import github from '../img/github-icon.svg'
-import logo from '../img/logo.svg'
+import logo from '../img/catamaran-logo.svg'
+import menu from '../img/icon-menu.png'
+import search from '../img/icon-search.png'
 
 const Navbar = class extends React.Component {
   constructor(props) {
@@ -12,7 +13,7 @@ const Navbar = class extends React.Component {
     }
   }
 
-  toggleHamburger = () => {
+  toggleMenu = () => {
     // toggle the active boolean in the state
     this.setState(
       {
@@ -23,7 +24,7 @@ const Navbar = class extends React.Component {
         // set the class in state for the navbar accordingly
         this.state.active
           ? this.setState({
-              navBarActiveClass: 'is-active',
+              navBarActiveClass: '-active',
             })
           : this.setState({
               navBarActiveClass: '',
@@ -35,29 +36,31 @@ const Navbar = class extends React.Component {
   render() {
     return (
       <nav
-        className="navbar is-transparent"
+        className="c-navbar"
         role="navigation"
         aria-label="main-navigation"
       >
         <div className="container">
-          <div className="navbar-brand">
-            <Link to="/" className="navbar-item" title="Logo">
-              <img src={logo} alt="Kaldi" style={{ width: '88px' }} />
-            </Link>
-            {/* Hamburger menu */}
+          <Link to="/" className="c-navbar__logo" title="Logo">
+            <img src={logo} alt="Catamaran" style={{ width: '38px' }} />
+          </Link>
+          <div className="c-navbar__navigation">
             <div
-              className={`navbar-burger burger ${this.state.navBarActiveClass}`}
-              data-target="navMenu"
-              onClick={() => this.toggleHamburger()}
+              className={`c-navbar__search`}
             >
-              <span />
-              <span />
-              <span />
+              <img src={search} alt="Search" style={{ width: '25px' }} />
+            </div>
+            <div
+              className={`c-navbar__burger ${this.state.navBarActiveClass}`}
+              data-target="navMenu"
+              onClick={() => this.toggleMenu()}
+            >
+              <img src={menu} alt="Menu" style={{ width: '25px' }} />
             </div>
           </div>
           <div
             id="navMenu"
-            className={`navbar-menu ${this.state.navBarActiveClass}`}
+            className={`c-navbar__menu ${this.state.navBarActiveClass}`}
           >
             <div className="navbar-start has-text-centered">
               <Link className="navbar-item" to="/about">
@@ -75,18 +78,6 @@ const Navbar = class extends React.Component {
               <Link className="navbar-item" to="/contact/examples">
                 Form Examples
               </Link>
-            </div>
-            <div className="navbar-end has-text-centered">
-              <a
-                className="navbar-item"
-                href="https://github.com/netlify-templates/gatsby-starter-netlify-cms"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <span className="icon">
-                  <img src={github} alt="Github" />
-                </span>
-              </a>
             </div>
           </div>
         </div>
