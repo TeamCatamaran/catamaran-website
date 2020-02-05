@@ -6,7 +6,7 @@ import '../sass/app.scss'
 import useSiteMetadata from './SiteMetadata'
 import { withPrefix } from 'gatsby'
 
-  const TemplateWrapper = ({ bodyClass, header, mainContent }) => {
+  const TemplateWrapper = ({ bodyClass, children }) => {
   const { title, description } = useSiteMetadata()
   return (
     <div>
@@ -52,9 +52,8 @@ import { withPrefix } from 'gatsby'
         />
       </Helmet>
       <Navbar />
-      {header}
       <main role="main">
-        {mainContent}
+        {children}
       </main>
       <Footer />
     </div>

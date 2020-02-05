@@ -1,8 +1,8 @@
 ---
 templateKey: index-page
-title: We are a startup studio built for action.
+section: CATAMARAN
+heading: We are a startup studio built for action.
 image: /img/home-jumbotron.jpg
-heading: Great coffee with a conscience
 subheading: Support sustainable farming while enjoying a cu
 mainpitch:
   title: Why Kaldi

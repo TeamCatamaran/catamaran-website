@@ -7,18 +7,21 @@ import Layout from '../components/Layout'
 import Features from '../components/Features'
 import BlogRoll from '../components/BlogRoll'
 
-import headerImage from '../img/collage-home.png'
-
 export const IndexPageTemplate = ({
   image,
-  title,
   heading,
+  section,
   subheading,
   mainpitch,
   description,
   intro,
 }) => (
   <div>
+    <Header
+      heading = { heading }
+      image = { image }
+      section = { section }
+    />
     <section className="section section--gradient">
       <div className="container">
         <div className="section">
@@ -86,26 +89,18 @@ const IndexPage = ({ data }) => {
 
   return (
     <Layout
-      bodyClass = "-purple"
-      header = {
-        <Header
-          image = { frontmatter.image }
-          section = { frontmatter.section }
-          title = { frontmatter.title }
-        />
-      }
-      mainContent = {
+      bodyClass = "-purple">
         <IndexPageTemplate
           image = { frontmatter.image }
           title = { frontmatter.title }
           heading = { frontmatter.heading }
+          section = { frontmatter.section }
           subheading = { frontmatter.subheading }
           mainpitch = { frontmatter.mainpitch }
           description = { frontmatter.description }
           intro = { frontmatter.intro }
         />
-      }
-    />
+    </Layout>
   )
 }
 
@@ -123,7 +118,8 @@ export const pageQuery = graphql`
   query IndexPageTemplate {
     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
       frontmatter {
-        title
+        section
+        heading
         image {
           childImageSharp {
             fluid(maxWidth: 2048, quality: 100) {
@@ -131,7 +127,6 @@ export const pageQuery = graphql`
             }
           }
         }
-        heading
         subheading
         mainpitch {
           title

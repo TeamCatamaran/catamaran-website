@@ -14,8 +14,8 @@ const Header = class extends React.Component {
             backgroundPosition: `center right`,
         }}>
             <div className="container">
-                <h2 style={{ color: this.props.titleColor }}>{this.props.pageName}</h2>
-                <h1>{this.props.pageTitle}</h1>
+                <h2>{this.props.section}</h2>
+                <h1>{this.props.heading}</h1>
             </div>
         </header>
         )
