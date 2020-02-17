@@ -5,6 +5,9 @@ heading: We are a startup studio built for action.
 image: /img/collage-home.png
 subheading: Support sustainable farming while enjoying a cu
 intro:
-  heading: What we offer
+  heading: Great coffee with no compromises
+  sections:
+    - title: A title
+      description: Description
 ---
 

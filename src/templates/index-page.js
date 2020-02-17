@@ -1,19 +1,19 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import ReactPlayer from 'react-player'
 import { Link, graphql } from 'gatsby'
 
 import Header from '../components/Header'
 import Layout from '../components/Layout'
 import Features from '../components/Features'
 import BlogRoll from '../components/BlogRoll'
+import IntroSectionsGrid from '../components/IntroSections'
 
 export const IndexPageTemplate = ({
   image,
   heading,
   section,
   subheading,
-  mainpitch,
-  description,
   intro,
 }) => (
   <div>
@@ -22,7 +22,8 @@ export const IndexPageTemplate = ({
       image = { image }
       section = { section }
     />
-    <section className="section section--gradient">
+    <IntroSectionsGrid gridItems={intro} />
+    {/* <section className="section section--gradient">
       <div className="container">
         <div className="section">
           <div className="columns">
@@ -68,7 +69,7 @@ export const IndexPageTemplate = ({
           </div>
         </div>
       </div>
-    </section>
+    </section> */}
   </div>
 )
 
@@ -77,15 +78,15 @@ IndexPageTemplate.propTypes = {
   title: PropTypes.string,
   heading: PropTypes.string,
   subheading: PropTypes.string,
-  mainpitch: PropTypes.object,
-  description: PropTypes.string,
   intro: PropTypes.shape({
-    blurbs: PropTypes.array,
+    sections: PropTypes.array,
   }),
 }
 
 const IndexPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark
+
+  console.log(frontmatter.intro);
 
   return (
     <Layout
@@ -96,8 +97,6 @@ const IndexPage = ({ data }) => {
           heading = { frontmatter.heading }
           section = { frontmatter.section }
           subheading = { frontmatter.subheading }
-          mainpitch = { frontmatter.mainpitch }
-          description = { frontmatter.description }
           intro = { frontmatter.intro }
         />
     </Layout>
@@ -128,24 +127,12 @@ export const pageQuery = graphql`
           }
         }
         subheading
-        mainpitch {
-          title
-          description
-        }
-        description
         intro {
-          blurbs {
-            image {
-              childImageSharp {
-                fluid(maxWidth: 240, quality: 64) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-            text
-          }
           heading
-          description
+          sections {
+            title
+            description
+          }
         }
       }
     }

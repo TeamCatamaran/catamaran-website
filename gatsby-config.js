@@ -43,6 +43,7 @@ module.exports = {
           {
             resolve: 'gatsby-remark-relative-images',
             options: {
+              path: `${__dirname}/src/img`,
               name: 'uploads',
             },
           },

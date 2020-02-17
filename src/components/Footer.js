@@ -25,34 +25,29 @@ const Footer = class extends React.Component {
                 <section className="menu">
                   <ul className="menu-list">
                     <li>
-                      <Link to="/" className="navbar-item">
-                        Home
-                      </Link>
-                    </li>
-                    <li>
                       <Link className="navbar-item" to="/about">
                         About
                       </Link>
                     </li>
                     <li>
-                      <Link className="navbar-item" to="/products">
-                        Products
+                      <Link className="navbar-item" to="/about">
+                        Studio
                       </Link>
                     </li>
                     <li>
-                      <Link className="navbar-item" to="/contact/examples">
-                        Form Examples
+                      <Link className="navbar-item" to="/about">
+                        Experiments
                       </Link>
                     </li>
                     <li>
-                      <a
-                        className="navbar-item"
-                        href="/admin/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        Admin
-                      </a>
+                      <Link className="navbar-item" to="/about">
+                        Case Studies
+                      </Link>
+                    </li>
+                    <li>
+                      <Link className="navbar-item" to="/about">
+                        Journal
+                      </Link>
                     </li>
                   </ul>
                 </section>
@@ -62,7 +57,22 @@ const Footer = class extends React.Component {
                   <ul className="menu-list">
                     <li>
                       <Link className="navbar-item" to="/blog">
-                        Latest Stories
+                        Ventures
+                      </Link>
+                    </li>
+                    <li>
+                      <Link className="navbar-item" to="/contact">
+                        Partners
+                      </Link>
+                    </li>
+                    <li>
+                      <Link className="navbar-item" to="/contact">
+                        FAQs
+                      </Link>
+                    </li>
+                    <li>
+                      <Link className="navbar-item" to="/contact">
+                        Jobs
                       </Link>
                     </li>
                     <li>
