@@ -1,0 +1,5 @@
+.c-action {
+    &__item {
+        @include grid-column(4);
+    }
+}

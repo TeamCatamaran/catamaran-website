@@ -7,13 +7,13 @@ import Header from '../components/Header'
 import Layout from '../components/Layout'
 import Features from '../components/Features'
 import BlogRoll from '../components/BlogRoll'
-import IntroSectionsGrid from '../components/IntroSections'
 
 export const IndexPageTemplate = ({
   image,
   heading,
   section,
   intro,
+  action,
 }) => (
   <div>
     <Header
@@ -21,54 +21,41 @@ export const IndexPageTemplate = ({
       image = { image }
       section = { section }
     />
-    <IntroSectionsGrid gridItems={intro} />
-    {/* <section className="section section--gradient">
-      <div className="container">
-        <div className="section">
-          <div className="columns">
-            <div className="column is-10 is-offset-1">
-              <div className="content">
-                <div className="content">
-                  <div className="tile">
-                    <h1 className="title">{mainpitch.title}</h1>
-                  </div>
-                  <div className="tile">
-                    <h3 className="subtitle">{mainpitch.description}</h3>
-                  </div>
-                </div>
-                <div className="columns">
-                  <div className="column is-12">
-                    <h3 className="has-text-weight-semibold is-size-2">
-                      {heading}
-                    </h3>
-                    <p>{description}</p>
-                  </div>
-                </div>
-                <Features gridItems={intro.blurbs} />
-                <div className="columns">
-                  <div className="column is-12 has-text-centered">
-                    <Link className="btn" to="/products">
-                      See all products
-                    </Link>
-                  </div>
-                </div>
-                <div className="column is-12">
-                  <h3 className="has-text-weight-semibold is-size-2">
-                    Latest stories
-                  </h3>
-                  <BlogRoll />
-                  <div className="column is-12 has-text-centered">
-                    <Link className="btn" to="/blog">
-                      Read more
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+    <div className="c-intro container">
+      <div className="c-intro__heading">
+        <h2>{ intro.heading }</h2>
       </div>
-    </section> */}
+      {
+        intro.sections != null &&
+          <div>
+            {intro.sections.map((item, key) => (
+              <section key={key} className="c-intro__item">
+                {/* <PreviewCompatibleImage imageInfo={item} /> */}
+                <h3>{item.title}</h3>
+                <p>{item.description}</p>
+              </section>
+            ))}
+          </div>
+      }
+    </div>
+    <div className="c-action container">
+      <div className="c-action__item">
+        <h2>{ action.heading }</h2>
+        >
+      </div>
+      {
+        action.pages != null &&
+          <div>
+            {action.pages.map((item, key) => (
+              <section key={key} className="c-action__item">
+                {/* <PreviewCompatibleImage imageInfo={item} /> */}
+                <h3>{item.title}</h3>
+                <p>{item.description}</p>
+              </section>
+            ))}
+          </div>
+      }
+    </div>
   </div>
 )
 
@@ -77,10 +64,23 @@ IndexPageTemplate.propTypes = {
   title: PropTypes.string,
   heading: PropTypes.string,
   intro: PropTypes.shape({
-    sections: PropTypes.array,
+    heading: PropTypes.string,
+    sections: PropTypes.arrayOf(
+      PropTypes.shape({
+        title: PropTypes.string,
+        description: PropTypes.string,
+      })
+    )
   }),
   action: PropTypes.shape({
-    pages: PropTypes.array,
+    heading: PropTypes.string,
+    pages: PropTypes.arrayOf(
+      PropTypes.shape({
+        title: PropTypes.string,
+        description: PropTypes.string,
+        link: PropTypes.string,
+      })
+    )
   }),
 }
 
@@ -98,6 +98,7 @@ const IndexPage = ({ data }) => {
           heading = { frontmatter.heading }
           section = { frontmatter.section }
           intro = { frontmatter.intro }
+          action = { frontmatter.action }
         />
     </Layout>
   )

@@ -1,0 +1,11 @@
+.c-footer {
+    background-color: $grey-dark;
+
+    &__section {
+        @include grid-column(4);
+    }
+
+    &__row {
+        @include site-container;
+    }
+}

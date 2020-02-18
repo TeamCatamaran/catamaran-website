@@ -12,6 +12,7 @@ const IndexPagePreview = ({ entry, getAsset }) => {
         heading={data.heading}
         section={data.section}
         intro={data.intro || { sections: [] }}
+        action={data.action || { pages: [] }}
       />
     )
   } else {
