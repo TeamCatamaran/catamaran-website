@@ -38,8 +38,8 @@ collections:
           - {label: Section, name: section, widget: string}
           - {label: Heading, name: heading, widget: string}
           - {label: Image, name: image, widget: image}
-          - {label: Subheading, name: subheading, widget: string}
           - {label: Intro, name: intro, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Sections, name: sections, widget: list, allow_add: false, fields: [{label: Title, name: title, widget: string}, {label: Description, name: description, widget: text}]}]}
+          - {label: Action, name: action, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Pages, name: pages, widget: list, allow_add: false, fields: [{label: Title, name: title, widget: string}, {label: Description, name: description, widget: text}, {label: Link, name: link, widget: string}]}]}
       - file: "src/pages/about/index.md"
         label: "About"
         name: "about"
