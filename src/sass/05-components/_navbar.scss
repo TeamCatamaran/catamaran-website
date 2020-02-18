@@ -1,7 +1,7 @@
 .c-navbar {
     &__logo {
         display: inline-block;
-        padding: 36px;
+        padding: 36px 36px 20px;
     }
 
     &__menu {
@@ -13,7 +13,7 @@
 
         & > div {
             display: inline-block;
-            padding: 36px 34px;
+            padding: 36px 36px 20px;
         }
     }
 }

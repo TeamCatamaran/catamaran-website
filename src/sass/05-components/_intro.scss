@@ -1,0 +1,9 @@
+.c-intro {
+    &__item {
+        @include grid-column(6);
+    }
+
+    &__heading {
+        @include grid-column(12);
+    }
+}

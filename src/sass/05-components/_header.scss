@@ -1,0 +1,10 @@
+.c-header {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right center;
+    height: calc(100vh - 100px);
+
+    &__text {
+        @include grid-column(6);
+    }
+}

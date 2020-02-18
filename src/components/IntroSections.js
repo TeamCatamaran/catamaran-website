@@ -3,26 +3,19 @@ import PropTypes from 'prop-types'
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 
 const IntroSectionsGrid = ({ gridItems }) => (
-  <div className="columns is-multiline">
+  <div className="c-intro container">
+    <div className="c-intro__heading">
+      <h2>{ gridItems.heading }</h2>
+    </div>
     {
       gridItems.sections != null &&
         <div>
           {gridItems.sections.map((item, key) => (
-            <div key={key} className="column is-6">
-              <section className="section">
-                <div className="has-text-centered">
-                  <div
-                    style={{
-                      width: '240px',
-                      display: 'inline-block',
-                    }}
-                  >
-                    {/* <PreviewCompatibleImage imageInfo={item} /> */}
-                  </div>
-                </div>
-                <p>{item.text}</p>
-              </section>
-            </div>
+            <section key={key} className="c-intro__item">
+              {/* <PreviewCompatibleImage imageInfo={item} /> */}
+              <h3>{item.title}</h3>
+              <p>{item.description}</p>
+            </section>
           ))}
         </div>
     }
