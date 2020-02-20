@@ -1,5 +1,23 @@
 .c-action {
+    height: 410px;
+
+    h2 {
+        color: $grey;
+        font-size: 48px;
+        font-weight: $weight-light;
+        line-height: 60px;
+    }
+
+    &__footer {
+        background-color: $grey-dark;
+        height: 125px;
+    }
+
     &__item {
         @include grid-column(4);
+    }
+
+    &.-footer-overlay {
+        margin-bottom: -125px;
     }
 }

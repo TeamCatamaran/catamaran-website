@@ -23,7 +23,7 @@ export const IndexPageTemplate = ({
     />
     <div className="c-intro container">
       <div className="c-intro__heading">
-        <h2>{ intro.heading }</h2>
+        <h3>{ intro.heading }</h3>
       </div>
       {
         intro.sections != null &&
@@ -31,17 +31,16 @@ export const IndexPageTemplate = ({
             {intro.sections.map((item, key) => (
               <section key={key} className="c-intro__item">
                 {/* <PreviewCompatibleImage imageInfo={item} /> */}
-                <h3>{item.title}</h3>
+                <h4>{item.title}</h4>
                 <p>{item.description}</p>
               </section>
             ))}
           </div>
       }
     </div>
-    <div className="c-action container">
+    <div className="c-action container -footer-overlay">
       <div className="c-action__item">
-        <h2>{ action.heading }</h2>
-        >
+        <h2>{ action.heading }<span>></span></h2>
       </div>
       {
         action.pages != null &&
@@ -56,6 +55,7 @@ export const IndexPageTemplate = ({
           </div>
       }
     </div>
+    <div className="c-action__footer"></div>
   </div>
 )
 

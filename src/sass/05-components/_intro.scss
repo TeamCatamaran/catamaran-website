@@ -4,6 +4,7 @@
     }
 
     &__heading {
-        @include grid-column(12);
+        @include grid-column(10);
+        @include grid-push(1);
     }
 }

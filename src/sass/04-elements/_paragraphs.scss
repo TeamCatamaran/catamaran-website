@@ -1,0 +1,9 @@
+p {
+    @include font-style(
+        $font-normal,                     // Font Family
+        $size-p,                          // Font Size
+        $grey,                            // Font Color
+        $weight-medium,                   // Font Weight
+        $height-p                         // Line Height
+    );
+}

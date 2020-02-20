@@ -40,3 +40,23 @@ h2 {
         line-height: 40px;
     }
 }
+
+h3 {
+    @include font-style(
+        $font-normal,                     // Font Family
+        $size-3,                          // Font Size
+        $grey,                            // Font Color
+        $weight-light,                    // Font Weight
+        $height-3                         // Line Height
+    );
+}
+
+h4 {
+    @include font-style(
+        $font-normal,                     // Font Family
+        $size-4,                          // Font Size
+        $grey-light,                      // Font Color
+        $weight-bold,                     // Font Weight
+        $height-4                         // Line Height
+    );
+}

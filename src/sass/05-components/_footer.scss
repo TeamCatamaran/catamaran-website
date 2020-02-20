@@ -1,6 +1,10 @@
 .c-footer {
     background-color: $grey-dark;
 
+    a, p {
+        color: $white;
+    }
+
     &__section {
         @include grid-column(4);
     }
