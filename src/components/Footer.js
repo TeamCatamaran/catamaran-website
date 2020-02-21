@@ -82,11 +82,9 @@ const Footer = class extends React.Component {
         </div>
         <div className="c-footer__row">
           <div className="c-footer__section">
-            <img
-              src={logo}
-              alt="Catamaran"
-              style={{ width: '170px' }}
-            />
+            <Link to="/" title="Catamaran">
+              <img src={logo} alt="Catamaran" style={{ width: '170px' }} />
+            </Link>
           </div>
           <div className="c-footer__section -social">
               <a className="c-footer__social" title="twitter" href="https://twitter.com">

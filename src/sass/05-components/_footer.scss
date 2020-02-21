@@ -12,6 +12,7 @@
 
         a {
             color: $grey-light;
+            text-decoration: underline;
         }
     }
 
@@ -67,7 +68,6 @@
             font-size: 20px;
             font-weight: $weight-light;
             line-height: 48px;
-            text-decoration: none;
         }
 
         &.-primary {
