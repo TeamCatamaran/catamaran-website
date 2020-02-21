@@ -1,15 +1,86 @@
 .c-footer {
     background-color: $grey-dark;
+    padding: 100px 0 20px;
 
-    a, p {
-        color: $white;
+    &__family {
+        color: $grey-light;
+        font-size: 14px;
+        font-weight: $weight-bold;
+        letter-spacing: 2.4px;
+        line-height: 60px;
+        text-transform: uppercase;
+
+        a {
+            color: $grey-light;
+        }
     }
 
     &__section {
         @include grid-column(4);
+
+        &.-copyright {
+            @include grid-column(12);
+            text-align: center;
+
+            p {
+                color: $grey-light;
+                font-size: 9px;
+                font-weight: $weight-bold;
+                letter-spacing: 1.8px;
+                line-height: 60px;
+                text-transform: uppercase;
+            }
+        }
+
+        &.-newsletter {
+            label.-large {
+                color: $grey-lightest;
+                text-transform: uppercase;
+            }
+        }
+
+        &.-social {
+            margin-left: 0;
+        }
+    }
+
+    &__social {
+        display: inline-block;
+        padding: 20px 20px 20px 20px;
+        width: 25px;
     }
 
     &__row {
         @include site-container;
+
+        + .c-footer__row {
+            padding-top: 100px;
+        }
+    }
+
+    &__menu {
+        list-style-type: none;
+        margin: 0;
+
+        a {
+            color: $grey-lightest;
+            font-size: 20px;
+            font-weight: $weight-light;
+            line-height: 48px;
+            text-decoration: none;
+        }
+
+        &.-primary {
+            a {
+                font-size: 30px;
+                line-height: 60px;
+            }
+        }
+
+        &.-secondary {
+            a {
+                color: $grey-light;
+            }
+        }
     }
 }
