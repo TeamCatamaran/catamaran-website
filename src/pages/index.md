@@ -14,27 +14,26 @@ intro:
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
         veniam, quis nostrud. Sed do eiusmod tempor incididunt ut labore et
         dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.
-      title: LOREM IPSUM
       icon: triangle
+      title: LOREM IPSUM
     - description: >-
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
         veniam, quis nostrud. Sed do eiusmod tempor incididunt ut labore et
         dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.
-      title: LOREM IPSUM
       icon: circle
+      title: LOREM IPSUM
   watermark: Default To Action
 action:
-  heading: >-
-    Where the action is
+  heading: Where the action is
   pages:
-    - description: >-
-        We provide creative capital to startups at any step of the journey.
-      title: Studio
+    - description: We provide creative capital to startups at any step of the journey.
+      image: /img/studio.jpg
       link: /studio
-    - description: >-
-        We provide creative capital to startups at any step of the journey.
-      title: Experiments
+      title: Studio
+    - description: We provide creative capital to startups at any step of the journey.
+      image: /img/experiments.jpg
       link: /experiments
+      title: Experiments
 ---
 
