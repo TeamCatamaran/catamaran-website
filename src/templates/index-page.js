@@ -5,8 +5,6 @@ import { Link, graphql } from 'gatsby'
 
 import Header from '../components/Header'
 import Layout from '../components/Layout'
-import Features from '../components/Features'
-import BlogRoll from '../components/BlogRoll'
 import circle from '../img/accent-circle.png'
 import triangle from '../img/accent-triangle.png'
 
@@ -59,11 +57,16 @@ export const IndexPageTemplate = ({
           action.pages != null &&
             <div>
               {action.pages.map((item, key) => (
-                <section key={key} className="c-action__item">
-                  {/* <PreviewCompatibleImage imageInfo={item} /> */}
-                  <h3>{item.title}</h3>
-                  <p>{item.description}</p>
-                </section>
+                <Link key={key} className="c-action__item -background" to={item.link} style={{
+                  backgroundImage: `url(${
+                      !!item.image.childImageSharp ? item.image.childImageSharp.fluid.src : item.image
+                  })`,
+                }}>
+                  <div className="c-action__item__content">
+                    <h3>{item.title}</h3>
+                    <p>{item.description}</p>
+                  </div>
+                </Link>
               ))}
             </div>
         }
@@ -94,6 +97,7 @@ IndexPageTemplate.propTypes = {
       PropTypes.shape({
         title: PropTypes.string,
         description: PropTypes.string,
+        image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
         link: PropTypes.string,
       })
     )
@@ -155,6 +159,13 @@ export const pageQuery = graphql`
           pages {
             title
             description
+            image {
+              childImageSharp {
+                fluid(maxWidth: 2048, quality: 100) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
             link
           }
         }

@@ -6,6 +6,10 @@
         font-size: 48px;
         font-weight: $weight-light;
         line-height: 60px;
+
+        span {
+            float: right;
+        }
     }
 
     &__footer {
@@ -15,6 +19,53 @@
 
     &__item {
         @include grid-column(4);
+        padding: 30px;
+        height: 410px;
+        position: relative;
+
+        &__content {
+            bottom: -80px;
+            left: 0;
+            position: absolute;
+            padding: 30px;
+            transition: all 1s ease 0s;
+            z-index: 4;
+        }
+
+        &.-background {
+            background-size: contain;
+            overflow-y: hidden;
+
+            &:hover {
+                &:after {
+                    display: block;
+                    position: relative;
+                    width: calc(100% + 60px);
+                    height: calc(100% + 60px);
+                    top: -30px;
+                    left: -30px;
+                    background-image: linear-gradient(180deg, transparent 0%, $purple 100%);
+                    content: '';
+                    z-index: 1;
+                }
+
+                .c-action__item__content {
+                    bottom: 0;
+                }
+            }
+
+            h3 {
+                font-family: $font-accent;
+                font-weight: $weight-bold;
+                letter-spacing: 3px;
+                color: $white;
+                text-transform: uppercase;
+            }
+
+            p {
+                color: $white;
+            }
+        }
     }
 
     &.-footer-overlay {

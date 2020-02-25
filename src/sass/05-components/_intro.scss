@@ -26,15 +26,16 @@
     &__watermark {
         opacity: 0.05;
         position: absolute;
-        top: 0;
-        left: 0;
+        top: 30px;
+        left: -10px;
         pointer-events: none;
+        height: calc(100% - 30px);
 
         p {
             color: $grey-dark;
             font-size: 150px;
             font-weight: $weight-bold;
-            line-height: 150px;
+            line-height: 184px;
             writing-mode: vertical-rl;
         }
     }
