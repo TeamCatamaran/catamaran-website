@@ -6,13 +6,15 @@ import { graphql, Link } from 'gatsby'
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
 
-export const BlogPostTemplate = ({
-  content,
-  contentComponent,
-  description,
-  tags,
-  title,
-  helmet,
+export const JournalPostTemplate = ({
+    title,
+    category,
+    heading,
+    subheading,
+    introduction,
+    content,
+    contentComponent,
+    helmet,
 }) => {
   const PostContent = contentComponent || Content
 
@@ -25,20 +27,8 @@ export const BlogPostTemplate = ({
             <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
               {title}
             </h1>
-            <p>{description}</p>
+            <p>{introduction}</p>
             <PostContent content={content} />
-            {tags && tags.length ? (
-              <div style={{ marginTop: `4rem` }}>
-                <h4>Tags</h4>
-                <ul className="taglist">
-                  {tags.map(tag => (
-                    <li key={tag + `tag`}>
-                      <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ) : null}
           </div>
         </div>
       </div>
@@ -46,25 +36,32 @@ export const BlogPostTemplate = ({
   )
 }
 
-BlogPostTemplate.propTypes = {
+JournalPostTemplate.propTypes = {
   content: PropTypes.node.isRequired,
   contentComponent: PropTypes.func,
-  description: PropTypes.string,
-  title: PropTypes.string,
   helmet: PropTypes.object,
+  title: PropTypes.string,
+  category: PropTypes.string,
+  heading: PropTypes.string,
+  subheading: PropTypes.string,
+  introduction: PropTypes.string
 }
 
-const BlogPost = ({ data }) => {
+const JournalPost = ({ data }) => {
   const { markdownRemark: post } = data
 
   return (
     <Layout>
-      <BlogPostTemplate
+      <JournalPostTemplate
+        title={post.frontmatter.title}
+        category={post.frontmatter.category}
+        heading={post.frontmatter.heading}
+        subheading={post.frontmatter.subheading}
+        introduction={post.frontmatter.introduction}
         content={post.html}
         contentComponent={HTMLContent}
-        description={post.frontmatter.description}
         helmet={
-          <Helmet titleTemplate="%s | Blog">
+          <Helmet titleTemplate="%s | Journal">
             <title>{`${post.frontmatter.title}`}</title>
             <meta
               name="description"
@@ -72,31 +69,32 @@ const BlogPost = ({ data }) => {
             />
           </Helmet>
         }
-        tags={post.frontmatter.tags}
-        title={post.frontmatter.title}
       />
     </Layout>
   )
 }
 
-BlogPost.propTypes = {
+JournalPost.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.object,
   }),
 }
 
-export default BlogPost
+export default JournalPost
 
 export const pageQuery = graphql`
-  query BlogPostByID($id: String!) {
+  query JournalPostByID($id: String!) {
     markdownRemark(id: { eq: $id }) {
       id
       html
       frontmatter {
-        date(formatString: "MMMM DD, YYYY")
         title
         description
-        tags
+        category
+        date(formatString: "MMMM DD, YYYY")
+        heading
+        subheading
+        introduction
       }
     }
   }
