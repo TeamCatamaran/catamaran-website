@@ -21,11 +21,11 @@ export const ProductPageTemplate = ({
   <div className="content">
     <div
       className="full-width-image-container margin-top-0"
-      style={{
-        backgroundImage: `url(${
-          !!image.childImageSharp ? image.childImageSharp.fluid.src : image
-        })`,
-      }}
+      // style={{
+      //   backgroundImage: `url(${
+      //     !!image.childImageSharp ? image.childImageSharp.fluid.src : image
+      //   })`,
+      // }}
     >
       <h2
         className="has-text-weight-bold is-size-1"
@@ -83,13 +83,13 @@ export const ProductPageTemplate = ({
               <Testimonials testimonials={testimonials} />
               <div
                 className="full-width-image-container"
-                style={{
-                  backgroundImage: `url(${
-                    fullImage.childImageSharp
-                      ? fullImage.childImageSharp.fluid.src
-                      : fullImage
-                  })`,
-                }}
+                // style={{
+                //   backgroundImage: `url(${
+                //     fullImage.childImageSharp
+                //       ? fullImage.childImageSharp.fluid.src
+                //       : fullImage
+                //   })`,
+                // }}
               />
               <h2 className="has-text-weight-semibold is-size-2">
                 {pricing.heading}
