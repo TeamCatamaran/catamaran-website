@@ -38,7 +38,7 @@ collections:
           - {label: Section, name: section, widget: string}
           - {label: Heading, name: heading, widget: string}
           - {label: Image, name: image, widget: image}
-          - {label: Intro, name: intro, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Sections, name: sections, widget: list, allow_add: false, fields: [{label: Title, name: title, widget: string}, {label: Description, name: description, widget: text}]}]}
+          - {label: Intro, name: intro, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Sections, name: sections, widget: list, allow_add: false, fields: [{label: Title, name: title, widget: string}, {label: Icon, name: icon, widget: select, options: [circle, triangle]}, {label: Description, name: description, widget: text}]}, {label: Watermark, name: watermark, widget: string}]}
           - {label: Action, name: action, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Pages, name: pages, widget: list, allow_add: false, fields: [{label: Title, name: title, widget: string}, {label: Description, name: description, widget: text}, {label: Link, name: link, widget: string}, {label: Image, name: image, widget: image}]}]}
       - file: "src/pages/about/index.md"
         label: "About"

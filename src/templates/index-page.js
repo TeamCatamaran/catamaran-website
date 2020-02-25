@@ -7,6 +7,8 @@ import Header from '../components/Header'
 import Layout from '../components/Layout'
 import Features from '../components/Features'
 import BlogRoll from '../components/BlogRoll'
+import circle from '../img/accent-circle.png'
+import triangle from '../img/accent-triangle.png'
 
 export const IndexPageTemplate = ({
   image,
@@ -14,50 +16,62 @@ export const IndexPageTemplate = ({
   section,
   intro,
   action,
-}) => (
-  <div>
-    <Header
-      heading = { heading }
-      image = { image }
-      section = { section }
-    />
-    <div className="c-intro container">
-      <div className="c-intro__heading">
-        <h3>{ intro.heading }</h3>
+}) => {
+  const icons = {
+    circle: circle,
+    triangle: triangle
+  };
+
+  return (
+    <div>
+      <Header
+        heading = { heading }
+        image = { image }
+        section = { section }
+      />
+      <div className="c-intro container">
+        <div className="c-intro__heading">
+          <h3>{ intro.heading }</h3>
+        </div>
+        <div className="c-intro__item__wrapper">
+          {
+            intro.sections != null &&
+              <div>
+                {intro.sections.map((item, key) => (
+                  <section key={key} className="c-intro__item">
+                    <img src={icons[item.icon]} alt={item.title} />
+                    <h4>{item.title}</h4>
+                    <p>{item.description}</p>
+                  </section>
+                ))}
+              </div>
+          }
+        </div>
+        <div className="c-intro__watermark">
+          <p>{ intro.watermark }</p>
+        </div>
       </div>
-      {
-        intro.sections != null &&
-          <div>
-            {intro.sections.map((item, key) => (
-              <section key={key} className="c-intro__item">
-                {/* <PreviewCompatibleImage imageInfo={item} /> */}
-                <h4>{item.title}</h4>
-                <p>{item.description}</p>
-              </section>
-            ))}
-          </div>
-      }
-    </div>
-    <div className="c-action container -footer-overlay">
-      <div className="c-action__item">
-        <h2>{ action.heading }<span>></span></h2>
+      <div className="c-action container -footer-overlay">
+        <div className="c-action__item">
+          <h2>{ action.heading }<span>></span></h2>
+        </div>
+        {
+          action.pages != null &&
+            <div>
+              {action.pages.map((item, key) => (
+                <section key={key} className="c-action__item">
+                  {/* <PreviewCompatibleImage imageInfo={item} /> */}
+                  <h3>{item.title}</h3>
+                  <p>{item.description}</p>
+                </section>
+              ))}
+            </div>
+        }
       </div>
-      {
-        action.pages != null &&
-          <div>
-            {action.pages.map((item, key) => (
-              <section key={key} className="c-action__item">
-                {/* <PreviewCompatibleImage imageInfo={item} /> */}
-                <h3>{item.title}</h3>
-                <p>{item.description}</p>
-              </section>
-            ))}
-          </div>
-      }
+      <div className="c-action__footer"></div>
     </div>
-    <div className="c-action__footer"></div>
-  </div>
-)
+  )
+}
 
 IndexPageTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
@@ -68,9 +82,11 @@ IndexPageTemplate.propTypes = {
     sections: PropTypes.arrayOf(
       PropTypes.shape({
         title: PropTypes.string,
+        icon: PropTypes.string,
         description: PropTypes.string,
       })
-    )
+    ),
+    watermark: PropTypes.string
   }),
   action: PropTypes.shape({
     heading: PropTypes.string,
@@ -86,8 +102,6 @@ IndexPageTemplate.propTypes = {
 
 const IndexPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark
-
-  console.log(frontmatter.intro);
 
   return (
     <Layout
@@ -131,8 +145,10 @@ export const pageQuery = graphql`
           heading
           sections {
             title
+            icon
             description
           }
+          watermark
         }
         action {
           heading

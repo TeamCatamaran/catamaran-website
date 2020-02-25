@@ -15,12 +15,15 @@ intro:
         veniam, quis nostrud. Sed do eiusmod tempor incididunt ut labore et
         dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.
       title: LOREM IPSUM
+      icon: triangle
     - description: >-
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
         veniam, quis nostrud. Sed do eiusmod tempor incididunt ut labore et
         dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.
       title: LOREM IPSUM
+      icon: circle
+  watermark: Default To Action
 action:
   heading: >-
     Where the action is

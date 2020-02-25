@@ -1,10 +1,41 @@
 .c-intro {
+    padding: 100px 0 134px;
+
     &__item {
         @include grid-column(6);
+
+        &__wrapper {
+            float: left;
+            padding-top: 70px;
+        }
+
+        img {
+            width: 22px;
+        }
+
+        h4 {
+            padding: 20px 0 30px;
+        }
     }
 
     &__heading {
         @include grid-column(10);
         @include grid-push(1);
+    }
+
+    &__watermark {
+        opacity: 0.05;
+        position: absolute;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+
+        p {
+            color: $grey-dark;
+            font-size: 150px;
+            font-weight: $weight-bold;
+            line-height: 150px;
+            writing-mode: vertical-rl;
+        }
     }
 }
