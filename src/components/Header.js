@@ -11,7 +11,7 @@ const Header = class extends React.Component {
                 <div className="c-header__background" style={{
                     backgroundImage: `url(${
                         !!this.props.image.childImageSharp ? this.props.image.childImageSharp.fluid.src : this.props.image
-                    })`,
+                        })`,
                 }}>
                     <div className="container">
                         <div className="c-header__text">
