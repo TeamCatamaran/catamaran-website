@@ -5,6 +5,7 @@ import cloudinary from 'netlify-cms-media-library-cloudinary'
 import AboutPagePreview from './preview-templates/AboutPagePreview'
 import JournalPostPreview from './preview-templates/JournalPostPreview'
 import IndexPagePreview from './preview-templates/IndexPagePreview'
+import NetworkPagePreview from './preview-templates/NetworkPagePreview'
 
 CMS.registerMediaLibrary(uploadcare)
 CMS.registerMediaLibrary(cloudinary)
@@ -12,3 +13,4 @@ CMS.registerMediaLibrary(cloudinary)
 CMS.registerPreviewTemplate('index', IndexPagePreview)
 CMS.registerPreviewTemplate('about', AboutPagePreview)
 CMS.registerPreviewTemplate('journal', JournalPostPreview)
+CMS.registerPreviewTemplate('network', NetworkPagePreview)
