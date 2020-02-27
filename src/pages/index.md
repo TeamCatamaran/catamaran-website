@@ -3,7 +3,7 @@ templateKey: index-page
 section: CATAMARAN
 heading: We are a startup studio built for action.
 image: /img/collage-home.png
-intro:
+introSections:
   heading: >-
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
     tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,

@@ -115,7 +115,7 @@ const IndexPage = ({ data }) => {
           title = { frontmatter.title }
           heading = { frontmatter.heading }
           section = { frontmatter.section }
-          intro = { frontmatter.intro }
+          intro = { frontmatter.introSections }
           action = { frontmatter.action }
         />
     </Layout>
@@ -145,7 +145,7 @@ export const pageQuery = graphql`
             }
           }
         }
-        intro {
+        introSections {
           heading
           sections {
             title
