@@ -3,20 +3,20 @@ import PropTypes from 'prop-types'
 import { NetworkPageTemplate } from '../../templates/network-page'
 
 const NetworkPagePreview = ({ entry, widgetFor }) => {
-  const data = entry.getIn(['data']).toJS()
+    const data = entry.getIn(['data']).toJS()
 
-  if (data) {
-    return (
-        <NetworkPageTemplate
-          heading={data.heading}
-          section={data.section}
-          intro={data.intro}
-          partners={data.partners || []}
-        />
-    )
-  } else {
-    return <div>Loading...</div>
-  }
+    if (data) {
+        return (
+            <NetworkPageTemplate
+                heading={data.heading}
+                section={data.section}
+                intro={data.intro}
+                partners={data.partners || []}
+            />
+        )
+    } else {
+        return <div>Loading...</div>
+    }
 }
 
 NetworkPagePreview.propTypes = {
