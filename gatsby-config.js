@@ -70,7 +70,7 @@ module.exports = {
       options: {
         fonts: [
           'Barlow',
-          'Barlow Condensed\:700'
+          'Barlow Condensed\:700',
         ]
       }
     },

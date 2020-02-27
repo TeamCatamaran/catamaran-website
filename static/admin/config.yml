@@ -21,7 +21,7 @@ collections:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "journal-post"}
       - {label: Title, name: title, widget: string}
       - {label: Description, name: description, widget: string}
-      - {label: Category, name: category, widget: select, options: [Thoughts, "Startup Stories", Press, Sandbox, Events]}
+      - {label: Category, name: category, widget: select, options: [Thoughts, "Startup Story", Press, Sandbox, Events]}
       - {label: Publish Date, name: date, widget: datetime}
       - {label: Heading, name: heading, widget: string}
       - {label: Subheading, name: subheading, widget: string}
@@ -45,7 +45,7 @@ collections:
       - {label: Subheading, name: subheading, widget: string}
       - {label: Introduction, name: introduction, widget: text}
       - {label: Participants, name: participants, widget: list, fields: [{label: Name, name: name, widget: string}, {label: Image, name: image, widget: image}, {label: Title, name: title, widget: string}]}
-      - {label: Links, name: links, widget: list, fields: [{label: Name, name: name, widget: string}, {label: Category, name: category, widget: select, options: [Website, Facebook, Linkedin, Twitter, Instagram, Pinterest]}]}
+      - {label: Links, name: links, widget: list, fields: [{label: Name, name: name, widget: string}, {label: Category, name: category, widget: select, options: [Website, Facebook, Linkedin, Twitter, Instagram, Pinterest, Youtube]}]}
 
   - name: "pages"
     label: "Pages"

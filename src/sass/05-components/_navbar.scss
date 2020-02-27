@@ -1,13 +1,70 @@
 .c-navbar {
-    background-color: $grey-lightest;
-
     &__logo {
         display: inline-block;
         padding: 36px 36px 20px;
     }
 
     &__menu {
-        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100%;
+        z-index: 100;
+
+        &__item {
+            @include font-style(
+                $font-normal,                     // Font Family
+                58px,                             // Font Size
+                $white,                           // Font Color
+                $weight-light,                    // Font Weight
+                100px                             // Line Height
+            );
+            display: block;
+            letter-spacing: 4px;
+            height: 100%;
+            text-align: center;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+
+            &.-logo {
+                line-height: 30px;
+                text-align: left;
+            }
+
+            span {
+                color: $grey-light;
+                font-size: 16px;
+                letter-spacing: 2px;
+                line-height: 70px;
+                vertical-align: top;
+            }
+        }
+
+        &__section {
+            &.-secondary {
+                .c-navbar__menu__item {
+                    color: $grey-light;
+                    font-size: 20px;
+                    line-height: 34px;
+                    text-align: left;
+                    height: auto;
+                }
+
+                span {
+                    @include font-style(
+                        $font-accent-menu,                // Font Family
+                        20px,                             // Font Size
+                        $grey-light,                      // Font Color
+                        $weight-light,                    // Font Weight
+                        34px                              // Line Height
+                    );
+                }
+            }
+        }
     }
 
     &__navigation {

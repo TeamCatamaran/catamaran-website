@@ -1,3 +1,7 @@
 .container {
     @include site-container;
+
+    &.-collapse {
+        @include grid-collapse;
+    }
 }
