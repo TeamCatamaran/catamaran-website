@@ -29,6 +29,7 @@ export const IndexPageTemplate = ({
     return (
         <div>
             <Header
+                collageType="home"
                 heading={heading}
                 section={section}
             />

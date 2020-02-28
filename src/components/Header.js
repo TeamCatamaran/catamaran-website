@@ -1,5 +1,7 @@
 import React from 'react'
 
+import HeaderCollage from './HeaderCollage'
+
 const Header = class extends React.Component {
     constructor(props) {
         super(props)
@@ -8,16 +10,12 @@ const Header = class extends React.Component {
     render() {
         return (
             <header className="c-header">
-                <div className="c-header__background" style={{
-                    // backgroundImage: `url(${
-                    //     //!!this.props.image.childImageSharp ? this.props.image.childImageSharp.fluid.src : this.props.image
-                    //     })`,
-                }}>
-                    <div className="container">
-                        <div className="c-header__text">
-                            <h2>{this.props.section}</h2>
-                            <h1>{this.props.heading}</h1>
-                        </div>
+                <HeaderCollage
+                    type={this.props.collageType} />
+                <div className="container">
+                    <div className="c-header__text">
+                        <h2>{this.props.section}</h2>
+                        <h1>{this.props.heading}</h1>
                     </div>
                 </div>
             </header>
