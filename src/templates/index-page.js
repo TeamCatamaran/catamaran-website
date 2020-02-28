@@ -1,107 +1,118 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import ReactPlayer from 'react-player'
 import { Link, graphql } from 'gatsby'
 
+import FluidImage from '../components/FluidImage'
 import Header from '../components/Header'
 import Layout from '../components/Layout'
-import circle from '../img/accent-circle.png'
-import triangle from '../img/accent-triangle.png'
+
+import absorb from '../img/icon-absorb.png'
+import concept from '../img/icon-concept.png'
+import create from '../img/icon-create.png'
+import learn from '../img/icon-learn.png'
 
 export const IndexPageTemplate = ({
-    image,
-    heading,
     section,
+    heading,
+    focus,
     intro,
-    action,
+    process,
+    slider,
 }) => {
     const icons = {
-        circle: circle,
-        triangle: triangle
+        absorb: absorb,
+        concept: concept,
+        create: create,
+        learn: learn,
     };
 
     return (
         <div>
             <Header
                 heading={heading}
-                image={image}
                 section={section}
             />
+            <div>
+                {focus.map((f) => {
+                    return (
+                        <div>
+                            {f.title}
+                            {f.description}
+                            {f.link}
+                            <FluidImage
+                                alt={f.title}
+                                image={f.image} />
+                        </div>
+                    )
+                })}
+            </div>
             <div className="c-intro container">
                 <div className="c-intro__heading">
-                    <h3>{intro.heading}</h3>
+                    <h3>{intro}</h3>
                 </div>
-                <div className="c-intro__item__wrapper">
-                    {
-                        intro.sections != null &&
+            </div>
+            <div>
+                <h3>{process.heading}</h3>
+                {process.steps.map((s) => {
+                    return (
                         <div>
-                            {intro.sections.map((item, key) => (
-                                <section key={key} className="c-intro__item">
-                                    <img src={icons[item.icon]} alt={item.title} />
-                                    <h4>{item.title}</h4>
-                                    <p>{item.description}</p>
-                                </section>
-                            ))}
+                            {s.title}
+                            {s.icon}
+                            {s.description}
                         </div>
-                    }
-                </div>
-                <div className="c-intro__watermark">
-                    <p>{intro.watermark}</p>
-                </div>
+                    )
+                })}
             </div>
-            <div className="c-action container -footer-overlay">
-                <div className="c-action__item">
-                    <h2>{action.heading}<span>></span></h2>
-                </div>
-                {
-                    action.pages != null &&
-                    <div>
-                        {action.pages.map((item, key) => (
-                            <Link key={key} className="c-action__item -background" to={item.link} style={{
-                                backgroundImage: `url(${
-                                    !!item.image.childImageSharp ? item.image.childImageSharp.fluid.src : item.image
-                                    })`,
-                            }}>
-                                <div className="c-action__item__content">
-                                    <h3>{item.title}</h3>
-                                    <p>{item.description}</p>
-                                </div>
-                            </Link>
-                        ))}
-                    </div>
-                }
+            <div>
+                {slider.map((s) => {
+                    return (
+                        <div>
+                            {s.name}
+                            {s.title}
+                            {s.quote}
+                            {s.logo}
+                            <FluidImage
+                                alt={s.name}
+                                image={s.image} />
+                        </div>
+                    )
+                })}
             </div>
-            <div className="c-action__footer"></div>
         </div>
     )
 }
 
 IndexPageTemplate.propTypes = {
-    image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-    title: PropTypes.string,
+    section: PropTypes.string,
     heading: PropTypes.string,
-    intro: PropTypes.shape({
+    focus: PropTypes.arrayOf(
+        PropTypes.shape({
+            title: PropTypes.string,
+            description: PropTypes.string,
+            link: PropTypes.string,
+            image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+        }),
+    ),
+    intro: PropTypes.string,
+    process: PropTypes.shape({
         heading: PropTypes.string,
-        sections: PropTypes.arrayOf(
+        steps: PropTypes.arrayOf(
             PropTypes.shape({
-                title: PropTypes.string,
+                label: PropTypes.string,
                 icon: PropTypes.string,
                 description: PropTypes.string,
-            })
+            }),
         ),
-        watermark: PropTypes.string
     }),
-    action: PropTypes.shape({
-        heading: PropTypes.string,
-        pages: PropTypes.arrayOf(
-            PropTypes.shape({
-                title: PropTypes.string,
-                description: PropTypes.string,
-                image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-                link: PropTypes.string,
-            })
-        )
-    }),
+    slider: PropTypes.arrayOf(
+        PropTypes.shape({
+            name: PropTypes.string,
+            title: PropTypes.string,
+            quote: PropTypes.string,
+            logo: PropTypes.string,
+            image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+        }),
+    ),
 }
 
 const IndexPage = ({ data }) => {
@@ -111,12 +122,12 @@ const IndexPage = ({ data }) => {
         <Layout
             bodyClass="-purple">
             <IndexPageTemplate
-                image={frontmatter.image}
-                title={frontmatter.title}
-                heading={frontmatter.heading}
                 section={frontmatter.section}
-                intro={frontmatter.introSections}
-                action={frontmatter.action}
+                heading={frontmatter.heading}
+                focus={frontmatter.focus}
+                intro={frontmatter.intro}
+                process={frontmatter.process}
+                slider={frontmatter.slider}
             />
         </Layout>
     )
@@ -138,35 +149,38 @@ export const pageQuery = graphql`
       frontmatter {
         section
         heading
-        image {
-          childImageSharp {
-            fluid(maxWidth: 2048, quality: 100) {
-              ...GatsbyImageSharpFluid
+        focus {
+          title
+          description
+          link
+          image {
+            childImageSharp {
+              fluid(maxWidth: 2048, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
             }
           }
         }
-        introSections {
+        intro
+        process {
           heading
-          sections {
+          steps {
             title
             icon
             description
           }
-          watermark
         }
-        action {
-          heading
-          pages {
-            title
-            description
-            image {
-              childImageSharp {
-                fluid(maxWidth: 2048, quality: 100) {
-                  ...GatsbyImageSharpFluid
-                }
+        slider {
+          name
+          title
+          quote
+          logo
+          image {
+            childImageSharp {
+              fluid(maxWidth: 2048, quality: 100) {
+                ...GatsbyImageSharpFluid
               }
             }
-            link
           }
         }
       }

@@ -2,11 +2,11 @@ backend:
   name: git-gateway
   branch: master
   commit_messages:
-    create: 'Create {{collection}} “{{slug}}”'
-    update: 'Update {{collection}} “{{slug}}”'
-    delete: 'Delete {{collection}} “{{slug}}”'
-    uploadMedia: '[skip ci] Upload “{{path}}”'
-    deleteMedia: '[skip ci] Delete “{{path}}”'
+    create: "Create {{collection}} “{{slug}}”"
+    update: "Update {{collection}} “{{slug}}”"
+    delete: "Delete {{collection}} “{{slug}}”"
+    uploadMedia: "[skip ci] Upload “{{path}}”"
+    deleteMedia: "[skip ci] Delete “{{path}}”"
 
 media_folder: static/img
 public_folder: /img
@@ -18,15 +18,25 @@ collections:
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "journal-post"}
-      - {label: Title, name: title, widget: string}
-      - {label: Description, name: description, widget: string}
-      - {label: Category, name: category, widget: select, options: [Thoughts, "Startup Story", Press, Sandbox, Events]}
-      - {label: Publish Date, name: date, widget: datetime}
-      - {label: Heading, name: heading, widget: string}
-      - {label: Subheading, name: subheading, widget: string}
-      - {label: Introduction, name: introduction, widget: text}
-      - {label: Body, name: body, widget: markdown}
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "journal-post",
+        }
+      - { label: Title, name: title, widget: string }
+      - { label: Description, name: description, widget: string }
+      - {
+          label: Category,
+          name: category,
+          widget: select,
+          options: [Thoughts, "Startup Story", Press, Sandbox, Events],
+        }
+      - { label: Publish Date, name: date, widget: datetime }
+      - { label: Heading, name: heading, widget: string }
+      - { label: Subheading, name: subheading, widget: string }
+      - { label: Introduction, name: introduction, widget: text }
+      - { label: Body, name: body, widget: markdown }
 
   - name: "ventures"
     label: "Ventures"
@@ -34,18 +44,56 @@ collections:
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "ventures-post"}
-      - {label: Title, name: title, widget: string}
-      - {label: Description, name: description, widget: string}
-      - {label: Company, name: company, widget: string}
-      - {label: Logo, name: logo, widget: string}
-      - {label: Video, name: video, widget: file, required: false}
-      - {label: Publish Date, name: date, widget: datetime}
-      - {label: Heading, name: heading, widget: string}
-      - {label: Subheading, name: subheading, widget: string}
-      - {label: Introduction, name: introduction, widget: text}
-      - {label: Participants, name: participants, widget: list, fields: [{label: Name, name: name, widget: string}, {label: Image, name: image, widget: image}, {label: Title, name: title, widget: string}]}
-      - {label: Links, name: links, widget: list, fields: [{label: Name, name: name, widget: string}, {label: Category, name: category, widget: select, options: [Website, Facebook, Linkedin, Twitter, Instagram, Pinterest, Youtube]}]}
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "ventures-post",
+        }
+      - { label: Title, name: title, widget: string }
+      - { label: Description, name: description, widget: string }
+      - { label: Company, name: company, widget: string }
+      - { label: Logo, name: logo, widget: string }
+      - { label: Video, name: video, widget: file, required: false }
+      - { label: Publish Date, name: date, widget: datetime }
+      - { label: Heading, name: heading, widget: string }
+      - { label: Subheading, name: subheading, widget: string }
+      - { label: Introduction, name: introduction, widget: text }
+      - {
+          label: Participants,
+          name: participants,
+          widget: list,
+          fields:
+            [
+              { label: Name, name: name, widget: string },
+              { label: Image, name: image, widget: image },
+              { label: Title, name: title, widget: string },
+            ],
+        }
+      - {
+          label: Links,
+          name: links,
+          widget: list,
+          fields:
+            [
+              { label: Name, name: name, widget: string },
+              {
+                label: Category,
+                name: category,
+                widget: select,
+                options:
+                  [
+                    Website,
+                    Facebook,
+                    Linkedin,
+                    Twitter,
+                    Instagram,
+                    Pinterest,
+                    Youtube,
+                  ],
+              },
+            ],
+        }
 
   - name: "pages"
     label: "Pages"
@@ -54,25 +102,112 @@ collections:
         label: "Landing Page"
         name: "index"
         fields:
-          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "index-page"}
-          - {label: Section, name: section, widget: string}
-          - {label: Heading, name: heading, widget: string}
-          - {label: Image, name: image, widget: image}
-          - {label: Intro, name: introSections, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Sections, name: sections, widget: list, allow_add: false, fields: [{label: Title, name: title, widget: string}, {label: Icon, name: icon, widget: select, options: [circle, triangle]}, {label: Description, name: description, widget: text}]}, {label: Watermark, name: watermark, widget: string}]}
-          - {label: Action, name: action, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Pages, name: pages, widget: list, allow_add: false, fields: [{label: Title, name: title, widget: string}, {label: Description, name: description, widget: text}, {label: Link, name: link, widget: string}, {label: Image, name: image, widget: image}]}]}
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "index-page",
+            }
+          - { label: Section, name: section, widget: string }
+          - { label: Heading, name: heading, widget: string }
+          - {
+              label: Focus,
+              name: focus,
+              widget: list,
+              allow_add: false,
+              fields:
+                [
+                  { label: Title, name: title, widget: string },
+                  { label: Description, name: description, widget: text },
+                  { label: Link, name: link, widget: string },
+                  { label: Image, name: image, widget: image },
+                ],
+            }
+          - { label: Intro, name: intro, widget: text }
+          - {
+              label: Process,
+              name: process,
+              widget: object,
+              fields:
+                [
+                  { label: Heading, name: heading, widget: string },
+                  {
+                    label: Steps,
+                    name: steps,
+                    widget: list,
+                    allow_add: false,
+                    fields:
+                      [
+                        { label: Title, name: title, widget: string },
+                        {
+                          label: Icon,
+                          name: icon,
+                          widget: select,
+                          options: [absorb, concept, create, learn],
+                        },
+                        { label: Description, name: description, widget: text },
+                      ],
+                  },
+                ],
+            }
+          - {
+              label: Slider,
+              name: slider,
+              widget: list,
+              fields:
+                [
+                  { label: Name, name: name, widget: string },
+                  { label: Title, name: title, widget: string },
+                  { label: Quote, name: quote, widget: text },
+                  { label: Logo, name: logo, widget: image },
+                  { label: Image, name: image, widget: image },
+                ],
+            }
       - file: "src/pages/about/index.md"
         label: "About"
         name: "about"
         fields:
-          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "about-page"}
-          - {label: "Title", name: "title", widget: "string"}
-          - {label: "Body", name: "body", widget: "markdown"}
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "about-page",
+            }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
       - file: "src/pages/network/index.md"
         label: "Network"
         name: "network"
         fields:
-          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "network-page"}
-          - {label: Section, name: section, widget: string}
-          - {label: Heading, name: heading, widget: string}
-          - {label: Intro, name: intro, widget: text}
-          - {label: Partners, name: partners, widget: list, fields: [{label: Category, name: category, widget: select, options: [coworking, mentorship, "economic dev", "community contacts"]}, {label: Name, name: name, widget: string}, {label: Logo, name: logo, required: false, widget: image}, {label: Link, name: link, widget: string}]}
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "network-page",
+            }
+          - { label: Section, name: section, widget: string }
+          - { label: Heading, name: heading, widget: string }
+          - { label: Intro, name: intro, widget: text }
+          - {
+              label: Partners,
+              name: partners,
+              widget: list,
+              fields:
+                [
+                  {
+                    label: Category,
+                    name: category,
+                    widget: select,
+                    options:
+                      [
+                        coworking,
+                        mentorship,
+                        "economic dev",
+                        "community contacts",
+                      ],
+                  },
+                  { label: Name, name: name, widget: string },
+                  { label: Logo, name: logo, required: false, widget: image },
+                  { label: Link, name: link, widget: string },
+                ],
+            }
