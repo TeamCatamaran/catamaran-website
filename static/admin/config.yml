@@ -121,6 +121,7 @@ collections:
                   { label: Description, name: description, widget: text },
                   { label: Link, name: link, widget: string },
                   { label: Image, name: image, widget: image },
+                  { label: "Hover Image", name: hover, widget: image },
                 ],
             }
           - { label: Intro, name: intro, widget: text }
@@ -159,7 +160,12 @@ collections:
                   { label: Name, name: name, widget: string },
                   { label: Title, name: title, widget: string },
                   { label: Quote, name: quote, widget: text },
-                  { label: Logo, name: logo, widget: image },
+                  {
+                    label: Logo,
+                    name: logo,
+                    widget: file,
+                    allow_multiple: false,
+                  },
                   { label: Image, name: image, widget: image },
                 ],
             }

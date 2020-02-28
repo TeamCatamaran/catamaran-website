@@ -5,14 +5,16 @@ heading: We are a startup studio built for action.
 focus:
   - description: >-
       We work along-side founders and by providing creative capital and services
-      to startups at any step of the journey. 
+      to startups at any step of the journey.
     image: /img/studio.png
+    hover: /img/studio-hover.png
     link: /studio
     title: Studio
   - description: >-
       We explore, test, and develop ideas through the pursuit of new
       technologies both internally and for large companies.
-    image: /img/experiments-hover.png
+    image: /img/experiments.png
+    hover: /img/experiments-hover.png
     link: /experiments
     title: Experiments
 intro: >-

@@ -71,7 +71,7 @@ export const IndexPageTemplate = ({
                             {s.name}
                             {s.title}
                             {s.quote}
-                            {s.logo}
+                            {/* {s.logo} */}
                             <FluidImage
                                 alt={s.name}
                                 image={s.image} />
@@ -161,6 +161,13 @@ export const pageQuery = graphql`
               }
             }
           }
+          hover {
+            childImageSharp {
+              fluid(maxWidth: 2048, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
         }
         intro
         process {
@@ -175,7 +182,13 @@ export const pageQuery = graphql`
           name
           title
           quote
-          logo
+          logo {
+            childImageSharp {
+              fluid(maxWidth: 2048, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
           image {
             childImageSharp {
               fluid(maxWidth: 2048, quality: 100) {
