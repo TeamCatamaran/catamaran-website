@@ -6,7 +6,7 @@ import close from '../img/icon-close.png'
 import menu from '../img/icon-menu.png'
 import search from '../img/icon-search.png'
 import waterworks from '../img/waterworks.jpg'
-// import imagesLoaded from 'imagesloaded';
+import arrowDark from '../img/icon-arrow-dark.png'
 import { gsap, Power1, Power3, Power4 } from 'gsap';
 
 const Navbar = class extends React.Component {
@@ -73,52 +73,59 @@ const Navbar = class extends React.Component {
                                     <Logo fill="white" />
                                 </div>
                                 <Link className="c-navbar__menu__item" to="/about">
-                                    <span>01</span>About
+                                    <span className="-index">01</span>
+                                    <span className="-underline">About</span>
                                 </Link>
                                 <Link className="c-navbar__menu__item" to="/studio">
-                                    <span>02</span>Studio
+                                    <span className="-index">02</span>
+                                    <span className="-underline">Studio</span>
                                 </Link>
                                 <Link className="c-navbar__menu__item" to="/experiments">
-                                    <span>03</span>Experiments
+                                    <span className="-index">03</span>
+                                    <span className="-underline">Experiments</span>
                                 </Link>
                                 <Link className="c-navbar__menu__item" to="/studies">
-                                    <span>04</span>Case Studies
+                                    <span className="-index">04</span>
+                                    <span className="-underline">Case Studies</span>
                                 </Link>
                                 <Link className="c-navbar__menu__item" to="/journal">
-                                    <span>05</span>Journal
+                                    <span className="-index">05</span>
+                                    <span className="-underline">Journal</span>
                                 </Link>
                             </div>
                         </div>
                         <div className="c-navbar__menu__section -secondary c-multibox__item" data-menu="item2" data-direction="bt">
                             <div className="c-multibox__inner">
                                 <Link className="c-navbar__menu__item" to="/network">
-                                    Network
+                                    <span className="-underline">Network</span>
                                 </Link>
-                                <span>-</span>
+                                <span className="-divider">-</span>
                                 <Link className="c-navbar__menu__item" to="/faqs">
-                                    FAQs
+                                    <span className="-underline">FAQs</span>
                                 </Link>
-                                <span>-</span>
+                                <span className="-divider">-</span>
                                 <Link className="c-navbar__menu__item" to="/jobs">
-                                    Jobs
+                                    <span className="-underline">Jobs</span>
                                 </Link>
-                                <span>-</span>
+                                <span className="-divider">-</span>
                                 <Link className="c-navbar__menu__item" to="/contact">
-                                    Contact
+                                    <span className="-underline">Contact</span>
                                 </Link>
                             </div>
                         </div>
                         <div className="c-multibox__item" data-menu="item3" data-direction="rl">
                             <div className="c-multibox__inner">
-                                <p>Shoot us a message so we can connect</p>
+                                <Link className="c-navbar__menu__item -fill" to="/contact">
+                                    <p>Shoot us a message so we can connect</p>
+                                    <img src={arrowDark} alt="Connect With Us" />
+                                </Link>
                             </div>
                         </div>
                         <div className="c-multibox__item" data-direction="lr" data-menu="item4">
                             <div className="c-multibox__inner">
                                 <div className="c-multibox__inner__image" style={{
                                     backgroundImage: `url(${waterworks})`,
-                                }}></div>
-                                <div>
+                                }}>
                                     <div
                                         className={`c-navbar__menu__close action--close ${navbarActiveClass}`}
                                         data-target="navMenu"
@@ -128,10 +135,18 @@ const Navbar = class extends React.Component {
                                             alt="Close Menu action--close"
                                             style={{ width: '25px' }} />
                                     </div>
-                                    <p>39.738449° N
-                                    -76.889830° W
-                                    </p>
+                                    <div className="c-navbar__menu__coordinates c-multibox__inner__content">
+                                        <p>
+                                            39.<br />738449&deg; N<br />
+                                            -76.<br />889830&deg; W
+                                        </p>
+                                        <p>
+                                            40.<br />263570&deg; N<br />
+                                            -104.<br />984848&deg; W
+                                        </p>
+                                    </div>
                                 </div>
+
                             </div>
                         </div>
                         <div className="c-multibox__item" data-direction="tb" data-menu="item5">

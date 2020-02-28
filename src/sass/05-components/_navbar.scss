@@ -12,6 +12,25 @@
         width: 100%;
         z-index: 100;
 
+        &__close {
+            padding: 30px 35px;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        &__coordinates {
+            p {
+                font-family: $font-accent;
+                font-size: 16px;
+                font-weight: $weight-bold;
+                letter-spacing: 3px;
+                line-height: 16px;
+                color: $white;
+                margin-bottom: 55px;
+            }
+        }
+
         &__item {
             @include font-style(
                 $font-normal,                     // Font Family
@@ -25,22 +44,62 @@
             height: 100%;
             text-align: center;
             text-decoration: none;
+            transition: color 0.5s;
 
             &:hover {
-                text-decoration: underline;
+                color: darken($white, 20%);
+                text-decoration: none;
+
+                span.-underline {
+                    border-color: darken($white, 20%);
+                }
+            }
+
+            &.-fill {
+                text-align: left;
+
+                &:hover {
+                    text-decoration: none;
+
+                    p {
+                        color: darken($white, 20%);
+                    }
+                }
+
+                img {
+                    position: absolute;
+                    bottom: 30px;
+                    left: 30px;
+                    width: 25px;
+                }
+
+                p {
+                    color: $white;
+                    font-size: 24px;
+                    line-height: 34px;
+                    padding: 0 15% 0 0;
+                    transition: color 0.5s;
+                }
             }
 
             &.-logo {
+                height: 50%;
                 line-height: 30px;
                 text-align: left;
             }
 
-            span {
+            span.-index {
                 color: $grey-light;
                 font-size: 16px;
                 letter-spacing: 2px;
+                padding-right: 6px;
                 line-height: 70px;
                 vertical-align: top;
+            }
+
+            span.-underline {
+                border-bottom: 2px solid transparent;
+                transition: border-color 0.5s;
             }
         }
 
@@ -52,15 +111,24 @@
                     line-height: 34px;
                     text-align: left;
                     height: auto;
+                    padding: 15px 0;
+
+                    &:hover {
+                        color: $white;
+
+                        span.-underline {
+                            border-color: $white;
+                        }
+                    }
                 }
 
-                span {
+                span.-divider {
                     @include font-style(
-                        $font-accent-menu,                // Font Family
+                        $font-normal,                     // Font Family
                         20px,                             // Font Size
                         $grey-light,                      // Font Color
                         $weight-light,                    // Font Weight
-                        34px                              // Line Height
+                        10px                              // Line Height
                     );
                 }
             }
