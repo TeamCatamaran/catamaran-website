@@ -5,6 +5,12 @@
         "item1 item2 item4"
         "item1 item3 item5";
     pointer-events: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: 100;
 
     &.-active {
         pointer-events: auto;
@@ -47,7 +53,6 @@
 
         &[data-menu='item1'] {
             grid-area: item1;
-            width: 101%;
 
             .c-multibox__inner {
                 background-color: $grey;
