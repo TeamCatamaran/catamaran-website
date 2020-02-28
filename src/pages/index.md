@@ -3,38 +3,52 @@ templateKey: index-page
 section: CATAMARAN
 heading: We are a startup studio built for action.
 focus:
-  - title: test
-    description: test
-    link: ""
-    image: /img/collage-home.png
-  - title: test
-    description: test
-    link: ""
-    image: /img/collage-home.png
+  - description: >-
+      We work along-side founders and by providing creative capital and services
+      to startups at any step of the journey. 
+    image: /img/studio.png
+    link: /studio
+    title: Studio
+  - description: >-
+      We explore, test, and develop ideas through the pursuit of new
+      technologies both internally and for large companies.
+    image: /img/experiments-hover.png
+    link: /experiments
+    title: Experiments
 intro: >-
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-  quis nostrud exercitation ullamco.
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+  nostrud exercitation ullamco.
 process:
-  heading: test
+  heading: Lorem Ipsum Dolor Sit Amet
   steps:
-    - title: test
-      icon: circle
-      description: test
-    - title: test
-      icon: circle
-      description: test
-    - title: test
-      icon: circle
-      description: test
-    - title: test
-      icon: circle
-      description: test
+    - description: >-
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et.
+      icon: absorb
+      title: Absorb
+    - description: >-
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et.
+      icon: concept
+      title: Concept
+    - description: >-
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et.
+      icon: create
+      title: Create
+    - description: >-
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et.
+      icon: learn
+      title: Learn
 slider:
-  - name: test
-    title: test
-    quote: test
-    logo: ""
-    image: /img/collage-home.png
+  - image: /img/scott.png
+    logo: /img/studio.png
+    name: Scott Shirley
+    quote: >-
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et.
+    title: Founder / Pledge It
 ---
 
