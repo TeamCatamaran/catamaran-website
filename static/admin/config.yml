@@ -173,14 +173,15 @@ collections:
         label: "About"
         name: "about"
         fields:
-          - {
-              label: "Template Key",
-              name: "templateKey",
-              widget: "hidden",
-              default: "about-page",
-            }
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Body", name: "body", widget: "markdown" }
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "about-page"}
+          - {label: Section, name: section, widget: string}
+          - {label: Heading, name: heading, widget: string}
+          - {label: Image, name: image, widget: image}
+          - {label: Intro, name: intro, widget: text}
+          - {label: Mission, name: mission, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Image, name: image, widget: image}, {label: Sections, name: sections, widget: list, fields: [{label: Title, name: title, widget: string}, {label: Body, label: body, widget: text}]}]}
+          - {label: Values, name: values, widget: object, fields: [{ label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: text}, {label: Image, name: image, widget: image}, {label: Values, name: values, widget: list, fields: [{label: Title, name: title, widget: string}, {label: Body, name: body, widget: text}]}]}
+          - {label: Team, name: team, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: People, name: people, widget: list, fields[{label: Name, name: name, widget: string}, {label: Photo, name: photo, widget: image}]}]}
+          - {label: Action, name: action, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Pages, name: pages, widget: list, allow_add: false, fields: [{label: Title, name: title, widget: string}, {label: Description, name: description, widget: text}, {label: Link, name: link, widget: string}, {label: Image, name: image, widget: image}]}]}
       - file: "src/pages/network/index.md"
         label: "Network"
         name: "network"

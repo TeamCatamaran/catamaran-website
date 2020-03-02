@@ -33,9 +33,7 @@ export const NetworkPageTemplate = ({
                 section = { section }
             /> */}
             <div className="c-intro container">
-                <div className="c-intro__heading">
-                    <h3>{intro}</h3>
-                </div>
+                <h3>{intro}</h3>
             </div>
             <div className="c-partners container">
                 <div className="c-partners__logos">
