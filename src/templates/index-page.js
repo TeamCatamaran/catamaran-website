@@ -5,11 +5,14 @@ import { Link, graphql } from 'gatsby'
 import FluidImage from '../components/FluidImage'
 import Header from '../components/Header'
 import Layout from '../components/Layout'
+import Slider from '../components/Slider'
 
 import absorb from '../img/icon-absorb.png'
 import concept from '../img/icon-concept.png'
 import create from '../img/icon-create.png'
 import learn from '../img/icon-learn.png'
+
+import processCollage from '../img/process-collage.png'
 
 export const IndexPageTemplate = ({
     section,
@@ -65,6 +68,7 @@ export const IndexPageTemplate = ({
             <div className="c-process container">
                 <div className="c-process__title">
                     <h3>{process.heading}</h3>
+                    <img className="c-process__collage" src={processCollage} alt="Our Process Collage" />
                 </div>
                 <div className="c-process__wrapper">
                     <div className="container -collapse">
@@ -80,21 +84,8 @@ export const IndexPageTemplate = ({
                     </div>
                 </div>
             </div>
-            <div>
-                {slider.map((s) => {
-                    return (
-                        <div>
-                            {s.name}
-                            {s.title}
-                            {s.quote}
-                            {/* {s.logo} */}
-                            <FluidImage
-                                alt={s.name}
-                                image={s.image} />
-                        </div>
-                    )
-                })}
-            </div>
+            <Slider
+                items={slider} />
         </div>
     )
 }

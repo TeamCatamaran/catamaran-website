@@ -1,4 +1,11 @@
 .c-process {
+    &__collage {
+        position: absolute;
+        bottom: 60px;
+        left: 0;
+        width: 40%;
+    }
+
     &__wrapper {
         @include grid-column(6);
     }
