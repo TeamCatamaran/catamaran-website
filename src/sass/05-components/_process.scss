@@ -1,0 +1,44 @@
+.c-process {
+    &__wrapper {
+        @include grid-column(6);
+    }
+
+    &__item {
+        @include grid-column(6);
+        margin-bottom: 75px;
+
+        label {
+            display: block;
+            font-family: $font-accent;
+            letter-spacing: 2px;
+            margin: 15px 0 25px;
+            text-transform: uppercase;
+        }
+
+        img {
+            width: 40px;
+        }
+    }
+
+    &__title {
+        @include grid-column(6);
+    }
+
+    h3 {
+        font-size: 48px;
+    }
+}
+
+body.-purple {
+    .c-process {
+        h3 {
+            color: $purple;
+        }
+
+        &__item {
+            label {
+                color: $purple;
+            }
+        }
+    }
+}

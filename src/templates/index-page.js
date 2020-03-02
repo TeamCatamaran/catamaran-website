@@ -62,17 +62,23 @@ export const IndexPageTemplate = ({
                     <h3>{intro}</h3>
                 </div>
             </div>
-            <div>
-                <h3>{process.heading}</h3>
-                {process.steps.map((s) => {
-                    return (
-                        <div>
-                            {s.title}
-                            {s.icon}
-                            {s.description}
-                        </div>
-                    )
-                })}
+            <div className="c-process container">
+                <div className="c-process__title">
+                    <h3>{process.heading}</h3>
+                </div>
+                <div className="c-process__wrapper">
+                    <div className="container -collapse">
+                        {process.steps.map((s, key) => {
+                            return (
+                                <div className="c-process__item" key={key}>
+                                    <img src={icons[s.icon]} alt={s.title} />
+                                    <label className="">{s.title}</label>
+                                    <p>{s.description}</p>
+                                </div>
+                            )
+                        })}
+                    </div>
+                </div>
             </div>
             <div>
                 {slider.map((s) => {
