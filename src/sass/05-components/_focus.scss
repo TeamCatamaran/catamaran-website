@@ -1,0 +1,98 @@
+.c-focus {
+    position: relative;
+
+    &__content {
+        position: absolute;
+        bottom: -76px;
+        left: 0;
+        right: 0;
+        padding: 0 55px 60px;
+        transition: all 0.5s;
+
+        .c-button {
+            color: $white;
+            border-color: $white;
+            opacity: 0;
+            height: 46px;
+            transition: all 0.5s;
+        }
+
+        label.-large {
+            font-family: $font-accent;
+            font-size: 30px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            transition: all 0.3s;
+        }
+
+        p {
+            color: $grey-light;
+            font-size: 20px;
+            line-height: 30px;
+            margin: 14px 0 30px;
+            transition: all 0.2s;
+        }
+    }
+
+    &__item {
+        @include grid-column(6);
+        position: relative;
+
+        &:hover {
+            label.-large {
+                color: $white;
+            }
+
+            p {
+                color: $white;
+            }
+
+            img.-default {
+                opacity: 0;
+            }
+
+            img.-hover {
+                opacity: 1;
+            }
+
+            .c-button {
+                opacity: 1;
+            }
+
+            .c-focus__content {
+                bottom: 0;
+            }
+        }
+
+        img {
+            transition: all 0.5s;
+            width: 100%;
+
+            &.-hover {
+                opacity: 0;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+        }
+    }
+
+    &__overlay {
+        background-color: $grey-lightest;
+        width: 100%;
+        height: 100px;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+}
+
+body.-purple {
+    .c-focus {
+        &__item:not(:hover) {
+            label.-large {
+                color: $purple;
+            }
+        }
+    }
+}

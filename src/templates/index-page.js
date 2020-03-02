@@ -33,19 +33,29 @@ export const IndexPageTemplate = ({
                 heading={heading}
                 section={section}
             />
-            <div>
-                {focus.map((f) => {
-                    return (
-                        <div>
-                            {f.title}
-                            {f.description}
-                            {f.link}
-                            <FluidImage
-                                alt={f.title}
-                                image={f.image} />
-                        </div>
-                    )
-                })}
+            <div className="c-focus">
+                <div className="c-focus__overlay"></div>
+                <div className="container">
+                    {focus.map((f, key) => {
+                        return (
+                            <div className="c-focus__item" key={key}>
+                                <FluidImage
+                                    className="-default"
+                                    alt={f.title}
+                                    image={f.image} />
+                                <FluidImage
+                                    className="-hover"
+                                    alt={f.title}
+                                    image={f.hover} />
+                                <div className="c-focus__content">
+                                    <label className="-large">{f.title}</label>
+                                    <p>{f.description}</p>
+                                    <Link className="c-button" to={f.link}>Lets Go</Link>
+                                </div>
+                            </div>
+                        )
+                    })}
+                </div>
             </div>
             <div className="c-intro container">
                 <div className="c-intro__heading">
