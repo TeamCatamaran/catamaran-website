@@ -1,17 +1,15 @@
 .c-header {
     background-color: $grey-lightest;
     height: 100vh;
-    margin-top: -100px;
     padding-bottom: 50px;
 
     &__background {
         width: 50%;
-        height: calc(90vh - 100px);
+        height: 90vh;
         float: right;
         position: absolute;
         overflow: hidden;
         right: 0;
-        margin-top: 100px;
 
         &.-studio {
             .studio-layer-one {
