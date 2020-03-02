@@ -61,9 +61,7 @@ export const IndexPageTemplate = ({
                 </div>
             </div>
             <div className="c-intro container">
-                <div className="c-intro__heading">
-                    <h3>{intro}</h3>
-                </div>
+                <p className="intro">{intro}</p>
             </div>
             <div className="c-process container">
                 <div className="c-process__title">

@@ -24,50 +24,76 @@ export const AboutPageTemplate = ({
                 image={image}
                 section={section}
             />
-            <div className="c-intro container">
-                <p>{intro.heading}</p>
-            </div>
-            <div className="c-mission container">
-                <div className="c-mission__leftCol">
-                    <h2>{mission.heading}</h2>
-                    <FluidImage
-                        className="-default"
-                        alt={mission.heading}
-                        image={mission.image} />
+            <div className="c-interiorPage">
+                <div className="c-intro container">
+                    <p>{intro}</p>
                 </div>
-                <div className="c-mission__rightCol">
-                    { mission.sections.map((s) => {
-                        return (
-                            <div className="c-mission__section">
-                                <h3 className="c-mission__section__title">{s.title}</h3>
-                                <p className="c-mission__section__body">{s.body}</p>
-                            </div>
-                        )
-                    })}
-                </div>
-            </div>
-            
-            <div className="c-action container -footer-overlay">
-                <div className="c-action__item">
-                    <h2>{action.heading}<span>></span></h2>
-                </div>
-                {
-                    action.pages != null &&
-                    <div>
-                        {action.pages.map((item, key) => (
-                            <Link key={key} className="c-action__item -background" to={item.link} style={{
-                                backgroundImage: `url(${
-                                    !!item.image.childImageSharp ? item.image.childImageSharp.fluid.src : item.image
-                                    })`,
-                            }}>
-                                <div className="c-action__item__content">
-                                    <h3>{item.title}</h3>
-                                    <p>{item.description}</p>
-                                </div>
-                            </Link>
-                        ))}
+                <div className="c-mission container">
+                    <div className="c-mission__leftCol">
+                        <h2>{mission.heading}</h2>
+                        <FluidImage
+                            className="-default"
+                            alt={mission.heading}
+                            image={mission.image} />
                     </div>
-                }
+                    <div className="c-mission__rightCol">
+                        { mission.sections.map((s) => {
+                            return (
+                                <div className="c-mission__section">
+                                    <h3 className="c-mission__section__title">{s.title}</h3>
+                                    <p className="c-mission__section__body">{s.body}</p>
+                                </div>
+                            )
+                        })}
+                    </div>
+                </div>
+                <div className="c-values container">
+                    <div className="c-values__heading">
+                        <div className="c-values__heading__leftCol">
+                            <h2>{values.heading}</h2>
+                            <p>{values.description}</p>
+                        </div>
+                        <div className="c-values__heading__leftCol">
+                            <FluidImage
+                                className="-default"
+                                alt={values.heading}
+                                image={values.image} />
+                        </div>
+                    </div>
+                    <div className="c-values__list">
+                        { values.values.map((v) => {
+                            return (
+                                <div className="c-values__list__item">
+                                    <label>{v.title}</label>
+                                    <p>{v.body}</p>
+                                </div>
+                            );
+                        })}
+                    </div>
+                </div>
+                
+                <div className="c-action container -footer-overlay">
+                    <div className="c-action__item">
+                        <h2>{action.heading}</h2>
+                    </div>
+                    {
+                        action.pages != null &&
+                        <div>
+                            {action.pages.map((item, key) => (
+                                <Link key={key} className="c-action__item -background" to={item.link} style={{
+                                    backgroundImage: `url(${
+                                        !!item.image.childImageSharp ? item.image.childImageSharp.fluid.src : item.image
+                                        })`,
+                                }}>
+                                    <div className="c-action__item__content">
+                                        <h3>{item.title}</h3>
+                                        <p>{item.description}</p>
+                                    </div>
+                                </Link>
+                            ))}
+                        </div>
+                    }
+                </div>
             </div>
             <div className="c-action__footer"></div>
         </div>
@@ -91,6 +117,7 @@ AboutPageTemplate.propTypes = {
     values: PropTypes.shape({
         heading: PropTypes.string,
         description: PropTypes.string,
+        image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
         values: PropTypes.arrayOf(
             PropTypes.shape({
                 title: PropTypes.string,

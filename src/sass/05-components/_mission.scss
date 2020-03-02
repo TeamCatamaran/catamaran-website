@@ -1,0 +1,9 @@
+.c-mission {
+    &__leftCol {
+        @include grid-column(6);
+    }
+
+    &__rightCol {
+        @include grid-column(6);
+    }
+}

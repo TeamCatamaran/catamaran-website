@@ -1,42 +1,16 @@
 .c-intro {
-    padding: 100px 0 134px;
+    p {
+        @include font-style(
+            $font-normal,                     // Font Family
+            $size-3,                          // Font Size
+            $grey,                            // Font Color
+            $weight-light,                    // Font Weight
+            $height-3                         // Line Height
+        );
 
-    &__item {
-        @include grid-column(6);
-
-        &__wrapper {
-            float: left;
-            padding-top: 70px;
-        }
-
-        img {
-            width: 22px;
-        }
-
-        h4 {
-            padding: 20px 0 30px;
-        }
-    }
-
-    &__heading {
-        @include grid-column(10);
-        @include grid-push(1);
-    }
-
-    &__watermark {
-        opacity: 0.05;
-        position: absolute;
-        top: 30px;
-        left: -10px;
-        pointer-events: none;
-        height: calc(100% - 30px);
-
-        p {
-            color: $grey-dark;
-            font-size: 150px;
-            font-weight: $weight-bold;
-            line-height: 184px;
-            writing-mode: vertical-rl;
-        }
-    }
+        text-align: center;
+        margin: 0 auto;
+        padding-top: 100px;
+        max-width: 840px;
+    };
 }
