@@ -8,7 +8,7 @@ const FluidImage = class extends React.Component {
     render() {
         const className = this.props.className != null ? this.props.className : "";
 
-        if (!!this.props.image.childImageSharp) {
+        if (this.props.image != null && !!this.props.image.childImageSharp) {
             return (
                 <img className={className} src={this.props.image.childImageSharp.fluid.src} alt={this.props.alt} />
             );
