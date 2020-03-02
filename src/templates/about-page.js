@@ -18,7 +18,7 @@ export const AboutPageTemplate = ({
 }) => {
 
     return (
-        <div>
+        <div >
             <Header
                 heading={heading}
                 image={image}
@@ -30,11 +30,11 @@ export const AboutPageTemplate = ({
                 </div>
                 <div className="c-mission container">
                     <div className="c-mission__leftCol">
-                        <h2>{mission.heading}</h2>
+                        <h2 className="c-mission__heading">{mission.heading}</h2>
                         <FluidImage
-                            className="-default"
-                            alt={mission.heading}
-                            image={mission.image} />
+                            className="c-mission__image -default"
+                            alt="todo"
+                            image={"/img/about-intro-collage.png"} />
                     </div>
                     <div className="c-mission__rightCol">
                         { mission.sections.map((s) => {
@@ -48,16 +48,16 @@ export const AboutPageTemplate = ({
                     </div>
                 </div>
                 <div className="c-values container">
-                    <div className="c-values__heading">
-                        <div className="c-values__heading__leftCol">
-                            <h2>{values.heading}</h2>
-                            <p>{values.description}</p>
+                    <div className="c-values__header">
+                        <div className="c-values__header__leftCol">
+                            <h2 className="c-values__heading">{values.heading}</h2>
+                            <p className="c-values__description">{values.description}</p>
                         </div>
-                        <div className="c-values__heading__leftCol">
+                        <div className="c-values__header__leftCol">
                             <FluidImage
-                                className="-default"
+                                className="c-values__image -default"
                                 alt={values.heading}
-                                image={values.image} />
+                                image={"/img/about-values-collage.png"} />
                         </div>
                     </div>
                     <div className="c-values__list">
@@ -71,7 +71,6 @@ export const AboutPageTemplate = ({
                         })}
                     </div>
                 </div>
-                
                 <div className="c-action container -footer-overlay">
                     <div className="c-action__item">
                         <h2>{action.heading}</h2>
@@ -81,9 +80,11 @@ export const AboutPageTemplate = ({
                         <div>
                             {action.pages.map((item, key) => (
                                 <Link key={key} className="c-action__item -background" to={item.link} style={{
+                                    /*
                                     backgroundImage: `url(${
                                         !!item.image.childImageSharp ? item.image.childImageSharp.fluid.src : item.image
                                         })`,
+                                    */
                                 }}>
                                     <div className="c-action__item__content">
                                         <h3>{item.title}</h3>
@@ -179,23 +180,9 @@ export const aboutPageQuery = graphql`
       frontmatter {
         section
         heading
-        image {
-            childImageSharp {
-                fluid(maxWidth: 2048, quality: 100) {
-                    ...GatsbyImageSharpFluid
-                }
-            }
-        }
         intro
         mission {
             heading
-            image {
-                childImageSharp {
-                    fluid(maxWidth: 2048, quality: 100) {
-                        ...GatsbyImageSharpFluid
-                    }
-                }
-            }
             sections {
                 title
                 body
@@ -204,13 +191,6 @@ export const aboutPageQuery = graphql`
         values {
             heading
             description
-            image {
-                childImageSharp {
-                    fluid(maxWidth: 2048, quality: 100) {
-                        ...GatsbyImageSharpFluid
-                    }
-                }
-            }
             values {
                 title
                 body
@@ -220,13 +200,6 @@ export const aboutPageQuery = graphql`
             heading
             people {
                 name
-                photo {
-                    childImageSharp {
-                        fluid(maxWidth: 2048, quality: 100) {
-                            ...GatsbyImageSharpFluid
-                        }
-                    }
-                }
             }
         }
         action {
@@ -234,13 +207,6 @@ export const aboutPageQuery = graphql`
             pages {
                 title
                 description
-                image {
-                    childImageSharp {
-                        fluid(maxWidth: 2048, quality: 100) {
-                            ...GatsbyImageSharpFluid
-                        }
-                    }
-                }
                 link
             }
         }

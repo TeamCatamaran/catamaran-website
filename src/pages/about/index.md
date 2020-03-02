@@ -29,13 +29,13 @@ values:
         We make our days happier by being kind, bringing empathy, and investing in each other.
     - title: Nerd Life
       body: >-
-        We get bored when we aren’t learning. So we invest the time in ourselves and the team.
+        We get bored when we aren't learning. So we invest the time in ourselves and the team.
     - title: Co-Create
       body: >-
         We invite new ideas, different perspectives and welcome healthy debate. Our work is forever better because of it.
     - title: Be Cool
       body: >-
-        Startup life is stressful. Priorities change quickly. We are quick to adapt. When the pressure is on, that’s when we bring our A game.
+        Startup life is stressful. Priorities change quickly. We are quick to adapt. When the pressure is on, that's when we bring our A game.
     - title: Intro The Wild
       body: >-
         It can be frustrating to not immediately know the solution. But this is where we thrive. We embrace ambiguity by trusting the process, valuing communication and working hard.
