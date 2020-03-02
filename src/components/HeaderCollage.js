@@ -13,21 +13,21 @@ const HeaderCollage = class extends React.Component {
     render() {
         if (this.props.type === "studio") {
             return (
-                <div class="c-header__background -studio">
-                    <img class="studio-layer-four" src={studio4} alt="Studio Collage Layer 4" />
-                    <img class="studio-layer-three" src={studio3} alt="Studio Collage Layer 3" />
-                    <img class="studio-layer-two" src={studio2} alt="Studio Collage Layer 2" />
-                    <img class="studio-layer-one" src={studio1} alt="Studio Collage Layer 1" />
+                <div className="c-header__background -studio">
+                    <img className="studio-layer-four" src={studio4} alt="Studio Collage Layer 4" />
+                    <img className="studio-layer-three" src={studio3} alt="Studio Collage Layer 3" />
+                    <img className="studio-layer-two" src={studio2} alt="Studio Collage Layer 2" />
+                    <img className="studio-layer-one" src={studio1} alt="Studio Collage Layer 1" />
                 </div>
             );
         }
 
         return (
-            <div class="c-header__background -studio">
-                <img class="studio-layer-four" src={studio4} alt="Studio Collage Layer 4" />
-                <img class="studio-layer-three" src={studio3} alt="Studio Collage Layer 3" />
-                <img class="studio-layer-two" src={studio2} alt="Studio Collage Layer 2" />
-                <img class="studio-layer-one" src={studio1} alt="Studio Collage Layer 1" />
+            <div className="c-header__background -studio">
+                <img className="studio-layer-four" src={studio4} alt="Studio Collage Layer 4" />
+                <img className="studio-layer-three" src={studio3} alt="Studio Collage Layer 3" />
+                <img className="studio-layer-two" src={studio2} alt="Studio Collage Layer 2" />
+                <img className="studio-layer-one" src={studio1} alt="Studio Collage Layer 1" />
             </div>
         );
     }

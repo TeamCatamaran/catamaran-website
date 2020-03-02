@@ -117,7 +117,7 @@ IndexPageTemplate.propTypes = {
             name: PropTypes.string,
             title: PropTypes.string,
             quote: PropTypes.string,
-            logo: PropTypes.string,
+            logo: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
             image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
         }),
     ),
