@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Header from '../components/Header'
+import SocialIcons from '../components/SocialIcons'
 import FluidImage from '../components/FluidImage'
 
 export const ContactPageTemplate = ({
@@ -40,6 +41,7 @@ export const ContactPageTemplate = ({
             <div>
                 <p>{coordinates}<br />{harrisburg}<br />{harrisburgNumber}<br />{denver}<br />{denverNumber}</p>
             </div>
+            <SocialIcons />
         </div>
     )
 }
