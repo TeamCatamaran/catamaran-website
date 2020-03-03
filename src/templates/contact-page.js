@@ -21,7 +21,7 @@ export const ContactPageTemplate = ({
     return (
         <div>
             <Header
-                collageType="contact"
+                collageType="none"
                 heading={heading}
                 section={section}
             />
@@ -67,7 +67,8 @@ const ContactPage = ({ data }) => {
     const { frontmatter } = data.markdownRemark
 
     return (
-        <Layout>
+        <Layout
+            bodyClass="-purple">
             <ContactPageTemplate
                 section={frontmatter.section}
                 heading={frontmatter.heading}
