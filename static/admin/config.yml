@@ -355,7 +355,7 @@ collections:
                   },
                 ],
             }
-      - file: "src/pages/experiments/index.md"
+      - file: "src/pages/experiments/lab.md"
         label: "Lab Experiments"
         name: labExperiments
         fields:
