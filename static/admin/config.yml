@@ -265,6 +265,38 @@ collections:
                   },
                 ],
             }
+      - file: "src/pages/contact/index.md"
+        label: "Contact"
+        name: "contact"
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "contact-page",
+            }
+          - { label: Section, name: section, widget: string }
+          - { label: Heading, name: heading, widget: string }
+          - { label: Intro, name: intro, widget: text }
+          - {
+              label: Type,
+              name: type,
+              widget: list,
+              fields:
+                [
+                  { label: Name, name: name, widget: string },
+                  { label: "Embed Code", name: embed, widget: text },
+                ],
+            }
+          - { label: Coordinates, name: coordinates, widget: string }
+          - { label: "Harrisburg Address", name: harrisburg, widget: text }
+          - {
+              label: "Harrisburg Number",
+              name: harrisburgNumber,
+              widget: string,
+            }
+          - { label: "Denver Address", name: denver, widget: text }
+          - { label: "Denver Number", name: denverNumber, widget: string }
       - file: "src/pages/network/index.md"
         label: "Network"
         name: "network"
