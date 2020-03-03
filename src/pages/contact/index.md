@@ -2,20 +2,19 @@
 templateKey: contact-page
 section: TEST
 heading: Test
-intro: >-
-  Test
+intro: Test
 type:
   heading: test
   types:
-    - name: test
-      embed: something
+    - embed: something
+      name: test
 social:
   heading: test
-map: /img/studio.png
+map: /img/experiments.jpg
 locations:
-  heading: test
   addresses:
     - address: 123
       number: 321
+  heading: test
 ---
 
