@@ -14,7 +14,7 @@ public_folder: /img
 collections:
   - name: "journal"
     label: "Journal"
-    folder: "src/pages/journal/posts"
+    folder: "src/pages/blog/posts"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
@@ -321,7 +321,7 @@ collections:
                   },
                 ],
             }
-      - file: "src/pages/journal/index.md"
+      - file: "src/pages/blog/index.md"
         label: "Journal"
         name: "journal"
         fields:
@@ -432,6 +432,40 @@ collections:
               name: "templateKey",
               widget: "hidden",
               default: "ventures-page",
+            }
+          - { label: Section, name: section, widget: string }
+          - { label: Heading, name: heading, widget: string }
+          - {
+              label: Action,
+              name: action,
+              widget: object,
+              fields:
+                [
+                  { label: Heading, name: heading, widget: string },
+                  {
+                    label: Pages,
+                    name: pages,
+                    widget: list,
+                    allow_add: false,
+                    fields:
+                      [
+                        { label: Title, name: title, widget: string },
+                        { label: Description, name: description, widget: text },
+                        { label: Link, name: link, widget: string },
+                        { label: Image, name: image, widget: image },
+                      ],
+                  },
+                ],
+            }
+      - file: "src/pages/studio/index.md"
+        label: "Studio"
+        name: studio
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "studio-page",
             }
           - { label: Section, name: section, widget: string }
           - { label: Heading, name: heading, widget: string }
