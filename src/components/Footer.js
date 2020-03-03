@@ -1,11 +1,8 @@
 import React from 'react'
 import { Link } from 'gatsby'
+import SocialIcons from '../components/SocialIcons'
 
 import logo from '../img/footer-logo.png'
-import facebook from '../img/social/facebook.png'
-import instagram from '../img/social/instagram.png'
-import twitter from '../img/social/twitter.png'
-import linkedin from '../img/social/linkedin.png'
 
 const Footer = class extends React.Component {
     render() {
@@ -86,37 +83,7 @@ const Footer = class extends React.Component {
                             <img src={logo} alt="Catamaran" style={{ width: '170px' }} />
                         </Link>
                     </div>
-                    <div className="c-footer__section -social">
-                        <a className="c-footer__social" title="twitter" href="https://twitter.com">
-                            <img
-                                className="fas fa-lg"
-                                src={twitter}
-                                alt="Twitter"
-                                style={{ maxWidth: '1em', maxHeight: '1em' }}
-                            />
-                        </a>
-                        <a className="c-footer__social" title="facebook" href="https://facebook.com">
-                            <img
-                                src={facebook}
-                                alt="Facebook"
-                                style={{ maxWidth: '1em', maxHeight: '1em' }}
-                            />
-                        </a>
-                        <a className="c-footer__social" title="instagram" href="https://instagram.com">
-                            <img
-                                src={instagram}
-                                alt="Instagram"
-                                style={{ maxWidth: '1em', maxHeight: '1em' }}
-                            />
-                        </a>
-                        <a className="c-footer__social" title="linkedin" href="https://www.linkedin.com">
-                            <img
-                                src={linkedin}
-                                alt="Linkedin"
-                                style={{ maxWidth: '1em', maxHeight: '1em' }}
-                            />
-                        </a>
-                    </div>
+                    <SocialIcons className="c-footer__section -social" />
                     <div className="c-footer__section">
                         <p className="c-footer__family">
                             part of the <a title="andculture family" href="https://andculture.com" target="_blank">andculture</a> family

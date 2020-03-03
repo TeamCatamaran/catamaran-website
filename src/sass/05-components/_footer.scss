@@ -45,12 +45,6 @@
         }
     }
 
-    &__social {
-        display: inline-block;
-        padding: 20px 20px 20px 20px;
-        width: 25px;
-    }
-
     &__row {
         @include site-container;
 
