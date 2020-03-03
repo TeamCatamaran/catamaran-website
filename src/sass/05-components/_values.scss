@@ -1,0 +1,79 @@
+
+
+.c-values {
+    margin-top: 150px;
+
+    &__header {
+        @include grid-container;
+
+        &__leftCol {
+            @include grid-column(6);
+        }
+    
+        &__rightCol {
+            @include grid-column(6);
+        }
+    }
+    
+
+    &__heading {
+        margin-bottom: 24px;
+        @include font-style(
+            $font-normal,                     // Font Family
+            $size-2,                          // Font Size
+            $pink,                            // Font Color
+            $weight-semibold,                 // Font Weight
+            $height-3                         // Line Height
+        );
+    }
+
+    &__description {
+        @include font-style(
+            $font-normal,                     // Font Family
+            $size-3,                          // Font Size
+            $grey,                            // Font Color
+            $weight-normal,                   // Font Weight
+            $height-2                         // Line Height
+        );
+    }
+
+    &__image {
+        margin: 24px 0 0 134px;
+        width: 391px;
+        height: 91px;
+    }
+
+    &__list {
+        margin: 74px 0 0 0;
+        @include grid-container;
+
+        &__item {
+            @include grid-column(4);
+            margin-bottom: 74px;
+            label {
+                display: block;
+                margin-bottom: 26px;
+                text-transform: uppercase;
+                letter-spacing: .24em;
+                @include font-style(
+                    $font-accent,                     // Font Family
+                    $size-4,                          // Font Size
+                    $pink,                            // Font Color
+                    $weight-bold,                     // Font Weight
+                    $height-4                         // Line Height
+                );
+            }
+    
+            p {
+                margin-right: 64px;
+                @include font-style(
+                    $font-normal,                     // Font Family
+                    $size-p,                          // Font Size
+                    $grey,                            // Font Color
+                    $weight-medium,                     // Font Weight
+                    $height-p                         // Line Height
+                );
+            }
+        }
+    }
+}

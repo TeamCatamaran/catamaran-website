@@ -1,0 +1,58 @@
+
+
+.c-mission {
+    &__leftCol {
+        @include grid-column(6);
+    }
+
+    &__rightCol {
+        @include grid-column(6);
+    }
+
+    &__heading {
+        @include font-style(
+            $font-normal,                     // Font Family
+            $size-2,                          // Font Size
+            $pink,                            // Font Color
+            $weight-semibold,                 // Font Weight
+            $height-3                         // Line Height
+        );
+    }
+
+    &__image {
+        margin: 90px 0 0 75px;
+        width: 288px;
+        height: 198px;
+    }
+
+    &__section {
+        margin: 12px 0 0 80px;
+
+        &:not(:last-of-type) {
+            margin-bottom: 80px;
+        }
+
+        &__title {
+            margin-bottom: 26px;
+            text-transform: uppercase;
+            letter-spacing: .24em;
+            @include font-style(
+                $font-accent,                     // Font Family
+                $size-4,                          // Font Size
+                $pink,                            // Font Color
+                $weight-bold,                     // Font Weight
+                $height-4                         // Line Height
+            );
+        }
+
+        &__body {
+            @include font-style(
+                $font-normal,                     // Font Family
+                $size-p,                          // Font Size
+                $grey,                            // Font Color
+                $weight-medium,                     // Font Weight
+                $height-p                         // Line Height
+            );
+        }
+    }
+}
