@@ -5,12 +5,17 @@ heading: Test
 intro: >-
   Test
 type:
-  - name: test
-    embed: something
-coordinates: 1
-harrisburg: 123
-harrisburgNumber: 1
-denver: 123
-denverNumber: 1
+  heading: test
+  types:
+    - name: test
+      embed: something
+social:
+  heading: test
+map: /img/studio.png
+locations:
+  heading: test
+  addresses:
+    - address: 123
+      number: 321
 ---
 

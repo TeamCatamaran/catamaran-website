@@ -181,7 +181,6 @@ collections:
             }
           - { label: Section, name: section, widget: string }
           - { label: Heading, name: heading, widget: string }
-          - { label: Image, name: image, widget: image }
           - { label: Intro, name: intro, widget: text }
           - {
               label: Mission,
@@ -190,7 +189,6 @@ collections:
               fields:
                 [
                   { label: Heading, name: heading, widget: string },
-                  { label: Image, name: image, widget: image },
                   {
                     label: Sections,
                     name: sections,
@@ -211,7 +209,6 @@ collections:
                 [
                   { label: Heading, name: heading, widget: string },
                   { label: Description, name: description, widget: text },
-                  { label: Image, name: image, widget: image },
                   {
                     label: Values,
                     name: values,
@@ -279,24 +276,50 @@ collections:
           - { label: Heading, name: heading, widget: string }
           - { label: Intro, name: intro, widget: text }
           - {
-              label: Type,
+              label: "Contact Type",
               name: type,
-              widget: list,
+              widget: object,
               fields:
                 [
-                  { label: Name, name: name, widget: string },
-                  { label: "Embed Code", name: embed, widget: text },
+                  { label: Heading, name: heading, widget: string },
+                  {
+                    label: "Contact Types",
+                    name: types,
+                    widget: list,
+                    fields:
+                      [
+                        { label: Name, name: name, widget: string },
+                        { label: "Embed Code", name: embed, widget: text },
+                      ],
+                  },
                 ],
             }
-          - { label: Coordinates, name: coordinates, widget: string }
-          - { label: "Harrisburg Address", name: harrisburg, widget: text }
           - {
-              label: "Harrisburg Number",
-              name: harrisburgNumber,
-              widget: string,
+              label: Social,
+              name: social,
+              widget: object,
+              fields: [{ label: Heading, name: heading, widget: string }],
             }
-          - { label: "Denver Address", name: denver, widget: text }
-          - { label: "Denver Number", name: denverNumber, widget: string }
+          - { label: Map, name: map, widget: image }
+          - {
+              label: Locations,
+              name: locations,
+              widget: object,
+              fields:
+                [
+                  { label: Heading, name: heading, widget: string },
+                  {
+                    label: Addresses,
+                    name: addresses,
+                    widget: list,
+                    fields:
+                      [
+                        { label: Address, name: address, widget: text },
+                        { label: Number, name: number, widget: string },
+                      ],
+                  },
+                ],
+            }
       - file: "src/pages/network/index.md"
         label: "Network"
         name: "network"

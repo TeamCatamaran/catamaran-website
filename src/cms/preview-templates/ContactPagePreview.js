@@ -12,11 +12,9 @@ const ContactPagePreview = ({ entry, widgetFor }) => {
                 heading={data.heading}
                 intro={data.intro}
                 type={data.type}
-                coordinates={data.coordinates}
-                harrisburg={data.harrisburg}
-                harrisburgNumber={data.harrisburgNumber}
-                denver={data.denver}
-                denverNumber={data.denverNumber}
+                social={data.social}
+                map={data.map}
+                locations={data.locations}
             />
         )
     } else {

@@ -6,6 +6,9 @@ import Header from '../components/Header'
 import Content, { HTMLContent } from '../components/Content'
 import FluidImage from '../components/FluidImage'
 
+import aboutIntroCollage from '../img/about-intro-collage.png'
+import aboutValuesCollage from '../img/about-values-collage.png'
+
 export const AboutPageTemplate = ({
     section,
     heading,
@@ -31,13 +34,13 @@ export const AboutPageTemplate = ({
                 <div className="c-mission container">
                     <div className="c-mission__leftCol">
                         <h2 className="c-mission__heading">{mission.heading}</h2>
-                        <FluidImage
+                        <img
                             className="c-mission__image -default"
                             alt="todo"
-                            image={"/img/about-intro-collage.png"} />
+                            src={aboutIntroCollage} />
                     </div>
                     <div className="c-mission__rightCol">
-                        { mission.sections.map((s) => {
+                        {mission.sections.map((s) => {
                             return (
                                 <div className="c-mission__section">
                                     <h3 className="c-mission__section__title">{s.title}</h3>
@@ -53,21 +56,21 @@ export const AboutPageTemplate = ({
                         <p className="c-values__description">{values.description}</p>
                     </div>
                     <div className="c-values__header">
-                        <FluidImage
+                        <img
                             className="c-values__image -default"
                             alt={values.heading}
-                            image={"/img/about-values-collage.png"} />
+                            src={aboutValuesCollage} />
                     </div>
                     <div className="c-values__list">
                         <div className="c-values__list__container">
-                        { values.values.map((v) => {
-                            return (
-                                <div className="c-values__list__item">
-                                    <label>{v.title}</label>
-                                    <p>{v.body}</p>
-                                </div>
-                            );
-                        })}
+                            {values.values.map((v) => {
+                                return (
+                                    <div className="c-values__list__item">
+                                        <label>{v.title}</label>
+                                        <p>{v.body}</p>
+                                    </div>
+                                );
+                            })}
                         </div>
                     </div>
                 </div>
@@ -80,7 +83,7 @@ export const AboutPageTemplate = ({
                             image={"/img/donut.png"} />
                     </div>
                     <div className="c-team__list">
-                        { team.people.map((p) => {
+                        {team.people.map((p) => {
                             return (
                                 <div className="c-team__member">
                                     <label className="c-team__member__name">{p.name}</label>
@@ -106,11 +109,9 @@ export const AboutPageTemplate = ({
                         <div>
                             {action.pages.map((item, key) => (
                                 <Link key={key} className="c-action__item -background" to={item.link} style={{
-                                    /*
                                     backgroundImage: `url(${
                                         !!item.image.childImageSharp ? item.image.childImageSharp.fluid.src : item.image
                                         })`,
-                                    */
                                 }}>
                                     <div className="c-action__item__content">
                                         <h3>{item.title}</h3>
@@ -130,7 +131,6 @@ export const AboutPageTemplate = ({
 AboutPageTemplate.propTypes = {
     section: PropTypes.string,
     heading: PropTypes.string,
-    image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
     intro: PropTypes.string,
     mission: PropTypes.shape({
         heading: PropTypes.string,
@@ -144,7 +144,6 @@ AboutPageTemplate.propTypes = {
     values: PropTypes.shape({
         heading: PropTypes.string,
         description: PropTypes.string,
-        image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
         values: PropTypes.arrayOf(
             PropTypes.shape({
                 title: PropTypes.string,
@@ -209,33 +208,47 @@ export const aboutPageQuery = graphql`
         heading
         intro
         mission {
-            heading
-            sections {
-                title
-                body
-            }
+          heading
+          sections {
+            title
+            body
+          }
         }
         values {
-            heading
-            description
-            values {
-                title
-                body
-            }
+          heading
+          description
+          values {
+            title
+            body
+          }
         }
         team {
-            heading
-            people {
-                name
+          heading
+          people {
+            name
+            photo {
+              childImageSharp {
+                fluid(maxWidth: 2048, quality: 100) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
             }
+          }
         }
         action {
-            heading
-            pages {
-                title
-                description
-                link
+          heading
+          pages {
+            title
+            description
+            image {
+              childImageSharp {
+                fluid(maxWidth: 2048, quality: 100) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
             }
+            link
+          }
         }
       }
     }

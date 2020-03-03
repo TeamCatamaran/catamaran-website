@@ -2,12 +2,10 @@
 templateKey: about-page
 section: ABOUT
 heading: The how, why & who behind the what
-image: /img/studio.png
 intro: >-
   Catamaran was started in 2017 and since it's inception we've believed by joining together founders and an expert team, that like a Catamaran the resulting twin-hulled vessel can outperform their mono-hauled counterparts.
 mission:
   heading: Lorem Ipsum Dolar Sit Amet Lorem Ipsum Dolar Sit Amet Lorem Ipsum Dolar Sit Amet
-  image: /img/intro-collage.png
   sections:
     - title: Absorb
       body: >-
@@ -18,8 +16,7 @@ mission:
 values:
   heading: A Culture to Create
   description: >-
-    From how we approach ideas to how we approach each other, our values are there to remind us who we are and who we want to be. 
-  image: /img/values-collage.png
+    From how we approach ideas to how we approach each other, our values are there to remind us who we are and who we want to be.
   values:
     - title: Default to Action
       body: >-
