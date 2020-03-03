@@ -84,9 +84,9 @@ const Navbar = class extends React.Component {
                                     <span className="-index">03</span>
                                     <span className="-underline">Experiments</span>
                                 </Link>
-                                <Link className="c-navbar__menu__item" to="/studies">
+                                <Link className="c-navbar__menu__item" to="/ventures">
                                     <span className="-index">04</span>
-                                    <span className="-underline">Case Studies</span>
+                                    <span className="-underline">Ventures</span>
                                 </Link>
                                 <Link className="c-navbar__menu__item" to="/journal">
                                     <span className="-index">05</span>
