@@ -355,6 +355,108 @@ collections:
                   },
                 ],
             }
+      - file: "src/pages/experiments/index.md"
+        label: "Lab Experiments"
+        name: labExperiments
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "experiments-page",
+            }
+          - { label: Section, name: section, widget: string }
+          - { label: Heading, name: heading, widget: string }
+          - {
+              label: Action,
+              name: action,
+              widget: object,
+              fields:
+                [
+                  { label: Heading, name: heading, widget: string },
+                  {
+                    label: Pages,
+                    name: pages,
+                    widget: list,
+                    allow_add: false,
+                    fields:
+                      [
+                        { label: Title, name: title, widget: string },
+                        { label: Description, name: description, widget: text },
+                        { label: Link, name: link, widget: string },
+                        { label: Image, name: image, widget: image },
+                      ],
+                  },
+                ],
+            }
+      - file: "src/pages/experiments/enterprise.md"
+        label: "Enterprise Experiments"
+        name: enterpriseExperiments
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "experiments-page",
+            }
+          - { label: Section, name: section, widget: string }
+          - { label: Heading, name: heading, widget: string }
+          - {
+              label: Action,
+              name: action,
+              widget: object,
+              fields:
+                [
+                  { label: Heading, name: heading, widget: string },
+                  {
+                    label: Pages,
+                    name: pages,
+                    widget: list,
+                    allow_add: false,
+                    fields:
+                      [
+                        { label: Title, name: title, widget: string },
+                        { label: Description, name: description, widget: text },
+                        { label: Link, name: link, widget: string },
+                        { label: Image, name: image, widget: image },
+                      ],
+                  },
+                ],
+            }
+      - file: "src/pages/ventures/index.md"
+        label: "Ventures"
+        name: ventures
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "ventures-page",
+            }
+          - { label: Section, name: section, widget: string }
+          - { label: Heading, name: heading, widget: string }
+          - {
+              label: Action,
+              name: action,
+              widget: object,
+              fields:
+                [
+                  { label: Heading, name: heading, widget: string },
+                  {
+                    label: Pages,
+                    name: pages,
+                    widget: list,
+                    allow_add: false,
+                    fields:
+                      [
+                        { label: Title, name: title, widget: string },
+                        { label: Description, name: description, widget: text },
+                        { label: Link, name: link, widget: string },
+                        { label: Image, name: image, widget: image },
+                      ],
+                  },
+                ],
+            }
       - file: "src/pages/network/index.md"
         label: "Network"
         name: "network"
