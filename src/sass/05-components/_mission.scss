@@ -56,3 +56,11 @@
         }
     }
 }
+
+body.-pink {
+    .c-mission {
+        &__heading, &__title {
+            color: $pink;
+        }
+    }
+}

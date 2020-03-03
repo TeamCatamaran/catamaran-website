@@ -49,18 +49,17 @@ export const AboutPageTemplate = ({
                 </div>
                 <div className="c-values container">
                     <div className="c-values__header">
-                        <div className="c-values__header__leftCol">
-                            <h2 className="c-values__heading">{values.heading}</h2>
-                            <p className="c-values__description">{values.description}</p>
-                        </div>
-                        <div className="c-values__header__leftCol">
-                            <FluidImage
-                                className="c-values__image -default"
-                                alt={values.heading}
-                                image={"/img/about-values-collage.png"} />
-                        </div>
+                        <h2 className="c-values__heading">{values.heading}</h2>
+                        <p className="c-values__description">{values.description}</p>
+                    </div>
+                    <div className="c-values__header">
+                        <FluidImage
+                            className="c-values__image -default"
+                            alt={values.heading}
+                            image={"/img/about-values-collage.png"} />
                     </div>
                     <div className="c-values__list">
+                        <div className="c-values__list__container">
                         { values.values.map((v) => {
                             return (
                                 <div className="c-values__list__item">
@@ -69,7 +68,34 @@ export const AboutPageTemplate = ({
                                 </div>
                             );
                         })}
+                        </div>
                     </div>
+                </div>
+                <div className="c-team container">
+                    <div className="c-team__header">
+                        <h2 className="c-team__heading">{team.heading}</h2>
+                        <FluidImage
+                            className="c-team__topImage -default"
+                            alt={team.heading}
+                            image={"/img/donut.png"} />
+                    </div>
+                    <div className="c-team__list">
+                        { team.people.map((p) => {
+                            return (
+                                <div className="c-team__member">
+                                    <label className="c-team__member__name">{p.name}</label>
+                                    <FluidImage
+                                        className="c-team__member__photo -default"
+                                        alt={p.name}
+                                        image="/img/alex.jpg" />
+                                </div>
+                            );
+                        })}
+                    </div>
+                    <FluidImage
+                        className="c-team__bottomImage -default"
+                        alt={team.heading}
+                        image={"/img/plus.png"} />
                 </div>
                 <div className="c-action container -footer-overlay">
                     <div className="c-action__item">
@@ -152,7 +178,8 @@ const AboutPage = ({ data }) => {
     const { frontmatter } = data.markdownRemark
 
     return (
-        <Layout>
+        <Layout
+            bodyClass="-pink">
             <AboutPageTemplate
                 section={frontmatter.section}
                 heading={frontmatter.heading}

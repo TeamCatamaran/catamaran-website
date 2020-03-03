@@ -41,19 +41,25 @@ values:
         It can be frustrating to not immediately know the solution. But this is where we thrive. We embrace ambiguity by trusting the process, valuing communication and working hard.
 
 team:
-  heading: test
+  heading: The Team
   people:
-    - name: me
-      photo: /img/studio.png
+    - name: Amanda Mills
+      photo: /img/amanda.jpg
+    - name: Alex Getty
+      photo: /img/alex.jpg
+    - name: Kate Ferrara
+      photo: /img/kate.jpg
+    - name: Phil Hess
+      photo: /img/phil.jpg
 action:
-  heading: test
+  heading: Where the action is >
   pages:
-    - title: something
-      description: something
+    - title: Journal Entry
+      description: From Business Accelerator to Startup Studio
       link: test
       image: /img/studio.png
-    - title: something
-      description: something
+    - title: Press
+      description: Harrisburg Landmark Has a New Owner
       link: test
       image: /img/studio.png
 ---
