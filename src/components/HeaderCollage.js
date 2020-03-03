@@ -11,6 +11,10 @@ const HeaderCollage = class extends React.Component {
     }
 
     render() {
+        if (this.props.type === "none") {
+            return (null);
+        }
+
         if (this.props.type === "studio") {
             return (
                 <div className="c-header__background -studio">
