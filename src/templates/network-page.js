@@ -5,6 +5,7 @@ import { Link, graphql } from 'gatsby'
 
 import Header from '../components/Header'
 import Layout from '../components/Layout'
+import FluidImage from '../components/FluidImage'
 
 export const NetworkPageTemplate = ({
     heading,
@@ -21,7 +22,7 @@ export const NetworkPageTemplate = ({
     const logoPartners = [];
     partners.forEach((p) => {
         sortedPartners[p.category].push(p);
-        if (p.image != null) {
+        if (p.logo != null) {
             logoPartners.push(p);
         }
     });
@@ -37,10 +38,12 @@ export const NetworkPageTemplate = ({
             </div>
             <div className="c-partners container">
                 <div className="c-partners__logos">
-                    {logoPartners.map((p) => {
+                    {logoPartners.map((p, key) => {
                         return (
-                            <Link className="c-partner__logos__item" to={p.link}>
-                                <img src={p.image} alt={p.name} />
+                            <Link className="c-partner__logos__item" to={p.link} key={key}>
+                                <FluidImage
+                                    alt={p.name}
+                                    image={p.logo} />
                             </Link>
                         );
                     })}
@@ -48,17 +51,17 @@ export const NetworkPageTemplate = ({
                 <div className="c-partners__list">
                     <div className="c-partners__list__section">
                         <h4>Coworking</h4>
-                        {sortedPartners["coworking"].map((p) => <Link to={p.link} target="_blank">{p.name}</Link>)}
+                        {sortedPartners["coworking"].map((p, key) => <Link to={p.link} target="_blank" key={key}>{p.name}</Link>)}
                         <h4>Mentorship</h4>
-                        {sortedPartners["mentorship"].map((p) => <Link to={p.link} target="_blank">{p.name}</Link>)}
+                        {sortedPartners["mentorship"].map((p, key) => <Link to={p.link} target="_blank" key={key}>{p.name}</Link>)}
                     </div>
                     <div className="c-partners__list__section">
                         <h4>Economic Dev</h4>
-                        {sortedPartners["economic dev"].map((p) => <Link to={p.link} target="_blank">{p.name}</Link>)}
+                        {sortedPartners["economic dev"].map((p, key) => <Link to={p.link} target="_blank" key={key}>{p.name}</Link>)}
                     </div>
                     <div className="c-partners__list__section">
                         <h4>Community Contacts</h4>
-                        {sortedPartners["community contacts"].map((p) => <Link to={p.link} target="_blank">{p.name}</Link>)}
+                        {sortedPartners["community contacts"].map((p, key) => <Link to={p.link} target="_blank" key={key}>{p.name}</Link>)}
                     </div>
                 </div>
             </div>
@@ -74,7 +77,7 @@ NetworkPageTemplate.propTypes = {
         PropTypes.shape({
             category: PropTypes.string,
             name: PropTypes.string,
-            logo: PropTypes.string,
+            logo: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
             link: PropTypes.string,
         })
     )
@@ -116,7 +119,13 @@ export const pageQuery = graphql`
         partners {
           category
           name
-          logo
+          logo {
+            childImageSharp {
+              fluid(maxWidth: 2048, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
           link
         }
       }

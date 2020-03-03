@@ -9,7 +9,7 @@ intro: >-
 partners:
   - category: coworking
     link: 'https://google.com'
-    logo: ''
+    logo: /img/studio.png
     name: test
 ---
 
