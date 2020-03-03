@@ -49,7 +49,7 @@ team:
     - name: Phil Hess
       photo: /img/phil.jpg
 action:
-  heading: Where the action is >
+  heading: Where the action is
   pages:
     - title: Journal Entry
       description: From Business Accelerator to Startup Studio

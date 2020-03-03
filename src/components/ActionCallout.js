@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'gatsby'
 
 const ActionCallout = class extends React.Component {
     constructor(props) {
@@ -15,7 +16,7 @@ const ActionCallout = class extends React.Component {
                     {
                         this.props.pages != null &&
                         <div>
-                            {action.pages.map((item, key) => (
+                            {this.props.pages.map((item, key) => (
                                 <Link key={key} className="c-action__item -background" to={item.link} style={{
                                     backgroundImage: `url(${
                                         !!item.image.childImageSharp ? item.image.childImageSharp.fluid.src : item.image
