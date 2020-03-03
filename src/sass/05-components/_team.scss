@@ -47,6 +47,11 @@
         margin-bottom: 20px;
         background-color: $grey-light;
         position: relative;
+        overflow: hidden;
+
+        &.-large {
+            @include grid-column(8);
+        }
 
         &__name {
             position: absolute;

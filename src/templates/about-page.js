@@ -85,13 +85,17 @@ export const AboutPageTemplate = ({
                     </div>
                     <div className="c-team__list">
                         {team.people.map((p) => {
+                            let className = "c-team__member";
+                            if (p.large) {
+                                className += " -large"
+                            }
                             return (
-                                <div className="c-team__member">
+                                <div className={className}>
                                     <label className="c-team__member__name">{p.name}</label>
                                     <FluidImage
                                         className="c-team__member__photo -default"
                                         alt={p.name}
-                                        image="/img/alex.jpg" />
+                                        image={p.photo} />
                                 </div>
                             );
                         })}
@@ -138,6 +142,7 @@ AboutPageTemplate.propTypes = {
             PropTypes.shape({
                 name: PropTypes.string,
                 photo: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+                large: PropTypes.bool,
             })
         )
     }),
@@ -214,6 +219,7 @@ export const aboutPageQuery = graphql`
                 }
               }
             }
+            large
           }
         }
         action {

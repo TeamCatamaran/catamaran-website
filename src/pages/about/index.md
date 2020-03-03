@@ -42,12 +42,19 @@ team:
   people:
     - name: Amanda Mills
       photo: /img/amanda.jpg
+      large: false
     - name: Alex Getty
       photo: /img/alex.jpg
+      large: false
     - name: Kate Ferrara
       photo: /img/kate.jpg
+      large: false
     - name: Phil Hess
       photo: /img/phil.jpg
+      large: false
+    - name: Shane Shearer / Evan Keller / Dave Hickethier / Josh Benton
+      photo: /img/group.jpg
+      large: true
 action:
   heading: Where the action is
   pages:
