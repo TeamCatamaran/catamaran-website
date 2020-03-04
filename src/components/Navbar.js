@@ -76,7 +76,7 @@ const Navbar = class extends React.Component {
                                     <span className="-index">01</span>
                                     <span className="-underline">About</span>
                                 </Link>
-                                <Link className="c-navbar__menu__item" to="/studio">
+                                <Link className="c-navbar__menu__item" to="/studio/startup">
                                     <span className="-index">02</span>
                                     <span className="-underline">Studio</span>
                                 </Link>

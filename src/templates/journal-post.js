@@ -89,7 +89,6 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
-        description
         category
         date(formatString: "MMMM DD, YYYY")
         heading

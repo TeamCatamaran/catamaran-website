@@ -457,9 +457,185 @@ collections:
                   },
                 ],
             }
-      - file: "src/pages/studio/index.md"
-        label: "Studio"
-        name: studio
+      - file: "src/pages/studio/startup.md"
+        label: "Startup Launch Program"
+        name: studioStartup
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "studio-page",
+            }
+          - { label: Section, name: section, widget: string }
+          - { label: Heading, name: heading, widget: string }
+          - {
+              label: Overview,
+              name: overview,
+              widget: object,
+              fields:
+                [
+                  { label: Introduction, name: introduction, widget: text },
+                  { label: "Left Content", name: leftContent, widget: text },
+                  { label: "Right Content", name: rightContent, widget: text },
+                ],
+            }
+          - {
+              label: "How We Do It",
+              name: how,
+              widget: object,
+              fields:
+                [
+                  { label: Heading, name: heading, widget: string },
+                  { label: Intro, name: intro, widget: text },
+                  {
+                    label: Steps,
+                    name: steps,
+                    widget: list,
+                    fields:
+                      [
+                        { label: Heading, name: heading, widget: string },
+                        { label: Description, name: description, widget: text },
+                      ],
+                  },
+                ],
+            }
+          - {
+              label: Process,
+              name: process,
+              widget: object,
+              fields:
+                [
+                  { label: Heading, name: heading, widget: string },
+                  {
+                    label: Steps,
+                    name: steps,
+                    widget: list,
+                    allow_add: false,
+                    fields:
+                      [
+                        { label: Title, name: title, widget: string },
+                        {
+                          label: Icon,
+                          name: icon,
+                          widget: select,
+                          options: [absorb, concept, create, learn],
+                        },
+                        { label: Description, name: description, widget: text },
+                      ],
+                  },
+                ],
+            }
+          - {
+              label: "What to Expect",
+              name: expect,
+              widget: object,
+              fields:
+                [
+                  { label: Heading, name: heading, widget: string },
+                  { label: Intro, name: intro, widget: text },
+                  {
+                    label: Steps,
+                    name: steps,
+                    widget: list,
+                    allow_add: false,
+                    fields:
+                      [
+                        { label: Heading, name: heading, widget: string },
+                        { label: Intro, name: intro, widget: text },
+                        { label: Description, name: description, widget: text },
+                      ],
+                  },
+                ],
+            }
+          - {
+              label: Slider,
+              name: slider,
+              widget: list,
+              fields:
+                [
+                  { label: Name, name: name, widget: string },
+                  { label: Title, name: title, widget: string },
+                  { label: Quote, name: quote, widget: text },
+                  {
+                    label: Logo,
+                    name: logo,
+                    widget: file,
+                    allow_multiple: false,
+                  },
+                  { label: Image, name: image, widget: image },
+                ],
+            }
+          - {
+              label: Launch,
+              name: launch,
+              widget: object,
+              fields:
+                [
+                  { label: Content, name: content, widget: string },
+                  { label: "Button Text", name: text, widget: string },
+                  { label: Link, name: link, widget: string },
+                ],
+            }
+          - {
+              label: Action,
+              name: action,
+              widget: object,
+              fields:
+                [
+                  { label: Heading, name: heading, widget: string },
+                  {
+                    label: Pages,
+                    name: pages,
+                    widget: list,
+                    allow_add: false,
+                    fields:
+                      [
+                        { label: Title, name: title, widget: string },
+                        { label: Description, name: description, widget: text },
+                        { label: Link, name: link, widget: string },
+                        { label: Image, name: image, widget: image },
+                      ],
+                  },
+                ],
+            }
+      - file: "src/pages/studio/upstart.md"
+        label: "For Upstarts"
+        name: upstartStartup
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "studio-page",
+            }
+          - { label: Section, name: section, widget: string }
+          - { label: Heading, name: heading, widget: string }
+          - {
+              label: Action,
+              name: action,
+              widget: object,
+              fields:
+                [
+                  { label: Heading, name: heading, widget: string },
+                  {
+                    label: Pages,
+                    name: pages,
+                    widget: list,
+                    allow_add: false,
+                    fields:
+                      [
+                        { label: Title, name: title, widget: string },
+                        { label: Description, name: description, widget: text },
+                        { label: Link, name: link, widget: string },
+                        { label: Image, name: image, widget: image },
+                      ],
+                  },
+                ],
+            }
+      - file: "src/pages/studio/cofounder.md"
+        label: "Be A Co-Founder"
+        name: cofounderStartup
         fields:
           - {
               label: "Template Key",
@@ -510,6 +686,7 @@ collections:
               widget: list,
               fields:
                 [
+                  { label: Name, name: name, widget: string },
                   {
                     label: Category,
                     name: category,
@@ -522,7 +699,6 @@ collections:
                         "community contacts",
                       ],
                   },
-                  { label: Name, name: name, widget: string },
                   { label: Logo, name: logo, required: false, widget: image },
                   { label: Link, name: link, widget: string },
                 ],

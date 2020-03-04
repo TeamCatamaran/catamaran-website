@@ -5,7 +5,7 @@ import Layout from '../components/Layout'
 import Header from '../components/Header'
 import ActionCallout from '../components/ActionCallout'
 
-export const StudioPageTemplate = ({
+export const StudioCofounderPageTemplate = ({
     section,
     heading,
     action,
@@ -25,7 +25,7 @@ export const StudioPageTemplate = ({
     )
 }
 
-StudioPageTemplate.propTypes = {
+StudioCofounderPageTemplate.propTypes = {
     section: PropTypes.string,
     heading: PropTypes.string,
     action: PropTypes.shape({
@@ -41,13 +41,13 @@ StudioPageTemplate.propTypes = {
     }),
 }
 
-const StudioPage = ({ data }) => {
+const StudioCofounderPage = ({ data }) => {
     const { frontmatter } = data.markdownRemark
 
     return (
         <Layout
             bodyClass="-dark">
-            <StudioPageTemplate
+            <StudioCofounderPageTemplate
                 section={frontmatter.section}
                 heading={frontmatter.heading}
                 action={frontmatter.action}
@@ -56,14 +56,14 @@ const StudioPage = ({ data }) => {
     )
 }
 
-StudioPage.propTypes = {
+StudioCofounderPage.propTypes = {
     data: PropTypes.object.isRequired,
 }
 
-export default StudioPage;
+export default StudioCofounderPage;
 
-export const studioPageQuery = graphql`
-query StudioPage($id: String!) {
+export const studioCofounderPageQuery = graphql`
+query StudioCofounderPage($id: String!) {
   markdownRemark(id: { eq: $id }) {
     html
     frontmatter {
