@@ -1,33 +1,183 @@
 .c-slider {
-    height: 500px;
+    position: relative;
+    height: 530px;
+    margin-top: 200px;
 
-    &__item {
-        height: 100%;
+    &__companies {
+        @include grid-column(6);
+        height: 530px;
+        position: relative;
+    }
+
+    &__content {
+        @include grid-column(6);
+        height: 530px;
+        position: relative;
+    }
+
+
+    &__count {
+        position: absolute;
+        letter-spacing: .2em;
+        top: 50px;
+        @include font-style(
+            $font-accent,                     // Font Family
+            $size-4,                          // Font Size
+            $grey-light,                            // Font Color
+            $weight-bold,                 // Font Weight
+            $height-4                         // Line Height
+        );
+
+        &__current {
+            color: $purple
+        }
+    }
+
+    &__logos {
+        position: absolute;
+        bottom: 70px;
+        height: 60px;
+        width: 100%;
+        padding-right: 30px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: stretch;
     }
 
     &__logo {
-        @include grid-column(4);
-        position: relative;
-        height: 500px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 2;
 
-        &__item {
-            padding: 0 20px;
-            position: absolute;
-            bottom: 40px;
-            left: 0;
-            right: 0;
+        &__image {
+            max-height: 50px;
+            max-width: 150px;
         }
 
-        &__highlight {
-
-        }
-
-        img {
-            width: 100%;
+        &.-selected {
+            width: 230px;
         }
     }
 
-    &__section {
-        @include grid-column(6);
+    &__images {
+        position: absolute;
+        z-index: 1;
+        height: 530px;
+        width: 230px;
+        right: 30px;
+        background-color: $grey-dark;
+        display: flex;
+        flex-direction: row;
+    }
+
+    &__image {
+        position: relative;
+        max-width: 230px;
+        max-height: 530px;
+        display: none;
+
+        &.-selected {
+            display: block;
+        }
+    }
+
+    &__quotes {
+        margin-top: 50px;
+    }
+
+    &__quote {
+        display: none;
+
+        &.-selected {
+            display: block;
+        }
+
+        &__name {
+            text-transform: uppercase;
+            letter-spacing: .2em;
+            @include font-style(
+                $font-accent,                       // Font Family
+                $size-4,                            // Font Size
+                $purple,                            // Font Color
+                $weight-bold,                       // Font Weight
+                $height-4                           // Line Height
+            );
+        }
+
+        &__title {
+            display: block;
+            margin-top: 8px;
+            @include font-style(
+                $font-normal,                       // Font Family
+                $size-p,                            // Font Size
+                $grey-light,                        // Font Color
+                $weight-medium,                     // Font Weight
+                $height-p                           // Line Height
+            );
+        }
+
+        &__body {
+            position: relative;
+            display: block;
+            margin-top: 60px;
+            @include font-style(
+                $font-normal,                       // Font Family
+                $size-3,                            // Font Size
+                $grey,                              // Font Color
+                $weight-medium,                     // Font Weight
+                $height-p                           // Line Height
+            );
+
+            &::before {
+                content: "\"";
+                position: absolute;
+                left: -.3em;
+            }
+            &::after {
+                content: "\"";
+            }
+        }
+    }
+
+
+    &__controls {
+        position: absolute;
+        bottom: 50px;
+        height: 45px;
+        width: 100%;
+        display: flex;
+        align-items: stretch;
+
+        &__button {
+            display: block;
+            background-color: $purple;
+            width: 45px;
+            border: none;
+            margin-right: 7px;
+            transition: background-color .16s ease-in-out;
+            @include font-style(
+                $font-normal,                       // Font Family
+                $size-4,                            // Font Size
+                $white,                              // Font Color
+                $weight-bold,                     // Font Weight
+                $height-4                           // Line Height
+            );
+
+            &:hover {
+                background-color: lighten($purple, 10%);
+                cursor: pointer;
+            }
+
+            &:focus {
+                outline: none;
+            }
+        }
+
+        &__zebra {
+            flex-grow: 1;
+            border: 1px solid $purple;
+        }
     }
 }
