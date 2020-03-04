@@ -1,13 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { StudioPageTemplate } from '../../templates/studio-page'
+import { StudioUpstartsPageTemplate } from '../../templates/studio-upstarts-page'
 
-const StudioPagePreview = ({ entry, widgetFor }) => {
+const StudioUpstartsPagePreview = ({ entry, widgetFor }) => {
     const data = entry.getIn(['data']).toJS()
 
     if (data) {
         return (
-            <StudioPageTemplate
+            <StudioUpstartsPageTemplate
                 section={data.section}
                 heading={data.heading}
                 action={data.action}
@@ -18,11 +18,11 @@ const StudioPagePreview = ({ entry, widgetFor }) => {
     }
 }
 
-StudioPagePreview.propTypes = {
+StudioUpstartsPagePreview.propTypes = {
     entry: PropTypes.shape({
         getIn: PropTypes.func,
     }),
     widgetFor: PropTypes.func,
 }
 
-export default StudioPagePreview
+export default StudioUpstartsPagePreview

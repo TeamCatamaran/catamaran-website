@@ -1,5 +1,5 @@
 ---
-templateKey: studio-page
+templateKey: studio-upstarts-page
 section: TEST
 heading: Test
 action:

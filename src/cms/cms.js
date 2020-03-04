@@ -9,7 +9,9 @@ import IndexPagePreview from './preview-templates/IndexPagePreview'
 import JournalPagePreview from './preview-templates/JournalPagePreview'
 import JournalPostPreview from './preview-templates/JournalPostPreview'
 import NetworkPagePreview from './preview-templates/NetworkPagePreview'
-import StudioPagePreview from './preview-templates/StudioPagePreview'
+import StudioCofounderPagePreview from './preview-templates/StudioCofounderPagePreview'
+import StudioStartupPagePreview from './preview-templates/StudioStartupPagePreview'
+import StudioUpstartsPagePreview from './preview-templates/StudioUpstartsPagePreview'
 import VenturesPagePreview from './preview-templates/VenturesPagePreview'
 
 CMS.registerMediaLibrary(uploadcare)
@@ -22,5 +24,7 @@ CMS.registerPreviewTemplate('index', IndexPagePreview)
 CMS.registerPreviewTemplate('journal', JournalPagePreview)
 CMS.registerPreviewTemplate('journal-post', JournalPostPreview)
 CMS.registerPreviewTemplate('network', NetworkPagePreview)
-CMS.registerPreviewTemplate('studio', StudioPagePreview)
+CMS.registerPreviewTemplate('studio-cofounder', StudioCofounderPagePreview)
+CMS.registerPreviewTemplate('studio-startup', StudioStartupPagePreview)
+CMS.registerPreviewTemplate('studio-upstarts', StudioUpstartsPagePreview)
 CMS.registerPreviewTemplate('ventures', VenturesPagePreview)

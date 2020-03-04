@@ -11,7 +11,7 @@ const ActionCallout = class extends React.Component {
             <div>
                 <div className="c-action container -footer-overlay">
                     <div className="c-action__item">
-                        <h2>{this.props.heading}<span>></span></h2>
+                        <h2>{this.props.heading} <span>></span></h2>
                     </div>
                     {
                         this.props.pages != null &&
