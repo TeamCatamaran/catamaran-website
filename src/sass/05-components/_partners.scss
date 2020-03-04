@@ -1,0 +1,50 @@
+
+.c-partners {
+    padding-bottom: 200px;
+
+    &__logos {
+        &__item {
+            @include grid-column(3);
+            background-color: $grey-light;
+            height: 265px;
+            width: 265px;
+        }
+    }
+
+    &__list {
+        &__section {
+            @include grid-column(4);
+
+            &__heading {
+                letter-spacing: .24em;
+                text-transform: uppercase;
+                margin-bottom: 20px;
+
+                .c-partners__list__section__list + & {
+                    margin-top: 108px;
+                }
+
+                @include font-style(
+                    $font-accent,                     // Font Family
+                    $size-4,                          // Font Size
+                    $purple,                            // Font Color
+                    $weight-bold,                 // Font Weight
+                    $height-4                         // Line Height
+                );
+            }
+
+            &__list {
+                list-style: none;
+                a {
+                    @include font-style(
+                        $font-normal,                     // Font Family
+                        $size-p,                          // Font Size
+                        $grey,                            // Font Color
+                        $weight-medium,                 // Font Weight
+                        $height-3                         // Line Height
+                    );
+                }
+            }
+        }
+    }
+}

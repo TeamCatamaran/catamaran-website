@@ -23,8 +23,8 @@ export const AboutPageTemplate = ({
     return (
         <div >
             <Header
+                collageType="about"
                 heading={heading}
-                image={image}
                 section={section}
             />
             <div className="c-interiorPage">

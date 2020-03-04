@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import ReactPlayer from 'react-player'
 import { Link, graphql } from 'gatsby'
+import FluidImage from '../components/FluidImage'
 
 import Header from '../components/Header'
 import Layout from '../components/Layout'
@@ -28,37 +29,51 @@ export const NetworkPageTemplate = ({
 
     return (
         <div>
-            {/* <Header
-                heading = { heading }
-                section = { section }
-            /> */}
-            <div className="c-intro container">
-                <h3>{intro}</h3>
-            </div>
-            <div className="c-partners container">
-                <div className="c-partners__logos">
-                    {logoPartners.map((p) => {
-                        return (
-                            <Link className="c-partner__logos__item" to={p.link}>
-                                <img src={p.image} alt={p.name} />
-                            </Link>
-                        );
-                    })}
+            <Header
+                collageType="network"
+                heading={heading}
+                section={section}
+            />
+            <div className="c-interiorPage">
+                <div className="c-intro container">
+                    <p>{intro}</p>
                 </div>
-                <div className="c-partners__list">
-                    <div className="c-partners__list__section">
-                        <h4>Coworking</h4>
-                        {sortedPartners["coworking"].map((p) => <Link to={p.link} target="_blank">{p.name}</Link>)}
-                        <h4>Mentorship</h4>
-                        {sortedPartners["mentorship"].map((p) => <Link to={p.link} target="_blank">{p.name}</Link>)}
+                <div className="c-partners container">
+                    <div className="c-partners__logos">
+                        {logoPartners.map((p) => {
+                            return (
+                                <Link className="c-partner__logos__item" to={p.link}>
+                                    <FluidImage
+                                        className="c-partner__logos__item__image -default"
+                                        alt={p.name}
+                                        image={p.logo} />
+                                </Link>
+                            );
+                        })}
                     </div>
-                    <div className="c-partners__list__section">
-                        <h4>Economic Dev</h4>
-                        {sortedPartners["economic dev"].map((p) => <Link to={p.link} target="_blank">{p.name}</Link>)}
-                    </div>
-                    <div className="c-partners__list__section">
-                        <h4>Community Contacts</h4>
-                        {sortedPartners["community contacts"].map((p) => <Link to={p.link} target="_blank">{p.name}</Link>)}
+                    <div className="c-partners__list">
+                        <div className="c-partners__list__section">
+                            <h4 className="c-partners__list__section__heading">Coworking</h4>
+                            <ul className="c-partners__list__section__list">
+                                {sortedPartners["coworking"].map((p) => <li><Link to={p.link} target="_blank">{p.name}</Link></li>)}
+                            </ul>
+                            <h4 className="c-partners__list__section__heading">Mentorship</h4>
+                            <ul className="c-partners__list__section__list">
+                                {sortedPartners["mentorship"].map((p) => <li><Link to={p.link} target="_blank">{p.name}</Link></li>)}
+                            </ul>
+                        </div>
+                        <div className="c-partners__list__section">
+                            <h4 className="c-partners__list__section__heading">Economic Dev</h4>
+                            <ul className="c-partners__list__section__list">
+                                {sortedPartners["economic dev"].map((p) => <li><Link to={p.link} target="_blank">{p.name}</Link></li>)}
+                            </ul>
+                        </div>
+                        <div className="c-partners__list__section">
+                            <h4 className="c-partners__list__section__heading">Community Contacts</h4>
+                            <ul className="c-partners__list__section__list">
+                                {sortedPartners["community contacts"].map((p) => <li><Link to={p.link} target="_blank">{p.name}</Link></li>)}
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -74,7 +89,7 @@ NetworkPageTemplate.propTypes = {
         PropTypes.shape({
             category: PropTypes.string,
             name: PropTypes.string,
-            logo: PropTypes.string,
+            logo: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
             link: PropTypes.string,
         })
     )
@@ -116,7 +131,13 @@ export const pageQuery = graphql`
         partners {
           category
           name
-          logo
+          logo {
+            childImageSharp {
+                fluid(maxWidth: 2048, quality: 100) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+          }
           link
         }
       }
