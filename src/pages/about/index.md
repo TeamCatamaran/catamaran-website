@@ -56,7 +56,7 @@ team:
       photo: /img/group.jpg
       large: true
 action:
-  heading: Where the action is >
+  heading: Where the action is
   pages:
     - title: Journal Entry
       description: From Business Accelerator to Startup Studio

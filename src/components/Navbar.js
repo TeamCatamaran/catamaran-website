@@ -69,9 +69,9 @@ const Navbar = class extends React.Component {
                         className={`c-navbar__menu c-multibox ${navbarActiveClass}`}>
                         <div className="c-navbar__menu__section -primary c-multibox__item" data-menu="item1" data-direction="bt">
                             <div className="c-multibox__inner">
-                                <div className="c-navbar__menu__item -logo">
+                                <Link className="c-navbar__menu__item -logo" to="/">
                                     <Logo fill="white" />
-                                </div>
+                                </Link>
                                 <Link className="c-navbar__menu__item" to="/about">
                                     <span className="-index">01</span>
                                     <span className="-underline">About</span>
@@ -80,15 +80,15 @@ const Navbar = class extends React.Component {
                                     <span className="-index">02</span>
                                     <span className="-underline">Studio</span>
                                 </Link>
-                                <Link className="c-navbar__menu__item" to="/experiments">
+                                <Link className="c-navbar__menu__item" to="/experiments/lab">
                                     <span className="-index">03</span>
                                     <span className="-underline">Experiments</span>
                                 </Link>
-                                <Link className="c-navbar__menu__item" to="/studies">
+                                <Link className="c-navbar__menu__item" to="/ventures">
                                     <span className="-index">04</span>
-                                    <span className="-underline">Case Studies</span>
+                                    <span className="-underline">Ventures</span>
                                 </Link>
-                                <Link className="c-navbar__menu__item" to="/journal">
+                                <Link className="c-navbar__menu__item" to="/blog">
                                     <span className="-index">05</span>
                                     <span className="-underline">Journal</span>
                                 </Link>

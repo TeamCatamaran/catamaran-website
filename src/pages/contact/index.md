@@ -1,21 +1,20 @@
 ---
 templateKey: contact-page
-section: TEST
-heading: Test
-intro: >-
-  Test
+section: Section
+heading: Heading
+intro: Intro
 type:
-  heading: test
+  heading: contact type sub heading
   types:
-    - name: test
-      embed: something
+    - embed: Contact embeded code sub heading
+      name: Contact name sub heading
 social:
-  heading: test
-map: /img/studio.png
+  heading: Social sub heading
+map: /img/map.jpg
 locations:
-  heading: test
   addresses:
-    - address: 123
-      number: 321
+    - address: Address
+      number: 'address #'
+  heading: Location sub header
 ---
 

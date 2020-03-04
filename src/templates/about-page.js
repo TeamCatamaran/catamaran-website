@@ -5,6 +5,7 @@ import Layout from '../components/Layout'
 import Header from '../components/Header'
 import Content, { HTMLContent } from '../components/Content'
 import FluidImage from '../components/FluidImage'
+import ActionCallout from '../components/ActionCallout'
 
 import aboutIntroCollage from '../img/about-intro-collage.png'
 import aboutValuesCollage from '../img/about-values-collage.png'
@@ -104,30 +105,10 @@ export const AboutPageTemplate = ({
                         alt={team.heading}
                         image={"/img/plus.png"} />
                 </div>
-                <div className="c-action container -footer-overlay">
-                    <div className="c-action__item">
-                        <h2>{action.heading}</h2>
-                    </div>
-                    {
-                        action.pages != null &&
-                        <div>
-                            {action.pages.map((item, key) => (
-                                <Link key={key} className="c-action__item -background" to={item.link} style={{
-                                    backgroundImage: `url(${
-                                        !!item.image.childImageSharp ? item.image.childImageSharp.fluid.src : item.image
-                                        })`,
-                                }}>
-                                    <div className="c-action__item__content">
-                                        <h3>{item.title}</h3>
-                                        <p>{item.description}</p>
-                                    </div>
-                                </Link>
-                            ))}
-                        </div>
-                    }
-                </div>
+                <ActionCallout
+                    heading={action.heading}
+                    pages={action.pages} />
             </div>
-            <div className="c-action__footer"></div>
         </div>
     )
 }

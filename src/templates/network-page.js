@@ -6,6 +6,7 @@ import FluidImage from '../components/FluidImage'
 
 import Header from '../components/Header'
 import Layout from '../components/Layout'
+import FluidImage from '../components/FluidImage'
 
 export const NetworkPageTemplate = ({
     heading,
@@ -22,7 +23,7 @@ export const NetworkPageTemplate = ({
     const logoPartners = [];
     partners.forEach((p) => {
         sortedPartners[p.category].push(p);
-        if (p.image != null) {
+        if (p.logo != null) {
             logoPartners.push(p);
         }
     });
@@ -133,10 +134,10 @@ export const pageQuery = graphql`
           name
           logo {
             childImageSharp {
-                fluid(maxWidth: 2048, quality: 100) {
-                  ...GatsbyImageSharpFluid
-                }
+              fluid(maxWidth: 2048, quality: 100) {
+                ...GatsbyImageSharpFluid
               }
+            }
           }
           link
         }
