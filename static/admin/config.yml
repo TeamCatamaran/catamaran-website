@@ -467,6 +467,7 @@ collections:
               widget: "hidden",
               default: "studio-page",
             }
+          - { label: Tab, name: tab, widget: hidden, default: startup }
           - { label: Section, name: section, widget: string }
           - { label: Heading, name: heading, widget: string }
           - {
@@ -599,9 +600,9 @@ collections:
                   },
                 ],
             }
-      - file: "src/pages/studio/upstart.md"
+      - file: "src/pages/studio/upstarts.md"
         label: "For Upstarts"
-        name: upstartStartup
+        name: upstartsStartup
         fields:
           - {
               label: "Template Key",
@@ -609,8 +610,72 @@ collections:
               widget: "hidden",
               default: "studio-page",
             }
+          - { label: Tab, name: tab, widget: hidden, default: upstarts }
           - { label: Section, name: section, widget: string }
           - { label: Heading, name: heading, widget: string }
+          - {
+              label: Overview,
+              name: overview,
+              widget: object,
+              fields:
+                [
+                  { label: Intro, name: intro, widget: text },
+                  { label: "Left Content", name: leftContent, widget: text },
+                  { label: "Right Content", name: rightContent, widget: text },
+                ],
+            }
+          - {
+              label: Photos,
+              name: photos,
+              widget: list,
+              field: { label: Photo, name: photo, widget: image },
+            }
+          - {
+              label: "How We Can Help",
+              name: how,
+              widget: object,
+              fields:
+                [
+                  { label: Heading, name: heading, widget: string },
+                  { label: Intro, name: intro, widget: text },
+                  {
+                    label: Steps,
+                    name: steps,
+                    widget: list,
+                    fields:
+                      [
+                        { label: Heading, name: heading, widget: string },
+                        { label: Description, name: description, widget: text },
+                      ],
+                  },
+                ],
+            }
+          - {
+              label: Upstarts,
+              name: upstarts,
+              widget: object,
+              fields:
+                [
+                  { label: Heading, name: heading, widget: string },
+                  {
+                    label: Logos,
+                    name: logos,
+                    widget: list,
+                    field: { label: Logo, name: logo, widget: image },
+                  },
+                ],
+            }
+          - {
+              label: Launch,
+              name: launch,
+              widget: object,
+              fields:
+                [
+                  { label: Content, name: content, widget: string },
+                  { label: "Button Text", name: text, widget: string },
+                  { label: Link, name: link, widget: string },
+                ],
+            }
           - {
               label: Action,
               name: action,
@@ -643,8 +708,31 @@ collections:
               widget: "hidden",
               default: "studio-page",
             }
+          - { label: Tab, name: tab, widget: hidden, default: cofounder }
           - { label: Section, name: section, widget: string }
           - { label: Heading, name: heading, widget: string }
+          - {
+              label: Overview,
+              name: overview,
+              widget: object,
+              fields:
+                [
+                  { label: Intro, name: intro, widget: text },
+                  { label: "Left Content", name: leftContent, widget: text },
+                  { label: "Right Content", name: rightContent, widget: text },
+                ],
+            }
+          - {
+              label: Launch,
+              name: launch,
+              widget: object,
+              fields:
+                [
+                  { label: Content, name: content, widget: string },
+                  { label: "Button Text", name: text, widget: string },
+                  { label: Link, name: link, widget: string },
+                ],
+            }
           - {
               label: Action,
               name: action,

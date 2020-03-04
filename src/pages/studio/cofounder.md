@@ -1,7 +1,19 @@
 ---
-templateKey: studio-cofounder-page
+templateKey: studio-page
+tab: cofounder
 section: TEST
 heading: Test
+overview:
+  intro: >-
+    test
+  leftContent: >-
+    test
+  rightContent: >-
+    test
+launch:
+  content: test
+  text: test
+  link: test
 action:
   heading: Where the action is
   pages:

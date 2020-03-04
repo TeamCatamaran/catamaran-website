@@ -1,5 +1,6 @@
 ---
-templateKey: studio-startup-page
+templateKey: studio-page
+tab: startup
 section: TEST
 heading: Test
 overview:
