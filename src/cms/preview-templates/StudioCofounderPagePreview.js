@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { StudioCofounderPageTemplate } from '../../templates/studio-startup-page'
+import { StudioCofounderPageTemplate } from '../../templates/studio-cofounder-page'
 
 const StudioCofounderPagePreview = ({ entry, widgetFor }) => {
     const data = entry.getIn(['data']).toJS()

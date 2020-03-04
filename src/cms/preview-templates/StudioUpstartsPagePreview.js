@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { StudioUpstartsPageTemplate } from '../../templates/studio-startup-page'
+import { StudioUpstartsPageTemplate } from '../../templates/studio-upstarts-page'
 
 const StudioUpstartsPagePreview = ({ entry, widgetFor }) => {
     const data = entry.getIn(['data']).toJS()
