@@ -6,7 +6,6 @@ import FluidImage from '../components/FluidImage'
 
 import Header from '../components/Header'
 import Layout from '../components/Layout'
-import FluidImage from '../components/FluidImage'
 
 export const NetworkPageTemplate = ({
     heading,
@@ -132,13 +131,6 @@ export const pageQuery = graphql`
         partners {
           category
           name
-          logo {
-            childImageSharp {
-              fluid(maxWidth: 2048, quality: 100) {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
           link
         }
       }

@@ -54,13 +54,18 @@ slider:
     title: Founder / Pledge It
   - image: /img/scott.png
     logo: /img/subx.png
-    name: A Test
-    quote: Lorem Ipsum
-    title: CEO
+    name: Some Name
+    quote: >-
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et.
+    title: CEO / Subx
   - image: /img/scott.png
     logo: /img/cope.png
-    name: Test
-    quote: Lorem Ipsum
-    title: Founder
+    name: Another Name
+    quote: >-
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et. Lorem ipsum dolor sit amet.
+    title: Founder / Cope Mosaic
 ---
 
