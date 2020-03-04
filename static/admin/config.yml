@@ -475,7 +475,7 @@ collections:
               widget: object,
               fields:
                 [
-                  { label: Introduction, name: introduction, widget: text },
+                  { label: Intro, name: intro, widget: text },
                   { label: "Left Content", name: leftContent, widget: text },
                   { label: "Right Content", name: rightContent, widget: text },
                 ],

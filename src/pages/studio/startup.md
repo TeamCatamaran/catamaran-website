@@ -3,7 +3,7 @@ templateKey: studio-startup-page
 section: TEST
 heading: Test
 overview:
-  introduction: >-
+  intro: >-
     test
   leftContent: >-
     test

@@ -1,9 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
-import Layout from '../components/Layout'
-import Header from '../components/Header'
+
+
 import ActionCallout from '../components/ActionCallout'
+import Header from '../components/Header'
+import Layout from '../components/Layout'
+import Slider from '../components/Slider'
+import Process from '../components/Process'
 
 export const StudioStartupPageTemplate = ({
     section,
@@ -20,10 +24,38 @@ export const StudioStartupPageTemplate = ({
     return (
         <div>
             <Header
-                collageType="none"
+                collageType="studio"
                 heading={heading}
                 section={section}
             />
+            <div>
+                {overview.intro}<br />{overview.leftContent}<br />{overview.rightContent}
+            </div>
+            <div>
+                {how.heading}<br />{how.intro}<br />{how.steps.map((s) => {
+                    return (
+                        <p>
+                            {s.heading}<br />{s.description}
+                        </p>
+                    )
+                })}
+            </div>
+            <Process
+                process={process} />
+            <div>
+                {expect.heading}<br />{expect.intro}{expect.steps.map((s) => {
+                    return (
+                        <p>
+                            {s.heading}<br />{s.intro}<br />{s.description}
+                        </p>
+                    )
+                })}
+            </div>
+            <Slider
+                items={slider} />
+            <div>
+                {launch.content}<br />{launch.text}<br />{launch.link}
+            </div>
             <ActionCallout
                 heading={action.heading}
                 pages={action.pages} />
@@ -34,8 +66,8 @@ export const StudioStartupPageTemplate = ({
 StudioStartupPageTemplate.propTypes = {
     section: PropTypes.string,
     heading: PropTypes.string,
-    description: PropTypes.shape({
-        introduction: PropTypes.string,
+    overview: PropTypes.shape({
+        intro: PropTypes.string,
         leftContent: PropTypes.string,
         rightContent: PropTypes.string,
     }),
@@ -132,7 +164,7 @@ query StudioStartupPage($id: String!) {
       section
       heading
       overview {
-        introduction
+        intro
         leftContent
         rightContent
       }

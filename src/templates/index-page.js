@@ -5,14 +5,8 @@ import { Link, graphql } from 'gatsby'
 import FluidImage from '../components/FluidImage'
 import Header from '../components/Header'
 import Layout from '../components/Layout'
+import Process from '../components/Process'
 import Slider from '../components/Slider'
-
-import absorb from '../img/icon-absorb.png'
-import concept from '../img/icon-concept.png'
-import create from '../img/icon-create.png'
-import learn from '../img/icon-learn.png'
-
-import processCollage from '../img/process-collage.png'
 
 export const IndexPageTemplate = ({
     section,
@@ -22,13 +16,6 @@ export const IndexPageTemplate = ({
     process,
     slider,
 }) => {
-    const icons = {
-        absorb: absorb,
-        concept: concept,
-        create: create,
-        learn: learn,
-    };
-
     return (
         <div>
             <Header
@@ -63,25 +50,8 @@ export const IndexPageTemplate = ({
             <div className="c-intro container">
                 <p className="intro">{intro}</p>
             </div>
-            <div className="c-process container">
-                <div className="c-process__title">
-                    <h3>{process.heading}</h3>
-                    <img className="c-process__collage" src={processCollage} alt="Our Process Collage" />
-                </div>
-                <div className="c-process__wrapper">
-                    <div className="container -collapse">
-                        {process.steps.map((s, key) => {
-                            return (
-                                <div className="c-process__item" key={key}>
-                                    <img src={icons[s.icon]} alt={s.title} />
-                                    <label className="">{s.title}</label>
-                                    <p>{s.description}</p>
-                                </div>
-                            )
-                        })}
-                    </div>
-                </div>
-            </div>
+            <Process
+                process={process} />
             <Slider
                 items={slider} />
         </div>
