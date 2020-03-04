@@ -11,67 +11,64 @@ partners:
 
   - category: coworking
     link: https://google.com
-    logo: '/img/plus/png'
+    logo: '/img/plus.png'
     name: Penwell
   - category: coworking
     link: https://google.com
-    logo: ''
     name: Sandler Training
   - category: coworking
     link: https://google.com
-    logo: ''
     name: Deeter Gallaher Group LLC
   - category: coworking
     link: https://google.com
-    logo: ''
     name: Gift CPAs
   - category: coworking
     link: https://google.com
-    logo: '/img/plus/png'
+    logo: '/img/plus.png'
     name: Fairway
   - category: coworking
     link: https://google.com
-    logo: '/img/plus/png'
+    logo: '/img/plus.png'
     name: Langan Group Financial
   - category: coworking
     link: https://google.com
-    logo: '/img/plus/png'
+    logo: '/img/plus.png'
     name: RW Financial
   - category: coworking
     link: https://google.com
-    logo: '/img/plus/png'
+    logo: '/img/plus.png'
     name: Mid Penn Bank
   - category: coworking
     link: https://google.com
-    logo: '/img/plus/png'
+    logo: '/img/plus.png'
     name: Harrisburg University
   - category: coworking
     link: https://google.com
-    logo: '/img/plus/png'
+    logo: '/img/plus.png'
     name: Assets
   - category: coworking
     link: https://google.com
-    logo: '/img/plus/png'
+    logo: '/img/plus.png'
     name: The Candy Factory
   - category: coworking
     link: https://google.com
-    logo: '/img/plus/png'
+    logo: '/img/plus.png'
     name: Capitol Support Services
   - category: coworking
     link: https://google.com
-    logo: '/img/plus/png'
+    logo: '/img/plus.png'
     name: ExecuStar
   - category: coworking
     link: https://google.com
-    logo: '/img/plus/png'
+    logo: '/img/plus.png'
     name: St@rtup
   - category: coworking
     link: https://google.com
-    logo: '/img/plus/png'
+    logo: '/img/plus.png'
     name: Supply
   - category: coworking
     link: https://google.com
-    logo: '/img/plus/png'
+    logo: '/img/plus.png'
     name: Netrepid
 
 
@@ -183,6 +180,6 @@ partners:
   - category: community contacts
     link: https://google.com
     name: York Young Professionals
-  
+
 ---
 

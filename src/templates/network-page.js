@@ -1,8 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import ReactPlayer from 'react-player'
 import { Link, graphql } from 'gatsby'
-import FluidImage from '../components/FluidImage'
 
 import Header from '../components/Header'
 import Layout from '../components/Layout'
