@@ -44,13 +44,8 @@ const Footer = class extends React.Component {
                         <section>
                             <ul className="c-footer__menu -secondary">
                                 <li>
-                                    <Link className="navbar-item" to="/blog">
-                                        Ventures
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link className="navbar-item" to="/contact">
-                                        Partners
+                                    <Link className="navbar-item" to="/network">
+                                        Network
                                     </Link>
                                 </li>
                                 <li>
