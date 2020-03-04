@@ -61,9 +61,9 @@ action:
     - title: Journal Entry
       description: From Business Accelerator to Startup Studio
       link: test
-      image: /img/studio.png
+      image: /img/studio.jpg
     - title: Press
       description: Harrisburg Landmark Has a New Owner
       link: test
-      image: /img/studio.png
+      image: /img/experiments.jpg
 ---

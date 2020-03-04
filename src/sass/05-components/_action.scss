@@ -72,3 +72,9 @@
         margin-bottom: -125px;
     }
 }
+
+body.-pink {
+    .c-action__item.-background:hover:after {
+        background-image: linear-gradient(180deg, transparent 0%, $pink 100%);
+    }
+}
