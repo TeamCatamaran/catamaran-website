@@ -6,7 +6,7 @@ heading: We co-create to conquer the world
 overview:
   intro: >-
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. 
+    tempor incididunt ut labore et dolore magna aliqua.
   leftContent: >-
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
     tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -21,7 +21,7 @@ how:
   heading: How We Do It
   intro: >-
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. 
+    tempor incididunt ut labore et dolore magna aliqua.
   steps:
     - description: >-
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
@@ -58,21 +58,35 @@ expect:
     Just need that one thing? Don’t worry, we’ve still got you covered.
   steps:
     - description: |-
-        Lorem ipsum dolor 
+        Lorem ipsum dolor
         Lorem ipsum dolor sit amet
-        Lorem ipsum 
+        Lorem ipsum
         Lorem ipsum dolor sit
       heading: LOREM IPSUM
       intro: >-
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud. 
-    - description: test
-      heading: test
-      intro: test
-    - description: test
-      heading: test
-      intro: test
+        veniam, quis nostrud.
+    - description: |-
+        Lorem ipsum dolor
+        Lorem ipsum dolor sit amet
+        Lorem ipsum
+        Lorem ipsum dolor sit
+      heading: LOREM IPSUM
+      intro: >-
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud.
+    - description: |-
+        Lorem ipsum dolor
+        Lorem ipsum dolor sit amet
+        Lorem ipsum
+        Lorem ipsum dolor sit
+      heading: LOREM IPSUM
+      intro: >-
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud.
 slider:
   - image: /img/scott.png
     logo: /img/pledgeit.png
