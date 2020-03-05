@@ -45,7 +45,8 @@ how:
       heading: test
 upstarts:
   heading: UPSTARTS WE’VE WORKED WITH
-  logos: []
+  logos:
+    - /img/brandyourself.png
 launch:
   content: test
   link: test
