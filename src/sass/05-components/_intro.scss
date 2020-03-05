@@ -2,15 +2,15 @@
     p {
         @include font-style(
             $font-normal,                     // Font Family
-            $size-3,                          // Font Size
+            $size-2,                          // Font Size
             $grey,                            // Font Color
             $weight-light,                    // Font Weight
-            $height-3                         // Line Height
+            $height-2                         // Line Height
         );
 
         text-align: center;
         margin: 0 auto;
         padding: 100px 0 180px;
-        max-width: 840px;
+        max-width: 820px;
     };
 }

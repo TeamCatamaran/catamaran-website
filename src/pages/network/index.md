@@ -15,12 +15,15 @@ partners:
     name: Penwell
   - category: coworking
     link: https://google.com
+    logo: '/img/plus.png'
     name: Sandler Training
   - category: coworking
     link: https://google.com
+    logo: '/img/plus.png'
     name: Deeter Gallaher Group LLC
   - category: coworking
     link: https://google.com
+    logo: '/img/plus.png'
     name: Gift CPAs
   - category: coworking
     link: https://google.com

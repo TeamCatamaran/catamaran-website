@@ -691,6 +691,7 @@ collections:
                     label: Category,
                     name: category,
                     widget: select,
+                    required: false,
                     options:
                       [
                         coworking,

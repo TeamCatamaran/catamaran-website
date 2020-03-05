@@ -1,17 +1,33 @@
+$logo-grid: (
+    columns: 12,
+    gutter: 7px,
+);
+
 
 .c-partners {
     padding-bottom: 200px;
 
     &__logos {
+        @include grid-container;
+
         &__item {
-            @include grid-column(3);
-            background-color: $grey-light;
-            height: 265px;
-            width: 265px;
+            display: block;
+            @include grid-column(3, $logo-grid);
+            background-color: #EAE9E3;
+            margin-bottom: 7px;
+            padding: 36px;
+
+            &__image {
+                display: block;
+                max-width: 100%;
+                max-height: 100%;
+            }
         }
     }
 
     &__list {
+        margin-top: 200px;
+
         &__section {
             @include grid-column(4);
 
