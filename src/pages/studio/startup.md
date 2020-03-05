@@ -1,24 +1,35 @@
 ---
 templateKey: studio-page
 tab: startup
-section: TEST
-heading: Test
+section: STUDIO
+heading: We co-create to conquer the world
 overview:
   intro: >-
-    test
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. 
   leftContent: >-
-    test
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud. Sed do eiusmod tempor incididunt ut labore et dolore magna
+    aliqua. Ut enim ad minim veniam, quis nostrud.
   rightContent: >-
-    test
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud. Sed do eiusmod tempor incididunt ut labore et dolore magna
+    aliqua. Ut enim ad minim veniam, quis nostrud.
 how:
-  heading: test
+  heading: How We Do It
   intro: >-
-    test
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. 
   steps:
-    - heading: test
-      description: test
+    - description: >-
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et. Lorem ipsum dolor sit amet, consectetur
+        adipiscing elit, sed do eiusmod tempor incididunt ut labore et.
+      heading: Absorb
 process:
-  heading: Lorem Ipsum Dolor Sit Amet
+  heading: What We Need to Launch
   steps:
     - description: >-
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
@@ -41,18 +52,27 @@ process:
       icon: learn
       title: Learn
 expect:
-  heading: test
-  intro: test
+  heading: What to Expect
+  intro: >-
+    A bit past the idea stage? Not the time to dive into the Launch Program?
+    Just need that one thing? Don’t worry, we’ve still got you covered.
   steps:
-    - heading: test
+    - description: |-
+        Lorem ipsum dolor 
+        Lorem ipsum dolor sit amet
+        Lorem ipsum 
+        Lorem ipsum dolor sit
+      heading: LOREM IPSUM
+      intro: >-
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud. 
+    - description: test
+      heading: test
       intro: test
-      description: test
-    - heading: test
+    - description: test
+      heading: test
       intro: test
-      description: test
-    - heading: test
-      intro: test
-      description: test
 slider:
   - image: /img/scott.png
     logo: /img/pledgeit.png
@@ -72,19 +92,19 @@ slider:
     quote: Lorem Ipsum
     title: Founder
 launch:
-  content: test
-  text: test
-  link: test
+  content: Ready to launch?
+  link: 'https://google.com'
+  text: LET'S GO
 action:
   heading: Where the action is
   pages:
-    - title: Journal Entry
-      description: From Business Accelerator to Startup Studio
-      link: test
+    - description: From Business Accelerator to Startup Studio
       image: /img/studio.png
-    - title: Press
-      description: Harrisburg Landmark Has a New Owner
       link: test
+      title: Journal Entry
+    - description: Harrisburg Landmark Has a New Owner
       image: /img/studio.png
+      link: test
+      title: Press
 ---
 
