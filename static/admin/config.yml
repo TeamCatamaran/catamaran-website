@@ -767,6 +767,16 @@ collections:
                   { label: Intro, name: intro, widget: text },
                   { label: "Left Content", name: leftContent, widget: text },
                   { label: "Right Content", name: rightContent, widget: text },
+                  {
+                    label: Details,
+                    name: details,
+                    widget: list,
+                    fields:
+                      [
+                        { label: Heading, name: heading, widget: string },
+                        { label: Description, name: description, widget: text },
+                      ],
+                  },
                 ],
             }
           - {

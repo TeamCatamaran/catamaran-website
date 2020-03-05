@@ -17,6 +17,10 @@ overview:
     tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
     quis nostrud. Sed do eiusmod tempor incididunt ut labore et dolore magna
     aliqua. Ut enim ad minim veniam, quis nostrud.
+  details:
+    - heading: test
+      description: >-
+        test
 launch:
   content: Lorem Ipsum Dolor Sit
   link: 'https://google.com'
