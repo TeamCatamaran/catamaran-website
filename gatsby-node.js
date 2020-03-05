@@ -8,7 +8,7 @@ exports.createPages = ({ actions, graphql }) => {
 
   return graphql(`
     {
-      allMarkdownRemark(limit: 1000) {
+      allMarkdownRemark(limit: 1000, filter: {frontmatter: {templateKey: {nin: ["studio-tab", "experiments-tab"]}}}) {
         edges {
           node {
             id
