@@ -37,7 +37,7 @@ values:
       body: >-
         It can be frustrating to not immediately know the solution. But this is where we thrive. We embrace ambiguity by trusting the process, valuing communication and working hard.
 team:
-  heading: The Team
+  heading: The Core Team
   description: >-
     From how we approach ideas to how we approach eachother, our values are there to remind us who we are and who we want to be. 
   people:

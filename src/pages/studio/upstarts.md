@@ -31,22 +31,26 @@ how:
         Design sprint(s)
         UX/UI
         Prototyping
-      heading: test
     - description: |-
         Solution Validation
         Business Model Innovation
         Product Definition & Strategy
         Service Design
-      heading: test
     - description: |-
         Engineering
         Marketing (Website, Email, etc.)
         Pitch Deck Design
-      heading: test
 upstarts:
   heading: UPSTARTS WE’VE WORKED WITH
   logos:
     - /img/brandyourself.png
+    - /img/milkmoney.png
+    - /img/hackerone.png
+    - /img/ouya.png
+    - /img/kinetica.png
+    - /img/thought.png
+    - /img/pledgeit-dark.png
+    - /img/daytwo.png
 launch:
   content: Ready to get (up) started?
   link: 'https://google.com'

@@ -1,29 +1,36 @@
 ---
 templateKey: studio-page
 tab: cofounder
-section: TEST
-heading: Test
+section: STUDIO
+heading: We co-create to conquer the world
 overview:
   intro: >-
-    test
+    A bit past the idea stage? Not the time to dive into the Launch Program?
+    Just need that one thing? Don’t worry, we’ve still got you covered.
   leftContent: >-
-    test
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud. Sed do eiusmod tempor incididunt ut labore et dolore magna
+    aliqua. Ut enim ad minim veniam, quis nostrud.
   rightContent: >-
-    test
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud. Sed do eiusmod tempor incididunt ut labore et dolore magna
+    aliqua. Ut enim ad minim veniam, quis nostrud.
 launch:
-  content: test
-  text: test
-  link: test
+  content: Lorem Ipsum Dolor Sit
+  link: 'https://google.com'
+  text: LET'S GO
 action:
   heading: Where the action is
   pages:
-    - title: Journal Entry
-      description: From Business Accelerator to Startup Studio
-      link: test
+    - description: From Business Accelerator to Startup Studio
       image: /img/studio.png
-    - title: Press
-      description: Harrisburg Landmark Has a New Owner
       link: test
+      title: Journal Entry
+    - description: Harrisburg Landmark Has a New Owner
       image: /img/studio.png
+      link: test
+      title: Press
 ---
 
