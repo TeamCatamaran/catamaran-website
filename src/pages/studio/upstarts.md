@@ -48,9 +48,9 @@ upstarts:
   logos:
     - /img/brandyourself.png
 launch:
-  content: test
-  link: test
-  text: test
+  content: Ready to get (up) started?
+  link: 'https://google.com'
+  text: LET'S GO
 action:
   heading: Where the action is
   pages:
