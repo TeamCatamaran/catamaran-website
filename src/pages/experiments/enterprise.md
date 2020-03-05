@@ -1,8 +1,45 @@
 ---
-templateKey: journal-page
-path: /experiments/enterprise
+templateKey: experiments-page
+tab: enterprise
 section: TEST
 heading: Test
+overview:
+  intro: >-
+    test
+  leftContent: >-
+    test
+  rightContent: >-
+    test
+expect:
+  heading: test
+  intro: >-
+    test
+  steps:
+    - heading: test
+      intro: >-
+        test
+      description: >-
+        test
+    - heading: test
+      intro: >-
+        test
+      description: >-
+        test
+examples:
+  heading: test
+  intro: >-
+    test
+  steps:
+    - heading: test1
+      description: desc
+      image: /img/studio.png
+    - heading: test2
+      description: desc
+      image: /img/studio.png
+launch:
+  content: test
+  text: test
+  link: test
 action:
   heading: Where the action is
   pages:

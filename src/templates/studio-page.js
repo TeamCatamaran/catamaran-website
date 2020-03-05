@@ -1,15 +1,23 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
-import Layout from '../components/Layout'
-import Header from '../components/Header'
-import ActionCallout from '../components/ActionCallout'
 
-export const StudioStartupPageTemplate = ({
+
+import ActionCallout from '../components/ActionCallout'
+import Header from '../components/Header'
+import Layout from '../components/Layout'
+import Slider from '../components/Slider'
+import Process from '../components/Process'
+import FluidImage from '../components/FluidImage'
+
+export const StudioPageTemplate = ({
+    tab,
     section,
     heading,
     overview,
+    photos,
     how,
+    upstarts,
     process,
     expect,
     slider,
@@ -20,10 +28,74 @@ export const StudioStartupPageTemplate = ({
     return (
         <div>
             <Header
-                collageType="none"
+                collageType="studio"
                 heading={heading}
                 section={section}
             />
+            <div>
+                Selected Tab: {tab}
+            </div>
+            <div>
+                {overview.intro}<br />{overview.leftContent}<br />{overview.rightContent}
+            </div>
+            {
+                photos != null &&
+                <div>
+                    {photos.map((p) => {
+                        return (
+                            <p>
+                                <FluidImage
+                                    image={p.photo} />
+                            </p>
+                        )
+                    })}
+                </div>
+            }
+            {
+                how != null &&
+                <div>
+                    {how.heading}<br />{how.intro}<br />{how.steps.map((s) => {
+                        return (
+                            <p>
+                                {s.heading}<br />{s.description}
+                            </p>
+                        )
+                    })}
+                </div>
+            }
+            {
+                upstarts != null &&
+                <div>
+                    {upstarts.heading}
+                    {upstarts.logos.map((l) => {
+                        return (
+                            <p>
+                                <FluidImage
+                                    image={l.logo} />
+                            </p>
+                        )
+                    })}
+                </div>
+            }
+            <Process
+                process={process} />
+            {
+                expect != null &&
+                <div>
+                    {expect.heading}<br />{expect.intro}{expect.steps.map((s) => {
+                        return (
+                            <p>
+                                {s.heading}<br />{s.intro}<br />{s.description}
+                            </p>
+                        )
+                    })}
+                </div>
+            }
+            <Slider
+                items={slider} />
+            <div>
+                {launch.content}<br />{launch.text}<br />{launch.link}
+            </div>
             <ActionCallout
                 heading={action.heading}
                 pages={action.pages} />
@@ -31,14 +103,19 @@ export const StudioStartupPageTemplate = ({
     )
 }
 
-StudioStartupPageTemplate.propTypes = {
+StudioPageTemplate.propTypes = {
     section: PropTypes.string,
     heading: PropTypes.string,
-    description: PropTypes.shape({
-        introduction: PropTypes.string,
+    overview: PropTypes.shape({
+        intro: PropTypes.string,
         leftContent: PropTypes.string,
         rightContent: PropTypes.string,
     }),
+    photos: PropTypes.arrayOf(
+        PropTypes.shape({
+            photo: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+        }),
+    ),
     how: PropTypes.shape({
         heading: PropTypes.string,
         intro: PropTypes.string,
@@ -46,6 +123,14 @@ StudioStartupPageTemplate.propTypes = {
             PropTypes.shape({
                 heading: PropTypes.string,
                 description: PropTypes.string,
+            }),
+        ),
+    }),
+    upstarts: PropTypes.shape({
+        heading: PropTypes.string,
+        logos: PropTypes.arrayOf(
+            PropTypes.shape({
+                photo: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
             }),
         ),
     }),
@@ -97,17 +182,20 @@ StudioStartupPageTemplate.propTypes = {
     }),
 }
 
-const StudioStartupPage = ({ data }) => {
+const StudioPage = ({ data }) => {
     const { frontmatter } = data.markdownRemark
 
     return (
         <Layout
             bodyClass="-orange">
-            <StudioStartupPageTemplate
+            <StudioPageTemplate
+                tab={frontmatter.tab}
                 section={frontmatter.section}
                 heading={frontmatter.heading}
                 overview={frontmatter.overview}
+                photos={frontmatter.photos}
                 how={frontmatter.how}
+                upstarts={frontmatter.upstarts}
                 process={frontmatter.process}
                 expect={frontmatter.expect}
                 slider={frontmatter.slider}
@@ -118,29 +206,51 @@ const StudioStartupPage = ({ data }) => {
     )
 }
 
-StudioStartupPage.propTypes = {
+StudioPage.propTypes = {
     data: PropTypes.object.isRequired,
 }
 
-export default StudioStartupPage;
+export default StudioPage;
 
-export const studioStartupPageQuery = graphql`
-query StudioStartupPage($id: String!) {
+export const studioPageQuery = graphql`
+query StudioPage($id: String!) {
   markdownRemark(id: { eq: $id }) {
     html
     frontmatter {
+      tab
       section
       heading
       overview {
-        introduction
+        intro
         leftContent
         rightContent
+      }
+      photos {
+          photo {
+            childImageSharp {
+              fluid(maxWidth: 2048, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
       }
       how {
         heading
         steps {
           heading
           description
+        }
+      }
+      upstarts {
+        heading
+        logos {
+          logo {
+            childImageSharp {
+              fluid(maxWidth: 2048, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
         }
       }
       process {

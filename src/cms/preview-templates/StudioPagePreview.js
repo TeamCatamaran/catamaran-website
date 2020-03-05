@@ -1,19 +1,23 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { ExperimentsPageTemplate } from '../../templates/experiments-page'
+import { StudioPageTemplate } from '../../templates/studio-page'
 
-const ExperimentsPagePreview = ({ entry, widgetFor }) => {
+const StudioPagePreview = ({ entry, widgetFor }) => {
     const data = entry.getIn(['data']).toJS()
 
     if (data) {
         return (
-            <ExperimentsPageTemplate
+            <StudioPageTemplate
                 tab={data.tab}
                 section={data.section}
                 heading={data.heading}
                 overview={data.overview}
+                photos={data.photos}
+                how={data.how}
+                upstarts={data.upstarts}
+                process={data.process}
                 expect={data.expect}
-                examples={data.how}
+                slider={data.slider}
                 launch={data.launch}
                 action={data.action}
             />
@@ -23,11 +27,11 @@ const ExperimentsPagePreview = ({ entry, widgetFor }) => {
     }
 }
 
-ExperimentsPagePreview.propTypes = {
+StudioPagePreview.propTypes = {
     entry: PropTypes.shape({
         getIn: PropTypes.func,
     }),
     widgetFor: PropTypes.func,
 }
 
-export default ExperimentsPagePreview
+export default StudioPagePreview
