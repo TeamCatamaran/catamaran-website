@@ -228,6 +228,7 @@ collections:
               fields:
                 [
                   { label: Heading, name: heading, widget: string },
+                  { label: Description, name: description, widget: text },
                   {
                     label: People,
                     name: people,
@@ -236,7 +237,28 @@ collections:
                       [
                         { label: Name, name: name, widget: string },
                         { label: Photo, name: photo, widget: image },
-                        { label: Large, name: large, widget: boolean },
+                        { label: Title, name: title, widget: string },
+                      ],
+                  },
+                ],
+            }
+          - {
+              label: Leadership,
+              name: leadership,
+              widget: object,
+              fields:
+                [
+                  { label: Heading, name: heading, widget: string },
+                  { label: Description, name: description, widget: text },
+                  {
+                    label: People,
+                    name: people,
+                    widget: list,
+                    fields:
+                      [
+                        { label: Name, name: name, widget: string },
+                        { label: Photo, name: photo, widget: image },
+                        { label: Title, name: title, widget: string },
                       ],
                   },
                 ],

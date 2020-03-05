@@ -39,22 +39,41 @@ values:
 
 team:
   heading: The Team
+  description: >-
+    From how we approach ideas to how we approach eachother, our values are there to remind us who we are and who we want to be. 
   people:
     - name: Amanda Mills
+      title: Director
       photo: /img/amanda.jpg
-      large: false
     - name: Alex Getty
+      title: Principal, Something
       photo: /img/alex.jpg
-      large: false
     - name: Kate Ferrara
+      title: Principal, Something
       photo: /img/kate.jpg
-      large: false
     - name: Phil Hess
+      title: Principal, Something
       photo: /img/phil.jpg
-      large: false
-    - name: Shane Shearer / Evan Keller / Dave Hickethier / Josh Benton
-      photo: /img/group.jpg
-      large: true
+    - name: Abdullah Amir
+      title: Something
+      photo: /img/phil.jpg
+team:
+  heading: Some Title for Them
+  description: >-
+    From how we approach ideas to how we approach eachother, our values are there to remind us who we are and who we want to be. 
+  people:
+    - name: Dave Hickethier
+      title: Something
+      photo: /img/amanda.jpg
+    - name: Josh Benton
+      title: Something
+      photo: /img/alex.jpg
+    - name: Evan Keller
+      title: Something
+      photo: /img/kate.jpg
+    - name: Shane Shearer
+      title: Something
+      photo: /img/phil.jpg
 action:
   heading: Where the action is
   pages:

@@ -13,11 +13,11 @@ import aboutValuesCollage from '../img/about-values-collage.png'
 export const AboutPageTemplate = ({
     section,
     heading,
-    image,
     intro,
     mission,
     values,
     team,
+    leadership,
     action,
 }) => {
 
@@ -78,6 +78,7 @@ export const AboutPageTemplate = ({
                 <div className="c-team container">
                     <div className="c-team__header">
                         <h2 className="c-team__heading">{team.heading}</h2>
+                        <p className="c-team__description">{team.description}</p>
                         <FluidImage
                             className="c-team__topImage -default"
                             alt={team.heading}
@@ -91,11 +92,12 @@ export const AboutPageTemplate = ({
                             }
                             return (
                                 <div className={className}>
-                                    <label className="c-team__member__name">{p.name}</label>
                                     <FluidImage
                                         className="c-team__member__photo -default"
                                         alt={p.name}
                                         image={p.photo} />
+                                    <label className="c-team__member__name">{p.name}</label>
+                                    <label className="c-team__member__title">{p.title}</label>
                                 </div>
                             );
                         })}
@@ -138,11 +140,23 @@ AboutPageTemplate.propTypes = {
     }),
     team: PropTypes.shape({
         heading: PropTypes.string,
+        description: PropTypes.string,
         people: PropTypes.arrayOf(
             PropTypes.shape({
                 name: PropTypes.string,
+                title: PropTypes.string,
                 photo: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-                large: PropTypes.bool,
+            })
+        )
+    }),
+    leadership: PropTypes.shape({
+        heading: PropTypes.string,
+        description: PropTypes.string,
+        people: PropTypes.arrayOf(
+            PropTypes.shape({
+                name: PropTypes.string,
+                title: PropTypes.string,
+                photo: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
             })
         )
     }),
@@ -168,11 +182,11 @@ const AboutPage = ({ data }) => {
             <AboutPageTemplate
                 section={frontmatter.section}
                 heading={frontmatter.heading}
-                image={frontmatter.image}
                 intro={frontmatter.intro}
                 mission={frontmatter.mission}
                 values={frontmatter.values}
                 team={frontmatter.team}
+                leadership={frontmatter.leadership}
                 action={frontmatter.action}
             />
         </Layout>
@@ -210,8 +224,10 @@ export const aboutPageQuery = graphql`
         }
         team {
           heading
+          description
           people {
             name
+            title
             photo {
               childImageSharp {
                 fluid(maxWidth: 2048, quality: 100) {
@@ -219,9 +235,23 @@ export const aboutPageQuery = graphql`
                 }
               }
             }
-            large
           }
         }
+        leadership {
+            heading
+            description
+            people {
+              name
+              title
+              photo {
+                childImageSharp {
+                  fluid(maxWidth: 2048, quality: 100) {
+                    ...GatsbyImageSharpFluid
+                  }
+                }
+              }
+            }
+          }
         action {
           heading
           pages {
