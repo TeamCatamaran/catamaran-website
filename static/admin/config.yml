@@ -356,7 +356,7 @@ collections:
                 ],
             }
       - file: "src/pages/experiments/lab.md"
-        label: "Lab Experiments"
+        label: "Experiments - Lab"
         name: labExperiments
         fields:
           - {
@@ -446,7 +446,7 @@ collections:
                 ],
             }
       - file: "src/pages/experiments/enterprise.md"
-        label: "Enterprise Experiments"
+        label: "Experiments - Enterprise"
         name: enterpriseExperiments
         fields:
           - {
@@ -581,7 +581,7 @@ collections:
                 ],
             }
       - file: "src/pages/studio/startup.md"
-        label: "Startup Launch Program"
+        label: "Studio - Startup Launch Program"
         name: studioStartup
         fields:
           - {
@@ -724,7 +724,7 @@ collections:
                 ],
             }
       - file: "src/pages/studio/upstarts.md"
-        label: "For Upstarts"
+        label: "Studio - For Upstarts"
         name: upstartsStartup
         fields:
           - {
@@ -822,7 +822,7 @@ collections:
                 ],
             }
       - file: "src/pages/studio/cofounder.md"
-        label: "Be A Co-Founder"
+        label: "Studio - Be A Co-Founder"
         name: cofounderStartup
         fields:
           - {
