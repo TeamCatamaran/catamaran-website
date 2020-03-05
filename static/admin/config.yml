@@ -842,6 +842,7 @@ collections:
                   { label: "Right Content", name: rightContent, widget: text },
                 ],
             }
+          - { label: Photos, name: photos, widget: hidden, default: null }
           - {
               label: Launch,
               name: launch,

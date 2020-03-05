@@ -226,13 +226,11 @@ query StudioPage($id: String!) {
         rightContent
       }
       photos {
-          photo {
-            childImageSharp {
-              fluid(maxWidth: 2048, quality: 100) {
-                ...GatsbyImageSharpFluid
-              }
-            }
+        childImageSharp {
+          fluid(maxWidth: 2048, quality: 100) {
+            ...GatsbyImageSharpFluid
           }
+        }
       }
       how {
         heading
@@ -244,11 +242,9 @@ query StudioPage($id: String!) {
       upstarts {
         heading
         logos {
-          logo {
-            childImageSharp {
-              fluid(maxWidth: 2048, quality: 100) {
-                ...GatsbyImageSharpFluid
-              }
+          childImageSharp {
+            fluid(maxWidth: 2048, quality: 100) {
+              ...GatsbyImageSharpFluid
             }
           }
         }
