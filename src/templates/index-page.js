@@ -28,7 +28,7 @@ export const IndexPageTemplate = ({
                 <div className="container">
                     {focus.map((f, key) => {
                         return (
-                            <div className="c-focus__item" key={key}>
+                            <Link to={f.link} className="c-focus__item" key={key}>
                                 <FluidImage
                                     className="-default"
                                     alt={f.title}
@@ -42,7 +42,7 @@ export const IndexPageTemplate = ({
                                     <p>{f.description}</p>
                                     <Link className="c-button" to={f.link}>Lets Go</Link>
                                 </div>
-                            </div>
+                            </Link>
                         )
                     })}
                 </div>
@@ -54,6 +54,12 @@ export const IndexPageTemplate = ({
                 process={process} />
             <Slider
                 items={slider} />
+            <div className="c-indexFooterShapes container">
+                <FluidImage
+                    className="c-indexFooterShapes__image"
+                    alt={"decorative geometric shapes"}
+                    image={"/img/footer-shapes.png"} />
+            </div>
         </div>
     )
 }

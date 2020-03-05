@@ -20,9 +20,11 @@ export const NetworkPageTemplate = ({
     };
     const logoPartners = [];
     partners.forEach((p) => {
-        sortedPartners[p.category].push(p);
+        console.log(p.logo);
         if (p.logo != null) {
             logoPartners.push(p);
+        } else if (p.category != null) {
+            sortedPartners[p.category].push(p);
         }
     });
 
@@ -39,11 +41,15 @@ export const NetworkPageTemplate = ({
                 </div>
                 <div className="c-partners container">
                     <div className="c-partners__logos">
-                        {logoPartners.map((p) => {
+                        {logoPartners.map((p, key) => {
                             return (
-                                <Link className="c-partner__logos__item" to={p.link}>
+                                <Link
+                                    className="c-partners__logos__item"
+                                    key={"logoPartner-" + key}
+                                    to={p.link}
+                                >
                                     <FluidImage
-                                        className="c-partner__logos__item__image -default"
+                                        className="c-partners__logos__item__image"
                                         alt={p.name}
                                         image={p.logo} />
                                 </Link>
@@ -54,23 +60,23 @@ export const NetworkPageTemplate = ({
                         <div className="c-partners__list__section">
                             <h4 className="c-partners__list__section__heading">Coworking</h4>
                             <ul className="c-partners__list__section__list">
-                                {sortedPartners["coworking"].map((p) => <li><Link to={p.link} target="_blank">{p.name}</Link></li>)}
+                                {sortedPartners["coworking"].map((p, key) => <li key={"coworking-" + key}><Link to={p.link} target="_blank">{p.name}</Link></li>)}
                             </ul>
                             <h4 className="c-partners__list__section__heading">Mentorship</h4>
                             <ul className="c-partners__list__section__list">
-                                {sortedPartners["mentorship"].map((p) => <li><Link to={p.link} target="_blank">{p.name}</Link></li>)}
+                                {sortedPartners["mentorship"].map((p, key) => <li key={"mentorship-" + key}><Link to={p.link} target="_blank">{p.name}</Link></li>)}
                             </ul>
                         </div>
                         <div className="c-partners__list__section">
                             <h4 className="c-partners__list__section__heading">Economic Dev</h4>
                             <ul className="c-partners__list__section__list">
-                                {sortedPartners["economic dev"].map((p) => <li><Link to={p.link} target="_blank">{p.name}</Link></li>)}
+                                {sortedPartners["economic dev"].map((p, key) => <li key={"economic-" + key}><Link to={p.link} target="_blank">{p.name}</Link></li>)}
                             </ul>
                         </div>
                         <div className="c-partners__list__section">
                             <h4 className="c-partners__list__section__heading">Community Contacts</h4>
                             <ul className="c-partners__list__section__list">
-                                {sortedPartners["community contacts"].map((p) => <li><Link to={p.link} target="_blank">{p.name}</Link></li>)}
+                                {sortedPartners["community contacts"].map((p, key) => <li key={"community-" + key}><Link to={p.link} target="_blank">{p.name}</Link></li>)}
                             </ul>
                         </div>
                     </div>
@@ -131,6 +137,13 @@ export const pageQuery = graphql`
           category
           name
           link
+          logo {
+            childImageSharp {
+              fluid(maxWidth: 2048, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
         }
       }
     }
