@@ -1,3 +1,68 @@
 .c-studioPhotos {
-    
+    margin-top: 200px;
+    position: relative;
+
+    &__photo1 {
+        @include grid-column(8);
+        height: 355px;
+        margin-top: 100px;
+        position: relative;
+        z-index: 2;
+        overflow: hidden;
+
+        img {
+            width: calc(100% - 30px);
+        }
+    }
+
+    &__photo2 {
+        @include grid-column(4);
+        position: relative;
+        height: 500px;
+        overflow: hidden;
+        z-index: 2;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    &__element1 {
+        width: 239px;
+        height: 88px;
+        @include grid-push(2);
+        bottom: 15px;
+        position: absolute;
+        z-index: 3;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    &__element2 {
+        width: 315px;
+        height: 315px;
+        @include grid-push(5);
+        top: 30px;
+        position: absolute;
+        z-index: 1;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    &__element3 {
+        width: 90px;
+        height: 330px;
+        @include grid-push(10);
+        bottom: -194px;
+        position: absolute;
+        z-index: 3;
+
+        img {
+            width: 100%;
+        }
+    }
 }

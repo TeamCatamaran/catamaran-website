@@ -79,8 +79,32 @@ export const StudioPageTemplate = ({
             </div>
             {
                 photos != null &&
-                <div className="c-studioPhotos">
-                    
+                <div className="c-studioPhotos container">
+                    <div className="c-studioPhotos__photo1">
+                        <FluidImage
+                            alt={"upstart-photo"}
+                            image={photos[0]} />
+                    </div>
+                    <div className="c-studioPhotos__photo2">
+                        <FluidImage
+                            alt={"upstart-photo"}
+                            image={photos[1]} />
+                    </div>
+                    <div className="c-studioPhotos__element1">
+                        <FluidImage
+                            alt={"abstract geometric design element"}
+                            image={"/img/waves.png"} />
+                    </div>
+                    <div className="c-studioPhotos__element2">
+                        <FluidImage
+                            alt={"abstract geometric design element"}
+                            image={"/img/angles.png"} />
+                    </div>
+                    <div className="c-studioPhotos__element3">
+                        <FluidImage
+                            alt={"abstract geometric design element"}
+                            image={"/img/scribble.png"} />
+                    </div>
                 </div>
             }
             {
