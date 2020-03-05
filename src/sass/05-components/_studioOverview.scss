@@ -1,0 +1,32 @@
+.c-studioOverview {
+    &__intro {
+        @include grid-container;
+        &__p {
+            @include grid-column(8);
+            @include font-style(
+                $font-normal,                     // Font Family
+                $size-2,                          // Font Size
+                $grey,                            // Font Color
+                $weight-light,                     // Font Weight
+                $height-2                         // Line Height
+            );
+        }
+    }
+
+    &__row {
+        margin-top: 45px;
+        @include grid-container;
+
+        &__col {
+            @include grid-column(6);
+            display: block;
+
+            &:first-of-type p {
+                padding-right: 25px;
+            }
+            &:last-of-type p {
+                padding-left: 25px;
+            }
+        }
+    }
+}

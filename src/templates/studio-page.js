@@ -9,6 +9,7 @@ import Layout from '../components/Layout'
 import Slider from '../components/Slider'
 import Process from '../components/Process'
 import FluidImage from '../components/FluidImage'
+import { Link } from 'gatsby'
 
 export const StudioPageTemplate = ({
     tab,
@@ -16,14 +17,28 @@ export const StudioPageTemplate = ({
     heading,
     overview,
     photos,
-    how,
-    upstarts,
-    process,
+    how,        // How we can help
+    upstarts,   // Logos
+    process,    // Criteria
     expect,
     slider,
     launch,
     action,
 }) => {
+
+  const pages = [{
+    name: "startup",
+    label: "Startup Launch Program",
+    link: "studio/startup"
+  },{
+    name: "upstarts",
+    label: "Upstarts",
+    link: "studio/upstarts"
+  },{
+    name: "cofounder",
+    label: "Be a Co-Founder",
+    link: "studio/cofounder"
+  }]
 
     return (
         <div>
@@ -32,23 +47,40 @@ export const StudioPageTemplate = ({
                 heading={heading}
                 section={section}
             />
-            <div>
-                Selected Tab: {tab}
+            <div className="c-tabset">
+                <div className="container">
+                    <div className="c-tabset__wrapper">
+                    {
+                        pages.map((p, key) => {
+                            let className = "c-tabset__tab";
+                            if (tab === p.name) {
+                                className += " -active";
+                            }
+                            return (
+                                <Link key={"tab-" + key} to={p.link} className={className}>{p.label}</Link>
+                            );
+                        })
+                    }
+                    </div>
+                </div>
             </div>
-            <div>
-                {overview.intro}<br />{overview.leftContent}<br />{overview.rightContent}
+            <div className="c-studioOverview container">
+                <div className="c-studioOverview__intro">
+                    <p className="c-studioOverview__intro__p">{overview.intro}</p>
+                </div>
+                <div className="c-studioOverview__row">
+                    <div className="c-studioOverview__row__col">
+                        <p>{overview.leftContent}</p>
+                    </div>
+                    <div className="c-studioOverview__row__col">
+                        <p>{overview.rightContent}</p>
+                    </div>
+                </div>
             </div>
             {
                 photos != null &&
-                <div>
-                    {photos.map((p) => {
-                        return (
-                            <p>
-                                <FluidImage
-                                    image={p.photo} />
-                            </p>
-                        )
-                    })}
+                <div className="c-studioPhotos">
+                    
                 </div>
             }
             {

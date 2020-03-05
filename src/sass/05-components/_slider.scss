@@ -183,13 +183,46 @@
 }
 
 body.-pink {
+    .c-slider__count__current {
+        color: $pink;
+    }
+    .c-slider__quote__name {
+        color: $pink;
+    }
+    .c-slider__controls__button {
+        background-color: $pink;
+    }
     .c-slider__controls__zebra__svg path {
         fill: $pink
     }
 }
 
 body.-purple {
+    .c-slider__count__current {
+        color: $purple;
+    }
+    .c-slider__quote__name {
+        color: $purple;
+    }
+    .c-slider__controls__button {
+        background-color: $purple;
+    }
     .c-slider__controls__zebra__svg path {
         fill: $purple
+    }
+}
+
+body.-orange {
+    .c-slider__count__current {
+        color: $orange;
+    }
+    .c-slider__quote__name {
+        color: $orange;
+    }
+    .c-slider__controls__button {
+        background-color: $orange;
+    }
+    .c-slider__controls__zebra__svg path {
+        fill: $orange
     }
 }

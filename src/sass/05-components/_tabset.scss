@@ -1,0 +1,55 @@
+.c-tabset {
+    background: $grey-lightest;
+    margin-bottom: 200px;
+    
+    &__wrapper {
+        display: flex;
+        flex-direction: row;
+        height: 60px;
+        align-items: stretch;
+        @include grid-column(12);
+    }
+
+    &__tab {
+        position: relative;
+        display: block;
+        width: 33%;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: .2em;
+        transition: color .16s ease-in-out;
+        @include font-style(
+            $font-accent,                     // Font Family
+            $size-4,                          // Font Size
+            $grey-light,                            // Font Color
+            $weight-bold,                     // Font Weight
+            60px                         // Line Height
+        );
+
+        &:hover {
+            text-decoration: none;
+            cursor: pointer;
+            color: $grey;
+        }
+
+        &.-active {
+            color: $grey;
+
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                height: 5px;
+                background-color: $purple;
+            }
+        }
+    }
+}
+
+body.-orange {
+    .c-tabset__tab.-active::after {
+        background-color: $orange;
+    }
+}

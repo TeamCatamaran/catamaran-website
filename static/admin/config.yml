@@ -773,6 +773,7 @@ collections:
               label: Photos,
               name: photos,
               widget: list,
+              allow_add: false,
               field: { label: Photo, name: photo, widget: image },
             }
           - {
