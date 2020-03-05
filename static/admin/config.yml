@@ -365,8 +365,64 @@ collections:
               widget: "hidden",
               default: "experiments-page",
             }
+          - { label: Tab, name: tab, widget: hidden, default: lab }
           - { label: Section, name: section, widget: string }
           - { label: Heading, name: heading, widget: string }
+          - {
+              label: Overview,
+              name: overview,
+              widget: object,
+              fields:
+                [
+                  { label: Intro, name: intro, widget: text },
+                  { label: "Left Content", name: leftContent, widget: text },
+                  { label: "Right Content", name: rightContent, widget: text },
+                ],
+            }
+          - {
+              label: "What to Expect",
+              name: expect,
+              widget: object,
+              fields:
+                [
+                  { label: Heading, name: heading, widget: string },
+                  { label: Intro, name: intro, widget: text },
+                  {
+                    label: Steps,
+                    name: steps,
+                    widget: list,
+                    allow_add: false,
+                    fields:
+                      [
+                        { label: Heading, name: heading, widget: string },
+                        { label: Intro, name: intro, widget: text },
+                        { label: Description, name: description, widget: text },
+                      ],
+                  },
+                ],
+            }
+          - {
+              label: Examples,
+              name: examples,
+              widget: object,
+              fields:
+                [
+                  { label: Heading, name: heading, widget: string },
+                  { label: Intro, name: intro, widget: text },
+                  {
+                    label: Steps,
+                    name: steps,
+                    widget: list,
+                    allow_add: false,
+                    fields:
+                      [
+                        { label: Heading, name: heading, widget: string },
+                        { label: Description, name: description, widget: text },
+                        { label: Image, name: image, widget: image },
+                      ],
+                  },
+                ],
+            }
           - {
               label: Action,
               name: action,
@@ -399,8 +455,75 @@ collections:
               widget: "hidden",
               default: "experiments-page",
             }
+          - { label: Tab, name: tab, widget: hidden, default: enterprise }
           - { label: Section, name: section, widget: string }
           - { label: Heading, name: heading, widget: string }
+          - {
+              label: Overview,
+              name: overview,
+              widget: object,
+              fields:
+                [
+                  { label: Intro, name: intro, widget: text },
+                  { label: "Left Content", name: leftContent, widget: text },
+                  { label: "Right Content", name: rightContent, widget: text },
+                ],
+            }
+          - {
+              label: "What to Expect",
+              name: expect,
+              widget: object,
+              fields:
+                [
+                  { label: Heading, name: heading, widget: string },
+                  { label: Intro, name: intro, widget: text },
+                  {
+                    label: Steps,
+                    name: steps,
+                    widget: list,
+                    allow_add: false,
+                    fields:
+                      [
+                        { label: Heading, name: heading, widget: string },
+                        { label: Intro, name: intro, widget: text },
+                        { label: Description, name: description, widget: text },
+                      ],
+                  },
+                ],
+            }
+          - {
+              label: Examples,
+              name: examples,
+              widget: object,
+              fields:
+                [
+                  { label: Heading, name: heading, widget: string },
+                  { label: Intro, name: intro, widget: text },
+                  {
+                    label: Steps,
+                    name: steps,
+                    widget: list,
+                    allow_add: false,
+                    fields:
+                      [
+                        { label: Heading, name: heading, widget: string },
+                        { label: Description, name: description, widget: text },
+                        { label: Image, name: image, widget: image },
+                      ],
+                  },
+                ],
+            }
+          - {
+              label: Launch,
+              name: launch,
+              widget: object,
+              fields:
+                [
+                  { label: Content, name: content, widget: string },
+                  { label: "Button Text", name: text, widget: string },
+                  { label: Link, name: link, widget: string },
+                ],
+            }
           - {
               label: Action,
               name: action,

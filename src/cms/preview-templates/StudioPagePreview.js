@@ -7,9 +7,18 @@ const StudioPagePreview = ({ entry, widgetFor }) => {
 
     if (data) {
         return (
-            <StudioPagePreview
+            <StudioPageTemplate
+                tab={data.tab}
                 section={data.section}
                 heading={data.heading}
+                overview={data.overview}
+                photos={data.photos}
+                how={data.how}
+                upstarts={data.upstarts}
+                process={data.process}
+                expect={data.expect}
+                slider={data.slider}
+                launch={data.launch}
                 action={data.action}
             />
         )

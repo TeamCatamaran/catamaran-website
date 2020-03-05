@@ -10,7 +10,7 @@ import Slider from '../components/Slider'
 import Process from '../components/Process'
 import FluidImage from '../components/FluidImage'
 
-export const StudioStartupPageTemplate = ({
+export const StudioPageTemplate = ({
     tab,
     section,
     heading,
@@ -103,7 +103,7 @@ export const StudioStartupPageTemplate = ({
     )
 }
 
-StudioStartupPageTemplate.propTypes = {
+StudioPageTemplate.propTypes = {
     section: PropTypes.string,
     heading: PropTypes.string,
     overview: PropTypes.shape({
@@ -182,13 +182,13 @@ StudioStartupPageTemplate.propTypes = {
     }),
 }
 
-const StudioStartupPage = ({ data }) => {
+const StudioPage = ({ data }) => {
     const { frontmatter } = data.markdownRemark
 
     return (
         <Layout
             bodyClass="-orange">
-            <StudioStartupPageTemplate
+            <StudioPageTemplate
                 tab={frontmatter.tab}
                 section={frontmatter.section}
                 heading={frontmatter.heading}
@@ -206,14 +206,14 @@ const StudioStartupPage = ({ data }) => {
     )
 }
 
-StudioStartupPage.propTypes = {
+StudioPage.propTypes = {
     data: PropTypes.object.isRequired,
 }
 
-export default StudioStartupPage;
+export default StudioPage;
 
-export const studioStartupPageQuery = graphql`
-query StudioStartupPage($id: String!) {
+export const studioPageQuery = graphql`
+query StudioPage($id: String!) {
   markdownRemark(id: { eq: $id }) {
     html
     frontmatter {

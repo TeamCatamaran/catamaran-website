@@ -8,8 +8,13 @@ const ExperimentsPagePreview = ({ entry, widgetFor }) => {
     if (data) {
         return (
             <ExperimentsPageTemplate
+                tab={data.tab}
                 section={data.section}
                 heading={data.heading}
+                overview={data.overview}
+                expect={data.expect}
+                examples={data.how}
+                launch={data.launch}
                 action={data.action}
             />
         )
