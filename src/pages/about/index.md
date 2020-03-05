@@ -36,7 +36,6 @@ values:
     - title: Intro The Wild
       body: >-
         It can be frustrating to not immediately know the solution. But this is where we thrive. We embrace ambiguity by trusting the process, valuing communication and working hard.
-
 team:
   heading: The Team
   description: >-
@@ -57,7 +56,7 @@ team:
     - name: Abdullah Amir
       title: Something
       photo: /img/phil.jpg
-team:
+leadership:
   heading: Some Title for Them
   description: >-
     From how we approach ideas to how we approach eachother, our values are there to remind us who we are and who we want to be. 
