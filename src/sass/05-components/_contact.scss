@@ -1,0 +1,14 @@
+.c-contact {
+    &__chat{
+        @include grid-column(8);
+    }
+    &__heading{
+        @include font-style(
+            $font-normal,                     // Font Family
+            $size-2,                          // Font Size
+            $pink,                            // Font Color
+            $weight-semibold,                 // Font Weight
+            $height-3                         // Line Height
+        );
+    } 
+}
