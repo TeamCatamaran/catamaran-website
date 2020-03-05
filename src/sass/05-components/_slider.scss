@@ -177,7 +177,19 @@
 
         &__zebra {
             flex-grow: 1;
-            border: 1px solid $purple;
+            overflow: hidden;
         }
+    }
+}
+
+body.-pink {
+    .c-slider__controls__zebra__svg path {
+        fill: $pink
+    }
+}
+
+body.-purple {
+    .c-slider__controls__zebra__svg path {
+        fill: $purple
     }
 }
