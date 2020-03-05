@@ -87,9 +87,6 @@ export const AboutPageTemplate = ({
                     <div className="c-team__list">
                         {team.people.map((p) => {
                             let className = "c-team__member";
-                            if (p.large) {
-                                className += " -large"
-                            }
                             return (
                                 <div className={className}>
                                     <FluidImage
@@ -106,6 +103,27 @@ export const AboutPageTemplate = ({
                         className="c-team__bottomImage -default"
                         alt={team.heading}
                         image={"/img/plus.png"} />
+                </div>
+                <div className="c-leadership container">
+                    <div className="c-leadership__header">
+                        <h2 className="c-leadership__heading">{leadership.heading}</h2>
+                        <p className="c-leadership__description">{leadership.description}</p>
+                    </div>
+                    <div className="c-leadership__list">
+                        {leadership.people.map((p) => {
+                            let className = "c-leadership__member";
+                            return (
+                                <div className={className}>
+                                    <FluidImage
+                                        className="c-leadership__member__photo -default"
+                                        alt={p.name}
+                                        image={p.photo} />
+                                    <label className="c-leadership__member__name">{p.name}</label>
+                                    <label className="c-leadership__member__title">{p.title}</label>
+                                </div>
+                            );
+                        })}
+                    </div>
                 </div>
                 <ActionCallout
                     heading={action.heading}
