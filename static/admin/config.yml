@@ -766,10 +766,7 @@ collections:
                     name: steps,
                     widget: list,
                     fields:
-                      [
-                        { label: Heading, name: heading, widget: string },
-                        { label: Description, name: description, widget: text },
-                      ],
+                      [{ label: Description, name: description, widget: text }],
                   },
                 ],
             }
