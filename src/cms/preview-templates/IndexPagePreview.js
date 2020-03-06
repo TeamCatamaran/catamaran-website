@@ -13,7 +13,7 @@ const IndexPagePreview = ({ entry, getAsset }) => {
                 focus={data.focus || []}
                 intro={data.intro}
                 process={data.process || { steps: [] }}
-                slider={data.slider || []}
+                testimonials={data.testimonials || []}
             />
         )
     } else {

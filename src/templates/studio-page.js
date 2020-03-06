@@ -6,9 +6,10 @@ import { graphql } from 'gatsby'
 import ActionCallout from '../components/ActionCallout'
 import Header from '../components/Header'
 import Layout from '../components/Layout'
-import Slider from '../components/Slider'
+import Testimonials from '../components/Testimonials'
 import Breakdown from '../components/Breakdown'
 import FluidImage from '../components/FluidImage'
+import ProcessSlider from '../components/ProcessSlider'
 import { Link } from 'gatsby'
 
 export const StudioPageTemplate = ({
@@ -21,7 +22,7 @@ export const StudioPageTemplate = ({
     upstarts,   // Logos
     criteria,    // Criteria
     expect,
-    slider,
+    testimonials,
     launch,
     action,
 }) => {
@@ -121,15 +122,7 @@ export const StudioPageTemplate = ({
             }
             {
                 how != null &&
-                <div>
-                    {how.heading}<br />{how.intro}<br />{how.steps.map((s) => {
-                        return (
-                            <p>
-                                {s.heading}<br />{s.description}
-                            </p>
-                        )
-                    })}
-                </div>
+                <ProcessSlider content={how} />
             }
             {
                 upstarts != null &&
@@ -162,8 +155,8 @@ export const StudioPageTemplate = ({
                     })}
                 </div>
             }
-            <Slider
-                items={slider} />
+            <Testimonials
+                items={testimonials} />
             <div>
                 {launch.content}<br />{launch.text}<br />{launch.link}
             </div>
@@ -233,7 +226,7 @@ StudioPageTemplate.propTypes = {
             }),
         ),
     }),
-    slider: PropTypes.arrayOf(
+    testimonials: PropTypes.arrayOf(
         PropTypes.shape({
             name: PropTypes.string,
             title: PropTypes.string,
@@ -276,7 +269,7 @@ const StudioPage = ({ data }) => {
                 upstarts={frontmatter.upstarts}
                 criteria={frontmatter.criteria}
                 expect={frontmatter.expect}
-                slider={frontmatter.slider}
+                testimonials={frontmatter.testimonials}
                 launch={frontmatter.launch}
                 action={frontmatter.action}
             />
@@ -316,6 +309,7 @@ query StudioPage($id: String!) {
       }
       how {
         heading
+        intro
         steps {
           heading
           description
@@ -355,7 +349,7 @@ query StudioPage($id: String!) {
           description
         }
       }
-      slider {
+      testimonials {
         name
         title
         quote

@@ -16,6 +16,8 @@ const Breakdown = class extends React.Component {
             return (null);
         }
 
+        console.log(this.props.content.image);
+
         const icons = {
             absorb: absorb,
             concept: concept,
@@ -27,7 +29,7 @@ const Breakdown = class extends React.Component {
             <div className="c-breakdown container">
                 <div className="c-breakdown__title">
                     <h3>{this.props.content.heading}</h3>
-                { /* <img className="c-breakdown__collage" src={this.props.content.image} alt="Our Process Collage" /> */ }
+                    <img className="c-breakdown__collage" src={this.props.content.image} alt="Our Process Collage" />
                 </div>
                 {
                     this.props.content.items != null &&

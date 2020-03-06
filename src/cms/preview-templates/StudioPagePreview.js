@@ -17,7 +17,7 @@ const StudioPagePreview = ({ entry, widgetFor }) => {
                 upstarts={data.upstarts}
                 criteria={data.criteria}
                 expect={data.expect}
-                slider={data.slider}
+                testimonials={data.testimonials}
                 launch={data.launch}
                 action={data.action}
             />

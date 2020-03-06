@@ -6,7 +6,7 @@ import FluidImage from '../components/FluidImage'
 import Header from '../components/Header'
 import Layout from '../components/Layout'
 import Breakdown from '../components/Breakdown'
-import Slider from '../components/Slider'
+import Testimonials from '../components/Testimonials'
 
 export const IndexPageTemplate = ({
     section,
@@ -14,7 +14,7 @@ export const IndexPageTemplate = ({
     focus,
     intro,
     process,
-    slider,
+    testimonials,
 }) => {
     return (
         <div>
@@ -52,8 +52,8 @@ export const IndexPageTemplate = ({
             </div>
             <Breakdown
                 content={process} />
-            <Slider
-                items={slider} />
+            <Testimonials
+                items={testimonials} />
             <div className="c-indexFooterShapes container">
                 <FluidImage
                     className="c-indexFooterShapes__image"
@@ -87,7 +87,7 @@ IndexPageTemplate.propTypes = {
             }),
         ),
     }),
-    slider: PropTypes.arrayOf(
+    testimonials: PropTypes.arrayOf(
         PropTypes.shape({
             name: PropTypes.string,
             title: PropTypes.string,
@@ -110,7 +110,7 @@ const IndexPage = ({ data }) => {
                 focus={frontmatter.focus}
                 intro={frontmatter.intro}
                 process={frontmatter.process}
-                slider={frontmatter.slider}
+                testimonials={frontmatter.testimonials}
             />
         </Layout>
     )
@@ -154,14 +154,20 @@ export const pageQuery = graphql`
         intro
         process {
           heading
-          image
+          image {
+            childImageSharp {
+              fluid(maxWidth: 2048, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
           items {
             title
             icon
             description
           }
         }
-        slider {
+        testimonials {
           name
           title
           quote
