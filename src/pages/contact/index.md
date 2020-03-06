@@ -20,7 +20,7 @@ type:
     - embed: .
       name: I’m Just Looking to Chat
 social:
-  heading: Social sub heading
+  heading: WE CAN CONNECT HERE TOO
 map: /img/map.jpg
 locations:
   addresses:
