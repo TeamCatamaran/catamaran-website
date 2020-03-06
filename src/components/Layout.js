@@ -6,8 +6,12 @@ import '../sass/app.scss'
 import useSiteMetadata from './SiteMetadata'
 import { withPrefix } from 'gatsby'
 
-const TemplateWrapper = ({ bodyClass, children }) => {
+const TemplateWrapper = ({ bodyClass, seo, children }) => {
     const { title, description } = useSiteMetadata()
+    if (seo == null) {
+        seo = {}
+    }
+
     return (
         <div>
             <Helmet
@@ -15,8 +19,8 @@ const TemplateWrapper = ({ bodyClass, children }) => {
                     class: bodyClass
                 }}>
                 <html lang="en" />
-                <title>{title}</title>
-                <meta name="description" content={description} />
+                <title>{seo.title || title}</title>
+                <meta name="description" content={seo.description || description} />
 
                 <link
                     rel="apple-touch-icon"
@@ -43,9 +47,9 @@ const TemplateWrapper = ({ bodyClass, children }) => {
                 />
                 <meta name="theme-color" content="#fff" />
 
-                <meta property="og:type" content="business.business" />
-                <meta property="og:title" content={title} />
-                <meta property="og:url" content="/" />
+                <meta property="og:type" content={seo.ogType || "business.business"} />
+                <meta property="og:title" content={seo.ogTitle || seo.title || title} />
+                <meta property="og:url" content={seo.ogUrl || "/"} />
                 <meta
                     property="og:image"
                     content={`${withPrefix('/')}img/og-image.jpg`}

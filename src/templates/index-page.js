@@ -103,7 +103,8 @@ const IndexPage = ({ data }) => {
 
   return (
     <Layout
-      bodyClass="-purple">
+      bodyClass="-purple"
+      seo={frontmatter.seo}>
       <IndexPageTemplate
         section={frontmatter.section}
         heading={frontmatter.heading}
@@ -185,6 +186,16 @@ export const pageQuery = graphql`
               }
             }
           }
+        }
+        seo {
+          title
+          description
+          ogTitle
+          ogType
+          ogDescription
+          ogImage
+          robots
+          canonical
         }
       }
     }

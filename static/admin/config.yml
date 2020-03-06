@@ -8,6 +8,8 @@ backend:
     uploadMedia: "[skip ci] Upload “{{path}}”"
     deleteMedia: "[skip ci] Delete “{{path}}”"
 
+local_backend: true
+
 media_folder: static/img
 public_folder: /img
 
@@ -191,7 +193,7 @@ collections:
                   },
                   {
                     label: "OG Type",
-                    name: "OG Type",
+                    name: ogType,
                     widget: string,
                     required: false,
                   },
@@ -205,6 +207,12 @@ collections:
                     label: "OG Image",
                     name: ogImage,
                     widget: image,
+                    required: false,
+                  },
+                  {
+                    label: "OG Url",
+                    name: ogUrl,
+                    widget: string,
                     required: false,
                   },
                   {
