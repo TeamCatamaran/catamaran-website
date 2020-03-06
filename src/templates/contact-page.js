@@ -23,19 +23,22 @@ export const ContactPageTemplate = ({
                 heading={heading}
                 section={section}
             />
+            <div className="c-interiorPage">
             <div className="c-intro container">
                 <p>{intro}</p>
             </div>
-            <div>
-                <p>{type.heading}</p>
+            <div className="c-contact container">
+                <div className="c-contact__chat">
+                <p className="c-contact__heading">{type.heading}</p>
                 {type.types.map((t) => {
                     return (
                         <p>
                             {t.name}<br />
-                            {t.embed}
+                             {t.embed}
                         </p>
                     )
                 })}
+                </div>
             </div>
             <div>
                 <p>{social.heading}</p>
@@ -56,6 +59,7 @@ export const ContactPageTemplate = ({
                 })}
             </div>
             <SocialIcons />
+            </div>
         </div>
     )
 }

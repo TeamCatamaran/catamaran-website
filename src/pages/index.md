@@ -8,14 +8,14 @@ focus:
       to startups at any step of the journey.
     hover: /img/studio-hover.png
     image: /img/studio.png
-    link: /studio
+    link: /studio/startup
     title: Studio
   - description: >-
       We explore, test, and develop ideas through the pursuit of new
       technologies both internally and for large companies.
     hover: /img/experiments-hover.png
     image: /img/experiments.png
-    link: /experiments
+    link: /experiments/lab
     title: Experiments
 intro: >-
   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
@@ -58,8 +58,8 @@ slider:
     name: Some Name
     quote: >-
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et.
+      tempor incididunt ut labore et. Lorem ipsum dolor sit amet, consectetur
+      adipiscing elit, sed do eiusmod tempor incididunt ut labore et.
     title: CEO / Subx
   - image: /img/scott.png
     logo: /img/cope.png

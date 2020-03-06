@@ -26,19 +26,19 @@ export const StudioPageTemplate = ({
     action,
 }) => {
 
-  const pages = [{
-    name: "startup",
-    label: "Startup Launch Program",
-    link: "studio/startup"
-  },{
-    name: "upstarts",
-    label: "Upstarts",
-    link: "studio/upstarts"
-  },{
-    name: "cofounder",
-    label: "Be a Co-Founder",
-    link: "studio/cofounder"
-  }]
+    const pages = [{
+        name: "startup",
+        label: "Startup Launch Program",
+        link: "studio/startup"
+    }, {
+        name: "upstarts",
+        label: "Upstarts",
+        link: "studio/upstarts"
+    }, {
+        name: "cofounder",
+        label: "Be a Co-Founder",
+        link: "studio/cofounder"
+    }]
 
     return (
         <div>
@@ -50,17 +50,17 @@ export const StudioPageTemplate = ({
             <div className="c-tabset">
                 <div className="container">
                     <div className="c-tabset__wrapper">
-                    {
-                        pages.map((p, key) => {
-                            let className = "c-tabset__tab";
-                            if (tab === p.name) {
-                                className += " -active";
-                            }
-                            return (
-                                <Link key={"tab-" + key} to={p.link} className={className}>{p.label}</Link>
-                            );
-                        })
-                    }
+                        {
+                            pages.map((p, key) => {
+                                let className = "c-tabset__tab";
+                                if (tab === p.name) {
+                                    className += " -active";
+                                }
+                                return (
+                                    <Link key={"tab-" + key} to={p.link} className={className}>{p.label}</Link>
+                                );
+                            })
+                        }
                     </div>
                 </div>
             </div>
@@ -76,6 +76,18 @@ export const StudioPageTemplate = ({
                         <p>{overview.rightContent}</p>
                     </div>
                 </div>
+                {
+                    overview.details != null && overview.details.length > 0 &&
+                    <div>
+                        {overview.details.map((d) => {
+                            return (
+                                <p>
+                                    {d.heading}<br />{d.description}
+                                </p>
+                            )
+                        })}
+                    </div>
+                }
             </div>
             {
                 photos != null &&
@@ -169,6 +181,12 @@ StudioPageTemplate.propTypes = {
         intro: PropTypes.string,
         leftContent: PropTypes.string,
         rightContent: PropTypes.string,
+        details: PropTypes.arrayOf(
+            PropTypes.shape({
+                heading: PropTypes.string,
+                description: PropTypes.string,
+            }),
+        ),
     }),
     photos: PropTypes.arrayOf(
         PropTypes.shape({
@@ -284,6 +302,10 @@ query StudioPage($id: String!) {
         intro
         leftContent
         rightContent
+        details {
+          heading
+          description
+        }
       }
       photos {
         childImageSharp {
