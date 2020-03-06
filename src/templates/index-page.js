@@ -5,7 +5,7 @@ import { Link, graphql } from 'gatsby'
 import FluidImage from '../components/FluidImage'
 import Header from '../components/Header'
 import Layout from '../components/Layout'
-import Process from '../components/Process'
+import Breakdown from '../components/Breakdown'
 import Slider from '../components/Slider'
 
 export const IndexPageTemplate = ({
@@ -50,8 +50,8 @@ export const IndexPageTemplate = ({
             <div className="c-intro container">
                 <p className="intro">{intro}</p>
             </div>
-            <Process
-                process={process} />
+            <Breakdown
+                content={process} />
             <Slider
                 items={slider} />
             <div className="c-indexFooterShapes container">
@@ -78,6 +78,7 @@ IndexPageTemplate.propTypes = {
     intro: PropTypes.string,
     process: PropTypes.shape({
         heading: PropTypes.string,
+        image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
         steps: PropTypes.arrayOf(
             PropTypes.shape({
                 label: PropTypes.string,
@@ -153,7 +154,8 @@ export const pageQuery = graphql`
         intro
         process {
           heading
-          steps {
+          image
+          items {
             title
             icon
             description

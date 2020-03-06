@@ -23,7 +23,8 @@ intro: >-
   nostrud exercitation ullamco.
 process:
   heading: Lorem Ipsum Dolor Sit Amet
-  steps:
+  image: /img/process-collage.png
+  items:
     - description: >-
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et.

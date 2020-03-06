@@ -28,9 +28,10 @@ how:
         tempor incididunt ut labore et. Lorem ipsum dolor sit amet, consectetur
         adipiscing elit, sed do eiusmod tempor incididunt ut labore et.
       heading: Absorb
-process:
+criteria:
   heading: What We Need to Launch
-  steps:
+  image: /img/criteria-collage.png
+  items:
     - description: >-
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et.

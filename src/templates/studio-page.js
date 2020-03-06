@@ -7,7 +7,7 @@ import ActionCallout from '../components/ActionCallout'
 import Header from '../components/Header'
 import Layout from '../components/Layout'
 import Slider from '../components/Slider'
-import Process from '../components/Process'
+import Breakdown from '../components/Breakdown'
 import FluidImage from '../components/FluidImage'
 import { Link } from 'gatsby'
 
@@ -19,7 +19,7 @@ export const StudioPageTemplate = ({
     photos,
     how,        // How we can help
     upstarts,   // Logos
-    process,    // Criteria
+    criteria,    // Criteria
     expect,
     slider,
     launch,
@@ -133,8 +133,11 @@ export const StudioPageTemplate = ({
                     })}
                 </div>
             }
-            <Process
-                process={process} />
+            {
+                criteria != null &&
+                <Breakdown
+                    content={criteria} />
+            }
             {
                 expect != null &&
                 <div>
@@ -190,9 +193,10 @@ StudioPageTemplate.propTypes = {
             }),
         ),
     }),
-    process: PropTypes.shape({
+    criteria: PropTypes.shape({
         heading: PropTypes.string,
-        steps: PropTypes.arrayOf(
+        image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+        items: PropTypes.arrayOf(
             PropTypes.shape({
                 label: PropTypes.string,
                 icon: PropTypes.string,
@@ -252,7 +256,7 @@ const StudioPage = ({ data }) => {
                 photos={frontmatter.photos}
                 how={frontmatter.how}
                 upstarts={frontmatter.upstarts}
-                process={frontmatter.process}
+                criteria={frontmatter.criteria}
                 expect={frontmatter.expect}
                 slider={frontmatter.slider}
                 launch={frontmatter.launch}
@@ -305,9 +309,16 @@ query StudioPage($id: String!) {
           }
         }
       }
-      process {
+      criteria {
         heading
-        steps {
+        image {
+            childImageSharp {
+                fluid(maxWidth: 2048, quality: 100) {
+                ...GatsbyImageSharpFluid
+                }
+            }
+        }
+        items {
           title
           icon
           description
