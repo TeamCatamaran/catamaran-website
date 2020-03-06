@@ -68,5 +68,7 @@ slider:
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
       tempor incididunt ut labore et. Lorem ipsum dolor sit amet.
     title: Founder / Cope Mosaic
+seo:
+  title: Catamaran
+  description: Something
 ---
-
