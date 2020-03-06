@@ -33,7 +33,7 @@ const Breakdown = class extends React.Component {
                     this.props.content.items != null &&
                     <div className="c-breakdown__wrapper">
                         <div className="container -collapse">
-                            {this.props.contnet.items.map((item, key) => {
+                            {this.props.content.items.map((item, key) => {
                                 return (
                                     <div className="c-breakdown__item" key={key}>
                                         <img src={icons[item.icon]} alt={item.title} />
