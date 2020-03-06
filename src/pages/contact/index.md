@@ -7,7 +7,7 @@ intro: >+
   incididunt ut labore et dolore. Lorem ipsum dolor sit amet.
 
 type:
-  heading: What Should we chat about?
+  heading: WHAT SHOULD WE CHAT ABOUT?
   types:
     - embed: Contact embeded code sub heading
       name: Contact name sub heading
