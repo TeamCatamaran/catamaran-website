@@ -9,119 +9,119 @@ import Breakdown from '../components/Breakdown'
 import Slider from '../components/Slider'
 
 export const IndexPageTemplate = ({
-    section,
-    heading,
-    focus,
-    intro,
-    process,
-    slider,
+  section,
+  heading,
+  focus,
+  intro,
+  process,
+  slider,
 }) => {
-    return (
-        <div>
-            <Header
-                collageType="home"
-                heading={heading}
-                section={section}
-            />
-            <div className="c-focus">
-                <div className="c-focus__overlay"></div>
-                <div className="container">
-                    {focus.map((f, key) => {
-                        return (
-                            <Link to={f.link} className="c-focus__item" key={key}>
-                                <FluidImage
-                                    className="-default"
-                                    alt={f.title}
-                                    image={f.image} />
-                                <FluidImage
-                                    className="-hover"
-                                    alt={f.title}
-                                    image={f.hover} />
-                                <div className="c-focus__content">
-                                    <label className="-large">{f.title}</label>
-                                    <p>{f.description}</p>
-                                    <Link className="c-button" to={f.link}>Lets Go</Link>
-                                </div>
-                            </Link>
-                        )
-                    })}
-                </div>
-            </div>
-            <div className="c-intro container">
-                <p className="intro">{intro}</p>
-            </div>
-            <Breakdown
-                content={process} />
-            <Slider
-                items={slider} />
-            <div className="c-indexFooterShapes container">
+  return (
+    <div>
+      <Header
+        collageType="home"
+        heading={heading}
+        section={section}
+      />
+      <div className="c-focus">
+        <div className="c-focus__overlay"></div>
+        <div className="container">
+          {focus.map((f, key) => {
+            return (
+              <Link to={f.link} className="c-focus__item" key={key}>
                 <FluidImage
-                    className="c-indexFooterShapes__image"
-                    alt={"decorative geometric shapes"}
-                    image={"/img/footer-shapes.png"} />
-            </div>
+                  className="-default"
+                  alt={f.title}
+                  image={f.image} />
+                <FluidImage
+                  className="-hover"
+                  alt={f.title}
+                  image={f.hover} />
+                <div className="c-focus__content">
+                  <label className="-large">{f.title}</label>
+                  <p>{f.description}</p>
+                  <Link className="c-button" to={f.link}>Lets Go</Link>
+                </div>
+              </Link>
+            )
+          })}
         </div>
-    )
+      </div>
+      <div className="c-intro container">
+        <p className="intro">{intro}</p>
+      </div>
+      <Breakdown
+        content={process} />
+      <Slider
+        items={slider} />
+      <div className="c-indexFooterShapes container">
+        <FluidImage
+          className="c-indexFooterShapes__image"
+          alt={"decorative geometric shapes"}
+          image={"/img/footer-shapes.png"} />
+      </div>
+    </div>
+  )
 }
 
 IndexPageTemplate.propTypes = {
-    section: PropTypes.string,
-    heading: PropTypes.string,
-    focus: PropTypes.arrayOf(
-        PropTypes.shape({
-            title: PropTypes.string,
-            description: PropTypes.string,
-            link: PropTypes.string,
-            image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-        }),
-    ),
-    intro: PropTypes.string,
-    process: PropTypes.shape({
-        heading: PropTypes.string,
-        image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-        steps: PropTypes.arrayOf(
-            PropTypes.shape({
-                label: PropTypes.string,
-                icon: PropTypes.string,
-                description: PropTypes.string,
-            }),
-        ),
+  section: PropTypes.string,
+  heading: PropTypes.string,
+  focus: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string,
+      description: PropTypes.string,
+      link: PropTypes.string,
+      image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
     }),
-    slider: PropTypes.arrayOf(
-        PropTypes.shape({
-            name: PropTypes.string,
-            title: PropTypes.string,
-            quote: PropTypes.string,
-            logo: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-            image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-        }),
+  ),
+  intro: PropTypes.string,
+  process: PropTypes.shape({
+    heading: PropTypes.string,
+    image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+    steps: PropTypes.arrayOf(
+      PropTypes.shape({
+        label: PropTypes.string,
+        icon: PropTypes.string,
+        description: PropTypes.string,
+      }),
     ),
+  }),
+  slider: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string,
+      title: PropTypes.string,
+      quote: PropTypes.string,
+      logo: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+      image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+    }),
+  ),
 }
 
 const IndexPage = ({ data }) => {
-    const { frontmatter } = data.markdownRemark
+  const { frontmatter } = data.markdownRemark
 
-    return (
-        <Layout
-            bodyClass="-purple">
-            <IndexPageTemplate
-                section={frontmatter.section}
-                heading={frontmatter.heading}
-                focus={frontmatter.focus}
-                intro={frontmatter.intro}
-                process={frontmatter.process}
-                slider={frontmatter.slider}
-            />
-        </Layout>
-    )
+  return (
+    <Layout
+      bodyClass="-purple">
+      <IndexPageTemplate
+        section={frontmatter.section}
+        heading={frontmatter.heading}
+        focus={frontmatter.focus}
+        intro={frontmatter.intro}
+        process={frontmatter.process}
+        slider={frontmatter.slider}
+      />
+    </Layout>
+  )
 }
 
 IndexPage.propTypes = {
-    data: PropTypes.shape({
-        markdownRemark: PropTypes.shape({
-            frontmatter: PropTypes.object,
-        }),
+  data: PropTypes.shape({
+    markdownRemark: PropTypes.shape({
+      frontmatter: PropTypes.object,
     }),
+  }),
 }
 
 export default IndexPage
@@ -154,7 +154,13 @@ export const pageQuery = graphql`
         intro
         process {
           heading
-          image
+          image {
+            childImageSharp {
+              fluid(maxWidth: 2048, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
           items {
             title
             icon
