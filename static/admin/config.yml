@@ -14,7 +14,7 @@ public_folder: /img
 collections:
   - name: "journal"
     label: "Journal"
-    folder: "src/pages/blog/posts"
+    folder: "src/collections/blog"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
@@ -40,7 +40,7 @@ collections:
 
   - name: "ventures"
     label: "Ventures"
-    folder: "src/pages/ventures/posts"
+    folder: "src/collections/ventures/"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
@@ -167,6 +167,57 @@ collections:
                     allow_multiple: false,
                   },
                   { label: Image, name: image, widget: image },
+                ],
+            }
+          - {
+              label: SEO,
+              name: seo,
+              widget: object,
+              fields:
+                [
+                  { label: Title, name: title, widget: string },
+                  {
+                    label: Description,
+                    name: description,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "OG Title",
+                    name: ogTitle,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "OG Type",
+                    name: "OG Type",
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "OG Description",
+                    name: ogDescription,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "OG Image",
+                    name: ogImage,
+                    widget: image,
+                    required: false,
+                  },
+                  {
+                    label: Robots,
+                    name: robots,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "Canonical URL",
+                    name: canonical,
+                    widget: string,
+                    required: false,
+                  },
                 ],
             }
       - file: "src/pages/about/index.md"
