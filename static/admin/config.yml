@@ -132,9 +132,10 @@ collections:
               fields:
                 [
                   { label: Heading, name: heading, widget: string },
+                  { label: Image, name: image, widget: image },
                   {
-                    label: Steps,
-                    name: steps,
+                    label: Items,
+                    name: items,
                     widget: list,
                     allow_add: false,
                     fields:
@@ -698,15 +699,16 @@ collections:
                 ],
             }
           - {
-              label: Process,
-              name: process,
+              label: Criteria,
+              name: criteria,
               widget: object,
               fields:
                 [
                   { label: Heading, name: heading, widget: string },
+                  { label: Image, name: image, widget: image },
                   {
-                    label: Steps,
-                    name: steps,
+                    label: Items,
+                    name: itmes,
                     widget: list,
                     allow_add: false,
                     fields:
