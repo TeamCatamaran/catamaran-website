@@ -33,7 +33,7 @@ locations:
         We also have a satellite office in Denver. Lorem ipsum dolor sit amet,
         consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
         et.
-      number: 303-xxx-xxxx
+      number: alex
   heading: WHERE WE'RE LOCATED
 ---
 
