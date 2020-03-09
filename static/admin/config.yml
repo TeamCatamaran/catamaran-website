@@ -610,6 +610,63 @@ collections:
                   },
                 ],
             }
+          - {
+              label: SEO,
+              name: seo,
+              widget: object,
+              fields:
+                [
+                  { label: Title, name: title, widget: string },
+                  {
+                    label: Description,
+                    name: description,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "OG Title",
+                    name: ogTitle,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "OG Type",
+                    name: ogType,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "OG Description",
+                    name: ogDescription,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "OG Image",
+                    name: ogImage,
+                    widget: image,
+                    required: false,
+                  },
+                  {
+                    label: "OG Url",
+                    name: ogUrl,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: Robots,
+                    name: robots,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "Canonical URL",
+                    name: canonical,
+                    widget: string,
+                    required: false,
+                  },
+                ],
+            }
       - file: "src/pages/contact/index.md"
         label: "Contact"
         name: "contact"
@@ -682,6 +739,63 @@ collections:
                   },
                 ],
             }
+          - {
+              label: SEO,
+              name: seo,
+              widget: object,
+              fields:
+                [
+                  { label: Title, name: title, widget: string },
+                  {
+                    label: Description,
+                    name: description,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "OG Title",
+                    name: ogTitle,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "OG Type",
+                    name: ogType,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "OG Description",
+                    name: ogDescription,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "OG Image",
+                    name: ogImage,
+                    widget: image,
+                    required: false,
+                  },
+                  {
+                    label: "OG Url",
+                    name: ogUrl,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: Robots,
+                    name: robots,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "Canonical URL",
+                    name: canonical,
+                    widget: string,
+                    required: false,
+                  },
+                ],
+            }
       - file: "src/pages/blog/index.md"
         label: "Journal"
         name: "journals"
@@ -741,6 +855,63 @@ collections:
                             ],
                         },
                       ],
+                  },
+                ],
+            }
+          - {
+              label: SEO,
+              name: seo,
+              widget: object,
+              fields:
+                [
+                  { label: Title, name: title, widget: string },
+                  {
+                    label: Description,
+                    name: description,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "OG Title",
+                    name: ogTitle,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "OG Type",
+                    name: ogType,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "OG Description",
+                    name: ogDescription,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "OG Image",
+                    name: ogImage,
+                    widget: image,
+                    required: false,
+                  },
+                  {
+                    label: "OG Url",
+                    name: ogUrl,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: Robots,
+                    name: robots,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "Canonical URL",
+                    name: canonical,
+                    widget: string,
+                    required: false,
                   },
                 ],
             }
@@ -873,6 +1044,63 @@ collections:
                             ],
                         },
                       ],
+                  },
+                ],
+            }
+          - {
+              label: SEO,
+              name: seo,
+              widget: object,
+              fields:
+                [
+                  { label: Title, name: title, widget: string },
+                  {
+                    label: Description,
+                    name: description,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "OG Title",
+                    name: ogTitle,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "OG Type",
+                    name: ogType,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "OG Description",
+                    name: ogDescription,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "OG Image",
+                    name: ogImage,
+                    widget: image,
+                    required: false,
+                  },
+                  {
+                    label: "OG Url",
+                    name: ogUrl,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: Robots,
+                    name: robots,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "Canonical URL",
+                    name: canonical,
+                    widget: string,
+                    required: false,
                   },
                 ],
             }
@@ -1033,6 +1261,63 @@ collections:
                   },
                 ],
             }
+          - {
+              label: SEO,
+              name: seo,
+              widget: object,
+              fields:
+                [
+                  { label: Title, name: title, widget: string },
+                  {
+                    label: Description,
+                    name: description,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "OG Title",
+                    name: ogTitle,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "OG Type",
+                    name: ogType,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "OG Description",
+                    name: ogDescription,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "OG Image",
+                    name: ogImage,
+                    widget: image,
+                    required: false,
+                  },
+                  {
+                    label: "OG Url",
+                    name: ogUrl,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: Robots,
+                    name: robots,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "Canonical URL",
+                    name: canonical,
+                    widget: string,
+                    required: false,
+                  },
+                ],
+            }
       - file: "src/pages/ventures/index.md"
         label: "Ventures"
         name: ventures
@@ -1092,6 +1377,63 @@ collections:
                             ],
                         },
                       ],
+                  },
+                ],
+            }
+          - {
+              label: SEO,
+              name: seo,
+              widget: object,
+              fields:
+                [
+                  { label: Title, name: title, widget: string },
+                  {
+                    label: Description,
+                    name: description,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "OG Title",
+                    name: ogTitle,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "OG Type",
+                    name: ogType,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "OG Description",
+                    name: ogDescription,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "OG Image",
+                    name: ogImage,
+                    widget: image,
+                    required: false,
+                  },
+                  {
+                    label: "OG Url",
+                    name: ogUrl,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: Robots,
+                    name: robots,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "Canonical URL",
+                    name: canonical,
+                    widget: string,
+                    required: false,
                   },
                 ],
             }
@@ -1309,6 +1651,63 @@ collections:
                   },
                 ],
             }
+          - {
+              label: SEO,
+              name: seo,
+              widget: object,
+              fields:
+                [
+                  { label: Title, name: title, widget: string },
+                  {
+                    label: Description,
+                    name: description,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "OG Title",
+                    name: ogTitle,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "OG Type",
+                    name: ogType,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "OG Description",
+                    name: ogDescription,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "OG Image",
+                    name: ogImage,
+                    widget: image,
+                    required: false,
+                  },
+                  {
+                    label: "OG Url",
+                    name: ogUrl,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: Robots,
+                    name: robots,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "Canonical URL",
+                    name: canonical,
+                    widget: string,
+                    required: false,
+                  },
+                ],
+            }
       - file: "src/pages/studio/upstarts.md"
         label: "Studio - For Upstarts"
         name: upstartsStartup
@@ -1475,6 +1874,63 @@ collections:
                   },
                 ],
             }
+          - {
+              label: SEO,
+              name: seo,
+              widget: object,
+              fields:
+                [
+                  { label: Title, name: title, widget: string },
+                  {
+                    label: Description,
+                    name: description,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "OG Title",
+                    name: ogTitle,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "OG Type",
+                    name: ogType,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "OG Description",
+                    name: ogDescription,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "OG Image",
+                    name: ogImage,
+                    widget: image,
+                    required: false,
+                  },
+                  {
+                    label: "OG Url",
+                    name: ogUrl,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: Robots,
+                    name: robots,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "Canonical URL",
+                    name: canonical,
+                    widget: string,
+                    required: false,
+                  },
+                ],
+            }
       - file: "src/pages/studio/cofounder.md"
         label: "Studio - Be A Co-Founder"
         name: cofounderStartup
@@ -1575,6 +2031,63 @@ collections:
                   },
                 ],
             }
+          - {
+              label: SEO,
+              name: seo,
+              widget: object,
+              fields:
+                [
+                  { label: Title, name: title, widget: string },
+                  {
+                    label: Description,
+                    name: description,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "OG Title",
+                    name: ogTitle,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "OG Type",
+                    name: ogType,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "OG Description",
+                    name: ogDescription,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "OG Image",
+                    name: ogImage,
+                    widget: image,
+                    required: false,
+                  },
+                  {
+                    label: "OG Url",
+                    name: ogUrl,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: Robots,
+                    name: robots,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "Canonical URL",
+                    name: canonical,
+                    widget: string,
+                    required: false,
+                  },
+                ],
+            }
       - file: "src/pages/network/index.md"
         label: "Network"
         name: "network"
@@ -1643,6 +2156,63 @@ collections:
                           required: false,
                         },
                       ],
+                  },
+                ],
+            }
+          - {
+              label: SEO,
+              name: seo,
+              widget: object,
+              fields:
+                [
+                  { label: Title, name: title, widget: string },
+                  {
+                    label: Description,
+                    name: description,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "OG Title",
+                    name: ogTitle,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "OG Type",
+                    name: ogType,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "OG Description",
+                    name: ogDescription,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "OG Image",
+                    name: ogImage,
+                    widget: image,
+                    required: false,
+                  },
+                  {
+                    label: "OG Url",
+                    name: ogUrl,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: Robots,
+                    name: robots,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "Canonical URL",
+                    name: canonical,
+                    widget: string,
+                    required: false,
                   },
                 ],
             }

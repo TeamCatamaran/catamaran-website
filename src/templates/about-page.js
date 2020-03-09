@@ -65,18 +65,21 @@ export const AboutPageTemplate = ({
                             alt={values.heading}
                             src={aboutValuesCollage} />
                     </div>
-                    <div className="c-values__list">
-                        <div className="c-values__list__container">
-                            {values.values.map((v) => {
-                                return (
-                                    <div className="c-values__list__item">
-                                        <label>{v.title}</label>
-                                        <p>{v.body}</p>
-                                    </div>
-                                );
-                            })}
+                    {
+                        values.values != null &&
+                        <div className="c-values__list">
+                            <div className="c-values__list__container">
+                                {values.values.map((v) => {
+                                    return (
+                                        <div className="c-values__list__item">
+                                            <label>{v.title}</label>
+                                            <p>{v.body}</p>
+                                        </div>
+                                    );
+                                })}
+                            </div>
                         </div>
-                    </div>
+                    }
                 </div>
                 <div className="c-team container">
                     <div className="c-team__header">
@@ -87,21 +90,27 @@ export const AboutPageTemplate = ({
                             alt={team.heading}
                             src={donut} />
                     </div>
-                    <div className="c-team__list">
-                        {team.people.map((p) => {
-                            let className = "c-team__member";
-                            return (
-                                <div className={className}>
-                                    <FluidImage
-                                        className="c-team__member__photo -default"
-                                        alt={p.photo.alt || p.name}
-                                        image={p.photo.src} />
-                                    <label className="c-team__member__name">{p.name}</label>
-                                    <label className="c-team__member__title">{p.title}</label>
-                                </div>
-                            );
-                        })}
-                    </div>
+                    {
+                        team.people != null &&
+                        <div className="c-team__list">
+                            {team.people.map((p) => {
+                                let className = "c-team__member";
+                                return (
+                                    <div className={className}>
+                                        {
+                                            p.photo != null &&
+                                            <FluidImage
+                                                className="c-team__member__photo -default"
+                                                alt={p.photo.alt || p.name}
+                                                image={p.photo.src} />
+                                        }
+                                        <label className="c-team__member__name">{p.name}</label>
+                                        <label className="c-team__member__title">{p.title}</label>
+                                    </div>
+                                );
+                            })}
+                        </div>
+                    }
                     <img
                         className="c-team__bottomImage -default"
                         alt={team.heading}
@@ -112,25 +121,34 @@ export const AboutPageTemplate = ({
                         <h2 className="c-leadership__heading">{leadership.heading}</h2>
                         <p className="c-leadership__description">{leadership.description}</p>
                     </div>
-                    <div className="c-leadership__list">
-                        {leadership.people.map((p) => {
-                            let className = "c-leadership__member";
-                            return (
-                                <div className={className}>
-                                    <FluidImage
-                                        className="c-leadership__member__photo -default"
-                                        alt={p.photo.alt || p.name}
-                                        image={p.photo.src} />
-                                    <label className="c-leadership__member__name">{p.name}</label>
-                                    <label className="c-leadership__member__title">{p.title}</label>
-                                </div>
-                            );
-                        })}
-                    </div>
+                    {
+                        leadership.people != null &&
+                        <div className="c-leadership__list">
+                            {leadership.people.map((p) => {
+                                let className = "c-leadership__member";
+                                return (
+                                    <div className={className}>
+                                        {
+                                            p.photo != null &&
+                                            <FluidImage
+                                                className="c-leadership__member__photo -default"
+                                                alt={p.photo.alt || p.name}
+                                                image={p.photo.src} />
+                                        }
+                                        <label className="c-leadership__member__name">{p.name}</label>
+                                        <label className="c-leadership__member__title">{p.title}</label>
+                                    </div>
+                                );
+                            })}
+                        </div>
+                    }
                 </div>
-                <ActionCallout
-                    heading={action.heading}
-                    pages={action.pages} />
+                {
+                    action != null &&
+                    <ActionCallout
+                        heading={action.heading}
+                        pages={action.pages} />
+                }
             </div>
         </div>
     )
@@ -192,6 +210,7 @@ AboutPageTemplate.propTypes = {
             })
         )
     }),
+    seo: types.seoProps,
 }
 
 const AboutPage = ({ data }) => {
@@ -199,7 +218,8 @@ const AboutPage = ({ data }) => {
 
     return (
         <Layout
-            bodyClass="-pink">
+            bodyClass="-pink"
+            seo={frontmatter.seo}>
             <AboutPageTemplate
                 section={frontmatter.section}
                 heading={frontmatter.heading}
@@ -299,6 +319,16 @@ export const aboutPageQuery = graphql`
               rel
             }
           }
+        }
+        seo {
+          title
+          description
+          ogTitle
+          ogType
+          ogDescription
+          ogImage
+          robots
+          canonical
         }
       }
     }

@@ -24,9 +24,12 @@ export const VenturesPostTemplate = ({
                     {company}<br />
                     {heading}<br />
                     {timeframe}<br />
-                    <FluidImage
-                        alt={logo.alt || company}
-                        image={logo.src} />
+                    {
+                        logo != null &&
+                        <FluidImage
+                            alt={logo.alt || company}
+                            image={logo.src} />
+                    }
                     {
                         video != null &&
                         <ReactPlayer

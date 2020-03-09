@@ -43,6 +43,9 @@ export const NetworkPageTemplate = ({
                 <div className="c-partners container">
                     <div className="c-partners__logos">
                         {logoPartners.map((p, key) => {
+                            if (p.link == null) {
+                                return (null);
+                            }
                             return (
                                 <a
                                     className="c-partners__logos__item"
@@ -51,10 +54,13 @@ export const NetworkPageTemplate = ({
                                     rel={p.link.rel}
                                     target="_blank"
                                 >
-                                    <FluidImage
-                                        className="c-partners__logos__item__image"
-                                        alt={p.image.alt || p.name}
-                                        image={p.image.src} />
+                                    {
+                                        p.image != null &&
+                                        <FluidImage
+                                            className="c-partners__logos__item__image"
+                                            alt={p.image.alt || p.name}
+                                            image={p.image.src} />
+                                    }
                                 </a>
                             );
                         })}
@@ -64,6 +70,9 @@ export const NetworkPageTemplate = ({
                             <h4 className="c-partners__list__section__heading">Coworking</h4>
                             <ul className="c-partners__list__section__list">
                                 {sortedPartners["coworking"].map((p, key) => {
+                                    if (p.link == null) {
+                                        return (null);
+                                    }
                                     return (
                                         <li key={"coworking-" + key}>
                                             <a href={p.link.url} rel={p.link.rel} target="_blank">{p.name}</a>
@@ -74,6 +83,9 @@ export const NetworkPageTemplate = ({
                             <h4 className="c-partners__list__section__heading">Mentorship</h4>
                             <ul className="c-partners__list__section__list">
                                 {sortedPartners["mentorship"].map((p, key) => {
+                                    if (p.link == null) {
+                                        return (null);
+                                    }
                                     return (
                                         <li key={"mentorship-" + key}>
                                             <a href={p.link.url} rel={p.link.rel} target="_blank">{p.name}</a>
@@ -86,6 +98,9 @@ export const NetworkPageTemplate = ({
                             <h4 className="c-partners__list__section__heading">Economic Dev</h4>
                             <ul className="c-partners__list__section__list">
                                 {sortedPartners["economic dev"].map((p, key) => {
+                                    if (p.link == null) {
+                                        return (null);
+                                    }
                                     return (
                                         <li key={"economic-" + key}>
                                             <a href={p.link.url} rel={p.link.rel} target="_blank">{p.name}</a>
@@ -98,6 +113,9 @@ export const NetworkPageTemplate = ({
                             <h4 className="c-partners__list__section__heading">Community Contacts</h4>
                             <ul className="c-partners__list__section__list">
                                 {sortedPartners["community contacts"].map((p, key) => {
+                                    if (p.link == null) {
+                                        return (null);
+                                    }
                                     return (
                                         <li key={"community-" + key}>
                                             <a href={p.link.url} rel={p.link.rel} target="_blank">{p.name}</a>
@@ -124,7 +142,8 @@ NetworkPageTemplate.propTypes = {
             image: types.imageProps,
             link: types.linkProps,
         })
-    )
+    ),
+    seo: types.seoProps,
 }
 
 const NetworkPage = ({ data }) => {
@@ -132,7 +151,8 @@ const NetworkPage = ({ data }) => {
 
     return (
         <Layout
-            bodyClass="-purple">
+            bodyClass="-purple"
+            seo={frontmatter.seo}>
             <NetworkPageTemplate
                 heading={frontmatter.heading}
                 section={frontmatter.section}
@@ -177,6 +197,16 @@ export const pageQuery = graphql`
             }
             alt
           }
+        }
+        seo {
+          title
+          description
+          ogTitle
+          ogType
+          ogDescription
+          ogImage
+          robots
+          canonical
         }
       }
     }

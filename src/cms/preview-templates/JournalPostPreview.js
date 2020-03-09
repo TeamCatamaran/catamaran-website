@@ -2,17 +2,25 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { JournalPostTemplate } from '../../templates/journal-post'
 
-const JournalPostPreview = ({ entry, widgetFor }) => (
-    <JournalPostTemplate
-        title={entry.getIn(['data', 'title'])}
-        category={entry.getIn(['data', 'category'])}
-        heading={entry.getIn(['data', 'heading'])}
-        subheading={entry.getIn(['data', 'subheading'])}
-        introduction={entry.getIn(['data', 'introduction'])}
-        description={entry.getIn(['data', 'description'])}
-        content={widgetFor('body')}
-    />
-)
+const JournalPostPreview = ({ entry, widgetFor }) => {
+    const data = entry.getIn(['data']).toJS()
+
+    if (data) {
+        return (
+            <JournalPostTemplate
+                title={data.title}
+                category={data.category}
+                heading={data.heading}
+                subheading={data.subheading}
+                image={data.image}
+                introduction={data.introduction}
+                content={widgetFor('body')}
+            />
+        )
+    } else {
+        return <div>Loading...</div>
+    }
+}
 
 JournalPostPreview.propTypes = {
     entry: PropTypes.shape({

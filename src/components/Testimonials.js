@@ -64,6 +64,9 @@ const Testimonials = class extends React.Component {
                                 if (c.isSelected) {
                                     className += " -selected";
                                 }
+                                if (c.image == null) {
+                                    return (null);
+                                }
                                 return (
                                     <FluidImage
                                         alt={c.image.alt || c.name}
