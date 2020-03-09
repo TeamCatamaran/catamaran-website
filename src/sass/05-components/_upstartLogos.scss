@@ -1,0 +1,33 @@
+.c-upstartLogos {
+    margin-top: 100px;
+
+    &__heading {
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: .2em;
+        @include font-style(
+            $font-accent,                       // Font Family
+            $size-4,                            // Font Size
+            $orange,                              // Font Color
+            $weight-bold,                     // Font Weight
+            $height-4                           // Line Height
+        );
+    }
+
+    &__list {
+
+    }
+
+    &__logo {
+        @include grid-column(3);
+        height: 40px;
+        margin-top: 40px;
+
+        &__image {
+            max-height: 100%;
+            max-width: 140px;
+            margin: 0 auto;
+            display: block;
+        }
+    }
+}

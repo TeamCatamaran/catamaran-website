@@ -184,16 +184,21 @@ export const StudioPageTemplate = ({
             }
             {
                 upstarts != null &&
-                <div>
-                    {upstarts.heading}
-                    {upstarts.logos.map((l) => {
-                        return (
-                            <p>
-                                <FluidImage
-                                    image={l.logo} />
-                            </p>
-                        )
-                    })}
+                <div className="c-upstartLogos container">
+                    <h2 className="c-upstartLogos__heading">{upstarts.heading}</h2>
+                    <div className="c-upstartLogos__list">
+                    {
+                        upstarts.logos.map((logo, key) => {
+                            return (
+                                <div className="c-upstartLogos__logo" key={"logo-" + key}>
+                                    <FluidImage
+                                        className="c-upstartLogos__logo__image"
+                                        image={logo} />
+                                </div>
+                            )
+                        })
+                    }
+                    </div>
                 </div>
             }
             <Testimonials
