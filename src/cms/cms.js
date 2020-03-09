@@ -9,6 +9,7 @@ import IndexPagePreview from './preview-templates/IndexPagePreview'
 import JournalPagePreview from './preview-templates/JournalPagePreview'
 import JournalPostPreview from './preview-templates/JournalPostPreview'
 import NetworkPagePreview from './preview-templates/NetworkPagePreview'
+import PrivacyPagePreview from './preview-templates/PrivacyPagePreview'
 import StudioPagePreview from './preview-templates/StudioPagePreview'
 import VenturesPagePreview from './preview-templates/VenturesPagePreview'
 import VenturesPostPreview from './preview-templates/VenturesPostPreview'
@@ -25,6 +26,7 @@ CMS.registerPreviewTemplate('index', IndexPagePreview)
 CMS.registerPreviewTemplate('journalPage', JournalPagePreview)
 CMS.registerPreviewTemplate('journal', JournalPostPreview)
 CMS.registerPreviewTemplate('network', NetworkPagePreview)
+CMS.registerPreviewTemplate('privacy', PrivacyPagePreview)
 CMS.registerPreviewTemplate('studioStartup', StudioPagePreview)
 CMS.registerPreviewTemplate('upstartsStartup', StudioPagePreview)
 CMS.registerPreviewTemplate('ventures', VenturesPagePreview)
