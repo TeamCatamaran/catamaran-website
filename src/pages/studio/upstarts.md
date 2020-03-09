@@ -20,12 +20,12 @@ overview:
 photos:
   - /img/whiteboard.png
   - /img/collab.png
-how:
+services:
   heading: How We Can Help
   intro: >-
     A bit past the idea stage? Not the time to dive into the Launch Program?
     Just need that one thing? Don’t worry, we’ve still got you covered.
-  steps:
+  list:
     - description: |-
         Venture Branding
         Design sprint(s)

@@ -19,9 +19,10 @@ export const StudioPageTemplate = ({
     heading,
     overview,
     photos,
-    how,        // How we can help
-    upstarts,   // Logos
-    criteria,    // Criteria
+    process,        // How we do it
+    services,
+    upstarts,       // Logos
+    criteria,
     expect,
     testimonials,
     launch,
@@ -123,8 +124,63 @@ export const StudioPageTemplate = ({
                 </div>
             }
             {
-                how != null &&
-                <ProcessSlider content={how} />
+                process != null &&
+                <ProcessSlider content={process} />
+            }
+            {
+                criteria != null &&
+                <Breakdown
+                    content={criteria} />
+            }
+            {
+                services != null &&
+                <div className="c-services container">
+                    <div className="c-services__header">
+                        <div className="c-services__header__wrapper">
+                            <h2 className="c-services__heading">{services.heading}</h2>
+                            <p className="c-services__intro">{services.intro}</p>
+                        </div>
+                        {
+                            tab == "startup" &&
+                            <div className="c-services__header__images">
+                                <img
+                                    className="c-services__header__images__circlelines"
+                                    src="/img/circlelines.png" />
+                                <img
+                                    className="c-services__header__images__warpbox"
+                                    src="/img/warpbox.png" />
+                            </div>
+                        }
+                    </div>
+                    <div className="c-services__list">
+                    {
+                        services.list.map((i, key) => {
+                            return (
+                                <div className="c-services__listItem" key={"listItem-" + key}>
+                                    {
+                                        i.heading != null &&
+                                        <h3 className="c-services__listItem__heading">{i.heading}</h3>
+                                    }
+                                    {
+                                        i.intro != null &&
+                                        <p className="c-services__listItem__intro">{i.intro}</p>
+                                    }
+                                    {
+                                        i.description != null &&
+                                        <p className="c-services__listItem__description">{i.description}</p>
+                                    }
+                                </div>
+                            )
+                        })
+                    }
+                    {
+                        tab == "upstarts" &&
+                        <img
+                            className="c-services__list__image"
+                            src="/img/diamonds.png" />
+                    }
+                    </div>
+                </div>
             }
             {
                 upstarts != null &&
@@ -135,24 +191,6 @@ export const StudioPageTemplate = ({
                             <p>
                                 <FluidImage
                                     image={l.logo} />
-                            </p>
-                        )
-                    })}
-                </div>
-            }
-            {
-                criteria != null &&
-                <Breakdown
-                    content={criteria} />
-            }
-            {
-                expect != null &&
-                <div className="c-expect container">
-
-                    {expect.heading}<br />{expect.intro}{expect.steps.map((s) => {
-                        return (
-                            <p>
-                                {s.heading}<br />{s.intro}<br />{s.description}
                             </p>
                         )
                     })}
@@ -189,12 +227,23 @@ StudioPageTemplate.propTypes = {
             photo: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
         }),
     ),
-    how: PropTypes.shape({
+    process: PropTypes.shape({
         heading: PropTypes.string,
         intro: PropTypes.string,
         steps: PropTypes.arrayOf(
             PropTypes.shape({
                 heading: PropTypes.string,
+                description: PropTypes.string,
+            }),
+        ),
+    }),
+    services: PropTypes.shape({
+        heading: PropTypes.string,
+        intro: PropTypes.string,
+        list: PropTypes.arrayOf(
+            PropTypes.shape({
+                heading: PropTypes.string,
+                intro: PropTypes.string,
                 description: PropTypes.string,
             }),
         ),
@@ -214,17 +263,6 @@ StudioPageTemplate.propTypes = {
             PropTypes.shape({
                 label: PropTypes.string,
                 icon: PropTypes.string,
-                description: PropTypes.string,
-            }),
-        ),
-    }),
-    expect: PropTypes.shape({
-        heading: PropTypes.string,
-        intro: PropTypes.string,
-        steps: PropTypes.arrayOf(
-            PropTypes.shape({
-                heading: PropTypes.string,
-                intro: PropTypes.string,
                 description: PropTypes.string,
             }),
         ),
@@ -268,10 +306,11 @@ const StudioPage = ({ data }) => {
                 heading={frontmatter.heading}
                 overview={frontmatter.overview}
                 photos={frontmatter.photos}
-                how={frontmatter.how}
+                process={frontmatter.process}
+                services={frontmatter.services}
+                services={frontmatter.services}
                 upstarts={frontmatter.upstarts}
                 criteria={frontmatter.criteria}
-                expect={frontmatter.expect}
                 testimonials={frontmatter.testimonials}
                 launch={frontmatter.launch}
                 action={frontmatter.action}
@@ -310,12 +349,21 @@ query StudioPage($id: String!) {
           }
         }
       }
-      how {
+      process {
         heading
         intro
         steps {
           heading
           description
+        }
+      }
+      services {
+        heading
+        intro
+        list {
+            heading
+            intro
+            description
         }
       }
       upstarts {
@@ -340,15 +388,6 @@ query StudioPage($id: String!) {
         items {
           title
           icon
-          description
-        }
-      }
-      expect {
-        heading
-        intro
-        steps {
-          heading
-          intro
           description
         }
       }
