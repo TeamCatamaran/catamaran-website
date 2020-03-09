@@ -56,12 +56,15 @@ collections:
       - { label: Company, name: company, widget: string }
       - { label: Heading, name: heading, widget: string }
       - { label: Timeframe, name: timeframe, widget: string }
-      - { label: Logo, name: logo, widget: image }
       - {
-          label: "Logo Alt Text",
-          name: logoAlt,
-          widget: string,
-          required: false,
+          label: Logo,
+          name: logo,
+          widget: object,
+          fields:
+            [
+              { label: Image, name: src, widget: image },
+              { label: "Alt Text", name: alt, widget: string, required: false },
+            ],
         }
       - { label: Video, name: video, widget: file, required: false }
       - { label: Publish Date, name: date, widget: datetime }
@@ -73,12 +76,20 @@ collections:
           fields:
             [
               { label: Name, name: name, widget: string },
-              { label: Image, name: image, widget: image },
               {
-                label: "Image Alt Text",
-                name: imageAlt,
-                widget: string,
-                required: false,
+                label: Image,
+                name: image,
+                widget: object,
+                fields:
+                  [
+                    { label: Image, name: src, widget: image },
+                    {
+                      label: "Alt Text",
+                      name: alt,
+                      widget: string,
+                      required: false,
+                    },
+                  ],
               },
               { label: Title, name: title, widget: string },
             ],
@@ -242,8 +253,8 @@ collections:
                 ],
             }
           - {
-              label: Testimonials,
-              name: testimonials,
+              label: Slider,
+              name: slider,
               widget: list,
               fields:
                 [
@@ -927,8 +938,8 @@ collections:
                 ],
             }
           - {
-              label: Testimonials,
-              name: testimonials,
+              label: Slider,
+              name: slider,
               widget: list,
               fields:
                 [

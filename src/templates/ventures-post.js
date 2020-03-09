@@ -1,16 +1,17 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { graphql, Link } from 'gatsby'
+import { graphql } from 'gatsby'
+import ReactPlayer from 'react-player'
+
 import Layout from '../components/Layout'
 import FluidImage from '../components/FluidImage'
-import ReactPlayer from 'react-player'
+import { types } from '../types/types';
 
 export const VenturesPostTemplate = ({
     company,
     heading,
     timeframe,
     logo,
-    logoAlt,
     video,
     intro,
     participants,
@@ -24,8 +25,8 @@ export const VenturesPostTemplate = ({
                     {heading}<br />
                     {timeframe}<br />
                     <FluidImage
-                        alt={logoAlt || company}
-                        image={logo} />
+                        alt={logo.alt || company}
+                        image={logo.src} />
                     {
                         video != null &&
                         <ReactPlayer
@@ -37,7 +38,7 @@ export const VenturesPostTemplate = ({
             <div>
                 {participants.map((p) => {
                     return (
-                        <p>{p.name}<br />{p.title}<br /><FluidImage alt={p.imageAlt || p.name} image={p.image} /></p>
+                        <p>{p.name}<br />{p.title}<br /><FluidImage alt={p.image.alt || p.name} image={p.image.src} /></p>
                     )
                 })}
             </div>
@@ -60,16 +61,31 @@ export const VenturesPostTemplate = ({
 }
 
 VenturesPostTemplate.propTypes = {
-    content: PropTypes.node.isRequired,
-    contentComponent: PropTypes.func,
-    description: PropTypes.string,
-    title: PropTypes.string,
-    helmet: PropTypes.object,
+    company: PropTypes.string,
+    heading: PropTypes.string,
+    timeframe: PropTypes.string,
+    logo: types.imageProps,
+    video: PropTypes.string,
+    intro: PropTypes.string,
+    participants: PropTypes.arrayOf(
+        PropTypes.shape({
+            name: PropTypes.string,
+            image: types.imageProps,
+            title: PropTypes.string,
+        })
+    ),
+    links: PropTypes.arrayOf(
+        PropTypes.shape({
+            name: PropTypes.string,
+            link: types.linkProps,
+            category: PropTypes.string,
+        })
+    ),
+    seo: types.seoProps,
 }
 
 const VenturesPost = ({ data }) => {
     const { frontmatter } = data.markdownRemark
-    console.log(data);
 
     return (
         <Layout
@@ -79,7 +95,6 @@ const VenturesPost = ({ data }) => {
                 heading={frontmatter.heading}
                 timeframe={frontmatter.timeframe}
                 logo={frontmatter.logo}
-                logoAlt={frontmatter.logoAlt}
                 video={frontmatter.video}
                 intro={frontmatter.intro}
                 participants={frontmatter.participants}
@@ -108,25 +123,29 @@ export const pageQuery = graphql`
         heading
         timeframe
         logo {
-          childImageSharp {
-            fluid(maxWidth: 2048, quality: 100) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
-        logoAlt
-        video
-        intro
-        participants {
-          name
-          image {
+          src {
             childImageSharp {
               fluid(maxWidth: 2048, quality: 100) {
                 ...GatsbyImageSharpFluid
               }
             }
           }
-          imageAlt
+          alt
+        }
+        video
+        intro
+        participants {
+          name
+          image {
+            src {
+              childImageSharp {
+                fluid(maxWidth: 2048, quality: 100) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+            alt
+          }
           title
         }
         links {

@@ -7,9 +7,11 @@ const VenturesPostPreview = ({ entry, widgetFor }) => (
         company={entry.getIn(['data', 'company'])}
         heading={entry.getIn(['data', 'heading'])}
         timeframe={entry.getIn(['data', 'timeframe'])}
+        logo={entry.getIn(['data', 'logo']).toJS()}
+        video={entry.getIn(['data', 'video'])}
         intro={entry.getIn(['data', 'intro'])}
-        participants={entry.getIn(['data', 'participants'])}
-        links={entry.getIn(['data', 'links'])}
+        participants={entry.getIn(['data', 'participants']).toJS()}
+        links={entry.getIn(['data', 'links']).toJS()}
     />
 )
 
