@@ -12,9 +12,12 @@ import FluidImage from '../components/FluidImage'
 import ProcessSlider from '../components/ProcessSlider'
 
 import angles from '../img/angles.png'
+import circlelines from '../img/circlelines.png'
+import diamonds from '../img/diamonds.png'
 import dots from '../img/dots.png'
 import scribble from '../img/scribble.png'
 import triangle from '../img/triangle.png'
+import warpbox from '../img/warpbox.png'
 import waves from '../img/waves.png'
 import { types } from '../types/types'
 
@@ -150,10 +153,12 @@ export const StudioPageTemplate = ({
                             <div className="c-services__header__images">
                                 <img
                                     className="c-services__header__images__circlelines"
-                                    src="/img/circlelines.png" />
+                                    alt="circlelines"
+                                    src={circlelines} />
                                 <img
                                     className="c-services__header__images__warpbox"
-                                    src="/img/warpbox.png" />
+                                    alt="warpbox"
+                                    src={warpbox} />
                             </div>
                         }
                     </div>
@@ -182,7 +187,8 @@ export const StudioPageTemplate = ({
                             tab == "upstarts" &&
                             <img
                                 className="c-services__list__image"
-                                src="/img/diamonds.png" />
+                                alt="diamonds"
+                                src={diamonds} />
                         }
                     </div>
                 </div>
