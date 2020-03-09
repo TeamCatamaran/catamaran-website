@@ -1,14 +1,30 @@
 .c-contact {
-    &__chat{
-        @include grid-column(8);
-    }
     &__heading{
         @include font-style(
-            $font-normal,                     // Font Family
-            $size-2,                          // Font Size
-            $pink,                            // Font Color
-            $weight-semibold,                 // Font Weight
-            $height-3                         // Line Height
+            $font-accent,                     // Font Family
+            $size-4,                          // Font Size
+            $purple,                            // Font Color
+            $weight-bold,                 // Font Weight
+            $height-4                         // Line Height
         );
-    } 
+        letter-spacing: 2px;
+        margin-bottom: 64px;
+    }
+    &__chat{
+        @include grid-column(8);
+
+    }
+    &__social{
+        @include grid-column(4);
+        p{
+            @include font-style(
+                $font-accent,                     // Font Family
+                $size-4,                          // Font Size
+                $purple,                            // Font Color
+                $weight-bold,                 // Font Weight
+                $height-4                         // Line Height
+            );
+            letter-spacing: 2px;
+        }
+    }
 }
