@@ -7,6 +7,7 @@ import Header from '../components/Header'
 import Layout from '../components/Layout'
 import Testimonials from '../components/Testimonials'
 import Breakdown from '../components/Breakdown'
+import Cta from '../components/Cta'
 import FluidImage from '../components/FluidImage'
 import ProcessSlider from '../components/ProcessSlider'
 
@@ -23,9 +24,10 @@ export const StudioPageTemplate = ({
     heading,
     overview,
     photos,
-    how,        // How we can help
-    upstarts,   // Logos
-    criteria,    // Criteria
+    process,        // How we do it
+    services,
+    upstarts,       // Logos
+    criteria,
     expect,
     testimonials,
     launch,
@@ -127,23 +129,8 @@ export const StudioPageTemplate = ({
                 </div>
             }
             {
-                how != null &&
-                <ProcessSlider content={how} />
-            }
-            {
-                upstarts != null &&
-                <div>
-                    {upstarts.heading}
-                    {upstarts.logos.map((l) => {
-                        return (
-                            <p>
-                                <FluidImage
-                                    alt={l.alt}
-                                    image={l.src} />
-                            </p>
-                        )
-                    })}
-                </div>
+                process != null &&
+                <ProcessSlider content={process} />
             }
             {
                 criteria != null &&
@@ -151,38 +138,80 @@ export const StudioPageTemplate = ({
                     content={criteria} />
             }
             {
-                expect != null &&
-                <div className="c-expect container">
-
-                    {expect.heading}<br />{expect.intro}{expect.steps.map((s) => {
-                        return (
-                            <p>
-                                {s.heading}<br />{s.intro}<br />{s.description}
-                            </p>
-                        )
-                    })}
+                services != null &&
+                <div className="c-services container">
+                    <div className="c-services__header">
+                        <div className="c-services__header__wrapper">
+                            <h2 className="c-services__heading">{services.heading}</h2>
+                            <p className="c-services__intro">{services.intro}</p>
+                        </div>
+                        {
+                            tab == "startup" &&
+                            <div className="c-services__header__images">
+                                <img
+                                    className="c-services__header__images__circlelines"
+                                    src="/img/circlelines.png" />
+                                <img
+                                    className="c-services__header__images__warpbox"
+                                    src="/img/warpbox.png" />
+                            </div>
+                        }
+                    </div>
+                    <div className="c-services__list">
+                        {
+                            services.list.map((i, key) => {
+                                return (
+                                    <div className="c-services__listItem" key={"listItem-" + key}>
+                                        {
+                                            i.heading != null &&
+                                            <h3 className="c-services__listItem__heading">{i.heading}</h3>
+                                        }
+                                        {
+                                            i.intro != null &&
+                                            <p className="c-services__listItem__intro">{i.intro}</p>
+                                        }
+                                        {
+                                            i.description != null &&
+                                            <p className="c-services__listItem__description">{i.description}</p>
+                                        }
+                                    </div>
+                                )
+                            })
+                        }
+                        {
+                            tab == "upstarts" &&
+                            <img
+                                className="c-services__list__image"
+                                src="/img/diamonds.png" />
+                        }
+                    </div>
+                </div>
+            }
+            {
+                upstarts != null &&
+                <div className="c-upstartLogos container">
+                    <h2 className="c-upstartLogos__heading">{upstarts.heading}</h2>
+                    <div className="c-upstartLogos__list">
+                        {
+                            upstarts.logos.map((logo, key) => {
+                                return (
+                                    <div className="c-upstartLogos__logo" key={"logo-" + key}>
+                                        <FluidImage
+                                            className="c-upstartLogos__logo__image"
+                                            alt={logo.alt}
+                                            image={logo.src} />
+                                    </div>
+                                )
+                            })
+                        }
+                    </div>
                 </div>
             }
             <Testimonials
                 items={testimonials} />
-            <div className="c-cta">
-                <img
-                    className="c-cta__triangle"
-                    alt={"abstract geometric design element"}
-                    src={triangle} />
-                <img
-                    className="c-cta__dots"
-                    alt={"abstract geometric design element"}
-                    src={dots} />
-                <div className="c-cta__wrapper">
-                    <div className="c-cta__content">
-                        <p>{launch.content}</p>
-                    </div>
-                    <div className="c-cta__link">
-                        <Link to={launch.link.to} rel={launch.link.rel} className="c-focus__item">{launch.text}</Link>
-                    </div>
-                </div>
-            </div>
+            <Cta
+                content={launch}
+                variant={tab} />
             <ActionCallout
                 heading={action.heading}
                 pages={action.pages} />
@@ -207,12 +236,23 @@ StudioPageTemplate.propTypes = {
     photos: PropTypes.arrayOf(
         types.imageProps
     ),
-    how: PropTypes.shape({
+    process: PropTypes.shape({
         heading: PropTypes.string,
         intro: PropTypes.string,
         steps: PropTypes.arrayOf(
             PropTypes.shape({
                 heading: PropTypes.string,
+                description: PropTypes.string,
+            }),
+        ),
+    }),
+    services: PropTypes.shape({
+        heading: PropTypes.string,
+        intro: PropTypes.string,
+        list: PropTypes.arrayOf(
+            PropTypes.shape({
+                heading: PropTypes.string,
+                intro: PropTypes.string,
                 description: PropTypes.string,
             }),
         ),
@@ -230,17 +270,6 @@ StudioPageTemplate.propTypes = {
             PropTypes.shape({
                 label: PropTypes.string,
                 icon: PropTypes.string,
-                description: PropTypes.string,
-            }),
-        ),
-    }),
-    expect: PropTypes.shape({
-        heading: PropTypes.string,
-        intro: PropTypes.string,
-        steps: PropTypes.arrayOf(
-            PropTypes.shape({
-                heading: PropTypes.string,
-                intro: PropTypes.string,
                 description: PropTypes.string,
             }),
         ),
@@ -284,10 +313,11 @@ const StudioPage = ({ data }) => {
                 heading={frontmatter.heading}
                 overview={frontmatter.overview}
                 photos={frontmatter.photos}
-                how={frontmatter.how}
+                process={frontmatter.process}
+                services={frontmatter.services}
+                services={frontmatter.services}
                 upstarts={frontmatter.upstarts}
                 criteria={frontmatter.criteria}
-                expect={frontmatter.expect}
                 testimonials={frontmatter.testimonials}
                 launch={frontmatter.launch}
                 action={frontmatter.action}
@@ -329,12 +359,21 @@ query StudioPage($id: String!) {
         }
         alt
       }
-      how {
+      process {
         heading
         intro
         steps {
           heading
           description
+        }
+      }
+      services {
+        heading
+        intro
+        list {
+            heading
+            intro
+            description
         }
       }
       upstarts {
@@ -365,15 +404,6 @@ query StudioPage($id: String!) {
         items {
           title
           icon
-          description
-        }
-      }
-      expect {
-        heading
-        intro
-        steps {
-          heading
-          intro
           description
         }
       }

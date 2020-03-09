@@ -17,7 +17,7 @@ overview:
     tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
     quis nostrud. Sed do eiusmod tempor incididunt ut labore et dolore magna
     aliqua. Ut enim ad minim veniam, quis nostrud.
-how:
+process:
   heading: How We Do It
   intro: >-
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
@@ -69,12 +69,12 @@ criteria:
         tempor incididunt ut labore et.
       icon: learn
       title: Learn
-expect:
+services:
   heading: What to Expect
   intro: >-
     A bit past the idea stage? Not the time to dive into the Launch Program?
     Just need that one thing? Don’t worry, we’ve still got you covered.
-  steps:
+  list:
     - description: |-
         Lorem ipsum dolor
         Lorem ipsum dolor sit amet
