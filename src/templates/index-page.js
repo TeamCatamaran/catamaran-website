@@ -28,7 +28,7 @@ export const IndexPageTemplate = ({
         <div className="container">
           {focus.map((f, key) => {
             return (
-              <Link to={f.link} className="c-focus__item" key={key}>
+              <Link to={f.link.url} rel={f.link.rel} className="c-focus__item" key={key}>
                 <FluidImage
                   className="-default"
                   alt={f.title}
@@ -40,7 +40,7 @@ export const IndexPageTemplate = ({
                 <div className="c-focus__content">
                   <label className="-large">{f.title}</label>
                   <p>{f.description}</p>
-                  <Link className="c-button" to={f.link}>Lets Go</Link>
+                  <Link className="c-button" to={f.link.url} rel={f.link.rel}>Lets Go</Link>
                 </div>
               </Link>
             )
@@ -52,7 +52,7 @@ export const IndexPageTemplate = ({
       </div>
       <Breakdown
         content={process} />
-      <Slider
+      <Testimonials
         items={slider} />
       <div className="c-indexFooterShapes container">
         <FluidImage
@@ -71,7 +71,10 @@ IndexPageTemplate.propTypes = {
     PropTypes.shape({
       title: PropTypes.string,
       description: PropTypes.string,
-      link: PropTypes.string,
+      link: PropTypes.shape({
+        url: PropTypes.string,
+        rel: PropTypes.string,
+      }),
       image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
     }),
   ),
