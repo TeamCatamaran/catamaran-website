@@ -8,6 +8,7 @@ import Header from '../components/Header'
 import Layout from '../components/Layout'
 import Testimonials from '../components/Testimonials'
 import Breakdown from '../components/Breakdown'
+import Cta from '../components/Cta'
 import FluidImage from '../components/FluidImage'
 import ProcessSlider from '../components/ProcessSlider'
 import { Link } from 'gatsby'
@@ -159,24 +160,9 @@ export const StudioPageTemplate = ({
             }
             <Testimonials
                 items={testimonials} />
-            <div className="c-cta">
-                <FluidImage
-                    className="c-cta__triangle"
-                    alt={"abstract geometric design element"}
-                    image={"/img/triangle.png"} />
-                <FluidImage
-                    className="c-cta__dots"
-                    alt={"abstract geometric design element"}
-                    image={"/img/dots.png"} />
-                <div className="c-cta__wrapper">
-                    <div className="c-cta__content">
-                        <p>{launch.content}</p>
-                    </div>
-                    <div className="c-cta__link">
-                        <Link to={launch.link} className="c-focus__item">{launch.text}</Link>
-                    </div>
-                </div>
-            </div>
+            <Cta
+                content={launch}
+                variant={tab}/>
             <ActionCallout
                 heading={action.heading}
                 pages={action.pages} />

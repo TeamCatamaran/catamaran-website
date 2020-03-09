@@ -1,4 +1,107 @@
 .c-cta {
     @include site-container;
     background-color: $orange;
+    height: 184px;
+    margin-top: 200px;
+    margin-bottom: 200px;
+
+    &__wrapper {
+        position: absolute;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        height: 184px;
+        width: 100%;
+        padding: 0 80px;
+    }
+
+    &__content {
+        flex-grow: 1;
+
+        p {
+            @include font-style(
+                $font-normal,                       // Font Family
+                48px,                            // Font Size
+                $white,                              // Font Color
+                $weight-light,                     // Font Weight
+                70px                           // Line Height
+            );
+        }
+    }
+
+    &__link__button {
+        display: block;
+        border: 2px solid $white;
+        border-radius: 22px;
+        min-width: 171px;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: .15em;
+        background-color: $orange;
+        
+        &:hover {
+            text-decoration: none;
+        }
+
+        @include font-style(
+                $font-accent,                       // Font Family
+                $size-4,                            // Font Size
+                $white,                              // Font Color
+                $weight-bold,                     // Font Weight
+                40px                           // Line Height
+            );
+    }
+
+    &__images {
+        height: 184px;
+        width: 100%;
+        position: absolute;
+        z-index: -1;
+
+        img {
+            position: absolute;
+        }
+    }
+
+    // startup images
+
+    &__asterick {
+        width: 207px;
+        left: -80px;
+        top: -96px;
+    }
+
+    &__tube {
+        height: 257px;
+        right: -33px;
+        bottom: -106px;
+    }
+
+    // upstarts images
+
+    &__halfdonut {
+        width: 240px;
+        left: -70px;
+        top: -125px;
+    }
+
+    &__wavylines {
+        width: 445px;
+        right: -86px;
+        bottom: -83px;
+    }
+
+    // cofounder images
+
+    &__triangle {
+        width: 133px;
+        left: -70px;
+        top: -75px;
+    }
+
+    &__dots {
+        width: 87px;
+        right: -45px;
+        bottom: -60px;
+    }
 }
