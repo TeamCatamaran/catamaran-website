@@ -44,7 +44,7 @@ export const StudioPageTemplate = ({
     }]
 
     return (
-        <div>
+        <div >
             <Header
                 collageType="studio"
                 heading={heading}
