@@ -49,7 +49,7 @@ process:
         tempor incididunt ut labore et.
       icon: learn
       title: Learn
-slider:
+testimonials:
   - image: /img/scott.png
     logo: /img/pledgeit.png
     name: Scott Shirley

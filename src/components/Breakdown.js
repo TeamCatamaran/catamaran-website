@@ -16,6 +16,8 @@ const Breakdown = class extends React.Component {
             return (null);
         }
 
+        console.log(this.props.content.image);
+
         const icons = {
             absorb: absorb,
             concept: concept,

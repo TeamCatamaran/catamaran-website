@@ -29,4 +29,35 @@
             }
         }
     }
+
+    &__details {
+        margin-top: 70px;
+    }
+
+    &__detail {
+        @include grid-column(4);
+
+        &__title {
+            text-transform: uppercase;
+            letter-spacing: .2em;
+            @include font-style(
+                $font-accent,                     // Font Family
+                $size-4,                          // Font Size
+                $orange,                            // Font Color
+                $weight-bold,                     // Font Weight
+                $height-4                         // Line Height
+            );
+        }
+
+        &__description {
+            margin-top: 15px;
+            @include font-style(
+                $font-normal,                     // Font Family
+                $size-p,                          // Font Size
+                $grey-light,                            // Font Color
+                $weight-medium,                     // Font Weight
+                $height-p                         // Line Height
+            );
+        }
+    }
 }

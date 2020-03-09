@@ -1,8 +1,8 @@
-.c-process {
+.c-breakdown {
     &__collage {
         position: absolute;
         bottom: 60px;
-        left: 0;
+        left: 20px;
         width: 40%;
     }
 
@@ -33,11 +33,12 @@
 
     h3 {
         font-size: 48px;
+        line-height: 70px;
     }
 }
 
 body.-purple {
-    .c-process {
+    .c-breakdown {
         h3 {
             color: $purple;
         }

@@ -6,7 +6,7 @@ import FluidImage from '../components/FluidImage'
 import Header from '../components/Header'
 import Layout from '../components/Layout'
 import Breakdown from '../components/Breakdown'
-import Slider from '../components/Slider'
+import Testimonials from '../components/Testimonials'
 
 export const IndexPageTemplate = ({
   section,
@@ -171,7 +171,7 @@ export const pageQuery = graphql`
             description
           }
         }
-        slider {
+        testimonials {
           name
           title
           quote

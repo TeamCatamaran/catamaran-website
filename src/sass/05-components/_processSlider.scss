@@ -1,0 +1,200 @@
+.c-processSlider {
+    @include site-container;
+    position: relative;
+    height: 734px;
+    margin-top: 200px;
+    margin-bottom: 200px;
+    
+
+    &__fill {
+        position: absolute;
+        z-index: -1;
+        background-color: $grey;
+        width: 100vw;
+        height: 734px;
+    }
+
+
+    &__header {
+        padding-top: 75px;
+        padding-left: 75px;
+        &__title {
+            @include font-style(
+                $font-normal,                     // Font Family
+                48px,                          // Font Size
+                $orange,                            // Font Color
+                $weight-light,                     // Font Weight
+                70px                         // Line Height
+            );
+        }
+
+        &__intro {
+            max-width: 850px;
+            margin-top: 20px;
+            @include font-style(
+                $font-normal,                     // Font Family
+                $size-2,                          // Font Size
+                $white,                            // Font Color
+                $weight-light,                     // Font Weight
+                $height-2                         // Line Height
+            );
+        }
+    }
+
+    &__content {
+        @include grid-container;
+        position: relative;
+        margin-top: 70px;
+    }
+
+    &__image {
+        @include grid-column(6);
+
+        &__asset {
+            margin-top: 25px;
+            display: block;
+            width: 415px;
+            height: auto;
+        }
+    }
+
+    &__steps {
+        @include grid-column(6);
+    }
+
+    &__count {
+        position: absolute;
+        letter-spacing: .2em;
+        @include font-style(
+            $font-accent,                     // Font Family
+            $size-4,                          // Font Size
+            $grey-light,                            // Font Color
+            $weight-bold,                 // Font Weight
+            $height-4                         // Line Height
+        );
+
+        &__current {
+            color: $purple
+        }
+    }
+
+    &__step {
+        display: none;
+
+        &.-selected {
+            display: block;
+        }
+
+        &__title {
+            margin-top: 20px;
+            @include font-style(
+                $font-normal,                     // Font Family
+                $size-2,                          // Font Size
+                $orange,                            // Font Color
+                $weight-semibold,                 // Font Weight
+                $height-2                         // Line Height
+            );
+        }
+
+        &__description {
+            margin-top: 20px;
+            @include font-style(
+                $font-normal,                     // Font Family
+                $size-p,                          // Font Size
+                $white,                            // Font Color
+                $weight-medium,                 // Font Weight
+                $height-p                         // Line Height
+            );
+        }
+    }
+
+    
+
+
+    &__controls {
+        position: absolute;
+        bottom: 50px;
+        height: 45px;
+        width: 100%;
+        display: flex;
+        align-items: stretch;
+
+        &__button {
+            display: block;
+            background-color: $purple;
+            width: 45px;
+            border: none;
+            margin-right: 7px;
+            transition: background-color .16s ease-in-out;
+            @include font-style(
+                $font-normal,                       // Font Family
+                $size-4,                            // Font Size
+                $white,                              // Font Color
+                $weight-bold,                     // Font Weight
+                $height-4                           // Line Height
+            );
+
+            &:hover {
+                background-color: lighten($purple, 10%);
+                cursor: pointer;
+            }
+
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+
+    &__spiral {
+        position: absolute;
+        bottom: -145px;
+        width: 167px;
+        height: 167px;
+        right: 0
+    }
+}
+
+body.-pink {
+    .c-processSlider__count__current {
+        color: $pink;
+    }
+    .c-processSlider__quote__name {
+        color: $pink;
+    }
+    .c-processSlider__controls__button {
+        background-color: $pink;
+    }
+    .c-processSlider__controls__zebra__svg path {
+        fill: $pink
+    }
+}
+
+body.-purple {
+    .c-processSlider__count__current {
+        color: $purple;
+    }
+    .c-processSlider__quote__name {
+        color: $purple;
+    }
+    .c-processSlider__controls__button {
+        background-color: $purple;
+    }
+    .c-processSlider__controls__zebra__svg path {
+        fill: $purple
+    }
+}
+
+body.-orange {
+    .c-processSlider__count__current {
+        color: $orange;
+    }
+    .c-processSlider__quote__name {
+        color: $orange;
+    }
+    .c-processSlider__controls__button {
+        background-color: $orange;
+    }
+    .c-processSlider__controls__zebra__svg path {
+        fill: $orange
+    }
+}

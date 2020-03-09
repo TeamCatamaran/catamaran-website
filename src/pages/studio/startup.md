@@ -28,6 +28,21 @@ how:
         tempor incididunt ut labore et. Lorem ipsum dolor sit amet, consectetur
         adipiscing elit, sed do eiusmod tempor incididunt ut labore et.
       heading: Absorb
+    - description: >-
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et. Lorem ipsum dolor sit amet, consectetur
+        adipiscing elit, sed do eiusmod tempor incididunt ut labore et.
+      heading: Orb
+    - description: >-
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et. Lorem ipsum dolor sit amet, consectetur
+        adipiscing elit, sed do eiusmod tempor incididunt ut labore et.
+      heading: Reabsorb
+    - description: >-
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et. Lorem ipsum dolor sit amet, consectetur
+        adipiscing elit, sed do eiusmod tempor incididunt ut labore et.
+      heading: Reorb
 criteria:
   heading: What We Need to Launch
   image: /img/criteria-collage.png
@@ -88,7 +103,7 @@ expect:
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
         veniam, quis nostrud.
-slider:
+testimonials:
   - image: /img/scott.png
     logo: /img/pledgeit.png
     name: Scott Shirley

@@ -242,8 +242,8 @@ collections:
                 ],
             }
           - {
-              label: Slider,
-              name: slider,
+              label: Testimonials,
+              name: testimonials,
               widget: list,
               fields:
                 [
@@ -927,8 +927,8 @@ collections:
                 ],
             }
           - {
-              label: Slider,
-              name: slider,
+              label: Testimonials,
+              name: testimonials,
               widget: list,
               fields:
                 [

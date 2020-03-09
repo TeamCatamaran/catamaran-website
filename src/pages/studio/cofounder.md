@@ -18,9 +18,18 @@ overview:
     quis nostrud. Sed do eiusmod tempor incididunt ut labore et dolore magna
     aliqua. Ut enim ad minim veniam, quis nostrud.
   details:
-    - heading: test
+    - heading: Absorb
       description: >-
-        test
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua.
+    - heading: Absorb
+      description: >-
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua.
+    - heading: Absorb
+      description: >-
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua.
 launch:
   content: Lorem Ipsum Dolor Sit
   link:
