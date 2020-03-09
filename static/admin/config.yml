@@ -677,7 +677,7 @@ collections:
                     fields:
                       [
                         { label: Address, name: address, widget: text },
-                        { label: Number, name: number, widget: string },
+                        { label: Number, name: number, widget: string, required: false },
                       ],
                   },
                 ],

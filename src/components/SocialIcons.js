@@ -2,8 +2,9 @@ import React from 'react'
 
 import facebook from '../img/social/facebook.png'
 import instagram from '../img/social/instagram.png'
-import twitter from '../img/social/twitter.png'
 import linkedin from '../img/social/linkedin.png'
+import twitter from '../img/social/twitter.png'
+
 
 const SocialIcons = class extends React.Component {
     constructor(props) {

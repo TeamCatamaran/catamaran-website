@@ -6,6 +6,7 @@ import Layout from '../components/Layout'
 import Header from '../components/Header'
 import SocialIcons from '../components/SocialIcons'
 import FluidImage from '../components/FluidImage'
+import footer from '../img/footer-shapes.png'
 
 import { types } from '../types/types';
 
@@ -28,7 +29,7 @@ export const ContactPageTemplate = ({
             />
             <div className="c-interiorPage">
                 <div className="c-intro container">
-                    <p>{intro}</p>
+                    <p className="-left">{intro}</p>
                 </div>
                 <div className="c-contact container">
                     <div className="c-contact__chat">
@@ -42,27 +43,35 @@ export const ContactPageTemplate = ({
                             )
                         })}
                     </div>
+                    <div className="c-contact__social">
+                        <p>{social.heading}</p>
+                        <div >
+                            <SocialIcons />
+                        </div>
+                    </div>
                 </div>
-                <div>
-                    <p>{social.heading}</p>
-                </div>
-                <div>
-                    <FluidImage
-                        alt={map.alt || "Catamaran location"}
-                        image={map.src} />
-                </div>
-                <div>
-                    <p>{locations.heading}</p>
+                {
+                    map != null &&
+                    <div className="c-location__map">
+                        <FluidImage
+                            alt={map.alt || "Catamaran location map"}
+                            image={map.src} />
+                    </div>
+                }
+                <div className="c-location container">
+                    <label className="c-location__heading">{locations.heading}</label>
                     {locations.addresses.map((l) => {
                         return (
-                            <p>
-                                {l.address}<br />
-                                {l.number}
-                            </p>
+                            <div className="c-location__address">
+                                <p>{l.address}</p>
+                                <p>{l.number}</p>
+                            </div>
                         )
                     })}
                 </div>
-                <SocialIcons />
+                <div className="c-location__footer">
+                    <img src={footer} alt="footer icons" />
+                </div>
             </div>
         </div>
     )
