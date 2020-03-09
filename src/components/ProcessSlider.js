@@ -2,6 +2,8 @@ import React from 'react'
 
 import FluidImage from './FluidImage'
 
+import spiral from '../img/spiral.png'
+
 const ProcessSlider = class extends React.Component {
     constructor(props) {
         super(props)
@@ -20,46 +22,46 @@ const ProcessSlider = class extends React.Component {
             <div className="c-processSlider">
                 <div className="c-processSlider__fill"></div>
                 <div className="c-processSlider__header">
-                        <h2 className="c-processSlider__header__title">{this.props.content.heading}</h2>
-                        <p className="c-processSlider__header__intro">{this.props.content.intro}</p>
+                    <h2 className="c-processSlider__header__title">{this.props.content.heading}</h2>
+                    <p className="c-processSlider__header__intro">{this.props.content.intro}</p>
+                </div>
+                <div className="c-processSlider__content">
+                    <div className="c-processSlider__image">
+                        <img
+                            className="c-processSlider__asset"
+                            alt="geometric design"
+                            src={spiral} />
                     </div>
-                    <div className="c-processSlider__content">
-                        <div className="c-processSlider__image">
-                            <FluidImage
-                                className="c-processSlider__asset"
-                                alt={"geometric design"}
-                                image="/img/spiral.png" />
+                    <div className="c-processSlider__steps">
+                        <div className="c-processSlider__count">
+                            <span className="c-processSlider__count__current">{(this.state.selectedIndex + 1).toString().padStart(2, '0')}</span> / {this.props.content.steps.length.toString().padStart(2, '0')}
                         </div>
-                        <div className="c-processSlider__steps">
-                            <div className="c-processSlider__count">
-                                <span className="c-processSlider__count__current">{(this.state.selectedIndex + 1).toString().padStart(2, '0')}</span> / {this.props.content.steps.length.toString().padStart(2, '0')}
-                            </div>
-                            {
-                                this.props.content.steps.map((s, key) => {
-                                    let className = "c-processSlider__step";
-                                    if (key === this.state.selectedIndex) {
-                                        className += " -selected";
-                                    }
-                                    return (
-                                        <div 
-                                            className={className}
-                                            key={"quote-" + key}>
-                                                <h3 className="c-processSlider__step__title">{s.heading}</h3>
-                                                <p className="c-processSlider__step__description">{s.description}</p>
-                                        </div>
-                                    );
-                                })
-                            }
-                            <div className="c-processSlider__controls">
-                                <button onClick={this.prevSlide.bind(this)} className="c-processSlider__controls__button -prev">&#60;</button>
-                                <button onClick={this.nextSlide.bind(this)}className="c-processSlider__controls__button -next">&#62;</button>
-                            </div>
+                        {
+                            this.props.content.steps.map((s, key) => {
+                                let className = "c-processSlider__step";
+                                if (key === this.state.selectedIndex) {
+                                    className += " -selected";
+                                }
+                                return (
+                                    <div
+                                        className={className}
+                                        key={"quote-" + key}>
+                                        <h3 className="c-processSlider__step__title">{s.heading}</h3>
+                                        <p className="c-processSlider__step__description">{s.description}</p>
+                                    </div>
+                                );
+                            })
+                        }
+                        <div className="c-processSlider__controls">
+                            <button onClick={this.prevSlide.bind(this)} className="c-processSlider__controls__button -prev">&#60;</button>
+                            <button onClick={this.nextSlide.bind(this)} className="c-processSlider__controls__button -next">&#62;</button>
                         </div>
-                        <FluidImage
-                            className="c-processSlider__spiral"
-                            alt={"geometric design"}
-                            image="/img/spiral.png" />
                     </div>
+                    <img
+                        className="c-processSlider__spiral"
+                        alt="geometric design"
+                        src={spiral} />
+                </div>
             </div>
         )
     }
@@ -82,7 +84,7 @@ const ProcessSlider = class extends React.Component {
                 selectedIndex: next,
             });
         }
-        
+
     }
 
     prevSlide() {
