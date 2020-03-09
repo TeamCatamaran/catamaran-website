@@ -1,9 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
+
 import Layout from '../components/Layout'
 import Header from '../components/Header'
 import ActionCallout from '../components/ActionCallout'
+
+import { types } from '../types/types';
 
 export const JournalPageTemplate = ({
   section,
@@ -34,8 +37,8 @@ JournalPageTemplate.propTypes = {
       PropTypes.shape({
         title: PropTypes.string,
         description: PropTypes.string,
-        image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-        link: PropTypes.string,
+        image: types.imageProps,
+        link: types.linkProps,
       })
     )
   }),
@@ -75,11 +78,14 @@ query JournalPage($id: String!) {
           title
           description
           image {
-            childImageSharp {
-              fluid(maxWidth: 2048, quality: 100) {
-                ...GatsbyImageSharpFluid
+            src {
+              childImageSharp {
+                fluid(maxWidth: 2048, quality: 100) {
+                  ...GatsbyImageSharpFluid
+                }
               }
             }
+            alt
           }
           link {
             url

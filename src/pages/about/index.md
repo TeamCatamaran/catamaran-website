@@ -43,19 +43,29 @@ team:
   people:
     - name: Amanda Mills
       title: Director
-      photo: /img/amanda.jpg
+      photo:
+        src: /img/amanda.jpg
+        alt: ''
     - name: Alex Getty
       title: Principal, Something
-      photo: /img/alex.jpg
+      photo:
+        src: /img/alex.jpg
+        alt: ''
     - name: Kate Ferrara
       title: Principal, Something
-      photo: /img/kate.jpg
+      photo:
+        src: /img/kate.jpg
+        alt: ''
     - name: Phil Hess
       title: Principal, Something
-      photo: /img/phil.jpg
+      photo:
+        src: /img/phil.jpg
+        alt: ''
     - name: Abdullah Amir
       title: Something
-      photo: /img/phil.jpg
+      photo:
+        src: /img/phil.jpg
+        alt: ''
 leadership:
   heading: Some Title for Them
   description: >-
@@ -63,16 +73,24 @@ leadership:
   people:
     - name: Dave Hickethier
       title: Something
-      photo: /img/amanda.jpg
+      photo:
+        src: /img/amanda.jpg
+        alt: ''
     - name: Josh Benton
       title: Something
-      photo: /img/alex.jpg
+      photo:
+        src: /img/alex.jpg
+        alt: ''
     - name: Evan Keller
       title: Something
-      photo: /img/kate.jpg
+      photo:
+        src: /img/kate.jpg
+        alt: ''
     - name: Shane Shearer
       title: Something
-      photo: /img/phil.jpg
+      photo:
+        src: /img/phil.jpg
+        alt: ''
 action:
   heading: Where the action is
   pages:
@@ -81,11 +99,15 @@ action:
       link:
         url: test
         rel: ''
-      image: /img/studio.jpg
+      image:
+        src: /img/studio.jpg
+        alt: ''
     - title: Press
       description: Harrisburg Landmark Has a New Owner
       link:
         url: test
         rel: ''
-      image: /img/experiments.jpg
+      image:
+        src: /img/experiments.jpg
+        alt: ''
 ---

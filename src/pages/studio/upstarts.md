@@ -18,8 +18,10 @@ overview:
     quis nostrud. Sed do eiusmod tempor incididunt ut labore et dolore magna
     aliqua. Ut enim ad minim veniam, quis nostrud.
 photos:
-  - /img/whiteboard.png
-  - /img/collab.png
+  - src: /img/whiteboard.png
+    alt: ''
+  - src: /img/collab.png
+    alt: ''
 how:
   heading: How We Can Help
   intro: >-
@@ -43,14 +45,22 @@ how:
 upstarts:
   heading: UPSTARTS WE’VE WORKED WITH
   logos:
-    - /img/brandyourself.png
-    - /img/milkmoney.png
-    - /img/hackerone.png
-    - /img/ouya.png
-    - /img/kinetica.png
-    - /img/thought.png
-    - /img/pledgeit-dark.png
-    - /img/daytwo.png
+    - src: /img/brandyourself.png
+      alt: ''
+    - src: /img/milkmoney.png
+      alt: ''
+    - src: /img/hackerone.png
+      alt: ''
+    - src: /img/ouya.png
+      alt: ''
+    - src: /img/kinetica.png
+      alt: ''
+    - src: /img/thought.png
+      alt: ''
+    - src: /img/pledgeit-dark.png
+      alt: ''
+    - src: /img/daytwo.png
+      alt: ''
 launch:
   content: Ready to get (up) started?
   link:
@@ -61,13 +71,17 @@ action:
   heading: Where the action is
   pages:
     - description: From Business Accelerator to Startup Studio
-      image: /img/studio.png
+      image:
+        src: /img/studio.png
+        alt: ''
       link:
         url: test
         rel: ''
       title: Journal Entry
     - description: Harrisburg Landmark Has a New Owner
-      image: /img/studio.png
+      image:
+        src: /img/studio.png
+        alt: ''
       link:
         url: test
         rel: ''

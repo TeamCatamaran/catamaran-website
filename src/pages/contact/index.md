@@ -21,7 +21,9 @@ type:
       name: I’m Just Looking to Chat
 social:
   heading: WE CAN CONNECT HERE TOO
-map: /img/map.jpg
+map:
+  src: /img/map.jpg
+  alt: ''
 locations:
   addresses:
     - address: |-

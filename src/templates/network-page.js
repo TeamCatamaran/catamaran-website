@@ -1,10 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 
 import FluidImage from '../components/FluidImage'
 import Header from '../components/Header'
 import Layout from '../components/Layout'
+
+import { types } from '../types/types';
 
 export const NetworkPageTemplate = ({
     heading,
@@ -20,8 +22,7 @@ export const NetworkPageTemplate = ({
     };
     const logoPartners = [];
     partners.forEach((p) => {
-        console.log(p.logo);
-        if (p.logo != null) {
+        if (p.image != null) {
             logoPartners.push(p);
         } else if (p.category != null) {
             sortedPartners[p.category].push(p);
@@ -43,16 +44,18 @@ export const NetworkPageTemplate = ({
                     <div className="c-partners__logos">
                         {logoPartners.map((p, key) => {
                             return (
-                                <Link
+                                <a
                                     className="c-partners__logos__item"
                                     key={"logoPartner-" + key}
-                                    to={p.link}
+                                    href={p.link.url}
+                                    rel={p.link.rel}
+                                    target="_blank"
                                 >
                                     <FluidImage
                                         className="c-partners__logos__item__image"
-                                        alt={p.name}
-                                        image={p.logo} />
-                                </Link>
+                                        alt={p.image.alt || p.name}
+                                        image={p.image.src} />
+                                </a>
                             );
                         })}
                     </div>
@@ -60,23 +63,47 @@ export const NetworkPageTemplate = ({
                         <div className="c-partners__list__section">
                             <h4 className="c-partners__list__section__heading">Coworking</h4>
                             <ul className="c-partners__list__section__list">
-                                {sortedPartners["coworking"].map((p, key) => <li key={"coworking-" + key}><Link to={p.link} target="_blank">{p.name}</Link></li>)}
+                                {sortedPartners["coworking"].map((p, key) => {
+                                    return (
+                                        <li key={"coworking-" + key}>
+                                            <a href={p.link.url} rel={p.link.rel} target="_blank">{p.name}</a>
+                                        </li>
+                                    );
+                                })}
                             </ul>
                             <h4 className="c-partners__list__section__heading">Mentorship</h4>
                             <ul className="c-partners__list__section__list">
-                                {sortedPartners["mentorship"].map((p, key) => <li key={"mentorship-" + key}><Link to={p.link} target="_blank">{p.name}</Link></li>)}
+                                {sortedPartners["mentorship"].map((p, key) => {
+                                    return (
+                                        <li key={"mentorship-" + key}>
+                                            <a href={p.link.url} rel={p.link.rel} target="_blank">{p.name}</a>
+                                        </li>
+                                    );
+                                })}
                             </ul>
                         </div>
                         <div className="c-partners__list__section">
                             <h4 className="c-partners__list__section__heading">Economic Dev</h4>
                             <ul className="c-partners__list__section__list">
-                                {sortedPartners["economic dev"].map((p, key) => <li key={"economic-" + key}><Link to={p.link} target="_blank">{p.name}</Link></li>)}
+                                {sortedPartners["economic dev"].map((p, key) => {
+                                    return (
+                                        <li key={"economic-" + key}>
+                                            <a href={p.link.url} rel={p.link.rel} target="_blank">{p.name}</a>
+                                        </li>
+                                    );
+                                })}
                             </ul>
                         </div>
                         <div className="c-partners__list__section">
                             <h4 className="c-partners__list__section__heading">Community Contacts</h4>
                             <ul className="c-partners__list__section__list">
-                                {sortedPartners["community contacts"].map((p, key) => <li key={"community-" + key}><Link to={p.link} target="_blank">{p.name}</Link></li>)}
+                                {sortedPartners["community contacts"].map((p, key) => {
+                                    return (
+                                        <li key={"community-" + key}>
+                                            <a href={p.link.url} rel={p.link.rel} target="_blank">{p.name}</a>
+                                        </li>
+                                    );
+                                })}
                             </ul>
                         </div>
                     </div>
@@ -94,8 +121,8 @@ NetworkPageTemplate.propTypes = {
         PropTypes.shape({
             category: PropTypes.string,
             name: PropTypes.string,
-            logo: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-            link: PropTypes.string,
+            image: types.imageProps,
+            link: types.linkProps,
         })
     )
 }
@@ -140,12 +167,15 @@ export const pageQuery = graphql`
             url
             rel
           }
-          logo {
-            childImageSharp {
-              fluid(maxWidth: 2048, quality: 100) {
-                ...GatsbyImageSharpFluid
+          image {
+            src {
+              childImageSharp {
+                fluid(maxWidth: 2048, quality: 100) {
+                  ...GatsbyImageSharpFluid
+                }
               }
             }
+            alt
           }
         }
       }

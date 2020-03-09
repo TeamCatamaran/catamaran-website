@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { graphql } from 'gatsby'
-
+import { Link, graphql } from 'gatsby'
 
 import ActionCallout from '../components/ActionCallout'
 import Header from '../components/Header'
@@ -10,7 +9,13 @@ import Testimonials from '../components/Testimonials'
 import Breakdown from '../components/Breakdown'
 import FluidImage from '../components/FluidImage'
 import ProcessSlider from '../components/ProcessSlider'
-import { Link } from 'gatsby'
+
+import angles from '../img/angles.png'
+import dots from '../img/dots.png'
+import scribble from '../img/scribble.png'
+import triangle from '../img/triangle.png'
+import waves from '../img/waves.png'
+import { types } from '../types/types'
 
 export const StudioPageTemplate = ({
     tab,
@@ -58,7 +63,7 @@ export const StudioPageTemplate = ({
                                     className += " -active";
                                 }
                                 return (
-                                    <Link key={"tab-" + key} to={p.link} className={className}>{p.label}</Link>
+                                    <Link key={"tab-" + key} to={p.link.url} rel={p.link.rel} className={className}>{p.label}</Link>
                                 );
                             })
                         }
@@ -96,28 +101,28 @@ export const StudioPageTemplate = ({
                 <div className="c-studioPhotos container">
                     <div className="c-studioPhotos__photo1">
                         <FluidImage
-                            alt={"upstart-photo"}
-                            image={photos[0]} />
+                            alt={photos[0].alt || "upstart-photo"}
+                            image={photos[0].src} />
                     </div>
                     <div className="c-studioPhotos__photo2">
                         <FluidImage
-                            alt={"upstart-photo"}
-                            image={photos[1]} />
+                            alt={photos[1].alt || "upstart-photo"}
+                            image={photos[1].src} />
                     </div>
                     <div className="c-studioPhotos__element1">
-                        <FluidImage
+                        <img
                             alt={"abstract geometric design element"}
-                            image={"/img/waves.png"} />
+                            src={waves} />
                     </div>
                     <div className="c-studioPhotos__element2">
-                        <FluidImage
+                        <img
                             alt={"abstract geometric design element"}
-                            image={"/img/angles.png"} />
+                            src={angles} />
                     </div>
                     <div className="c-studioPhotos__element3">
-                        <FluidImage
+                        <img
                             alt={"abstract geometric design element"}
-                            image={"/img/scribble.png"} />
+                            src={scribble} />
                     </div>
                 </div>
             }
@@ -133,7 +138,8 @@ export const StudioPageTemplate = ({
                         return (
                             <p>
                                 <FluidImage
-                                    image={l.logo} />
+                                    alt={l.alt}
+                                    image={l.src} />
                             </p>
                         )
                     })}
@@ -160,20 +166,20 @@ export const StudioPageTemplate = ({
             <Testimonials
                 items={testimonials} />
             <div className="c-cta">
-                <FluidImage
+                <img
                     className="c-cta__triangle"
                     alt={"abstract geometric design element"}
-                    image={"/img/triangle.png"} />
-                <FluidImage
+                    src={triangle} />
+                <img
                     className="c-cta__dots"
                     alt={"abstract geometric design element"}
-                    image={"/img/dots.png"} />
+                    src={dots} />
                 <div className="c-cta__wrapper">
                     <div className="c-cta__content">
                         <p>{launch.content}</p>
                     </div>
                     <div className="c-cta__link">
-                        <Link to={launch.link} className="c-focus__item">{launch.text}</Link>
+                        <Link to={launch.link.to} rel={launch.link.rel} className="c-focus__item">{launch.text}</Link>
                     </div>
                 </div>
             </div>
@@ -199,9 +205,7 @@ StudioPageTemplate.propTypes = {
         ),
     }),
     photos: PropTypes.arrayOf(
-        PropTypes.shape({
-            photo: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-        }),
+        types.imageProps
     ),
     how: PropTypes.shape({
         heading: PropTypes.string,
@@ -216,9 +220,7 @@ StudioPageTemplate.propTypes = {
     upstarts: PropTypes.shape({
         heading: PropTypes.string,
         logos: PropTypes.arrayOf(
-            PropTypes.shape({
-                photo: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-            }),
+            types.imageProps
         ),
     }),
     criteria: PropTypes.shape({
@@ -249,13 +251,13 @@ StudioPageTemplate.propTypes = {
             title: PropTypes.string,
             quote: PropTypes.string,
             logo: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-            image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+            image: types.imageProps,
         }),
     ),
     launch: PropTypes.shape({
         content: PropTypes.string,
         text: PropTypes.string,
-        link: PropTypes.string,
+        link: types.linkProps,
     }),
     action: PropTypes.shape({
         heading: PropTypes.string,
@@ -263,8 +265,8 @@ StudioPageTemplate.propTypes = {
             PropTypes.shape({
                 title: PropTypes.string,
                 description: PropTypes.string,
-                image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-                link: PropTypes.string,
+                image: types.imageProps,
+                link: types.linkProps,
             })
         )
     }),
@@ -318,11 +320,14 @@ query StudioPage($id: String!) {
         }
       }
       photos {
-        childImageSharp {
-          fluid(maxWidth: 2048, quality: 100) {
-            ...GatsbyImageSharpFluid
+        src {
+          childImageSharp {
+            fluid(maxWidth: 2048, quality: 100) {
+              ...GatsbyImageSharpFluid
+            }
           }
         }
+        alt
       }
       how {
         heading
@@ -335,21 +340,27 @@ query StudioPage($id: String!) {
       upstarts {
         heading
         logos {
-          childImageSharp {
-            fluid(maxWidth: 2048, quality: 100) {
-              ...GatsbyImageSharpFluid
+          src {
+            childImageSharp {
+              fluid(maxWidth: 2048, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
             }
           }
+          alt
         }
       }
       criteria {
         heading
         image {
+          src {
             childImageSharp {
-                fluid(maxWidth: 2048, quality: 100) {
+              fluid(maxWidth: 2048, quality: 100) {
                 ...GatsbyImageSharpFluid
-                }
+              }
             }
+          }
+          alt
         }
         items {
           title
@@ -378,11 +389,14 @@ query StudioPage($id: String!) {
           }
         }
         image {
-          childImageSharp {
-            fluid(maxWidth: 2048, quality: 100) {
-              ...GatsbyImageSharpFluid
+          src {
+            childImageSharp {
+              fluid(maxWidth: 2048, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
             }
           }
+          alt
         }
       }
       launch {
@@ -399,11 +413,14 @@ query StudioPage($id: String!) {
           title
           description
           image {
-            childImageSharp {
-              fluid(maxWidth: 2048, quality: 100) {
-                ...GatsbyImageSharpFluid
+            src {
+              childImageSharp {
+                fluid(maxWidth: 2048, quality: 100) {
+                  ...GatsbyImageSharpFluid
+                }
               }
             }
+            alt
           }
           link {
             url

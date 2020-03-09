@@ -6,8 +6,12 @@ focus:
   - description: >-
       We work along-side founders and by providing creative capital and services
       to startups at any step of the journey.
-    hover: /img/studio-hover.png
-    image: /img/studio.png
+    hover:
+      src: /img/studio-hover.png
+      alt: ''
+    image:
+      src: /img/studio.png
+      alt: ''
     link:
       url: /studio/startup
       rel: ''
@@ -15,8 +19,12 @@ focus:
   - description: >-
       We explore, test, and develop ideas through the pursuit of new
       technologies both internally and for large companies.
-    hover: /img/experiments-hover.png
-    image: /img/experiments.png
+    hover:
+      src: /img/experiments-hover.png
+      alt: ''
+    image:
+      src: /img/experiments.png
+      alt: ''
     link:
       url: /experiments/lab
       rel: ''
@@ -27,7 +35,9 @@ intro: >-
   nostrud exercitation ullamco.
 process:
   heading: Lorem Ipsum Dolor Sit Amet
-  image: /img/process-collage.png
+  image:
+    src: /img/process-collage.png
+    alt: ''
   items:
     - description: >-
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
@@ -50,14 +60,18 @@ process:
       icon: learn
       title: Learn
 testimonials:
-  - image: /img/scott.png
+  - image:
+      src: /img/scott.png
+      alt: ''
     logo: /img/pledgeit.png
     name: Scott Shirley
     quote: >-
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
       tempor incididunt ut labore et.
     title: Founder / Pledge It
-  - image: /img/scott.png
+  - image:
+      src: /img/scott.png
+      alt: ''
     logo: /img/subx.png
     name: Some Name
     quote: >-
@@ -65,7 +79,9 @@ testimonials:
       tempor incididunt ut labore et. Lorem ipsum dolor sit amet, consectetur
       adipiscing elit, sed do eiusmod tempor incididunt ut labore et.
     title: CEO / Subx
-  - image: /img/scott.png
+  - image:
+      src: /img/scott.png
+      alt: ''
     logo: /img/cope.png
     name: Another Name
     quote: >-

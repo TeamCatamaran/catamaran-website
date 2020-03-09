@@ -45,7 +45,9 @@ how:
       heading: Reorb
 criteria:
   heading: What We Need to Launch
-  image: /img/criteria-collage.png
+  image:
+    src: /img/criteria-collage.png
+    alt: ''
   items:
     - description: >-
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
@@ -104,19 +106,25 @@ expect:
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
         veniam, quis nostrud.
 testimonials:
-  - image: /img/scott.png
+  - image:
+      src: /img/scott.png
+      alt: ''
     logo: /img/pledgeit.png
     name: Scott Shirley
     quote: >-
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
       tempor incididunt ut labore et.
     title: Founder / Pledge It
-  - image: /img/scott.png
+  - image:
+      src: /img/scott.png
+      alt: ''
     logo: /img/subx.png
     name: A Test
     quote: Lorem Ipsum
     title: CEO
-  - image: /img/scott.png
+  - image:
+      src: /img/scott.png
+      alt: ''
     logo: /img/cope.png
     name: Test
     quote: Lorem Ipsum
@@ -131,13 +139,17 @@ action:
   heading: Where the action is
   pages:
     - description: From Business Accelerator to Startup Studio
-      image: /img/studio.png
+      image:
+        src: /img/studio.png
+        alt: ''
       link:
         url: test
         rel: ''
       title: Journal Entry
     - description: Harrisburg Landmark Has a New Owner
-      image: /img/studio.png
+      image:
+        src: /img/studio.png
+        alt: ''
       link:
         url: test
         rel: ''

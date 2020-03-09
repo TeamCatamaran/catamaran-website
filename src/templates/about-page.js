@@ -1,14 +1,17 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
+
 import Layout from '../components/Layout'
 import Header from '../components/Header'
-import Content, { HTMLContent } from '../components/Content'
 import FluidImage from '../components/FluidImage'
 import ActionCallout from '../components/ActionCallout'
 
 import aboutIntroCollage from '../img/about-intro-collage.png'
 import aboutValuesCollage from '../img/about-values-collage.png'
+import donut from '../img/donut.png'
+import plus from '../img/plus.png'
+import { types } from '../types/types';
 
 export const AboutPageTemplate = ({
     section,
@@ -79,10 +82,10 @@ export const AboutPageTemplate = ({
                     <div className="c-team__header">
                         <h2 className="c-team__heading">{team.heading}</h2>
                         <p className="c-team__description">{team.description}</p>
-                        <FluidImage
+                        <img
                             className="c-team__topImage -default"
                             alt={team.heading}
-                            image={"/img/donut.png"} />
+                            src={donut} />
                     </div>
                     <div className="c-team__list">
                         {team.people.map((p) => {
@@ -91,18 +94,18 @@ export const AboutPageTemplate = ({
                                 <div className={className}>
                                     <FluidImage
                                         className="c-team__member__photo -default"
-                                        alt={p.name}
-                                        image={p.photo} />
+                                        alt={p.photo.alt || p.name}
+                                        image={p.photo.src} />
                                     <label className="c-team__member__name">{p.name}</label>
                                     <label className="c-team__member__title">{p.title}</label>
                                 </div>
                             );
                         })}
                     </div>
-                    <FluidImage
+                    <img
                         className="c-team__bottomImage -default"
                         alt={team.heading}
-                        image={"/img/plus.png"} />
+                        image={plus} />
                 </div>
                 <div className="c-leadership container">
                     <div className="c-leadership__header">
@@ -116,8 +119,8 @@ export const AboutPageTemplate = ({
                                 <div className={className}>
                                     <FluidImage
                                         className="c-leadership__member__photo -default"
-                                        alt={p.name}
-                                        image={p.photo} />
+                                        alt={p.photo.alt || p.name}
+                                        image={p.photo.src} />
                                     <label className="c-leadership__member__name">{p.name}</label>
                                     <label className="c-leadership__member__title">{p.title}</label>
                                 </div>
@@ -163,7 +166,7 @@ AboutPageTemplate.propTypes = {
             PropTypes.shape({
                 name: PropTypes.string,
                 title: PropTypes.string,
-                photo: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+                photo: types.imageProps,
             })
         )
     }),
@@ -174,7 +177,7 @@ AboutPageTemplate.propTypes = {
             PropTypes.shape({
                 name: PropTypes.string,
                 title: PropTypes.string,
-                photo: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+                photo: types.imageProps,
             })
         )
     }),
@@ -184,8 +187,8 @@ AboutPageTemplate.propTypes = {
             PropTypes.shape({
                 title: PropTypes.string,
                 description: PropTypes.string,
-                image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-                link: PropTypes.string,
+                image: types.imageProps,
+                link: types.linkProps,
             })
         )
     }),
@@ -247,11 +250,14 @@ export const aboutPageQuery = graphql`
             name
             title
             photo {
-              childImageSharp {
-                fluid(maxWidth: 2048, quality: 100) {
-                  ...GatsbyImageSharpFluid
+              src {
+                childImageSharp {
+                  fluid(maxWidth: 2048, quality: 100) {
+                    ...GatsbyImageSharpFluid
+                  }
                 }
               }
+              alt
             }
           }
         }
@@ -262,11 +268,14 @@ export const aboutPageQuery = graphql`
               name
               title
               photo {
-                childImageSharp {
-                  fluid(maxWidth: 2048, quality: 100) {
-                    ...GatsbyImageSharpFluid
+                src {
+                  childImageSharp {
+                    fluid(maxWidth: 2048, quality: 100) {
+                      ...GatsbyImageSharpFluid
+                    }
                   }
                 }
+                alt
               }
             }
           }
@@ -276,11 +285,14 @@ export const aboutPageQuery = graphql`
             title
             description
             image {
-              childImageSharp {
-                fluid(maxWidth: 2048, quality: 100) {
-                  ...GatsbyImageSharpFluid
+              src {
+                childImageSharp {
+                  fluid(maxWidth: 2048, quality: 100) {
+                    ...GatsbyImageSharpFluid
+                  }
                 }
               }
+              alt
             }
             link {
               url

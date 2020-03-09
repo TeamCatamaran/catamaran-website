@@ -1,10 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
+
 import Layout from '../components/Layout'
 import Header from '../components/Header'
 import SocialIcons from '../components/SocialIcons'
 import FluidImage from '../components/FluidImage'
+
+import { types } from '../types/types';
 
 export const ContactPageTemplate = ({
     section,
@@ -24,41 +27,42 @@ export const ContactPageTemplate = ({
                 section={section}
             />
             <div className="c-interiorPage">
-            <div className="c-intro container">
-                <p>{intro}</p>
-            </div>
-            <div className="c-contact container">
-                <div className="c-contact__chat">
-                <p className="c-contact__heading">{type.heading}</p>
-                {type.types.map((t) => {
-                    return (
-                        <p>
-                            {t.name}<br />
-                             {t.embed}
-                        </p>
-                    )
-                })}
+                <div className="c-intro container">
+                    <p>{intro}</p>
                 </div>
-            </div>
-            <div>
-                <p>{social.heading}</p>
-            </div>
-            <div>
-                <FluidImage
-                    image={map} />
-            </div>
-            <div>
-                <p>{locations.heading}</p>
-                {locations.addresses.map((l) => {
-                    return (
-                        <p>
-                            {l.address}<br />
-                            {l.number}
-                        </p>
-                    )
-                })}
-            </div>
-            <SocialIcons />
+                <div className="c-contact container">
+                    <div className="c-contact__chat">
+                        <p className="c-contact__heading">{type.heading}</p>
+                        {type.types.map((t) => {
+                            return (
+                                <p>
+                                    {t.name}<br />
+                                    {t.embed}
+                                </p>
+                            )
+                        })}
+                    </div>
+                </div>
+                <div>
+                    <p>{social.heading}</p>
+                </div>
+                <div>
+                    <FluidImage
+                        alt={map.alt || "Catamaran location"}
+                        image={map.src} />
+                </div>
+                <div>
+                    <p>{locations.heading}</p>
+                    {locations.addresses.map((l) => {
+                        return (
+                            <p>
+                                {l.address}<br />
+                                {l.number}
+                            </p>
+                        )
+                    })}
+                </div>
+                <SocialIcons />
             </div>
         </div>
     )
@@ -80,7 +84,7 @@ ContactPageTemplate.propTypes = {
     social: PropTypes.shape({
         heading: PropTypes.string,
     }),
-    map: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+    map: types.imageProps,
     locations: PropTypes.shape({
         heading: PropTypes.string,
         addresses: PropTypes.arrayOf(
@@ -136,11 +140,14 @@ query ContactPage($id: String!) {
         heading
       }
       map {
-        childImageSharp {
-          fluid(maxWidth: 2048, quality: 100) {
-            ...GatsbyImageSharpFluid
+        src {
+          childImageSharp {
+            fluid(maxWidth: 2048, quality: 100) {
+              ...GatsbyImageSharpFluid
+            }
           }
         }
+        alt
       }
       locations {
         heading
