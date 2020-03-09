@@ -61,7 +61,7 @@ export const ExperimentsPageTemplate = ({
             {
                 launch != null &&
                 <div>
-                    {launch.content}<br />{launch.text}<br />{launch.link}
+                    {launch.content}<br />{launch.text}<br />{launch.link.url}<br />{launch.link.rel}
                 </div>
             }
             <ActionCallout
