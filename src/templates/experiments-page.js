@@ -183,7 +183,10 @@ query ExperimentsPage($id: String!) {
       launch {
         content
         text
-        link
+        link {
+          url
+          rel
+        }
       }
       action {
         heading
@@ -197,7 +200,10 @@ query ExperimentsPage($id: String!) {
               }
             }
           }
-          link
+          link {
+            url
+            rel
+          }
         }
       }
     }

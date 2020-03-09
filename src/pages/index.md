@@ -8,14 +8,18 @@ focus:
       to startups at any step of the journey.
     hover: /img/studio-hover.png
     image: /img/studio.png
-    link: /studio/startup
+    link:
+      url: /studio/startup
+      rel: ''
     title: Studio
   - description: >-
       We explore, test, and develop ideas through the pursuit of new
       technologies both internally and for large companies.
     hover: /img/experiments-hover.png
     image: /img/experiments.png
-    link: /experiments/lab
+    link:
+      url: /experiments/lab
+      rel: ''
     title: Experiments
 intro: >-
   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor

@@ -1,52 +1,65 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { kebabCase } from 'lodash'
-import Helmet from 'react-helmet'
 import { graphql, Link } from 'gatsby'
 import Layout from '../components/Layout'
-import Content, { HTMLContent } from '../components/Content'
+import FluidImage from '../components/FluidImage'
+import ReactPlayer from 'react-player'
 
-export const BlogPostTemplate = ({
-    content,
-    contentComponent,
-    description,
-    tags,
-    title,
-    helmet,
+export const VenturesPostTemplate = ({
+    company,
+    heading,
+    timeframe,
+    logo,
+    logoAlt,
+    video,
+    intro,
+    participants,
+    links,
 }) => {
-    const PostContent = contentComponent || Content
-
     return (
         <section className="section">
-            {helmet || ''}
-            <div className="container content">
-                <div className="columns">
-                    <div className="column is-10 is-offset-1">
-                        <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
-                            {title}
-                        </h1>
-                        <p>{description}</p>
-                        <PostContent content={content} />
-                        {tags && tags.length ? (
-                            <div style={{ marginTop: `4rem` }}>
-                                <h4>Tags</h4>
-                                <ul className="taglist">
-                                    {tags.map(tag => (
-                                        <li key={tag + `tag`}>
-                                            <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-                        ) : null}
-                    </div>
-                </div>
+            <div>
+                <p>
+                    {company}<br />
+                    {heading}<br />
+                    {timeframe}<br />
+                    <FluidImage
+                        alt={logoAlt || company}
+                        image={logo} />
+                    {
+                        video != null &&
+                        <ReactPlayer
+                            url={video} />
+                    }
+                    {intro}
+                </p>
+            </div>
+            <div>
+                {participants.map((p) => {
+                    return (
+                        <p>{p.name}<br />{p.title}<br /><FluidImage alt={p.imageAlt || p.name} image={p.image} /></p>
+                    )
+                })}
+            </div>
+            <div>
+                {links.map((l) => {
+                    if (l.link == null || l.link.url == null) {
+                        return (null);
+                    }
+                    return (
+                        <p>
+                            <a href={l.link.url} rel={l.link.rel} target="_blank">
+                                {l.name}<br />{l.category}
+                            </a>
+                        </p>
+                    )
+                })}
             </div>
         </section>
     )
 }
 
-BlogPostTemplate.propTypes = {
+VenturesPostTemplate.propTypes = {
     content: PropTypes.node.isRequired,
     contentComponent: PropTypes.func,
     description: PropTypes.string,
@@ -54,47 +67,86 @@ BlogPostTemplate.propTypes = {
     helmet: PropTypes.object,
 }
 
-const BlogPost = ({ data }) => {
-    const { markdownRemark: post } = data
+const VenturesPost = ({ data }) => {
+    const { frontmatter } = data.markdownRemark
+    console.log(data);
 
     return (
-        <Layout>
-            <BlogPostTemplate
-                content={post.html}
-                contentComponent={HTMLContent}
-                description={post.frontmatter.description}
-                helmet={
-                    <Helmet titleTemplate="%s | Blog">
-                        <title>{`${post.frontmatter.title}`}</title>
-                        <meta
-                            name="description"
-                            content={`${post.frontmatter.description}`}
-                        />
-                    </Helmet>
-                }
-                tags={post.frontmatter.tags}
-                title={post.frontmatter.title}
+        <Layout
+            seo={frontmatter.seo}>
+            <VenturesPostTemplate
+                company={frontmatter.company}
+                heading={frontmatter.heading}
+                timeframe={frontmatter.timeframe}
+                logo={frontmatter.logo}
+                logoAlt={frontmatter.logoAlt}
+                video={frontmatter.video}
+                intro={frontmatter.intro}
+                participants={frontmatter.participants}
+                links={frontmatter.links}
             />
         </Layout>
     )
 }
 
-BlogPost.propTypes = {
+VenturesPost.propTypes = {
     data: PropTypes.shape({
         markdownRemark: PropTypes.object,
     }),
 }
 
-export default BlogPost
+export default VenturesPost
 
 export const pageQuery = graphql`
-  query BlogPostByID($id: String!) {
+  query VenturesPostByID($id: String!) {
     markdownRemark(id: { eq: $id }) {
       id
       html
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
-        title
+        company
+        heading
+        timeframe
+        logo {
+          childImageSharp {
+            fluid(maxWidth: 2048, quality: 100) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        logoAlt
+        video
+        intro
+        participants {
+          name
+          image {
+            childImageSharp {
+              fluid(maxWidth: 2048, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+          imageAlt
+          title
+        }
+        links {
+          name
+          link {
+            url
+            rel
+          }
+          category
+        }
+        seo {
+          title
+          description
+          ogTitle
+          ogType
+          ogDescription
+          ogImage
+          robots
+          canonical
+        }
       }
     }
   }

@@ -6,58 +6,58 @@ import Header from '../components/Header'
 import ActionCallout from '../components/ActionCallout'
 
 export const JournalPageTemplate = ({
-    section,
-    heading,
-    action,
+  section,
+  heading,
+  action,
 }) => {
 
-    return (
-        <div>
-            <Header
-                collageType="none"
-                heading={heading}
-                section={section}
-            />
-            <ActionCallout
-                heading={action.heading}
-                pages={action.pages} />
-        </div>
-    )
+  return (
+    <div>
+      <Header
+        collageType="none"
+        heading={heading}
+        section={section}
+      />
+      <ActionCallout
+        heading={action.heading}
+        pages={action.pages} />
+    </div>
+  )
 }
 
 JournalPageTemplate.propTypes = {
-    section: PropTypes.string,
+  section: PropTypes.string,
+  heading: PropTypes.string,
+  action: PropTypes.shape({
     heading: PropTypes.string,
-    action: PropTypes.shape({
-        heading: PropTypes.string,
-        pages: PropTypes.arrayOf(
-            PropTypes.shape({
-                title: PropTypes.string,
-                description: PropTypes.string,
-                image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-                link: PropTypes.string,
-            })
-        )
-    }),
+    pages: PropTypes.arrayOf(
+      PropTypes.shape({
+        title: PropTypes.string,
+        description: PropTypes.string,
+        image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+        link: PropTypes.string,
+      })
+    )
+  }),
 }
 
 const JournalPage = ({ data }) => {
-    const { frontmatter } = data.markdownRemark
+  const { frontmatter } = data.markdownRemark
 
-    return (
-        <Layout
-            bodyClass="-dark">
-            <JournalPageTemplate
-                section={frontmatter.section}
-                heading={frontmatter.heading}
-                action={frontmatter.action}
-            />
-        </Layout>
-    )
+  return (
+    <Layout
+      bodyClass="-dark">
+      <JournalPageTemplate
+        section={frontmatter.section}
+        heading={frontmatter.heading}
+        action={frontmatter.action}
+      />
+    </Layout>
+  )
 }
 
 JournalPage.propTypes = {
-    data: PropTypes.object.isRequired,
+  data: PropTypes.object.isRequired,
 }
 
 export default JournalPage;
@@ -81,7 +81,10 @@ query JournalPage($id: String!) {
               }
             }
           }
-          link
+          link {
+            url
+            rel
+          }
         }
       }
     }

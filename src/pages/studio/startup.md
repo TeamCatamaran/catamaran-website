@@ -108,18 +108,24 @@ slider:
     title: Founder
 launch:
   content: Ready to launch?
-  link: 'https://google.com'
+  link:
+    url: 'https://google.com'
+    rel: ''
   text: LET'S GO
 action:
   heading: Where the action is
   pages:
     - description: From Business Accelerator to Startup Studio
       image: /img/studio.png
-      link: test
+      link:
+        url: test
+        rel: ''
       title: Journal Entry
     - description: Harrisburg Landmark Has a New Owner
       image: /img/studio.png
-      link: test
+      link:
+        url: test
+        rel: ''
       title: Press
 ---
 

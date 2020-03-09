@@ -136,7 +136,10 @@ export const pageQuery = graphql`
         partners {
           category
           name
-          link
+          link {
+            url
+            rel
+          }
           logo {
             childImageSharp {
               fluid(maxWidth: 2048, quality: 100) {

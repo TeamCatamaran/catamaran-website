@@ -11,6 +11,7 @@ import JournalPostPreview from './preview-templates/JournalPostPreview'
 import NetworkPagePreview from './preview-templates/NetworkPagePreview'
 import StudioPagePreview from './preview-templates/StudioPagePreview'
 import VenturesPagePreview from './preview-templates/VenturesPagePreview'
+import VenturesPostPreview from './preview-templates/VenturesPostPreview'
 
 CMS.registerMediaLibrary(uploadcare)
 CMS.registerMediaLibrary(cloudinary)
@@ -21,9 +22,10 @@ CMS.registerPreviewTemplate('contact', ContactPagePreview)
 CMS.registerPreviewTemplate('enterpriseExperiments', ExperimentsPagePreview)
 CMS.registerPreviewTemplate('labExperiments', ExperimentsPagePreview)
 CMS.registerPreviewTemplate('index', IndexPagePreview)
-CMS.registerPreviewTemplate('journal', JournalPagePreview)
-CMS.registerPreviewTemplate('journal-post', JournalPostPreview)
+CMS.registerPreviewTemplate('journalPage', JournalPagePreview)
+CMS.registerPreviewTemplate('journal', JournalPostPreview)
 CMS.registerPreviewTemplate('network', NetworkPagePreview)
 CMS.registerPreviewTemplate('studioStartup', StudioPagePreview)
 CMS.registerPreviewTemplate('upstartsStartup', StudioPagePreview)
 CMS.registerPreviewTemplate('ventures', VenturesPagePreview)
+CMS.registerPreviewTemplate('venture', VenturesPostPreview)

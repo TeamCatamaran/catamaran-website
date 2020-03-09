@@ -282,7 +282,10 @@ export const aboutPageQuery = graphql`
                 }
               }
             }
-            link
+            link {
+              url
+              rel
+            }
           }
         }
       }

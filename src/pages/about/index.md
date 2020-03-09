@@ -39,7 +39,7 @@ values:
 team:
   heading: The Core Team
   description: >-
-    From how we approach ideas to how we approach eachother, our values are there to remind us who we are and who we want to be. 
+    From how we approach ideas to how we approach eachother, our values are there to remind us who we are and who we want to be.
   people:
     - name: Amanda Mills
       title: Director
@@ -59,7 +59,7 @@ team:
 leadership:
   heading: Some Title for Them
   description: >-
-    From how we approach ideas to how we approach eachother, our values are there to remind us who we are and who we want to be. 
+    From how we approach ideas to how we approach eachother, our values are there to remind us who we are and who we want to be.
   people:
     - name: Dave Hickethier
       title: Something
@@ -78,10 +78,14 @@ action:
   pages:
     - title: Journal Entry
       description: From Business Accelerator to Startup Studio
-      link: test
+      link:
+        url: test
+        rel: ''
       image: /img/studio.jpg
     - title: Press
       description: Harrisburg Landmark Has a New Owner
-      link: test
+      link:
+        url: test
+        rel: ''
       image: /img/experiments.jpg
 ---

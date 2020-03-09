@@ -6,74 +6,74 @@ import Header from '../components/Header'
 import ActionCallout from '../components/ActionCallout'
 
 export const VenturesPageTemplate = ({
-    section,
-    heading,
-    ventures,
-    action,
+  section,
+  heading,
+  ventures,
+  action,
 }) => {
 
-    return (
+  return (
+    <div>
+      <Header
+        collageType="none"
+        heading={heading}
+        section={section}
+      />
+      {
+        ventures != null && ventures.length > 0 &&
         <div>
-            <Header
-                collageType="none"
-                heading={heading}
-                section={section}
-            />
-            {
-                ventures != null && ventures.length > 0 &&
-                <div>
-                    {ventures.map((v) => {
-                        return (
-                            <p>
-                                {v.title}
-                            </p>
-                        )
-                    })}
-                </div>
-            }
-            <ActionCallout
-                heading={action.heading}
-                pages={action.pages} />
+          {ventures.map((v) => {
+            return (
+              <p>
+                {v.title}
+              </p>
+            )
+          })}
         </div>
-    )
+      }
+      <ActionCallout
+        heading={action.heading}
+        pages={action.pages} />
+    </div>
+  )
 }
 
 VenturesPageTemplate.propTypes = {
-    section: PropTypes.string,
+  section: PropTypes.string,
+  heading: PropTypes.string,
+  action: PropTypes.shape({
     heading: PropTypes.string,
-    action: PropTypes.shape({
-        heading: PropTypes.string,
-        pages: PropTypes.arrayOf(
-            PropTypes.shape({
-                title: PropTypes.string,
-                description: PropTypes.string,
-                image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-                link: PropTypes.string,
-            })
-        )
-    }),
+    pages: PropTypes.arrayOf(
+      PropTypes.shape({
+        title: PropTypes.string,
+        description: PropTypes.string,
+        image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+        link: PropTypes.string,
+      })
+    )
+  }),
 }
 
 const VenturesPage = ({ data }) => {
-    const { frontmatter } = data.markdownRemark
-    const ventures = data.ventures.edges.map((e) => e.node.frontmatter);
-    console.log(ventures);
+  const { frontmatter } = data.markdownRemark
+  const ventures = data.ventures.edges.map((e) => e.node.frontmatter);
+  console.log(ventures);
 
-    return (
-        <Layout
-            bodyClass="-dark">
-            <VenturesPageTemplate
-                section={frontmatter.section}
-                heading={frontmatter.heading}
-                ventures={ventures}
-                action={frontmatter.action}
-            />
-        </Layout>
-    )
+  return (
+    <Layout
+      bodyClass="-dark">
+      <VenturesPageTemplate
+        section={frontmatter.section}
+        heading={frontmatter.heading}
+        ventures={ventures}
+        action={frontmatter.action}
+      />
+    </Layout>
+  )
 }
 
 VenturesPage.propTypes = {
-    data: PropTypes.object.isRequired,
+  data: PropTypes.object.isRequired,
 }
 
 export default VenturesPage;
@@ -106,7 +106,10 @@ query VenturesPage($id: String!) {
               }
             }
           }
-          link
+          link {
+            url
+            rel
+          }
         }
       }
     }

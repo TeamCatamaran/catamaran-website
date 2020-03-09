@@ -136,7 +136,10 @@ export const pageQuery = graphql`
         focus {
           title
           description
-          link
+          link {
+            url
+            rel
+          }
           image {
             childImageSharp {
               fluid(maxWidth: 2048, quality: 100) {

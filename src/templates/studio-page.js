@@ -377,7 +377,10 @@ query StudioPage($id: String!) {
       launch {
         content
         text
-        link
+        link {
+          url
+          rel
+        }
       }
       action {
         heading
@@ -391,7 +394,10 @@ query StudioPage($id: String!) {
               }
             }
           }
-          link
+          link {
+            url
+            rel
+          }
         }
       }
     }
