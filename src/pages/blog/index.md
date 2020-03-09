@@ -6,13 +6,17 @@ action:
   heading: Where the action is
   pages:
     - description: From Business Accelerator to Startup Studio
-      image: /img/studio.png
+      image:
+        src: /img/studio.png
+        alt: ''
       link:
         url: test
         rel: ''
       title: Journal Entry
     - description: Harrisburg Landmark Has a New Owner
-      image: /img/studio.png
+      image:
+        src: /img/studio.png
+        alt: ''
       link:
         url: test
         rel: ''

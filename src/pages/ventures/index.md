@@ -10,12 +10,16 @@ action:
       link:
         url: test
         rel: ''
-      image: /img/studio.png
+      image:
+        src: /img/studio.png
+        alt: ''
     - title: Press
       description: Harrisburg Landmark Has a New Owner
       link:
         url: test
         rel: ''
-      image: /img/studio.png
+      image:
+        src: /img/studio.png
+        alt: ''
 ---
 

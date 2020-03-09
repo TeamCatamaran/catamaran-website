@@ -1,0 +1,28 @@
+.c-location{
+    &__heading{
+        @include font-style(
+            $font-accent,
+            $size-4,
+            $purple,
+            $weight-bold,
+            $height-4
+        );
+        letter-spacing: 2px;
+       @include grid-column(12);
+        }
+    &__map{
+        @include grid-column(12);
+        justify-content: start;
+    }
+    p{
+        white-space: pre-line;
+    }
+    p+p{
+        margin-top: 15px;
+    }
+    &__address{
+        @include grid-column(6);
+    }
+    &__footer{
+    }
+}

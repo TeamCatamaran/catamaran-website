@@ -13,97 +13,114 @@ partners:
     link:
       url: https://google.com
       rel: ''
-    logo: '/img/plus.png'
+    image:
+      src: /img/plus.png
+      alt: ''
     name: Penwell
   - category: coworking
     link:
       url: https://google.com
       rel: ''
-    logo: '/img/plus.png'
+    image:
+      src: /img/plus.png
     name: Sandler Training
   - category: coworking
     link:
       url: https://google.com
       rel: ''
-    logo: '/img/plus.png'
+    image:
+      src: /img/plus.png
     name: Deeter Gallaher Group LLC
   - category: coworking
     link:
       url: https://google.com
       rel: ''
-    logo: '/img/plus.png'
+    image:
+      src: /img/plus.png
     name: Gift CPAs
   - category: coworking
     link:
       url: https://google.com
       rel: ''
-    logo: '/img/plus.png'
+    image:
+      src: /img/plus.png
     name: Fairway
   - category: coworking
     link:
       url: https://google.com
       rel: ''
-    logo: '/img/plus.png'
+    image:
+      src: /img/plus.png
     name: Langan Group Financial
   - category: coworking
     link:
       url: https://google.com
       rel: ''
-    logo: '/img/plus.png'
+    image:
+      src: /img/plus.png
     name: RW Financial
   - category: coworking
     link:
       url: https://google.com
       rel: ''
-    logo: '/img/plus.png'
+    image:
+      src: /img/plus.png
     name: Mid Penn Bank
   - category: coworking
     link:
       url: https://google.com
       rel: ''
-    logo: '/img/plus.png'
+    image:
+      src: /img/plus.png
     name: Harrisburg University
   - category: coworking
     link:
       url: https://google.com
       rel: ''
-    logo: '/img/plus.png'
+    image:
+      src: /img/plus.png
     name: Assets
   - category: coworking
     link:
       url: https://google.com
       rel: ''
-    logo: '/img/plus.png'
+    image:
+      src: /img/plus.png
     name: The Candy Factory
   - category: coworking
     link:
       url: https://google.com
       rel: ''
-    logo: '/img/plus.png'
+    image:
+      src: /img/plus.png
     name: Capitol Support Services
   - category: coworking
     link:
       url: https://google.com
       rel: ''
-    logo: '/img/plus.png'
+    image:
+      src: /img/plus.png
     name: ExecuStar
   - category: coworking
     link:
       url: https://google.com
       rel: ''
-    logo: '/img/plus.png'
+    image:
+      src: /img/plus.png
     name: St@rtup
   - category: coworking
     link:
       url: https://google.com
       rel: ''
-    logo: '/img/plus.png'
+    image:
+      src: /img/plus.png
     name: Supply
   - category: coworking
     link:
       url: https://google.com
       rel: ''
-    logo: '/img/plus.png'
+    image:
+      src: /img/plus.png
     name: Netrepid
 
 

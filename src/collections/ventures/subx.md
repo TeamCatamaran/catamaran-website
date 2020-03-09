@@ -3,8 +3,9 @@ templateKey: ventures-post
 company: SUBX
 heading: Changing how contractors connect
 timeframe: Fall 2018 / Catamaran Season 2
-logo: /img/studio.png
-logoAlt: ''
+logo:
+  src: /img/studio.png
+  alt: ''
 video: ''
 date: 2020-03-09T04:00:00.000Z
 intro: >-
@@ -13,12 +14,14 @@ intro: >-
   their own crews busy during the slower seasons. The SubX platform was created
   to solve those problems.
 participants:
-  - image: /img/subx.png
-    imageAlt: ''
+  - image:
+      src: /img/subx.png
+      alt: 'ss'
     name: Ben Lewis
     title: Founder
-  - image: /img/subx.png
-    imageAlt: ''
+  - image:
+      src: /img/subx.png
+      alt: 'ss'
     name: Will Lewis
     title: Tech Co-Founder
 links:

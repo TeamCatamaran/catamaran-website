@@ -27,10 +27,13 @@ const Breakdown = class extends React.Component {
             <div className="c-breakdown container">
                 <div className="c-breakdown__title">
                     <h3>{this.props.content.heading}</h3>
-                    <FluidImage
-                        className="c-breakdown__image"
-                        image={this.props.content.image}
-                        alt="Our Process Collage" />
+                    {
+                        this.props.content.image != null &&
+                        <FluidImage
+                            className="c-breakdown__image"
+                            image={this.props.content.image.src}
+                            alt={this.props.content.image.alt || "Our Process Collage"} />
+                    }
                 </div>
                 {
                     this.props.content.items != null &&
@@ -39,7 +42,7 @@ const Breakdown = class extends React.Component {
                             {this.props.content.items.map((item, key) => {
                                 return (
                                     <div className="c-breakdown__item" key={key}>
-                                        <img src={icons[item.icon]} alt={item.title} />
+                                        <img src={icons[item.icon]} alt={`${item.icon} icon`} />
                                         <label className="">{item.title}</label>
                                         <p>{item.description}</p>
                                     </div>

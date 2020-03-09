@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { graphql } from 'gatsby'
-
+import { Link, graphql } from 'gatsby'
 
 import ActionCallout from '../components/ActionCallout'
 import Header from '../components/Header'
@@ -11,7 +10,16 @@ import Breakdown from '../components/Breakdown'
 import Cta from '../components/Cta'
 import FluidImage from '../components/FluidImage'
 import ProcessSlider from '../components/ProcessSlider'
-import { Link } from 'gatsby'
+
+import angles from '../img/angles.png'
+import circlelines from '../img/circlelines.png'
+import diamonds from '../img/diamonds.png'
+import dots from '../img/dots.png'
+import scribble from '../img/scribble.png'
+import triangle from '../img/triangle.png'
+import warpbox from '../img/warpbox.png'
+import waves from '../img/waves.png'
+import { types } from '../types/types'
 
 export const StudioPageTemplate = ({
     tab,
@@ -59,8 +67,11 @@ export const StudioPageTemplate = ({
                                 if (tab === p.name) {
                                     className += " -active";
                                 }
+                                if (p.link == null) {
+                                    return (null);
+                                }
                                 return (
-                                    <Link key={"tab-" + key} to={p.link} className={className}>{p.label}</Link>
+                                    <Link key={"tab-" + key} to={p.link.url} rel={p.link.rel} className={className}>{p.label}</Link>
                                 );
                             })
                         }
@@ -97,29 +108,35 @@ export const StudioPageTemplate = ({
                 photos != null &&
                 <div className="c-studioPhotos container">
                     <div className="c-studioPhotos__photo1">
-                        <FluidImage
-                            alt={"upstart-photo"}
-                            image={photos[0]} />
+                        {
+                            photos[0] != null &&
+                            <FluidImage
+                                alt={photos[0].alt || "upstart-photo"}
+                                image={photos[0].src} />
+                        }
                     </div>
                     <div className="c-studioPhotos__photo2">
-                        <FluidImage
-                            alt={"upstart-photo"}
-                            image={photos[1]} />
+                        {
+                            photos[1] != null &&
+                            <FluidImage
+                                alt={photos[1].alt || "upstart-photo"}
+                                image={photos[1].src} />
+                        }
                     </div>
                     <div className="c-studioPhotos__element1">
-                        <FluidImage
+                        <img
                             alt={"abstract geometric design element"}
-                            image={"/img/waves.png"} />
+                            src={waves} />
                     </div>
                     <div className="c-studioPhotos__element2">
-                        <FluidImage
+                        <img
                             alt={"abstract geometric design element"}
-                            image={"/img/angles.png"} />
+                            src={angles} />
                     </div>
                     <div className="c-studioPhotos__element3">
-                        <FluidImage
+                        <img
                             alt={"abstract geometric design element"}
-                            image={"/img/scribble.png"} />
+                            src={scribble} />
                     </div>
                 </div>
             }
@@ -145,40 +162,43 @@ export const StudioPageTemplate = ({
                             <div className="c-services__header__images">
                                 <img
                                     className="c-services__header__images__circlelines"
-                                    src="/img/circlelines.png" />
+                                    alt="circlelines"
+                                    src={circlelines} />
                                 <img
                                     className="c-services__header__images__warpbox"
-                                    src="/img/warpbox.png" />
+                                    alt="warpbox"
+                                    src={warpbox} />
                             </div>
                         }
                     </div>
                     <div className="c-services__list">
-                    {
-                        services.list.map((i, key) => {
-                            return (
-                                <div className="c-services__listItem" key={"listItem-" + key}>
-                                    {
-                                        i.heading != null &&
-                                        <h3 className="c-services__listItem__heading">{i.heading}</h3>
-                                    }
-                                    {
-                                        i.intro != null &&
-                                        <p className="c-services__listItem__intro">{i.intro}</p>
-                                    }
-                                    {
-                                        i.description != null &&
-                                        <p className="c-services__listItem__description">{i.description}</p>
-                                    }
-                                </div>
-                            )
-                        })
-                    }
-                    {
-                        tab == "upstarts" &&
-                        <img
-                            className="c-services__list__image"
-                            src="/img/diamonds.png" />
-                    }
+                        {
+                            services.list.map((i, key) => {
+                                return (
+                                    <div className="c-services__listItem" key={"listItem-" + key}>
+                                        {
+                                            i.heading != null &&
+                                            <h3 className="c-services__listItem__heading">{i.heading}</h3>
+                                        }
+                                        {
+                                            i.intro != null &&
+                                            <p className="c-services__listItem__intro">{i.intro}</p>
+                                        }
+                                        {
+                                            i.description != null &&
+                                            <p className="c-services__listItem__description">{i.description}</p>
+                                        }
+                                    </div>
+                                )
+                            })
+                        }
+                        {
+                            tab == "upstarts" &&
+                            <img
+                                className="c-services__list__image"
+                                alt="diamonds"
+                                src={diamonds} />
+                        }
                     </div>
                 </div>
             }
@@ -187,17 +207,18 @@ export const StudioPageTemplate = ({
                 <div className="c-upstartLogos container">
                     <h2 className="c-upstartLogos__heading">{upstarts.heading}</h2>
                     <div className="c-upstartLogos__list">
-                    {
-                        upstarts.logos.map((logo, key) => {
-                            return (
-                                <div className="c-upstartLogos__logo" key={"logo-" + key}>
-                                    <FluidImage
-                                        className="c-upstartLogos__logo__image"
-                                        image={logo} />
-                                </div>
-                            )
-                        })
-                    }
+                        {
+                            upstarts.logos.map((logo, key) => {
+                                return (
+                                    <div className="c-upstartLogos__logo" key={"logo-" + key}>
+                                        <FluidImage
+                                            className="c-upstartLogos__logo__image"
+                                            alt={logo.alt}
+                                            image={logo.src} />
+                                    </div>
+                                )
+                            })
+                        }
                     </div>
                 </div>
             }
@@ -205,10 +226,13 @@ export const StudioPageTemplate = ({
                 items={testimonials} />
             <Cta
                 content={launch}
-                variant={tab}/>
-            <ActionCallout
-                heading={action.heading}
-                pages={action.pages} />
+                variant={tab} />
+            {
+                action != null &&
+                <ActionCallout
+                    heading={action.heading}
+                    pages={action.pages} />
+            }
         </div>
     )
 }
@@ -228,9 +252,7 @@ StudioPageTemplate.propTypes = {
         ),
     }),
     photos: PropTypes.arrayOf(
-        PropTypes.shape({
-            photo: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-        }),
+        types.imageProps
     ),
     process: PropTypes.shape({
         heading: PropTypes.string,
@@ -256,9 +278,7 @@ StudioPageTemplate.propTypes = {
     upstarts: PropTypes.shape({
         heading: PropTypes.string,
         logos: PropTypes.arrayOf(
-            PropTypes.shape({
-                photo: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-            }),
+            types.imageProps
         ),
     }),
     criteria: PropTypes.shape({
@@ -278,13 +298,13 @@ StudioPageTemplate.propTypes = {
             title: PropTypes.string,
             quote: PropTypes.string,
             logo: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-            image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+            image: types.imageProps,
         }),
     ),
     launch: PropTypes.shape({
         content: PropTypes.string,
         text: PropTypes.string,
-        link: PropTypes.string,
+        link: types.linkProps,
     }),
     action: PropTypes.shape({
         heading: PropTypes.string,
@@ -292,11 +312,12 @@ StudioPageTemplate.propTypes = {
             PropTypes.shape({
                 title: PropTypes.string,
                 description: PropTypes.string,
-                image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-                link: PropTypes.string,
+                image: types.imageProps,
+                link: types.linkProps,
             })
         )
     }),
+    seo: types.seoProps,
 }
 
 const StudioPage = ({ data }) => {
@@ -304,7 +325,8 @@ const StudioPage = ({ data }) => {
 
     return (
         <Layout
-            bodyClass="-orange">
+            bodyClass="-orange"
+            seo={frontmatter.seo}>
             <StudioPageTemplate
                 tab={frontmatter.tab}
                 section={frontmatter.section}
@@ -348,11 +370,14 @@ query StudioPage($id: String!) {
         }
       }
       photos {
-        childImageSharp {
-          fluid(maxWidth: 2048, quality: 100) {
-            ...GatsbyImageSharpFluid
+        src {
+          childImageSharp {
+            fluid(maxWidth: 2048, quality: 100) {
+              ...GatsbyImageSharpFluid
+            }
           }
         }
+        alt
       }
       process {
         heading
@@ -374,21 +399,27 @@ query StudioPage($id: String!) {
       upstarts {
         heading
         logos {
-          childImageSharp {
-            fluid(maxWidth: 2048, quality: 100) {
-              ...GatsbyImageSharpFluid
+          src {
+            childImageSharp {
+              fluid(maxWidth: 2048, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
             }
           }
+          alt
         }
       }
       criteria {
         heading
         image {
+          src {
             childImageSharp {
-                fluid(maxWidth: 2048, quality: 100) {
+              fluid(maxWidth: 2048, quality: 100) {
                 ...GatsbyImageSharpFluid
-                }
+              }
             }
+          }
+          alt
         }
         items {
           title
@@ -408,11 +439,14 @@ query StudioPage($id: String!) {
           }
         }
         image {
-          childImageSharp {
-            fluid(maxWidth: 2048, quality: 100) {
-              ...GatsbyImageSharpFluid
+          src {
+            childImageSharp {
+              fluid(maxWidth: 2048, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
             }
           }
+          alt
         }
       }
       launch {
@@ -429,17 +463,30 @@ query StudioPage($id: String!) {
           title
           description
           image {
-            childImageSharp {
-              fluid(maxWidth: 2048, quality: 100) {
-                ...GatsbyImageSharpFluid
+            src {
+              childImageSharp {
+                fluid(maxWidth: 2048, quality: 100) {
+                  ...GatsbyImageSharpFluid
+                }
               }
             }
+            alt
           }
           link {
             url
             rel
           }
         }
+      }
+      seo {
+        title
+        description
+        ogTitle
+        ogType
+        ogDescription
+        ogImage
+        robots
+        canonical
       }
     }
   }

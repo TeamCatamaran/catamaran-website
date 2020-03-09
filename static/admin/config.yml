@@ -27,8 +27,6 @@ collections:
           widget: "hidden",
           default: "journal-post",
         }
-      - { label: Title, name: title, widget: string }
-      - { label: Description, name: description, widget: string }
       - {
           label: Category,
           name: category,
@@ -38,8 +36,65 @@ collections:
       - { label: Publish Date, name: date, widget: datetime }
       - { label: Heading, name: heading, widget: string }
       - { label: Subheading, name: subheading, widget: string }
+      - {
+          label: Image,
+          name: image,
+          widget: object,
+          fields:
+            [
+              { label: Image, name: src, widget: image },
+              { label: "Alt Text", name: alt, widget: string, required: false },
+            ],
+        }
       - { label: Introduction, name: introduction, widget: text }
       - { label: Body, name: body, widget: markdown }
+      - {
+          label: SEO,
+          name: seo,
+          widget: object,
+          fields:
+            [
+              { label: Title, name: title, widget: string },
+              {
+                label: Description,
+                name: description,
+                widget: string,
+                required: false,
+              },
+              {
+                label: "OG Title",
+                name: ogTitle,
+                widget: string,
+                required: false,
+              },
+              {
+                label: "OG Type",
+                name: ogType,
+                widget: string,
+                required: false,
+              },
+              {
+                label: "OG Description",
+                name: ogDescription,
+                widget: string,
+                required: false,
+              },
+              {
+                label: "OG Image",
+                name: ogImage,
+                widget: image,
+                required: false,
+              },
+              { label: "OG Url", name: ogUrl, widget: string, required: false },
+              { label: Robots, name: robots, widget: string, required: false },
+              {
+                label: "Canonical URL",
+                name: canonical,
+                widget: string,
+                required: false,
+              },
+            ],
+        }
 
   - name: "venture"
     label: "Ventures"
@@ -56,12 +111,15 @@ collections:
       - { label: Company, name: company, widget: string }
       - { label: Heading, name: heading, widget: string }
       - { label: Timeframe, name: timeframe, widget: string }
-      - { label: Logo, name: logo, widget: image }
       - {
-          label: "Logo Alt Text",
-          name: logoAlt,
-          widget: string,
-          required: false,
+          label: Image,
+          name: image,
+          widget: object,
+          fields:
+            [
+              { label: Image, name: src, widget: image },
+              { label: "Alt Text", name: alt, widget: string, required: false },
+            ],
         }
       - { label: Video, name: video, widget: file, required: false }
       - { label: Publish Date, name: date, widget: datetime }
@@ -73,12 +131,20 @@ collections:
           fields:
             [
               { label: Name, name: name, widget: string },
-              { label: Image, name: image, widget: image },
               {
-                label: "Image Alt Text",
-                name: imageAlt,
-                widget: string,
-                required: false,
+                label: Image,
+                name: image,
+                widget: object,
+                fields:
+                  [
+                    { label: Image, name: src, widget: image },
+                    {
+                      label: "Alt Text",
+                      name: alt,
+                      widget: string,
+                      required: false,
+                    },
+                  ],
               },
               { label: Title, name: title, widget: string },
             ],
@@ -209,8 +275,36 @@ collections:
                         },
                       ],
                   },
-                  { label: Image, name: image, widget: image },
-                  { label: "Hover Image", name: hover, widget: image },
+                  {
+                    label: Image,
+                    name: image,
+                    widget: object,
+                    fields:
+                      [
+                        { label: Image, name: src, widget: image },
+                        {
+                          label: "Alt Text",
+                          name: alt,
+                          widget: string,
+                          required: false,
+                        },
+                      ],
+                  },
+                  {
+                    label: "Hover Image",
+                    name: hover,
+                    widget: object,
+                    fields:
+                      [
+                        { label: Image, name: src, widget: image },
+                        {
+                          label: "Alt Text",
+                          name: alt,
+                          widget: string,
+                          required: false,
+                        },
+                      ],
+                  },
                 ],
             }
           - { label: Intro, name: intro, widget: text }
@@ -221,7 +315,21 @@ collections:
               fields:
                 [
                   { label: Heading, name: heading, widget: string },
-                  { label: Image, name: image, widget: image },
+                  {
+                    label: Image,
+                    name: image,
+                    widget: object,
+                    fields:
+                      [
+                        { label: Image, name: src, widget: image },
+                        {
+                          label: "Alt Text",
+                          name: alt,
+                          widget: string,
+                          required: false,
+                        },
+                      ],
+                  },
                   {
                     label: Items,
                     name: items,
@@ -256,7 +364,21 @@ collections:
                     widget: file,
                     allow_multiple: false,
                   },
-                  { label: Image, name: image, widget: image },
+                  {
+                    label: Image,
+                    name: image,
+                    widget: object,
+                    fields:
+                      [
+                        { label: Image, name: src, widget: image },
+                        {
+                          label: "Alt Text",
+                          name: alt,
+                          widget: string,
+                          required: false,
+                        },
+                      ],
+                  },
                 ],
             }
           - {
@@ -383,7 +505,21 @@ collections:
                     fields:
                       [
                         { label: Name, name: name, widget: string },
-                        { label: Photo, name: photo, widget: image },
+                        {
+                          label: Photo,
+                          name: photo,
+                          widget: object,
+                          fields:
+                            [
+                              { label: Image, name: src, widget: image },
+                              {
+                                label: "Alt Text",
+                                name: alt,
+                                widget: string,
+                                required: false,
+                              },
+                            ],
+                        },
                         { label: Title, name: title, widget: string },
                       ],
                   },
@@ -404,7 +540,21 @@ collections:
                     fields:
                       [
                         { label: Name, name: name, widget: string },
-                        { label: Photo, name: photo, widget: image },
+                        {
+                          label: Photo,
+                          name: photo,
+                          widget: object,
+                          fields:
+                            [
+                              { label: Image, name: src, widget: image },
+                              {
+                                label: "Alt Text",
+                                name: alt,
+                                widget: string,
+                                required: false,
+                              },
+                            ],
+                        },
                         { label: Title, name: title, widget: string },
                       ],
                   },
@@ -441,8 +591,79 @@ collections:
                               },
                             ],
                         },
-                        { label: Image, name: image, widget: image },
+                        {
+                          label: Image,
+                          name: image,
+                          widget: object,
+                          fields:
+                            [
+                              { label: Image, name: src, widget: image },
+                              {
+                                label: "Alt Text",
+                                name: alt,
+                                widget: string,
+                                required: false,
+                              },
+                            ],
+                        },
                       ],
+                  },
+                ],
+            }
+          - {
+              label: SEO,
+              name: seo,
+              widget: object,
+              fields:
+                [
+                  { label: Title, name: title, widget: string },
+                  {
+                    label: Description,
+                    name: description,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "OG Title",
+                    name: ogTitle,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "OG Type",
+                    name: ogType,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "OG Description",
+                    name: ogDescription,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "OG Image",
+                    name: ogImage,
+                    widget: image,
+                    required: false,
+                  },
+                  {
+                    label: "OG Url",
+                    name: ogUrl,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: Robots,
+                    name: robots,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "Canonical URL",
+                    name: canonical,
+                    widget: string,
+                    required: false,
                   },
                 ],
             }
@@ -484,7 +705,21 @@ collections:
               widget: object,
               fields: [{ label: Heading, name: heading, widget: string }],
             }
-          - { label: Map, name: map, widget: image }
+          - {
+              label: Map,
+              name: map,
+              widget: object,
+              fields:
+                [
+                  { label: Image, name: src, widget: image },
+                  {
+                    label: "Alt Text",
+                    name: alt,
+                    widget: string,
+                    required: false,
+                  },
+                ],
+            }
           - {
               label: Locations,
               name: locations,
@@ -499,8 +734,70 @@ collections:
                     fields:
                       [
                         { label: Address, name: address, widget: text },
-                        { label: Number, name: number, widget: string },
+                        {
+                          label: Number,
+                          name: number,
+                          widget: string,
+                          required: false,
+                        },
                       ],
+                  },
+                ],
+            }
+          - {
+              label: SEO,
+              name: seo,
+              widget: object,
+              fields:
+                [
+                  { label: Title, name: title, widget: string },
+                  {
+                    label: Description,
+                    name: description,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "OG Title",
+                    name: ogTitle,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "OG Type",
+                    name: ogType,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "OG Description",
+                    name: ogDescription,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "OG Image",
+                    name: ogImage,
+                    widget: image,
+                    required: false,
+                  },
+                  {
+                    label: "OG Url",
+                    name: ogUrl,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: Robots,
+                    name: robots,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "Canonical URL",
+                    name: canonical,
+                    widget: string,
+                    required: false,
                   },
                 ],
             }
@@ -547,8 +844,79 @@ collections:
                               },
                             ],
                         },
-                        { label: Image, name: image, widget: image },
+                        {
+                          label: Image,
+                          name: image,
+                          widget: object,
+                          fields:
+                            [
+                              { label: Image, name: src, widget: image },
+                              {
+                                label: "Alt Text",
+                                name: alt,
+                                widget: string,
+                                required: false,
+                              },
+                            ],
+                        },
                       ],
+                  },
+                ],
+            }
+          - {
+              label: SEO,
+              name: seo,
+              widget: object,
+              fields:
+                [
+                  { label: Title, name: title, widget: string },
+                  {
+                    label: Description,
+                    name: description,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "OG Title",
+                    name: ogTitle,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "OG Type",
+                    name: ogType,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "OG Description",
+                    name: ogDescription,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "OG Image",
+                    name: ogImage,
+                    widget: image,
+                    required: false,
+                  },
+                  {
+                    label: "OG Url",
+                    name: ogUrl,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: Robots,
+                    name: robots,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "Canonical URL",
+                    name: canonical,
+                    widget: string,
+                    required: false,
                   },
                 ],
             }
@@ -615,7 +983,21 @@ collections:
                       [
                         { label: Heading, name: heading, widget: string },
                         { label: Description, name: description, widget: text },
-                        { label: Image, name: image, widget: image },
+                        {
+                          label: Image,
+                          name: image,
+                          widget: object,
+                          fields:
+                            [
+                              { label: Image, name: src, widget: image },
+                              {
+                                label: "Alt Text",
+                                name: alt,
+                                widget: string,
+                                required: false,
+                              },
+                            ],
+                        },
                       ],
                   },
                 ],
@@ -651,8 +1033,79 @@ collections:
                               },
                             ],
                         },
-                        { label: Image, name: image, widget: image },
+                        {
+                          label: Image,
+                          name: image,
+                          widget: object,
+                          fields:
+                            [
+                              { label: Image, name: src, widget: image },
+                              {
+                                label: "Alt Text",
+                                name: alt,
+                                widget: string,
+                                required: false,
+                              },
+                            ],
+                        },
                       ],
+                  },
+                ],
+            }
+          - {
+              label: SEO,
+              name: seo,
+              widget: object,
+              fields:
+                [
+                  { label: Title, name: title, widget: string },
+                  {
+                    label: Description,
+                    name: description,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "OG Title",
+                    name: ogTitle,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "OG Type",
+                    name: ogType,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "OG Description",
+                    name: ogDescription,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "OG Image",
+                    name: ogImage,
+                    widget: image,
+                    required: false,
+                  },
+                  {
+                    label: "OG Url",
+                    name: ogUrl,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: Robots,
+                    name: robots,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "Canonical URL",
+                    name: canonical,
+                    widget: string,
+                    required: false,
                   },
                 ],
             }
@@ -719,7 +1172,21 @@ collections:
                       [
                         { label: Heading, name: heading, widget: string },
                         { label: Description, name: description, widget: text },
-                        { label: Image, name: image, widget: image },
+                        {
+                          label: Image,
+                          name: image,
+                          widget: object,
+                          fields:
+                            [
+                              { label: Image, name: src, widget: image },
+                              {
+                                label: "Alt Text",
+                                name: alt,
+                                widget: string,
+                                required: false,
+                              },
+                            ],
+                        },
                       ],
                   },
                 ],
@@ -780,8 +1247,79 @@ collections:
                               },
                             ],
                         },
-                        { label: Image, name: image, widget: image },
+                        {
+                          label: Image,
+                          name: image,
+                          widget: object,
+                          fields:
+                            [
+                              { label: Image, name: src, widget: image },
+                              {
+                                label: "Alt Text",
+                                name: alt,
+                                widget: string,
+                                required: false,
+                              },
+                            ],
+                        },
                       ],
+                  },
+                ],
+            }
+          - {
+              label: SEO,
+              name: seo,
+              widget: object,
+              fields:
+                [
+                  { label: Title, name: title, widget: string },
+                  {
+                    label: Description,
+                    name: description,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "OG Title",
+                    name: ogTitle,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "OG Type",
+                    name: ogType,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "OG Description",
+                    name: ogDescription,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "OG Image",
+                    name: ogImage,
+                    widget: image,
+                    required: false,
+                  },
+                  {
+                    label: "OG Url",
+                    name: ogUrl,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: Robots,
+                    name: robots,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "Canonical URL",
+                    name: canonical,
+                    widget: string,
+                    required: false,
                   },
                 ],
             }
@@ -828,8 +1366,79 @@ collections:
                               },
                             ],
                         },
-                        { label: Image, name: image, widget: image },
+                        {
+                          label: Image,
+                          name: image,
+                          widget: object,
+                          fields:
+                            [
+                              { label: Image, name: src, widget: image },
+                              {
+                                label: "Alt Text",
+                                name: alt,
+                                widget: string,
+                                required: false,
+                              },
+                            ],
+                        },
                       ],
+                  },
+                ],
+            }
+          - {
+              label: SEO,
+              name: seo,
+              widget: object,
+              fields:
+                [
+                  { label: Title, name: title, widget: string },
+                  {
+                    label: Description,
+                    name: description,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "OG Title",
+                    name: ogTitle,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "OG Type",
+                    name: ogType,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "OG Description",
+                    name: ogDescription,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "OG Image",
+                    name: ogImage,
+                    widget: image,
+                    required: false,
+                  },
+                  {
+                    label: "OG Url",
+                    name: ogUrl,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: Robots,
+                    name: robots,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "Canonical URL",
+                    name: canonical,
+                    widget: string,
+                    required: false,
                   },
                 ],
             }
@@ -884,7 +1493,21 @@ collections:
               fields:
                 [
                   { label: Heading, name: heading, widget: string },
-                  { label: Image, name: image, widget: image },
+                  {
+                    label: Image,
+                    name: image,
+                    widget: object,
+                    fields:
+                      [
+                        { label: Image, name: src, widget: image },
+                        {
+                          label: "Alt Text",
+                          name: alt,
+                          widget: string,
+                          required: false,
+                        },
+                      ],
+                  },
                   {
                     label: Items,
                     name: itmes,
@@ -927,8 +1550,8 @@ collections:
                 ],
             }
           - {
-              label: Testimonials,
-              name: testimonials,
+              label: Slider,
+              name: slider,
               widget: list,
               fields:
                 [
@@ -941,7 +1564,21 @@ collections:
                     widget: file,
                     allow_multiple: false,
                   },
-                  { label: Image, name: image, widget: image },
+                  {
+                    label: Image,
+                    name: image,
+                    widget: object,
+                    fields:
+                      [
+                        { label: Image, name: src, widget: image },
+                        {
+                          label: "Alt Text",
+                          name: alt,
+                          widget: string,
+                          required: false,
+                        },
+                      ],
+                  },
                 ],
             }
           - {
@@ -1000,8 +1637,79 @@ collections:
                               },
                             ],
                         },
-                        { label: Image, name: image, widget: image },
+                        {
+                          label: Image,
+                          name: image,
+                          widget: object,
+                          fields:
+                            [
+                              { label: Image, name: src, widget: image },
+                              {
+                                label: "Alt Text",
+                                name: alt,
+                                widget: string,
+                                required: false,
+                              },
+                            ],
+                        },
                       ],
+                  },
+                ],
+            }
+          - {
+              label: SEO,
+              name: seo,
+              widget: object,
+              fields:
+                [
+                  { label: Title, name: title, widget: string },
+                  {
+                    label: Description,
+                    name: description,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "OG Title",
+                    name: ogTitle,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "OG Type",
+                    name: ogType,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "OG Description",
+                    name: ogDescription,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "OG Image",
+                    name: ogImage,
+                    widget: image,
+                    required: false,
+                  },
+                  {
+                    label: "OG Url",
+                    name: ogUrl,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: Robots,
+                    name: robots,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "Canonical URL",
+                    name: canonical,
+                    widget: string,
+                    required: false,
                   },
                 ],
             }
@@ -1044,7 +1752,16 @@ collections:
               name: photos,
               widget: list,
               allow_add: false,
-              field: { label: Photo, name: photo, widget: image },
+              fields:
+                [
+                  { label: Image, name: src, widget: image },
+                  {
+                    label: "Alt Text",
+                    name: alt,
+                    widget: string,
+                    required: false,
+                  },
+                ],
             }
           - {
               label: "How We Can Help",
@@ -1074,7 +1791,16 @@ collections:
                     label: Logos,
                     name: logos,
                     widget: list,
-                    field: { label: Logo, name: logo, widget: image },
+                    fields:
+                      [
+                        { label: Image, name: src, widget: image },
+                        {
+                          label: "Alt Text",
+                          name: alt,
+                          widget: string,
+                          required: false,
+                        },
+                      ],
                   },
                 ],
             }
@@ -1134,8 +1860,79 @@ collections:
                               },
                             ],
                         },
-                        { label: Image, name: image, widget: image },
+                        {
+                          label: Image,
+                          name: image,
+                          widget: object,
+                          fields:
+                            [
+                              { label: Image, name: src, widget: image },
+                              {
+                                label: "Alt Text",
+                                name: alt,
+                                widget: string,
+                                required: false,
+                              },
+                            ],
+                        },
                       ],
+                  },
+                ],
+            }
+          - {
+              label: SEO,
+              name: seo,
+              widget: object,
+              fields:
+                [
+                  { label: Title, name: title, widget: string },
+                  {
+                    label: Description,
+                    name: description,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "OG Title",
+                    name: ogTitle,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "OG Type",
+                    name: ogType,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "OG Description",
+                    name: ogDescription,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "OG Image",
+                    name: ogImage,
+                    widget: image,
+                    required: false,
+                  },
+                  {
+                    label: "OG Url",
+                    name: ogUrl,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: Robots,
+                    name: robots,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "Canonical URL",
+                    name: canonical,
+                    widget: string,
+                    required: false,
                   },
                 ],
             }
@@ -1220,8 +2017,79 @@ collections:
                               },
                             ],
                         },
-                        { label: Image, name: image, widget: image },
+                        {
+                          label: Image,
+                          name: image,
+                          widget: object,
+                          fields:
+                            [
+                              { label: Image, name: src, widget: image },
+                              {
+                                label: "Alt Text",
+                                name: alt,
+                                widget: string,
+                                required: false,
+                              },
+                            ],
+                        },
                       ],
+                  },
+                ],
+            }
+          - {
+              label: SEO,
+              name: seo,
+              widget: object,
+              fields:
+                [
+                  { label: Title, name: title, widget: string },
+                  {
+                    label: Description,
+                    name: description,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "OG Title",
+                    name: ogTitle,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "OG Type",
+                    name: ogType,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "OG Description",
+                    name: ogDescription,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "OG Image",
+                    name: ogImage,
+                    widget: image,
+                    required: false,
+                  },
+                  {
+                    label: "OG Url",
+                    name: ogUrl,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: Robots,
+                    name: robots,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "Canonical URL",
+                    name: canonical,
+                    widget: string,
+                    required: false,
                   },
                 ],
             }
@@ -1258,7 +2126,27 @@ collections:
                         "community contacts",
                       ],
                   },
-                  { label: Logo, name: logo, required: false, widget: image },
+                  {
+                    label: Image,
+                    name: image,
+                    required: false,
+                    widget: object,
+                    fields:
+                      [
+                        {
+                          label: Image,
+                          name: src,
+                          widget: image,
+                          required: false,
+                        },
+                        {
+                          label: "Alt Text",
+                          name: alt,
+                          widget: string,
+                          required: false,
+                        },
+                      ],
+                  },
                   {
                     label: Link,
                     name: link,
@@ -1273,6 +2161,134 @@ collections:
                           required: false,
                         },
                       ],
+                  },
+                ],
+            }
+          - {
+              label: SEO,
+              name: seo,
+              widget: object,
+              fields:
+                [
+                  { label: Title, name: title, widget: string },
+                  {
+                    label: Description,
+                    name: description,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "OG Title",
+                    name: ogTitle,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "OG Type",
+                    name: ogType,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "OG Description",
+                    name: ogDescription,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "OG Image",
+                    name: ogImage,
+                    widget: image,
+                    required: false,
+                  },
+                  {
+                    label: "OG Url",
+                    name: ogUrl,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: Robots,
+                    name: robots,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "Canonical URL",
+                    name: canonical,
+                    widget: string,
+                    required: false,
+                  },
+                ],
+            }
+      - file: "src/pages/privacy/index.md"
+        label: "Privacy Policy"
+        name: "privacy"
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "privacy-page",
+            }
+          - { label: Section, name: section, widget: string }
+          - { label: Heading, name: heading, widget: string }
+          - { label: Intro, name: intro, widget: text }
+          - { label: Body, name: body, widget: markdown }
+          - {
+              label: SEO,
+              name: seo,
+              widget: object,
+              fields:
+                [
+                  { label: Title, name: title, widget: string },
+                  {
+                    label: Description,
+                    name: description,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "OG Title",
+                    name: ogTitle,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "OG Type",
+                    name: ogType,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "OG Description",
+                    name: ogDescription,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "OG Image",
+                    name: ogImage,
+                    widget: image,
+                    required: false,
+                  },
+                  {
+                    label: "OG Url",
+                    name: ogUrl,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: Robots,
+                    name: robots,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "Canonical URL",
+                    name: canonical,
+                    widget: string,
+                    required: false,
                   },
                 ],
             }

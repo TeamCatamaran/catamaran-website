@@ -8,6 +8,8 @@ import Header from '../components/Header'
 import Layout from '../components/Layout'
 import FluidImage from '../components/FluidImage'
 
+import { types } from '../types/types';
+
 export const ExperimentsPageTemplate = ({
     tab,
     section,
@@ -50,7 +52,7 @@ export const ExperimentsPageTemplate = ({
                     {examples.heading}<br />{examples.intro}{examples.steps.map((s) => {
                         return (
                             <p>
-                                {s.heading}<br />{s.description}<br /><FluidImage image={s.image} />
+                                {s.heading}<br />{s.description}<br /><FluidImage alt={s.image.alt || s.heading} image={s.image.src} />
                             </p>
                         )
                     })}
@@ -59,12 +61,15 @@ export const ExperimentsPageTemplate = ({
             {
                 launch != null &&
                 <div>
-                    {launch.content}<br />{launch.text}<br />{launch.link}
+                    {launch.content}<br />{launch.text}<br />{launch.link.url}<br />{launch.link.rel}
                 </div>
             }
-            <ActionCallout
-                heading={action.heading}
-                pages={action.pages} />
+            {
+                action != null &&
+                <ActionCallout
+                    heading={action.heading}
+                    pages={action.pages} />
+            }
         </div>
     )
 }
@@ -95,14 +100,14 @@ ExperimentsPageTemplate.propTypes = {
             PropTypes.shape({
                 heading: PropTypes.string,
                 description: PropTypes.string,
-                image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+                image: types.imageProps,
             }),
         ),
     }),
     launch: PropTypes.shape({
         content: PropTypes.string,
         text: PropTypes.string,
-        link: PropTypes.string,
+        link: types.linkProps,
     }),
     action: PropTypes.shape({
         heading: PropTypes.string,
@@ -110,11 +115,12 @@ ExperimentsPageTemplate.propTypes = {
             PropTypes.shape({
                 title: PropTypes.string,
                 description: PropTypes.string,
-                image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-                link: PropTypes.string,
+                image: types.imageProps,
+                link: types.linkProps,
             })
         )
     }),
+    seo: types.seoProps,
 }
 
 const ExperimentsPage = ({ data }) => {
@@ -122,7 +128,8 @@ const ExperimentsPage = ({ data }) => {
 
     return (
         <Layout
-            bodyClass="-green">
+            bodyClass="-green"
+            seo={frontmatter.seo}>
             <ExperimentsPageTemplate
                 tab={frontmatter.tab}
                 section={frontmatter.section}
@@ -172,11 +179,14 @@ query ExperimentsPage($id: String!) {
           heading
           description
           image {
-            childImageSharp {
-              fluid(maxWidth: 2048, quality: 100) {
-                ...GatsbyImageSharpFluid
+            src {
+              childImageSharp {
+                fluid(maxWidth: 2048, quality: 100) {
+                  ...GatsbyImageSharpFluid
+                }
               }
             }
+            alt
           }
         }
       }
@@ -194,17 +204,30 @@ query ExperimentsPage($id: String!) {
           title
           description
           image {
-            childImageSharp {
-              fluid(maxWidth: 2048, quality: 100) {
-                ...GatsbyImageSharpFluid
+            src {
+              childImageSharp {
+                fluid(maxWidth: 2048, quality: 100) {
+                  ...GatsbyImageSharpFluid
+                }
               }
             }
+            alt
           }
           link {
             url
             rel
           }
         }
+      }
+      seo {
+        title
+        description
+        ogTitle
+        ogType
+        ogDescription
+        ogImage
+        robots
+        canonical
       }
     }
   }
