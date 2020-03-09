@@ -67,6 +67,9 @@ export const StudioPageTemplate = ({
                                 if (tab === p.name) {
                                     className += " -active";
                                 }
+                                if (p.link == null) {
+                                    return (null);
+                                }
                                 return (
                                     <Link key={"tab-" + key} to={p.link.url} rel={p.link.rel} className={className}>{p.label}</Link>
                                 );
@@ -105,14 +108,20 @@ export const StudioPageTemplate = ({
                 photos != null &&
                 <div className="c-studioPhotos container">
                     <div className="c-studioPhotos__photo1">
-                        <FluidImage
-                            alt={photos[0].alt || "upstart-photo"}
-                            image={photos[0].src} />
+                        {
+                            photos[0] != null &&
+                            <FluidImage
+                                alt={photos[0].alt || "upstart-photo"}
+                                image={photos[0].src} />
+                        }
                     </div>
                     <div className="c-studioPhotos__photo2">
-                        <FluidImage
-                            alt={photos[1].alt || "upstart-photo"}
-                            image={photos[1].src} />
+                        {
+                            photos[1] != null &&
+                            <FluidImage
+                                alt={photos[1].alt || "upstart-photo"}
+                                image={photos[1].src} />
+                        }
                     </div>
                     <div className="c-studioPhotos__element1">
                         <img
@@ -218,9 +227,12 @@ export const StudioPageTemplate = ({
             <Cta
                 content={launch}
                 variant={tab} />
-            <ActionCallout
-                heading={action.heading}
-                pages={action.pages} />
+            {
+                action != null &&
+                <ActionCallout
+                    heading={action.heading}
+                    pages={action.pages} />
+            }
         </div>
     )
 }

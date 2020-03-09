@@ -27,10 +27,13 @@ const Breakdown = class extends React.Component {
             <div className="c-breakdown container">
                 <div className="c-breakdown__title">
                     <h3>{this.props.content.heading}</h3>
-                    <FluidImage
-                        className="c-breakdown__image"
-                        image={this.props.content.image.src}
-                        alt={this.props.content.image.alt || "Our Process Collage"} />
+                    {
+                        this.props.content.image != null &&
+                        <FluidImage
+                            className="c-breakdown__image"
+                            image={this.props.content.image.src}
+                            alt={this.props.content.image.alt || "Our Process Collage"} />
+                    }
                 </div>
                 {
                     this.props.content.items != null &&

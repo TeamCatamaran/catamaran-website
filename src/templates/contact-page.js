@@ -47,9 +47,12 @@ export const ContactPageTemplate = ({
                     <p>{social.heading}</p>
                 </div>
                 <div>
-                    <FluidImage
-                        alt={map.alt || "Catamaran location"}
-                        image={map.src} />
+                    {
+                        map != null &&
+                        <FluidImage
+                            alt={map.alt || "Catamaran location"}
+                            image={map.src} />
+                    }
                 </div>
                 <div>
                     <p>{locations.heading}</p>

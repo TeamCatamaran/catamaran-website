@@ -21,9 +21,12 @@ export const JournalPageTemplate = ({
         heading={heading}
         section={section}
       />
-      <ActionCallout
-        heading={action.heading}
-        pages={action.pages} />
+      {
+        action != null &&
+        <ActionCallout
+          heading={action.heading}
+          pages={action.pages} />
+      }
     </div>
   )
 }

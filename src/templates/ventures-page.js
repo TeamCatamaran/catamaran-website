@@ -34,9 +34,12 @@ export const VenturesPageTemplate = ({
                     })}
                 </div>
             }
-            <ActionCallout
-                heading={action.heading}
-                pages={action.pages} />
+            {
+                action != null &&
+                <ActionCallout
+                    heading={action.heading}
+                    pages={action.pages} />
+            }
         </div>
     )
 }

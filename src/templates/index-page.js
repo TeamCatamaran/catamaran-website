@@ -30,20 +30,32 @@ export const IndexPageTemplate = ({
                 <div className="c-focus__overlay"></div>
                 <div className="container">
                     {focus.map((f, key) => {
+                        if (f.link == null) {
+                            return (null);
+                        }
                         return (
                             <Link to={f.link.url} rel={f.link.rel} className="c-focus__item" key={key}>
-                                <FluidImage
-                                    className="-default"
-                                    alt={f.image.alt || f.title}
-                                    image={f.image.src} />
-                                <FluidImage
-                                    className="-hover"
-                                    alt={f.hover.alt || f.title}
-                                    image={f.hover.src} />
+                                {
+                                    f.image != null &&
+                                    <FluidImage
+                                        className="-default"
+                                        alt={f.image.alt || f.title}
+                                        image={f.image.src} />
+                                }
+                                {
+                                    f.hover != null &&
+                                    <FluidImage
+                                        className="-hover"
+                                        alt={f.hover.alt || f.title}
+                                        image={f.hover.src} />
+                                }
                                 <div className="c-focus__content">
                                     <label className="-large">{f.title}</label>
                                     <p>{f.description}</p>
-                                    <Link className="c-button" to={f.link.url} rel={f.link.rel}>Lets Go</Link>
+                                    {
+                                        f.link != null &&
+                                        <Link className="c-button" to={f.link.url} rel={f.link.rel}>Lets Go</Link>
+                                    }
                                 </div>
                             </Link>
                         )

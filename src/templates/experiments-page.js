@@ -64,9 +64,12 @@ export const ExperimentsPageTemplate = ({
                     {launch.content}<br />{launch.text}<br />{launch.link.url}<br />{launch.link.rel}
                 </div>
             }
-            <ActionCallout
-                heading={action.heading}
-                pages={action.pages} />
+            {
+                action != null &&
+                <ActionCallout
+                    heading={action.heading}
+                    pages={action.pages} />
+            }
         </div>
     )
 }
