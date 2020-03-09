@@ -142,7 +142,8 @@ NetworkPageTemplate.propTypes = {
             image: types.imageProps,
             link: types.linkProps,
         })
-    )
+    ),
+    seo: types.seoProps,
 }
 
 const NetworkPage = ({ data }) => {
@@ -150,7 +151,8 @@ const NetworkPage = ({ data }) => {
 
     return (
         <Layout
-            bodyClass="-purple">
+            bodyClass="-purple"
+            seo={frontmatter.seo}>
             <NetworkPageTemplate
                 heading={frontmatter.heading}
                 section={frontmatter.section}
@@ -195,6 +197,16 @@ export const pageQuery = graphql`
             }
             alt
           }
+        }
+        seo {
+          title
+          description
+          ogTitle
+          ogType
+          ogDescription
+          ogImage
+          robots
+          canonical
         }
       }
     }

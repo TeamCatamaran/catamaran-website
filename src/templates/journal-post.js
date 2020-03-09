@@ -48,7 +48,8 @@ JournalPostTemplate.propTypes = {
     heading: PropTypes.string,
     subheading: PropTypes.string,
     image: types.imageProps,
-    introduction: PropTypes.string
+    introduction: PropTypes.string,
+    seo: types.seoProps,
 }
 
 const JournalPost = ({ data }) => {
@@ -56,7 +57,8 @@ const JournalPost = ({ data }) => {
     console.log(data);
 
     return (
-        <Layout>
+        <Layout
+            seo={post.frontmatter.seo}>
             <JournalPostTemplate
                 title={post.frontmatter.title}
                 category={post.frontmatter.category}

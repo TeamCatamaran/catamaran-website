@@ -210,6 +210,7 @@ AboutPageTemplate.propTypes = {
             })
         )
     }),
+    seo: types.seoProps,
 }
 
 const AboutPage = ({ data }) => {
@@ -217,7 +218,8 @@ const AboutPage = ({ data }) => {
 
     return (
         <Layout
-            bodyClass="-pink">
+            bodyClass="-pink"
+            seo={frontmatter.seo}>
             <AboutPageTemplate
                 section={frontmatter.section}
                 heading={frontmatter.heading}
@@ -317,6 +319,16 @@ export const aboutPageQuery = graphql`
               rel
             }
           }
+        }
+        seo {
+          title
+          description
+          ogTitle
+          ogType
+          ogDescription
+          ogImage
+          robots
+          canonical
         }
       }
     }

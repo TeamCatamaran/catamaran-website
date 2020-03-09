@@ -317,6 +317,7 @@ StudioPageTemplate.propTypes = {
             })
         )
     }),
+    seo: types.seoProps,
 }
 
 const StudioPage = ({ data }) => {
@@ -324,7 +325,8 @@ const StudioPage = ({ data }) => {
 
     return (
         <Layout
-            bodyClass="-orange">
+            bodyClass="-orange"
+            seo={frontmatter.seo}>
             <StudioPageTemplate
                 tab={frontmatter.tab}
                 section={frontmatter.section}
@@ -475,6 +477,16 @@ query StudioPage($id: String!) {
             rel
           }
         }
+      }
+      seo {
+        title
+        description
+        ogTitle
+        ogType
+        ogDescription
+        ogImage
+        robots
+        canonical
       }
     }
   }

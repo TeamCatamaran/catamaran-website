@@ -120,6 +120,7 @@ ExperimentsPageTemplate.propTypes = {
             })
         )
     }),
+    seo: types.seoProps,
 }
 
 const ExperimentsPage = ({ data }) => {
@@ -127,7 +128,8 @@ const ExperimentsPage = ({ data }) => {
 
     return (
         <Layout
-            bodyClass="-green">
+            bodyClass="-green"
+            seo={frontmatter.seo}>
             <ExperimentsPageTemplate
                 tab={frontmatter.tab}
                 section={frontmatter.section}
@@ -216,6 +218,16 @@ query ExperimentsPage($id: String!) {
             rel
           }
         }
+      }
+      seo {
+        title
+        description
+        ogTitle
+        ogType
+        ogDescription
+        ogImage
+        robots
+        canonical
       }
     }
   }

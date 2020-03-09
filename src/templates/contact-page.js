@@ -96,7 +96,8 @@ ContactPageTemplate.propTypes = {
                 number: PropTypes.string,
             }),
         ),
-    })
+    }),
+    seo: types.seoProps,
 }
 
 const ContactPage = ({ data }) => {
@@ -104,7 +105,8 @@ const ContactPage = ({ data }) => {
 
     return (
         <Layout
-            bodyClass="-purple">
+            bodyClass="-purple"
+            seo={frontmatter.seo}>
             <ContactPageTemplate
                 section={frontmatter.section}
                 heading={frontmatter.heading}
@@ -158,6 +160,16 @@ query ContactPage($id: String!) {
           address
           number
         }
+      }
+      seo {
+        title
+        description
+        ogTitle
+        ogType
+        ogDescription
+        ogImage
+        robots
+        canonical
       }
     }
   }

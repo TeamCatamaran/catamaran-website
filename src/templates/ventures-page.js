@@ -58,6 +58,7 @@ VenturesPageTemplate.propTypes = {
             })
         )
     }),
+    seo: types.seoProps,
 }
 
 const VenturesPage = ({ data }) => {
@@ -67,7 +68,8 @@ const VenturesPage = ({ data }) => {
 
     return (
         <Layout
-            bodyClass="-dark">
+            bodyClass="-dark"
+            seo={frontmatter.seo}>
             <VenturesPageTemplate
                 section={frontmatter.section}
                 heading={frontmatter.heading}
@@ -120,6 +122,16 @@ query VenturesPage($id: String!) {
             rel
           }
         }
+      }
+      seo {
+        title
+        description
+        ogTitle
+        ogType
+        ogDescription
+        ogImage
+        robots
+        canonical
       }
     }
   }
