@@ -159,8 +159,23 @@ export const StudioPageTemplate = ({
             }
             <Testimonials
                 items={testimonials} />
-            <div>
-                {launch.content}<br />{launch.text}<br />{launch.link}
+            <div className="c-cta">
+                <FluidImage
+                    className="c-cta__triangle"
+                    alt={"abstract geometric design element"}
+                    image={"/img/triangle.png"} />
+                <FluidImage
+                    className="c-cta__dots"
+                    alt={"abstract geometric design element"}
+                    image={"/img/dots.png"} />
+                <div className="c-cta__wrapper">
+                    <div className="c-cta__content">
+                        <p>{launch.content}</p>
+                    </div>
+                    <div className="c-cta__link">
+                        <Link to={launch.link} className="c-focus__item">{launch.text}</Link>
+                    </div>
+                </div>
             </div>
             <ActionCallout
                 heading={action.heading}

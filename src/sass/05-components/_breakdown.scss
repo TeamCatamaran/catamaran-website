@@ -29,11 +29,18 @@
 
     &__title {
         @include grid-column(6);
+        position: relative;
+        padding-right: 100px;
     }
 
     h3 {
         font-size: 48px;
         line-height: 70px;
+    }
+
+    &__image {
+        width: 100%;
+        margin-top: 100px;
     }
 }
 
