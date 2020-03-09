@@ -68,5 +68,14 @@ testimonials:
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
       tempor incididunt ut labore et. Lorem ipsum dolor sit amet.
     title: Founder / Cope Mosaic
+seo:
+  ogTitle: ''
+  ogImage: ''
+  ogDescription: ''
+  robots: ''
+  ogType: ''
+  canonical: ''
+  ogUrl: ''
+  title: Catamaran Homepage
+  description: ''
 ---
-

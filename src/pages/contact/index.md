@@ -9,10 +9,18 @@ intro: >+
 type:
   heading: WHAT SHOULD WE CHAT ABOUT?
   types:
-    - embed: Contact embeded code sub heading
-      name: Contact name sub heading
+    - embed: .
+      name: I’m Interested in the Launch Program
+    - embed: .
+      name: I’m an Upstart Looking for that One Thing
+    - embed: .
+      name: I’m a Large Company Ready to Experiment
+    - embed: .
+      name: I’m Interested in Working at Catamaran
+    - embed: .
+      name: I’m Just Looking to Chat
 social:
-  heading: Social sub heading
+  heading: WE CAN CONNECT HERE TOO
 map: /img/map.jpg
 locations:
   addresses:
@@ -21,6 +29,11 @@ locations:
         Fourth Floor
         Harrisburg, PA 17102
       number: 717-xxx-xxxx
+    - address: >-
+        We also have a satellite office in Denver. Lorem ipsum dolor sit amet,
+        consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+        et.
+      number: alex
   heading: WHERE WE'RE LOCATED
 ---
 
