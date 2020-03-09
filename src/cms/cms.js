@@ -5,6 +5,7 @@ import cloudinary from 'netlify-cms-media-library-cloudinary'
 import AboutPagePreview from './preview-templates/AboutPagePreview'
 import ContactPagePreview from './preview-templates/ContactPagePreview'
 import ExperimentsPagePreview from './preview-templates/ExperimentsPagePreview'
+import FAQPagePreview from './preview-templates/FAQPagePreview'
 import IndexPagePreview from './preview-templates/IndexPagePreview'
 import JournalPagePreview from './preview-templates/JournalPagePreview'
 import JournalPostPreview from './preview-templates/JournalPostPreview'
@@ -21,6 +22,7 @@ CMS.registerPreviewTemplate('about', AboutPagePreview)
 CMS.registerPreviewTemplate('cofounderStartup', StudioPagePreview)
 CMS.registerPreviewTemplate('contact', ContactPagePreview)
 CMS.registerPreviewTemplate('enterpriseExperiments', ExperimentsPagePreview)
+CMS.registerPreviewTemplate('faq', FAQPagePreview)
 CMS.registerPreviewTemplate('labExperiments', ExperimentsPagePreview)
 CMS.registerPreviewTemplate('index', IndexPagePreview)
 CMS.registerPreviewTemplate('journalPage', JournalPagePreview)

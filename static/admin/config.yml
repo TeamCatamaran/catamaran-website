@@ -2292,3 +2292,82 @@ collections:
                   },
                 ],
             }
+      - file: "src/pages/faq/index.md"
+        label: "FAQs"
+        name: "faq"
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "faq-page",
+            }
+          - { label: Section, name: section, widget: string }
+          - { label: Heading, name: heading, widget: string }
+          - {
+              label: FAQs,
+              name: faqs,
+              widget: list,
+              fields:
+                [
+                  { label: Question, name: question, widget: string },
+                  { label: Answer, name: answer, widget: text },
+                ],
+            }
+          - {
+              label: SEO,
+              name: seo,
+              widget: object,
+              fields:
+                [
+                  { label: Title, name: title, widget: string },
+                  {
+                    label: Description,
+                    name: description,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "OG Title",
+                    name: ogTitle,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "OG Type",
+                    name: ogType,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "OG Description",
+                    name: ogDescription,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "OG Image",
+                    name: ogImage,
+                    widget: image,
+                    required: false,
+                  },
+                  {
+                    label: "OG Url",
+                    name: ogUrl,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: Robots,
+                    name: robots,
+                    widget: string,
+                    required: false,
+                  },
+                  {
+                    label: "Canonical URL",
+                    name: canonical,
+                    widget: string,
+                    required: false,
+                  },
+                ],
+            }
