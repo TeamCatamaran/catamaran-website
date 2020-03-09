@@ -79,12 +79,13 @@ export const StudioPageTemplate = ({
                 </div>
                 {
                     overview.details != null && overview.details.length > 0 &&
-                    <div>
+                    <div className="c-studioOverview__details">
                         {overview.details.map((d) => {
                             return (
-                                <p>
-                                    {d.heading}<br />{d.description}
-                                </p>
+                                <div className="c-studioOverview__detail">
+                                    <label className="c-studioOverview__detail__title">{d.heading}</label>
+                                    <p className="c-studioOverview__detail__description">{d.description}</p>
+                                </div>
                             )
                         })}
                     </div>
@@ -145,7 +146,8 @@ export const StudioPageTemplate = ({
             }
             {
                 expect != null &&
-                <div>
+                <div className="c-expect container">
+
                     {expect.heading}<br />{expect.intro}{expect.steps.map((s) => {
                         return (
                             <p>
