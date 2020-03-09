@@ -1,36 +1,40 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { kebabCase } from 'lodash'
-import Helmet from 'react-helmet'
-import { graphql, Link } from 'gatsby'
+import { graphql } from 'gatsby'
+
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
 
+import { types } from '../types/types'
+import FluidImage from '../components/FluidImage'
+
 export const JournalPostTemplate = ({
-    title,
     category,
     heading,
     subheading,
+    image,
     introduction,
     content,
     contentComponent,
-    helmet,
 }) => {
     const PostContent = contentComponent || Content
 
     return (
         <section className="section">
-            {helmet || ''}
-            <div className="container content">
-                <div className="columns">
-                    <div className="column is-10 is-offset-1">
-                        <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
-                            {title}
-                        </h1>
-                        <p>{introduction}</p>
-                        <PostContent content={content} />
-                    </div>
-                </div>
+            <div>
+                <div>{category}</div>
+                <h1>
+                    {heading}
+                </h1>
+                <div>{subheading}</div>
+                {
+                    image != null &&
+                    <FluidImage
+                        alt={image.alt || heading}
+                        image={image.src} />
+                }
+                <p>{introduction}</p>
+                <PostContent content={content} />
             </div>
         </section>
     )
@@ -39,16 +43,17 @@ export const JournalPostTemplate = ({
 JournalPostTemplate.propTypes = {
     content: PropTypes.node.isRequired,
     contentComponent: PropTypes.func,
-    helmet: PropTypes.object,
     title: PropTypes.string,
     category: PropTypes.string,
     heading: PropTypes.string,
     subheading: PropTypes.string,
+    image: types.imageProps,
     introduction: PropTypes.string
 }
 
 const JournalPost = ({ data }) => {
     const { markdownRemark: post } = data
+    console.log(data);
 
     return (
         <Layout>
@@ -57,18 +62,10 @@ const JournalPost = ({ data }) => {
                 category={post.frontmatter.category}
                 heading={post.frontmatter.heading}
                 subheading={post.frontmatter.subheading}
+                image={post.frontmatter.image}
                 introduction={post.frontmatter.introduction}
                 content={post.html}
                 contentComponent={HTMLContent}
-                helmet={
-                    <Helmet titleTemplate="%s | Journal">
-                        <title>{`${post.frontmatter.title}`}</title>
-                        <meta
-                            name="description"
-                            content={`${post.frontmatter.description}`}
-                        />
-                    </Helmet>
-                }
             />
         </Layout>
     )
@@ -93,7 +90,27 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         heading
         subheading
+        image {
+          src {
+            childImageSharp {
+              fluid(maxWidth: 2048, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+          alt
+        }
         introduction
+        seo {
+          title
+          description
+          ogTitle
+          ogType
+          ogDescription
+          ogImage
+          robots
+          canonical
+        }
       }
     }
   }
