@@ -54,7 +54,7 @@ export const IndexPageTemplate = ({
                                     <p>{f.description}</p>
                                     {
                                         f.link != null &&
-                                        <Link className="c-button" to={f.link.url} rel={f.link.rel}>Lets Go</Link>
+                                        <div className="c-button">Lets Go</div>
                                     }
                                 </div>
                             </Link>

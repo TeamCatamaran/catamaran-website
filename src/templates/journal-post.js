@@ -54,7 +54,6 @@ JournalPostTemplate.propTypes = {
 
 const JournalPost = ({ data }) => {
     const { markdownRemark: post } = data
-    console.log(data);
 
     return (
         <Layout

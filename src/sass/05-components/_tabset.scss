@@ -18,6 +18,7 @@
         text-transform: uppercase;
         letter-spacing: .2em;
         transition: color .16s ease-in-out;
+
         @include font-style(
             $font-accent,                     // Font Family
             $size-4,                          // Font Size
@@ -45,6 +46,60 @@
                 background-color: $purple;
             }
         }
+    }
+
+    @include respond-to("sm-tablet") {
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+        margin-bottom: 100px;
+
+        &::before {
+            content: "";
+            display: block;
+            width: 30px;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            background-image: linear-gradient(to right, rgba(244,243,237,1) 0, rgba(244,243,237,0) 100%);
+            z-index: 2;
+        }
+
+        &::after {
+            content: "";
+            display: block;
+            width: 30px;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            background-image: linear-gradient(to left, rgba(244,243,237,1) 0, rgba(244,243,237,0) 100%);
+            z-index: 2;
+        }
+
+        &__container {
+            width: 100%;
+        }
+
+        &__wrapper {
+            width: 100%;
+            float: none;
+            overflow: scroll;
+            margin-left: 0;
+            padding-left: 20px;
+        }
+
+        &__tab {
+            width: auto;
+            white-space:nowrap;
+
+            & + .c-tabset__tab {
+                margin-left: 70px;
+            }
+        }
+
+        
     }
 }
 
