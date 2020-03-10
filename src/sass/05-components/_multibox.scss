@@ -16,6 +16,12 @@
     transition-delay: 1s;
     opacity: 0;
 
+    @include respond-to("tablet") {
+        grid-template-columns: 100%;
+        grid-template-areas: unset;
+        grid-template-rows: repeat(3, 33.33%);
+    }
+
     &.-active {
         pointer-events: auto;
         transition: opacity 0s;
@@ -40,6 +46,11 @@
             position: absolute;
             top: 50%;
             left: 0;
+
+            @include respond-to("tablet") {
+                padding-left: 44%;
+                transform: translateY(-30%);
+            }
         }
 
         &__image {
@@ -49,6 +60,8 @@
             top: 0;
             left: 0;
             background-size: cover;
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
         }
     }
 
@@ -63,6 +76,10 @@
             .c-multibox__inner {
                 background-color: $grey;
             }
+
+            @include respond-to("tablet") {
+                grid-area: auto;
+            }
         }
 
         &[data-menu='item2'] {
@@ -70,6 +87,10 @@
 
             .c-multibox__inner {
                 background-color: $grey-darkest;
+            }
+
+            @include respond-to("tablet") {
+                grid-area: auto;
             }
         }
 
@@ -84,6 +105,10 @@
                     background-color: lighten($grey-dark, 5%);
                 }
             }
+
+            @include respond-to("tablet") {
+                display: none;
+            }
         }
 
         &[data-menu='item4'] {
@@ -92,6 +117,10 @@
             .c-multibox__inner {
                 background-color: $grey;
             }
+
+            @include respond-to("tablet") {
+                grid-area: auto;
+            }
         }
 
         &[data-menu='item5'] {
@@ -99,6 +128,10 @@
 
             .c-multibox__inner {
                 background-color: $grey;
+            }
+
+            @include respond-to("tablet") {
+                display: none;
             }
         }
     }

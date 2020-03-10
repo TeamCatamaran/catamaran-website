@@ -94,6 +94,25 @@ const Navbar = class extends React.Component {
                                 </Link>
                             </div>
                         </div>
+                        <div className="c-multibox__item" data-direction="lr" data-menu="item4">
+                            <div className="c-multibox__inner">
+                                <div className="c-multibox__inner__image" style={{
+                                    backgroundImage: `url(${waterworks})`,
+                                }}>
+                                    <div className="c-navbar__menu__coordinates c-multibox__inner__content">
+                                        <p>
+                                            39.<br />738449&deg; N<br />
+                                            -76.<br />889830&deg; W
+                                        </p>
+                                        <p>
+                                            40.<br />263570&deg; N<br />
+                                            -104.<br />984848&deg; W
+                                        </p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
                         <div className="c-navbar__menu__section -secondary c-multibox__item" data-menu="item2" data-direction="bt">
                             <div className="c-multibox__inner">
                                 <Link className="c-navbar__menu__item" to="/network">
@@ -121,40 +140,21 @@ const Navbar = class extends React.Component {
                                 </Link>
                             </div>
                         </div>
-                        <div className="c-multibox__item" data-direction="lr" data-menu="item4">
-                            <div className="c-multibox__inner">
-                                <div className="c-multibox__inner__image" style={{
-                                    backgroundImage: `url(${waterworks})`,
-                                }}>
-                                    <div
-                                        className={`c-navbar__menu__close action--close ${navbarActiveClass}`}
-                                        data-target="navMenu"
-                                        onClick={() => this.toggleMenu('close')}>
-                                        <img
-                                            src={close}
-                                            alt="Close Menu action--close"
-                                            style={{ width: '25px' }} />
-                                    </div>
-                                    <div className="c-navbar__menu__coordinates c-multibox__inner__content">
-                                        <p>
-                                            39.<br />738449&deg; N<br />
-                                            -76.<br />889830&deg; W
-                                        </p>
-                                        <p>
-                                            40.<br />263570&deg; N<br />
-                                            -104.<br />984848&deg; W
-                                        </p>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
                         <div className="c-multibox__item" data-direction="tb" data-menu="item5">
                             <div className="c-multibox__inner">
                                 <div className="c-multibox__inner__image" style={{
                                     backgroundImage: `url(${defaultImg})`,
                                 }}></div>
                             </div>
+                        </div>
+                        <div
+                            className={`c-navbar__menu__close action--close ${navbarActiveClass}`}
+                            data-target="navMenu"
+                            onClick={() => this.toggleMenu('close')}>
+                            <img
+                                src={close}
+                                alt="Close Menu action--close"
+                                style={{ width: '25px' }} />
                         </div>
                     </div>
                 </div>

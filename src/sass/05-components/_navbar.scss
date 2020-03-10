@@ -82,6 +82,19 @@
                 height: 50%;
                 line-height: 30px;
                 text-align: left;
+
+                @include respond-to("tablet") {
+                    position: absolute;
+                    top: 0;
+                    left: 20px;
+                    height: auto;
+                }
+            }
+
+            @include respond-to("tablet") {
+                font-size: 20px;
+                line-height: 20px;
+                padding: 15px 0;
             }
 
             span.-index {
@@ -91,6 +104,10 @@
                 padding-right: 6px;
                 line-height: 70px;
                 vertical-align: top;
+
+                @include respond-to("tablet") {
+                    display: none;
+                }
             }
 
             span.-underline {
@@ -116,6 +133,11 @@
                             border-color: $white;
                         }
                     }
+
+                    @include respond-to("tablet") {
+                        line-height: 20px;
+                        text-align: center;
+                    }
                 }
 
                 span.-divider {
@@ -126,6 +148,10 @@
                         $weight-light,                    // Font Weight
                         10px                              // Line Height
                     );
+
+                    @include respond-to("tablet") {
+                        display: none;
+                    }
                 }
             }
         }
