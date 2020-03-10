@@ -48,7 +48,7 @@
         }
     }
 
-    @include respond-to("sm-tablet") {
+    @include respond-to("tablet") {
         width: 100%;
         position: relative;
         overflow: hidden;

@@ -5,7 +5,7 @@
     margin-top: 200px;
     margin-bottom: 200px;
 
-    @include respond-to("sm-tablet") {
+    @include respond-to("tablet") {
         margin-top: 100px;
         margin-bottom: 100px;
         height: auto;
@@ -26,7 +26,7 @@
         padding-top: 75px;
         padding-left: 75px;
 
-        @include respond-to("sm-tablet") {
+        @include respond-to("tablet") {
             padding-top: 100px;
             padding-left: 20px;
         }
@@ -39,7 +39,7 @@
                 70px                         // Line Height
             );
 
-            @include respond-to("sm-tablet") {
+            @include respond-to("tablet") {
                 font-size: 36px;
             }
         }
@@ -55,7 +55,7 @@
                 $height-2                         // Line Height
             );
 
-            @include respond-to("sm-tablet") {
+            @include respond-to("tablet") {
                 font-size: 24px;
             }
         }
@@ -65,27 +65,37 @@
         @include grid-container;
         position: relative;
         margin-top: 70px;
+
+        @include respond-to("tablet") {
+            margin-top: 35px;
+        }
     }
 
     &__image {
         @include grid-column(6);
 
-        @include respond-to("sm-tablet") {
+        @include respond-to("tablet") {
             @include grid-column(12);
         }
 
         &__asset {
-            margin-top: 25px;
+            position: relative;
+            left: 25px;
+            top: 25px;
             display: block;
-            width: 415px;
+            width: 100%;
+            max-width: 415px;
             height: auto;
+            @include respond-to("tablet") {
+                max-width: 260px;
+            }
         }
     }
 
     &__steps {
         @include grid-column(6);
 
-        @include respond-to("sm-tablet") {
+        @include respond-to("tablet") {
             margin-top: 50px;
             @include grid-column(12);
         }
@@ -142,13 +152,12 @@
 
     &__controls {
         position: absolute;
-        bottom: 50px;
+        bottom: 0;
         height: 45px;
-        width: 100%;
         display: flex;
         align-items: stretch;
 
-        @include respond-to("sm-tablet") {
+        @include respond-to("tablet") {
             bottom: -90px;
         }
 
@@ -185,7 +194,7 @@
         height: 167px;
         right: 0;
 
-        @include respond-to("sm-tablet") {
+        @include respond-to("tablet") {
             width: 86px;
             height: 86px;
             bottom: -245px;

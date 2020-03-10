@@ -3,6 +3,7 @@ import React from 'react'
 import FluidImage from './FluidImage'
 
 import spiral from '../img/spiral.png'
+import absorb from '../img/studio-absorb.png'
 
 const ProcessSlider = class extends React.Component {
     constructor(props) {
@@ -28,9 +29,9 @@ const ProcessSlider = class extends React.Component {
                 <div className="c-processSlider__content">
                     <div className="c-processSlider__image">
                         <img
-                            className="c-processSlider__asset"
+                            className="c-processSlider__image__asset"
                             alt="geometric design"
-                            src={spiral} />
+                            src={absorb} />
                     </div>
                     <div className="c-processSlider__steps">
                         <div className="c-processSlider__count">

@@ -1,8 +1,12 @@
 .c-services {
     margin-top: 200px;
 
-    @include respond-to("sm-tablet") {
-        background-color: $grey-lightest;
+    @include respond-to("tablet") {
+
+        &.tab-startup {
+            background-color: $grey-lightest;
+        }
+
         margin-top: 100px;
         padding-top: 100px;
     }
@@ -13,7 +17,7 @@
         &__wrapper {
             @include grid-column(8);
 
-            @include respond-to("sm-tablet") {
+            @include respond-to("tablet") {
                 @include grid-column(12);
             }
         }
@@ -39,7 +43,7 @@
                 z-index: 1;
             }
 
-            @include respond-to("sm-tablet") {
+            @include respond-to("tablet") {
                 top: -42px;
                 right: 20px;
 
@@ -82,7 +86,7 @@
             $height-2                         // Line Height
         );
 
-        @include respond-to("sm-tablet") {
+        @include respond-to("tablet") {
             font-size: 24px;
             line-height: 48px;
         }
@@ -93,6 +97,10 @@
         position: relative;
         @include grid-container;
 
+        @include respond-to("tablet") {
+            margin-top: 0;
+        }
+
         &__image {
             @include grid-push(5);
             position: relative;
@@ -100,15 +108,19 @@
             padding-left: 50px;
             margin-top: -120px;
             z-index: -1;
+
+            @include respond-to("tablet") {
+                display: none;
+            }
         }
     }
 
     &__listItem {
         @include grid-column(4);
 
-        @include respond-to("sm-tablet") {
+        @include respond-to("tablet") {
             @include grid-column(12);
-            margin-bottom: 70px;
+            // margin-bottom: 70px;
         }
 
         &__heading {
@@ -121,6 +133,10 @@
                 $weight-bold,                     // Font Weight
                 $height-4                         // Line Height
             );
+
+            @include respond-to("tablet") {
+                margin-top: 70px;
+            }
         }
 
         &__intro {
@@ -144,6 +160,12 @@
                 $weight-medium,                     // Font Weight
                 $height-p                         // Line Height
             );
+        }
+    }
+
+    &.tab-upstarts {
+        .c-services__list {
+            margin-top: 40px;
         }
     }
 }

@@ -154,7 +154,7 @@ export const StudioPageTemplate = ({
             }
             {
                 services != null &&
-                <div className="c-services container">
+                <div className={"c-services container " + "tab-" + tab}>
                     <div className="c-services__header">
                         <div className="c-services__header__wrapper">
                             <h2 className="c-services__heading">{services.heading}</h2>
