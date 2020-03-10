@@ -5,6 +5,14 @@ import SocialIcons from '../components/SocialIcons'
 import logo from '../img/footer-logo.png'
 
 const Footer = class extends React.Component {
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            email: "",
+        };
+    }
+
     render() {
         return (
             <footer className="c-footer">
@@ -75,6 +83,23 @@ const Footer = class extends React.Component {
                         <label className="-large">
                             Who needs inbox zero?
                         </label>
+                        <form action="https://catamaran.us16.list-manage.com/subscribe/post?u=5443918b57c58841e377aa056&amp;id=45b4713f88" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" className="validate" target="_blank">
+                            <div id="mc_embed_signup_scroll">
+                                <div>
+                                    <input type="email" value={this.state.email} name="EMAIL" placeholder="Enter your email" className="required email" id="mce-EMAIL" onChange={(e) => this._handleEmailChange(e)} />
+                                </div>
+                                <div id="mce-responses" className="clear">
+                                    <div className="response" id="mce-error-response" style={{ display: "none" }}></div>
+                                    <div className="response" id="mce-success-response" style={{ display: "none" }}></div>
+                                </div>
+                                <div style={{ position: "absolute", left: "-5000px" }} aria-hidden="true">
+                                    <input type="text" name="b_5443918b57c58841e377aa056_45b4713f88" tabIndex="-1" value="" />
+                                </div>
+                                <div className="clear">
+                                    <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" className="c-button" readOnly />
+                                </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
                 <div className="c-footer__row">
@@ -95,6 +120,12 @@ const Footer = class extends React.Component {
                 </div>
             </footer>
         )
+    }
+
+    _handleEmailChange(e) {
+        this.setState({
+            email: e.target.value,
+        });
     }
 }
 
