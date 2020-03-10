@@ -8,11 +8,24 @@
             $height-4                         // Line Height
         );
         letter-spacing: 2px;
-        margin-bottom: 64px;
+        margin-bottom: 0px;
     }
     &__chat{
         @include grid-column(8);
-
+        &__formHeading {
+            a {
+                @include font-style(
+                    $font-normal,                     // Font Family
+                    $size-p,                          // Font Size
+                    $grey,                            // Font Color
+                    $weight-medium,                 // Font Weight
+                    $height-p                         // Line Height
+                );
+                letter-spacing: 2px;
+                text-decoration: underline;
+                line-height: 48px;
+            }
+        }
     }
     &__social{
         @include grid-column(4);

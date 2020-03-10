@@ -1,9 +1,13 @@
 import React from 'react'
-
+import facebookDark from '../img/social/facebook-dark.png'
 import facebook from '../img/social/facebook.png'
+import instagramDark from '../img/social/insta-dark.png'
 import instagram from '../img/social/instagram.png'
 import linkedin from '../img/social/linkedin.png'
+import linkedinDark from '../img/social/linkedin-dark.png'
 import twitter from '../img/social/twitter.png'
+import twitterDark from '../img/social/twitter-dark.png'
+
 
 
 const SocialIcons = class extends React.Component {
@@ -24,10 +28,10 @@ const SocialIcons = class extends React.Component {
         let linkedinIcon = linkedin;
 
         if (this.props.style === "dark") {
-            // twitterIcon = twitterDark;
-            // facebookIcon = facebookDark;
-            // instagramIcon = instagramDark;
-            // linkedinIcon = linkedinDark;
+            twitterIcon = twitterDark;
+            facebookIcon = facebookDark;
+            instagramIcon = instagramDark;
+            linkedinIcon = linkedinDark;
         }
 
         return (
