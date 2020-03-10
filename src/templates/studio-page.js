@@ -40,19 +40,22 @@ export const StudioPageTemplate = ({
     const pages = [{
         name: "startup",
         label: "Startup Launch Program",
-        link: "studio/startup"
+        url: "studio/startup",
+        rel: "",
     }, {
         name: "upstarts",
         label: "Upstarts",
-        link: "studio/upstarts"
+        url: "studio/upstarts",
+        rel: "",
     }, {
         name: "cofounder",
         label: "Be a Co-Founder",
-        link: "studio/cofounder"
+        url: "studio/cofounder",
+        rel: "",
     }]
 
     return (
-        <div>
+        <div >
             <Header
                 collageType="studio"
                 heading={heading}
@@ -67,11 +70,11 @@ export const StudioPageTemplate = ({
                                 if (tab === p.name) {
                                     className += " -active";
                                 }
-                                if (p.link == null) {
+                                if (p.url == null) {
                                     return (null);
                                 }
                                 return (
-                                    <Link key={"tab-" + key} to={p.link.url} rel={p.link.rel} className={className}>{p.label}</Link>
+                                    <Link key={"tab-" + key} to={p.url} rel={p.rel} className={className}>{p.label}</Link>
                                 );
                             })
                         }
