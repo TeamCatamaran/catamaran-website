@@ -9,25 +9,20 @@ intro: >+
 type:
   heading: WHAT SHOULD WE CHAT ABOUT?
   types:
-    - embed: >-
-        <a class="typeform-share button"
-        href="https://catamaran.typeform.com/to/K9k6Eq" data-mode="drawer_right"
-        style="display:inline-block;text-decoration:none;background-color:#267DDD;color:white;cursor:pointer;font-family:Helvetica,Arial,sans-serif;font-size:20px;line-height:50px;text-align:center;margin:0;height:50px;padding:0px
-        33px;border-radius:25px;max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:bold;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;"
-        target="_blank">Launch me </a> <script> (function() { var
-        qs,js,q,s,d=document, gi=d.getElementById, ce=d.createElement,
-        gt=d.getElementsByTagName, id="typef_orm_share",
-        b="https://embed.typeform.com/"; if(!gi.call(d,id)){
-        js=ce.call(d,"script"); js.id=id; js.src=b+"embed.js";
-        q=gt.call(d,"script")[0]; q.parentNode.insertBefore(js,q) } })()
-        </script>
+    - id: K9k6Eq
       name: I’m Interested in the Launch Program
-    - embed: .
+    - id: BduttO
       name: I’m an Upstart Looking for that One Thing
-    - embed: .
+    - id: t8tqPy
       name: I’m a Large Company Ready to Experiment
-    - embed: .
+    - id: TuVkx8
       name: I’m Just Looking to Chat
+embed: >
+  (function() { var qs,js,q,s,d=document, gi=d.getElementById,
+  ce=d.createElement, gt=d.getElementsByTagName, id="typef_orm_share",
+  b="https://embed.typeform.com/"; if(!gi.call(d,id)){ js=ce.call(d,"script");
+  js.id=id; js.src=b+"embed.js"; q=gt.call(d,"script")[0];
+  q.parentNode.insertBefore(js,q) } })()
 social:
   heading: WE CAN CONNECT HERE TOO
 map:

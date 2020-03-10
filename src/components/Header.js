@@ -9,7 +9,7 @@ const Header = class extends React.Component {
 
     render() {
         return (
-            <header className="c-header">
+            <header className={`c-header ${this.props.collageType === "none" ? "-collapse" : ""}`}>
                 <HeaderCollage
                     type={this.props.collageType} />
                 <div className="container">

@@ -18,33 +18,45 @@ const SocialIcons = class extends React.Component {
             cssClass += ` ${this.props.className}`;
         }
 
+        let twitterIcon = twitter;
+        let facebookIcon = facebook;
+        let instagramIcon = instagram;
+        let linkedinIcon = linkedin;
+
+        if (this.props.style === "dark") {
+            // twitterIcon = twitterDark;
+            // facebookIcon = facebookDark;
+            // instagramIcon = instagramDark;
+            // linkedinIcon = linkedinDark;
+        }
+
         return (
             <div className={cssClass}>
                 <a className="c-social__link" title="twitter" rel="noopener noreferrer" href="https://twitter.com" target="_blank">
                     <img
                         className="fas fa-lg"
-                        src={twitter}
+                        src={twitterIcon}
                         alt="Twitter"
                         style={{ maxWidth: '1em', maxHeight: '1em' }}
                     />
                 </a>
                 <a className="c-social__link" title="facebook" rel="noopener noreferrer" href="https://facebook.com" target="_blank">
                     <img
-                        src={facebook}
+                        src={facebookIcon}
                         alt="Facebook"
                         style={{ maxWidth: '1em', maxHeight: '1em' }}
                     />
                 </a>
                 <a className="c-social__link" title="instagram" rel="noopener noreferrer" href="https://instagram.com" target="_blank">
                     <img
-                        src={instagram}
+                        src={instagramIcon}
                         alt="Instagram"
                         style={{ maxWidth: '1em', maxHeight: '1em' }}
                     />
                 </a>
                 <a className="c-social__link" title="linkedin" rel="noopener noreferrer" href="https://www.linkedin.com" target="_blank">
                     <img
-                        src={linkedin}
+                        src={linkedinIcon}
                         alt="Linkedin"
                         style={{ maxWidth: '1em', maxHeight: '1em' }}
                     />

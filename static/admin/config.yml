@@ -694,11 +694,12 @@ collections:
                     fields:
                       [
                         { label: Name, name: name, widget: string },
-                        { label: "Embed Code", name: embed, widget: text },
+                        { label: "Form Id", name: id, widget: string },
                       ],
                   },
                 ],
             }
+          - { label: "Embed Script", name: embed, widget: text }
           - {
               label: Social,
               name: social,

@@ -1,5 +1,6 @@
-.c-location{
-    &__heading{
+.c-location {
+    &__heading {
+        @include grid-column(12);
         @include font-style(
             $font-accent,
             $size-4,
@@ -8,19 +9,26 @@
             $height-4
         );
         letter-spacing: 2px;
-       @include grid-column(12);
-        }
-    &__map{
-        @include grid-column(12);
-        justify-content: start;
     }
-    p{
+
+    &__map {
+        @include grid-column(12);
+        width: calc(100vw - ((100vw - 1180px)/2));
+
+        img {
+            width: 100%;
+        }
+    }
+
+    p {
         white-space: pre-line;
     }
-    p+p{
+
+    p+p {
         margin-top: 15px;
     }
-    &__address{
+
+    &__address {
         @include grid-column(6);
     }
 }

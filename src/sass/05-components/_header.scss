@@ -3,6 +3,10 @@
     height: 100vh;
     padding-bottom: 50px;
 
+    &.-collapse {
+        height: auto;
+    }
+
     &__background {
         width: 50%;
         height: 90vh;

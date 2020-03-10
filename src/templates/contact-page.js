@@ -6,8 +6,10 @@ import Layout from '../components/Layout'
 import Header from '../components/Header'
 import SocialIcons from '../components/SocialIcons'
 import FluidImage from '../components/FluidImage'
-import footer from '../img/footer-shapes.png'
+import TypeformContact from '../components/TypeformContact'
 
+
+import footer from '../img/footer-shapes.png'
 import { types } from '../types/types';
 
 export const ContactPageTemplate = ({
@@ -15,11 +17,11 @@ export const ContactPageTemplate = ({
     heading,
     intro,
     type,
+    embed,
     social,
     map,
     locations,
 }) => {
-
     return (
         <div>
             <Header
@@ -32,37 +34,33 @@ export const ContactPageTemplate = ({
                     <p className="-left">{intro}</p>
                 </div>
                 <div className="c-contact container">
-                    <div className="c-contact__chat">
-                        <p className="c-contact__heading">{type.heading}</p>
-                        {type.types.map((t) => {
-                            return (
-                                <p>
-                                    {t.name}<br />
-                                    {t.embed}
-                                </p>
-                            )
-                        })}
-                    </div>
+                    <TypeformContact
+                        embed={embed}
+                        header={type.heading}
+                        types={type.types} />
                     <div className="c-contact__social">
                         <p>{social.heading}</p>
                         <div >
-                            <SocialIcons />
+                            <SocialIcons
+                                style="dark" />
                         </div>
                     </div>
                 </div>
                 {
                     map != null &&
-                    <div className="c-location__map">
-                        <FluidImage
-                            alt={map.alt || "Catamaran location map"}
-                            image={map.src} />
+                    <div className="c-location container">
+                        <div className="c-location__map">
+                            <FluidImage
+                                alt={map.alt || "Catamaran location map"}
+                                image={map.src} />
+                        </div>
                     </div>
                 }
                 <div className="c-location container">
                     <label className="c-location__heading">{locations.heading}</label>
-                    {locations.addresses.map((l) => {
+                    {locations.addresses.map((l, key) => {
                         return (
-                            <div className="c-location__address">
+                            <div className="c-location__address" key={`locationkey-${key}`}>
                                 <p>{l.address}</p>
                                 <p>{l.number}</p>
                             </div>
@@ -86,10 +84,11 @@ ContactPageTemplate.propTypes = {
         types: PropTypes.arrayOf(
             PropTypes.shape({
                 name: PropTypes.string,
-                embed: PropTypes.string,
+                id: PropTypes.string,
             }),
         ),
     }),
+    embed: PropTypes.string,
     social: PropTypes.shape({
         heading: PropTypes.string,
     }),
@@ -118,6 +117,7 @@ const ContactPage = ({ data }) => {
                 heading={frontmatter.heading}
                 intro={frontmatter.intro}
                 type={frontmatter.type}
+                embed={frontmatter.embed}
                 social={frontmatter.social}
                 map={frontmatter.map}
                 locations={frontmatter.locations}
@@ -144,9 +144,10 @@ query ContactPage($id: String!) {
         heading
         types {
           name
-          embed
+          id
         }
       }
+      embed
       social {
         heading
       }

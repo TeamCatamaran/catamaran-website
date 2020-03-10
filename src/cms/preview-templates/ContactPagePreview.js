@@ -12,6 +12,7 @@ const ContactPagePreview = ({ entry, widgetFor }) => {
                 heading={data.heading}
                 intro={data.intro}
                 type={data.type}
+                embed={data.embed}
                 social={data.social}
                 map={data.map}
                 locations={data.locations}
