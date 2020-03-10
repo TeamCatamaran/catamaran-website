@@ -1,11 +1,21 @@
 .c-services {
     margin-top: 200px;
 
+    @include respond-to("sm-tablet") {
+        background-color: $grey-lightest;
+        margin-top: 100px;
+        padding-top: 100px;
+    }
+
     &__header {
         @include grid-container;
 
         &__wrapper {
             @include grid-column(8);
+
+            @include respond-to("sm-tablet") {
+                @include grid-column(12);
+            }
         }
 
         &__images {
@@ -27,6 +37,27 @@
                 right: 0;
                 width: 135px;
                 z-index: 1;
+            }
+
+            @include respond-to("sm-tablet") {
+                top: -42px;
+                right: 20px;
+
+                &__circlelines {
+                    position: absolute;
+                    width: 60px;
+                    top: 35px;
+                    right: 55px;
+                    z-index: 2;
+                }
+    
+                &__warpbox {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    width: 76px;
+                    z-index: 1;
+                }
             }
         }
     }
@@ -50,6 +81,11 @@
             $weight-light,                     // Font Weight
             $height-2                         // Line Height
         );
+
+        @include respond-to("sm-tablet") {
+            font-size: 24px;
+            line-height: 48px;
+        }
     }
 
     &__list {
@@ -69,6 +105,11 @@
 
     &__listItem {
         @include grid-column(4);
+
+        @include respond-to("sm-tablet") {
+            @include grid-column(12);
+            margin-bottom: 70px;
+        }
 
         &__heading {
             text-transform: uppercase;

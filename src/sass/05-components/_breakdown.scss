@@ -1,18 +1,48 @@
 .c-breakdown {
+    &__title {
+        @include grid-column(6);
+        position: relative;
+        padding-right: 100px;
+
+        @include respond-to("sm-tablet") {
+            @include grid-column(12);
+            padding-right: 0;
+        }
+    }
+
+    h3 {
+        font-size: 48px;
+        line-height: 70px;
+    }
+
     &__collage {
         position: absolute;
         bottom: 60px;
         left: 20px;
         width: 40%;
+
+        @include respond-to("sm-tablet") {
+            display: none;
+        }
     }
 
     &__wrapper {
         @include grid-column(6);
+
+        @include respond-to("sm-tablet") {
+            @include grid-column(12);
+            padding-top: 60px;
+        }
     }
 
     &__item {
         @include grid-column(6);
         margin-bottom: 75px;
+
+        @include respond-to("sm-tablet") {
+            @include grid-column(12);
+            margin-bottom: 60px;
+        }
 
         label {
             display: block;
@@ -27,20 +57,13 @@
         }
     }
 
-    &__title {
-        @include grid-column(6);
-        position: relative;
-        padding-right: 100px;
-    }
-
-    h3 {
-        font-size: 48px;
-        line-height: 70px;
-    }
-
     &__image {
         width: 100%;
         margin-top: 100px;
+
+        @include respond-to("sm-tablet") {
+            display: none;
+        }
     }
 }
 
@@ -53,6 +76,20 @@ body.-purple {
         &__item {
             label {
                 color: $purple;
+            }
+        }
+    }
+}
+
+body.-orange {
+    .c-breakdown {
+        h3 {
+            color: $orange;
+        }
+
+        &__item {
+            label {
+                color: $orange;
             }
         }
     }

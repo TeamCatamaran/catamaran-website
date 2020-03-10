@@ -5,18 +5,31 @@
     margin-top: 200px;
     margin-bottom: 200px;
 
+    @include respond-to("sm-tablet") {
+        margin-top: 100px;
+        margin-bottom: 100px;
+        height: auto;
+        padding-bottom: 200px;
+    }
+
     &__fill {
         position: absolute;
         z-index: -1;
         background-color: $grey;
         width: 100vw;
-        height: 734px;
+        top: 0;
+        bottom: 0;
     }
 
 
     &__header {
         padding-top: 75px;
         padding-left: 75px;
+
+        @include respond-to("sm-tablet") {
+            padding-top: 100px;
+            padding-left: 20px;
+        }
         &__title {
             @include font-style(
                 $font-normal,                     // Font Family
@@ -25,6 +38,10 @@
                 $weight-light,                     // Font Weight
                 70px                         // Line Height
             );
+
+            @include respond-to("sm-tablet") {
+                font-size: 36px;
+            }
         }
 
         &__intro {
@@ -37,6 +54,10 @@
                 $weight-light,                     // Font Weight
                 $height-2                         // Line Height
             );
+
+            @include respond-to("sm-tablet") {
+                font-size: 24px;
+            }
         }
     }
 
@@ -49,6 +70,10 @@
     &__image {
         @include grid-column(6);
 
+        @include respond-to("sm-tablet") {
+            @include grid-column(12);
+        }
+
         &__asset {
             margin-top: 25px;
             display: block;
@@ -59,6 +84,11 @@
 
     &__steps {
         @include grid-column(6);
+
+        @include respond-to("sm-tablet") {
+            margin-top: 50px;
+            @include grid-column(12);
+        }
     }
 
     &__count {
@@ -118,6 +148,10 @@
         display: flex;
         align-items: stretch;
 
+        @include respond-to("sm-tablet") {
+            bottom: -90px;
+        }
+
         &__button {
             display: block;
             background-color: $purple;
@@ -149,7 +183,14 @@
         bottom: -145px;
         width: 167px;
         height: 167px;
-        right: 0
+        right: 0;
+
+        @include respond-to("sm-tablet") {
+            width: 86px;
+            height: 86px;
+            bottom: -245px;
+            right: 25px;
+        }
     }
 }
 
