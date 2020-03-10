@@ -69,7 +69,7 @@ export const ContactPageTemplate = ({
                         )
                     })}
                 </div>
-                <div className="c-location__footer">
+                <div className="c-contactFooter__wavey">
                     <img src={footer} alt="footer icons" />
                 </div>
             </div>
