@@ -39,7 +39,7 @@ locations:
         We also have a satellite office in Denver. Lorem ipsum dolor sit amet,
         consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
         et.
-      number: alex
+      number: ''
   heading: WHERE WE'RE LOCATED
 seo:
   title: Contact Us
