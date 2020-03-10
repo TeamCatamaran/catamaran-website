@@ -13,6 +13,7 @@ const Navbar = class extends React.Component {
 
     constructor(props) {
         super(props)
+
         this.state = {
             DOM: null,
             isActive: false,

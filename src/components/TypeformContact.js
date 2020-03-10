@@ -19,7 +19,7 @@ const TypeformContact = class extends React.Component {
                 <div dangerouslySetInnerHTML={this._createScript(this.props.embed)} />
                 {this.props.types.map((t, key) => {
                     return (
-                        <div key={`chatkey-${key}`}>
+                        <div className="c-contact__chat__formHeading" key={`chatkey-${key}`}>
                             <a
                                 className="typeform-share button"
                                 data-mode="drawer_right"

@@ -70,7 +70,27 @@
         &.-newsletter {
             label.-large {
                 color: $grey-lightest;
+                letter-spacing: 2px;
                 text-transform: uppercase;
+            }
+
+            form {
+                input[type="email"] {
+                    background: none;
+                    border: none;
+                    border-bottom: 2px solid $grey-lightest;
+                    color: $grey-lightest;
+                    font-size: 16px;
+                    font-weight: $weight-medium;
+                    padding: 8px 0;
+                    margin: 26px 0 50px;
+                    letter-spacing: 2px;
+                    width: 100%;
+
+                    &:focus {
+                        outline: none;
+                    }
+                }
             }
 
             @include respond-to("tablet") {
