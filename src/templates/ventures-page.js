@@ -18,7 +18,7 @@ export const VenturesPageTemplate = ({
     return (
         <div>
             <Header
-                collageType="none"
+                collageType="ventures"
                 heading={heading}
                 section={section}
             />
