@@ -8,6 +8,11 @@
     padding: 10px 54px;
 
     &:hover {
+        cursor: pointer;
         text-decoration: none;
+    }
+
+    &:focus {
+        outline: none;
     }
 }
