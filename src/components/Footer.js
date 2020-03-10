@@ -78,13 +78,13 @@ const Footer = class extends React.Component {
                     </div>
                 </div>
                 <div className="c-footer__row">
-                    <div className="c-footer__section">
+                    <div className="c-footer__section -logo">
                         <Link to="/" title="Catamaran">
                             <img src={logo} alt="Catamaran" style={{ width: '170px' }} />
                         </Link>
                     </div>
                     <SocialIcons className="c-footer__section -social" />
-                    <div className="c-footer__section">
+                    <div className="c-footer__section -family">
                         <p className="c-footer__family">
                             part of the <a title="andculture family" href="https://andculture.com" target="_blank">andculture</a> family
                         </p>

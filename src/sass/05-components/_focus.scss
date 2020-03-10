@@ -38,6 +38,10 @@
         @include grid-column(6);
         position: relative;
 
+        @include respond-to("tablet") {
+            @include grid-column(12);
+        }
+
         &:hover {
             label.-large {
                 color: $white;
