@@ -52,11 +52,11 @@ const Navbar = class extends React.Component {
                         <Logo fill="#3e3d3f" />
                     </Link>
                     <div className="c-navbar__navigation">
-                        <div
+                        {/* <div
                             className={`c-navbar__search`}
                         >
                             <img src={search} alt="Search" style={{ width: '25px' }} />
-                        </div>
+                        </div> */}
                         <div
                             className={`c-navbar__burger action--menu ${navbarActiveClass}`}
                             data-target="navMenu"
