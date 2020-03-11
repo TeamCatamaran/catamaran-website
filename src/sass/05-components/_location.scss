@@ -12,9 +12,6 @@
     }
 
     &__map {
-        @include grid-column(12);
-        width: calc(100vw - ((100vw - 1180px)/2));
-
         img {
             width: 100%;
         }
