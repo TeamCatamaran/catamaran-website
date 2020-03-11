@@ -1,6 +1,4 @@
 .c-processSlider {
-    @include site-container;
-    position: relative;
     height: 734px;
     margin-top: 200px;
     margin-bottom: 200px;
@@ -16,7 +14,6 @@
         position: absolute;
         z-index: -1;
         background-color: $grey;
-        width: 100vw;
         top: 0;
         bottom: 0;
     }
