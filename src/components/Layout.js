@@ -6,7 +6,7 @@ import '../sass/app.scss'
 import useSiteMetadata from './SiteMetadata'
 import { withPrefix } from 'gatsby'
 
-const TemplateWrapper = ({ bodyClass, seo, children }) => {
+const TemplateWrapper = ({ bodyClass, seo, footerHasShapes, children }) => {
     const { title, description } = useSiteMetadata()
     if (seo == null) {
         seo = {}
@@ -59,7 +59,8 @@ const TemplateWrapper = ({ bodyClass, seo, children }) => {
             <main role="main">
                 {children}
             </main>
-            <Footer />
+            <Footer
+                hasShapes={footerHasShapes} />
         </div>
     )
 }
