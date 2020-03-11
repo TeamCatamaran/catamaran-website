@@ -7,6 +7,7 @@
     @include respond-to("tablet") {
         height: 866px;
         margin-top: 0;
+        margin-bottom: 0;
     }
 
     &__companies {
@@ -227,6 +228,7 @@
             left: 25px;
             display: block;
             bottom: 140px;
+            width: calc(100% - 25px);
         }
 
         &__button {
@@ -266,9 +268,13 @@
             @include respond-to("tablet") {
                 height: 45px;
                 flex-grow: 0;
-                width: 442px;
+                width: calc(100% - 104px);
                 position: absolute;
                 left: 104px;
+
+                &__svg {
+                    width: 442px;
+                }
             }
         }
     }

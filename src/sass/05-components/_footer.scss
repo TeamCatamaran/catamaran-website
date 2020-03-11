@@ -2,6 +2,25 @@
     background-color: $grey-dark;
     padding: 100px 0 20px;
 
+    &__shapes {
+        padding-top: 35px;
+    
+        &__image {
+            display: block;
+            width: 100%;
+        }
+    
+        &__wavey {
+            img {
+                width: 100%;
+            }
+        }
+
+        @include respond-to("tablet") {
+            display: none;
+        }
+    }
+
     &__family {
         color: $grey-light;
         font-size: 14px;
@@ -142,5 +161,11 @@
 
     @include respond-to("tablet") {
         padding-top: 40px;
+    }
+}
+
+body.-interior {
+    .c-footer__shapes {
+        background-color: $grey-lightest;
     }
 }
