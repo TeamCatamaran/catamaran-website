@@ -36,94 +36,92 @@ export const NetworkPageTemplate = ({
                 heading={heading}
                 section={section}
             />
-            <div className="c-interiorPage">
-                <div className="c-intro container">
-                    <p>{intro}</p>
+            <div className="c-intro container">
+                <p>{intro}</p>
+            </div>
+            <div className="c-partners container">
+                <div className="c-partners__logos">
+                    {logoPartners.map((p, key) => {
+                        if (p.link == null) {
+                            return (null);
+                        }
+                        return (
+                            <a
+                                className="c-partners__logos__item"
+                                key={"logoPartner-" + key}
+                                href={p.link.url}
+                                rel={p.link.rel}
+                                target="_blank"
+                            >
+                                {
+                                    p.image != null &&
+                                    <FluidImage
+                                        className="c-partners__logos__item__image"
+                                        alt={p.image.alt || p.name}
+                                        image={p.image.src} />
+                                }
+                            </a>
+                        );
+                    })}
                 </div>
-                <div className="c-partners container">
-                    <div className="c-partners__logos">
-                        {logoPartners.map((p, key) => {
-                            if (p.link == null) {
-                                return (null);
-                            }
-                            return (
-                                <a
-                                    className="c-partners__logos__item"
-                                    key={"logoPartner-" + key}
-                                    href={p.link.url}
-                                    rel={p.link.rel}
-                                    target="_blank"
-                                >
-                                    {
-                                        p.image != null &&
-                                        <FluidImage
-                                            className="c-partners__logos__item__image"
-                                            alt={p.image.alt || p.name}
-                                            image={p.image.src} />
-                                    }
-                                </a>
-                            );
-                        })}
+                <div className="c-partners__list">
+                    <div className="c-partners__list__section">
+                        <h4 className="c-partners__list__section__heading">Coworking</h4>
+                        <ul className="c-partners__list__section__list">
+                            {sortedPartners["coworking"].map((p, key) => {
+                                if (p.link == null) {
+                                    return (null);
+                                }
+                                return (
+                                    <li key={"coworking-" + key}>
+                                        <a href={p.link.url} rel={p.link.rel} target="_blank">{p.name}</a>
+                                    </li>
+                                );
+                            })}
+                        </ul>
+                        <h4 className="c-partners__list__section__heading">Mentorship</h4>
+                        <ul className="c-partners__list__section__list">
+                            {sortedPartners["mentorship"].map((p, key) => {
+                                if (p.link == null) {
+                                    return (null);
+                                }
+                                return (
+                                    <li key={"mentorship-" + key}>
+                                        <a href={p.link.url} rel={p.link.rel} target="_blank">{p.name}</a>
+                                    </li>
+                                );
+                            })}
+                        </ul>
                     </div>
-                    <div className="c-partners__list">
-                        <div className="c-partners__list__section">
-                            <h4 className="c-partners__list__section__heading">Coworking</h4>
-                            <ul className="c-partners__list__section__list">
-                                {sortedPartners["coworking"].map((p, key) => {
-                                    if (p.link == null) {
-                                        return (null);
-                                    }
-                                    return (
-                                        <li key={"coworking-" + key}>
-                                            <a href={p.link.url} rel={p.link.rel} target="_blank">{p.name}</a>
-                                        </li>
-                                    );
-                                })}
-                            </ul>
-                            <h4 className="c-partners__list__section__heading">Mentorship</h4>
-                            <ul className="c-partners__list__section__list">
-                                {sortedPartners["mentorship"].map((p, key) => {
-                                    if (p.link == null) {
-                                        return (null);
-                                    }
-                                    return (
-                                        <li key={"mentorship-" + key}>
-                                            <a href={p.link.url} rel={p.link.rel} target="_blank">{p.name}</a>
-                                        </li>
-                                    );
-                                })}
-                            </ul>
-                        </div>
-                        <div className="c-partners__list__section">
-                            <h4 className="c-partners__list__section__heading">Economic Dev</h4>
-                            <ul className="c-partners__list__section__list">
-                                {sortedPartners["economic dev"].map((p, key) => {
-                                    if (p.link == null) {
-                                        return (null);
-                                    }
-                                    return (
-                                        <li key={"economic-" + key}>
-                                            <a href={p.link.url} rel={p.link.rel} target="_blank">{p.name}</a>
-                                        </li>
-                                    );
-                                })}
-                            </ul>
-                        </div>
-                        <div className="c-partners__list__section">
-                            <h4 className="c-partners__list__section__heading">Community Contacts</h4>
-                            <ul className="c-partners__list__section__list">
-                                {sortedPartners["community contacts"].map((p, key) => {
-                                    if (p.link == null) {
-                                        return (null);
-                                    }
-                                    return (
-                                        <li key={"community-" + key}>
-                                            <a href={p.link.url} rel={p.link.rel} target="_blank">{p.name}</a>
-                                        </li>
-                                    );
-                                })}
-                            </ul>
-                        </div>
+                    <div className="c-partners__list__section">
+                        <h4 className="c-partners__list__section__heading">Economic Dev</h4>
+                        <ul className="c-partners__list__section__list">
+                            {sortedPartners["economic dev"].map((p, key) => {
+                                if (p.link == null) {
+                                    return (null);
+                                }
+                                return (
+                                    <li key={"economic-" + key}>
+                                        <a href={p.link.url} rel={p.link.rel} target="_blank">{p.name}</a>
+                                    </li>
+                                );
+                            })}
+                        </ul>
+                    </div>
+                    <div className="c-partners__list__section">
+                        <h4 className="c-partners__list__section__heading">Community Contacts</h4>
+                        <ul className="c-partners__list__section__list">
+                            {sortedPartners["community contacts"].map((p, key) => {
+                                if (p.link == null) {
+                                    return (null);
+                                }
+                                return (
+                                    <li key={"community-" + key}>
+                                        <a href={p.link.url} rel={p.link.rel} target="_blank">{p.name}</a>
+                                    </li>
+                                );
+                            })}
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -151,7 +149,7 @@ const NetworkPage = ({ data }) => {
 
     return (
         <Layout
-            bodyClass="-purple"
+            bodyClass="-purple -interior"
             seo={frontmatter.seo}>
             <NetworkPageTemplate
                 heading={frontmatter.heading}

@@ -1,4 +1,4 @@
-.c-indexFooterShapes {
+.c-footerShapes {
     padding-top: 100px;
 
     &__image {
@@ -10,5 +10,11 @@
         img {
             width: 100%;
         }
+    }
+}
+
+body.-interior {
+    .c-footerShapes {
+        background-color: $grey-lightest;
     }
 }

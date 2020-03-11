@@ -19,18 +19,16 @@ export const FAQPageTemplate = ({
                 heading={heading}
                 section={section}
             />
-            <div className="c-interiorPage">
-                {
-                    faqs != null &&
-                    <div>
-                        {faqs.map((f) => {
-                            return (
-                                <p>{f.question}<br />{f.answer}</p>
-                            )
-                        })}
-                    </div>
-                }
-            </div>
+            {
+                faqs != null &&
+                <div>
+                    {faqs.map((f) => {
+                        return (
+                            <p>{f.question}<br />{f.answer}</p>
+                        )
+                    })}
+                </div>
+            }
         </div>
     )
 }
@@ -52,7 +50,7 @@ const FAQPage = ({ data }) => {
 
     return (
         <Layout
-            bodyClass="-purple"
+            bodyClass="-purple -interior"
             seo={frontmatter.seo}>
             <FAQPageTemplate
                 section={frontmatter.section}

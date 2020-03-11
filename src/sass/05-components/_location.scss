@@ -12,13 +12,23 @@
         margin-top: 199px;
         margin-bottom: 41px;
     }
+    &__dotGrid {
+        position: absolute;
+        bottom: -48px;
+        left: -34px;
+        width:106px;
+        z-index: 2;
+    }
     &__circleWave {
         position: absolute;
-        margin-left: 664px;
-        margin-top: -149px;
-        max-width:406px;
+        right: 0;
+        top: -149px;
+        width:406px;
+        z-index: 2;
     }
     &__map {
+        position: relative;
+        z-index: 10;
         img {
             width: 100%;
         }

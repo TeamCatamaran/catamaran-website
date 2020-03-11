@@ -24,12 +24,10 @@ export const PrivacyPageTemplate = ({
                 heading={heading}
                 section={section}
             />
-            <div className="c-interiorPage">
-                <div className="c-intro container">
-                    <p className="-left">{intro}</p>
-                </div>
-                <PostContent content={content} />
+            <div className="c-intro container">
+                <p className="-left">{intro}</p>
             </div>
+            <PostContent content={content} />
         </div>
     )
 }
@@ -46,7 +44,7 @@ const PrivacyPage = ({ data }) => {
 
     return (
         <Layout
-            bodyClass="-purple"
+            bodyClass="-purple -interior"
             seo={post.frontmatter.seo}>
             <PrivacyPageTemplate
                 section={post.frontmatter.section}

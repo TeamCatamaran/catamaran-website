@@ -1,8 +1,7 @@
 .c-social {
     &__link {
         display: inline-block;
-        padding: 20px 20px 20px 20px;
-        width: 25px;
+        padding: 20px 14px 20px 14px;
 
         @include respond-to("mobile") {
             width: 20px;

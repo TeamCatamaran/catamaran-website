@@ -1,5 +1,5 @@
 .c-contact {
-    &__heading{
+    &__heading {
         @include font-style(
             $font-accent,                     // Font Family
             $size-4,                          // Font Size
@@ -10,8 +10,10 @@
         letter-spacing: 2px;
         margin-bottom: 0px;
     }
-    &__chat{
+
+    &__chat {
         @include grid-column(8);
+
         &__formHeading {
             a {
                 @include font-style(
@@ -28,9 +30,11 @@
         }
         margin-bottom: 199px;
     }
-    &__social{
+
+    &__social {
         @include grid-column(4);
-        p{
+
+        p {
             @include font-style(
                 $font-accent,                     // Font Family
                 $size-4,                          // Font Size
@@ -41,7 +45,12 @@
             letter-spacing: 2px;
         }
     }
+
     &__icons {
         justify-content: start;
+    }
+
+    .c-social {
+        margin-left: -14px;
     }
 }

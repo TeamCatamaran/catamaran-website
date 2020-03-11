@@ -19,11 +19,13 @@ const Footer = class extends React.Component {
             <div>
                 {
                     this.props.hasShapes &&
-                    <div className="c-footerShapes container">
-                        <img
-                            className="c-footerShapes__image container-overflow"
-                            alt="decorative geometric shapes"
-                            src={footerShapes} />
+                    <div className="c-footerShapes">
+                        <div className="container">
+                            <img
+                                className="c-footerShapes__image container-overflow"
+                                alt="decorative geometric shapes"
+                                src={footerShapes} />
+                        </div>
                     </div>
                 }
                 <footer className="c-footer">

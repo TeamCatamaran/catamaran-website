@@ -28,54 +28,45 @@ export const ContactPageTemplate = ({
                 heading={heading}
                 section={section}
             />
-            <div className="c-interiorPage">
-                <div className="c-intro container">
-                    <p className="-left">{intro}</p>
-                </div>
-                <div className="c-contact container">
-                    <TypeformContact
-                        embed={embed}
-                        heading={type.heading}
-                        types={type.types} />
-                    <div className="c-contact__social">
-                        <p>{social.heading}</p>
-                        <div className="c-contact__icons">
-                            <SocialIcons
-                                style="dark" />
-                        </div>
+            <div className="c-intro container">
+                <p className="-left">{intro}</p>
+            </div>
+            <div className="c-contact container">
+                <TypeformContact
+                    embed={embed}
+                    heading={type.heading}
+                    types={type.types} />
+                <div className="c-contact__social">
+                    <p>{social.heading}</p>
+                    <div className="c-contact__icons">
+                        <SocialIcons
+                            style="dark" />
                     </div>
                 </div>
-                {
-                    map != null &&
-                    <div className="c-location container">
-                        <div>
-                            <img src={circleWave} alt="circle Wave" className="c-location__circleWave" />
-                        </div>
-                        <div className="c-location__map container-overflow">
-                            <FluidImage
-                                alt={map.alt || "Catamaran location map"}
-                                image={map.src} />
-                        </div>
-                        <div>
-                            <img src={dotGrid} alt="dot grid" />
-                        </div>
-
-                    </div>
-                }
+            </div>
+            {
+                map != null &&
                 <div className="c-location container">
-                    <label className="c-location__heading">{locations.heading}</label>
-                    {locations.addresses.map((l, key) => {
-                        return (
-                            <div className="c-location__address" key={`locationkey-${key}`}>
-                                <p>{l.address}</p>
-                                <p>{l.number}</p>
-                            </div>
-                        )
-                    })}
+                    <img src={circleWave} alt="circle Wave" className="c-location__circleWave" />
+                    <div className="c-location__map container-overflow">
+                        <FluidImage
+                            alt={map.alt || "Catamaran location map"}
+                            image={map.src} />
+                    </div>
+                    <img src={dotGrid} alt="dot grid" className="c-location__dotGrid" />
+
                 </div>
-                <div className="c-indexFooterShapes container">
-                    <img className="c-indexFooter__wavey" src={footer} alt="footer icons" />
-                </div>
+            }
+            <div className="c-location container">
+                <label className="c-location__heading">{locations.heading}</label>
+                {locations.addresses.map((l, key) => {
+                    return (
+                        <div className="c-location__address" key={`locationkey-${key}`}>
+                            <p>{l.address}</p>
+                            <p>{l.number}</p>
+                        </div>
+                    )
+                })}
             </div>
         </div>
     )
@@ -116,7 +107,8 @@ const ContactPage = ({ data }) => {
 
     return (
         <Layout
-            bodyClass="-purple"
+            bodyClass="-purple -interior"
+            footerHasShapes={true}
             seo={frontmatter.seo}>
             <ContactPageTemplate
                 section={frontmatter.section}
