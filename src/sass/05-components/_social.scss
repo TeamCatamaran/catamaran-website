@@ -6,5 +6,10 @@
         @include respond-to("mobile") {
             width: 20px;
         }
+
+        img {
+            max-width: 1em;
+            max-height: 1em;
+        }
     }
 }

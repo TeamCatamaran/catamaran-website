@@ -14,7 +14,7 @@ const Header = class extends React.Component {
                     type={this.props.collageType} />
                 <div className="container">
                     <div className="c-header__text">
-                        <h2>{this.props.section}</h2>
+                        <label className="-large">{this.props.section}</label>
                         <h1>{this.props.heading}</h1>
                     </div>
                 </div>

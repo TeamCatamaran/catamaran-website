@@ -5,6 +5,15 @@
 
     &.-collapse {
         height: auto;
+        padding: 120px 0 80px;
+
+        .c-header__text {
+            transform: none;
+
+            h1 {
+                padding-top: 30px;
+            }
+        }
     }
 
     &__background {
@@ -611,7 +620,7 @@
 
 body.-purple {
     .c-header {
-        h2 {
+        label.-large {
             color: $purple;
         }
     }
@@ -619,7 +628,7 @@ body.-purple {
 
 body.-pink {
     .c-header {
-        h2 {
+        label.-large {
             color: $pink;
         }
     }
@@ -627,7 +636,7 @@ body.-pink {
 
 body.-orange {
     .c-header {
-        h2 {
+        label.-large {
             color: $orange;
         }
     }

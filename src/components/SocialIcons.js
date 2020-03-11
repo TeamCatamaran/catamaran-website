@@ -43,36 +43,30 @@ const SocialIcons = class extends React.Component {
                     <img
                         src={dribbbleIcon}
                         alt="Dribbble"
-                        style={{ maxWidth: '1em', maxHeight: '1em' }}
                     />
                 </a>
                 <a className="c-social__link" title="twitter" rel="noopener noreferrer" href="https://twitter.com" target="_blank">
                     <img
-                        className="fas fa-lg"
                         src={twitterIcon}
                         alt="Twitter"
-                        style={{ maxWidth: '1em', maxHeight: '1em' }}
                     />
                 </a>
                 <a className="c-social__link" title="facebook" rel="noopener noreferrer" href="https://facebook.com" target="_blank">
                     <img
                         src={facebookIcon}
                         alt="Facebook"
-                        style={{ maxWidth: '1em', maxHeight: '1em' }}
                     />
                 </a>
                 <a className="c-social__link" title="instagram" rel="noopener noreferrer" href="https://instagram.com" target="_blank">
                     <img
                         src={instagramIcon}
                         alt="Instagram"
-                        style={{ maxWidth: '1em', maxHeight: '1em' }}
                     />
                 </a>
                 <a className="c-social__link" title="linkedin" rel="noopener noreferrer" href="https://www.linkedin.com" target="_blank">
                     <img
                         src={linkedinIcon}
                         alt="Linkedin"
-                        style={{ maxWidth: '1em', maxHeight: '1em' }}
                     />
                 </a>
             </div>

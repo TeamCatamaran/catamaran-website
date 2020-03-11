@@ -1,4 +1,6 @@
 .c-breakdown {
+    padding-top: 115px;
+
     &__title {
         @include grid-column(6);
         position: relative;

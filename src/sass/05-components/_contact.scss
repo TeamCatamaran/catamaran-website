@@ -8,7 +8,7 @@
             $height-4                         // Line Height
         );
         letter-spacing: 2px;
-        margin-bottom: 0px;
+        margin-bottom: 10px;
     }
 
     &__chat {
@@ -20,12 +20,11 @@
                     $font-normal,                     // Font Family
                     $size-p,                          // Font Size
                     $grey,                            // Font Color
-                    $weight-medium,                 // Font Weight
-                    $height-p                         // Line Height
+                    $weight-medium,                   // Font Weight
+                    60px                              // Line Height
                 );
                 letter-spacing: 2px;
                 text-decoration: underline;
-                line-height: 48px;
             }
         }
         margin-bottom: 199px;
@@ -47,7 +46,12 @@
     }
 
     &__icons {
-        justify-content: start;
+        .c-social__link {
+            img {
+                max-width: 1.25em;
+                max-height: 1.25em;
+            }
+        }
     }
 
     .c-social {

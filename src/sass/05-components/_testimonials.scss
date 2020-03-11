@@ -1,6 +1,7 @@
 .c-testimonials {
     position: relative;
     height: 530px;
+    margin-bottom: 65px;
     margin-top: 200px;
 
     @include respond-to("tablet") {
