@@ -48,8 +48,8 @@ export const ContactPageTemplate = ({
                 </div>
                 {
                     map != null &&
-                    <div className="c-location container -overflow">
-                        <div className="c-location__map">
+                    <div className="c-location container">
+                        <div className="c-location__map container-overflow">
                             <FluidImage
                                 alt={map.alt || "Catamaran location map"}
                                 image={map.src} />
