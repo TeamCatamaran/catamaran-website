@@ -168,6 +168,10 @@
                 $weight-bold,                       // Font Weight
                 $height-4                           // Line Height
             );
+
+            @include respond-to("tablet") {
+                color: $white;
+            }
         }
 
         &__title {
@@ -286,6 +290,10 @@ body.-pink {
     }
     .c-testimonials__quote__name {
         color: $pink;
+
+        @include respond-to("tablet") {
+            color: $white;
+        }
     }
     .c-testimonials__controls__button {
         background-color: $pink;
@@ -301,6 +309,10 @@ body.-purple {
     }
     .c-testimonials__quote__name {
         color: $purple;
+
+        @include respond-to("tablet") {
+            color: $white;
+        }
     }
     .c-testimonials__controls__button {
         background-color: $purple;
@@ -316,6 +328,10 @@ body.-orange {
     }
     .c-testimonials__quote__name {
         color: $orange;
+        
+        @include respond-to("tablet") {
+            color: $white;
+        }
     }
     .c-testimonials__controls__button {
         background-color: $orange;

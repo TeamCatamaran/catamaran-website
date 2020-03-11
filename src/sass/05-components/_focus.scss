@@ -9,12 +9,27 @@
         padding: 0 55px 60px;
         transition: all 0.5s;
 
+        @include respond-to("tablet") {
+            padding: 0 30px 45px;
+            top: 30px;
+            display: flex;
+            flex-direction: column;
+        }
+
         .c-button {
             color: $white;
             border-color: $white;
             opacity: 0;
             height: 46px;
             transition: all 0.5s;
+            text-transform: uppercase;
+            font-weight: $weight-bold;
+            letter-spacing: .2em;
+
+            @include respond-to("tablet") {
+                width: 100%;
+                text-align: center;
+            }
         }
 
         label.-large {
@@ -31,16 +46,17 @@
             line-height: 30px;
             margin: 14px 0 30px;
             transition: all 0.2s;
+
+            @include respond-to("tablet") {
+                flex-grow: 1;
+            }
         }
     }
 
     &__item {
         @include grid-column(6);
         position: relative;
-
-        @include respond-to("tablet") {
-            @include grid-column(12);
-        }
+        z-index: 2;
 
         &:hover {
             label.-large {
@@ -79,6 +95,34 @@
                 left: 0;
             }
         }
+
+        @include respond-to("tablet") {
+            @include grid-column(12);
+
+            label.-large {
+                color: $white;
+            }
+
+            p {
+                color: $white;
+            }
+
+            img.-default {
+                opacity: 0;
+            }
+
+            img.-hover {
+                opacity: 1;
+            }
+
+            .c-button {
+                opacity: 1;
+            }
+
+            .c-focus__content {
+                bottom: 0;
+            }
+        }
     }
 
     &__overlay {
@@ -89,6 +133,17 @@
         top: 0;
         left: 0;
     }
+
+    &__image {
+        position: absolute;
+        width: 207px;
+        bottom: -130px;
+        right: -65px;
+
+        @include respond-to("tablet") {
+            
+        }
+    }
 }
 
 body.-purple {
@@ -96,6 +151,10 @@ body.-purple {
         &__item:not(:hover) {
             label.-large {
                 color: $purple;
+
+                @include respond-to("tablet") {
+                    color: $white;
+                }
             }
         }
     }

@@ -1,6 +1,10 @@
 .c-breakdown {
     padding-top: 115px;
 
+    @include respond-to("tablet") {
+        padding-top: 50px;
+    }
+
     &__title {
         @include grid-column(6);
         position: relative;

@@ -18,5 +18,10 @@
             text-align: left;
             justify-content: start;
         }
+
+        @include respond-to("tablet") {
+            margin: 0 25px;
+            text-align: left;
+        }
     };
 }

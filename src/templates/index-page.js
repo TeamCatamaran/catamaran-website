@@ -7,6 +7,7 @@ import Header from '../components/Header'
 import Layout from '../components/Layout'
 import Breakdown from '../components/Breakdown'
 import Testimonials from '../components/Testimonials'
+import spiral from '../img/home-spiral.png'
 
 import { types } from '../types/types';
 
@@ -59,6 +60,7 @@ export const IndexPageTemplate = ({
               </Link>
             )
           })}
+          <img className="c-focus__image" src={spiral} alt="abstract design element" />
         </div>
       </div>
       <div className="c-intro container">
