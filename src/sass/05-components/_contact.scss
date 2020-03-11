@@ -13,6 +13,12 @@
 
     &__chat {
         @include grid-column(8);
+        margin-bottom: 200px;
+
+        @include respond-to("phone") {
+            @include grid-column(12);
+            margin-bottom: 40px
+        }
 
         &__formHeading {
             a {
@@ -27,11 +33,14 @@
                 text-decoration: underline;
             }
         }
-        margin-bottom: 199px;
     }
 
     &__social {
         @include grid-column(4);
+
+        @include respond-to("phone") {
+            @include grid-column(12);
+        }
 
         p {
             @include font-style(
