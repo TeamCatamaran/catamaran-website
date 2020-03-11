@@ -2,6 +2,8 @@ import React from 'react'
 import FluidImage from '../components/FluidImage'
 import { Link } from 'gatsby'
 
+import ctaBG from '../img/cta-bg.png'
+
 const Cta = class extends React.Component {
     constructor(props) {
         super(props)
@@ -17,7 +19,7 @@ const Cta = class extends React.Component {
 
         return (
             <div className="c-cta">
-                <div className="c-cta__wrapper">
+                <div className="c-cta__wrapper" style={{backgroundImage: `url(${ctaBG})`}}>
                     <div className="c-cta__content">
                         <p>{this.props.content.content}</p>
                     </div>

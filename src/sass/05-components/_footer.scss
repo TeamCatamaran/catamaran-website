@@ -62,7 +62,7 @@
                 }
             }
 
-            @include respond-to("sm-tablet") {
+            @include respond-to("tablet") {
                 text-align: left;
             }
         }

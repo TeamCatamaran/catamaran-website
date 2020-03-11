@@ -1,6 +1,10 @@
 .c-upstartLogos {
     margin-top: 100px;
 
+    @include respond-to("tablet") {
+        margin-bottom: 100px;
+    }
+
     &__heading {
         text-align: center;
         text-transform: uppercase;
@@ -14,14 +18,14 @@
         );
     }
 
-    &__list {
-
-    }
-
     &__logo {
         @include grid-column(3);
         height: 40px;
         margin-top: 40px;
+
+        @include respond-to("tablet") {
+            @include grid-column(6);
+        }
 
         &__image {
             max-height: 100%;

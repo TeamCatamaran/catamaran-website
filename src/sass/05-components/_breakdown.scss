@@ -4,7 +4,7 @@
         position: relative;
         padding-right: 100px;
 
-        @include respond-to("sm-tablet") {
+        @include respond-to("tablet") {
             @include grid-column(12);
             padding-right: 0;
         }
@@ -21,7 +21,7 @@
         left: 20px;
         width: 40%;
 
-        @include respond-to("sm-tablet") {
+        @include respond-to("tablet") {
             display: none;
         }
     }
@@ -29,7 +29,7 @@
     &__wrapper {
         @include grid-column(6);
 
-        @include respond-to("sm-tablet") {
+        @include respond-to("tablet") {
             @include grid-column(12);
             padding-top: 60px;
         }
@@ -39,7 +39,7 @@
         @include grid-column(6);
         margin-bottom: 75px;
 
-        @include respond-to("sm-tablet") {
+        @include respond-to("tablet") {
             @include grid-column(12);
             margin-bottom: 60px;
         }
@@ -61,7 +61,7 @@
         width: 100%;
         margin-top: 100px;
 
-        @include respond-to("sm-tablet") {
+        @include respond-to("tablet") {
             display: none;
         }
     }

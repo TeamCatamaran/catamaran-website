@@ -51,7 +51,7 @@ export const ContactPageTemplate = ({
                         <div>
                             <img src={circleWave} alt="circle Wave" className="c-location__circleWave" />
                         </div>
-                        <div className="c-location__map">
+                        <div className="c-location__map container-overflow">
                             <FluidImage
                                 alt={map.alt || "Catamaran location map"}
                                 image={map.src} />

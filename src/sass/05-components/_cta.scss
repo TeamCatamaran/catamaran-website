@@ -5,10 +5,14 @@
     margin-top: 200px;
     margin-bottom: 200px;
 
-    @include respond-to("sm-tablet") {
+    @include respond-to("tablet") {
         margin-top: 0;
         margin-bottom: 0;
         height: 320px;
+
+        .c-studioOverview + & {
+            margin-top: 100px;
+        }
     }
 
     &__wrapper {
@@ -20,18 +24,19 @@
         width: 100%;
         padding: 0 80px;
 
-        @include respond-to("sm-tablet") {
+        @include respond-to("tablet") {
             flex-direction: column;
             padding: 100px 25px;
             height: 320px;
             align-items: flex-start;
+            background-position: -700px;
         }
     }
 
     &__content {
         flex-grow: 1;
         
-        @include respond-to("sm-tablet") {
+        @include respond-to("tablet") {
 
             flex-grow: 0;
         }
@@ -45,7 +50,7 @@
                 70px                           // Line Height
             );
 
-            @include respond-to("sm-tablet") {
+            @include respond-to("tablet") {
                 font-size: 36px;
                 line-height: 48px;
             }
@@ -54,7 +59,7 @@
 
     &__link__button {
         display: block;
-        border: 2px solid $white;
+        border: 3px solid $white;
         border-radius: 22px;
         min-width: 171px;
         text-align: center;
@@ -74,7 +79,7 @@
             40px                           // Line Height
         );
 
-        @include respond-to("sm-tablet") {
+        @include respond-to("tablet") {
             margin-top: 40px;
         }
     }
@@ -89,7 +94,7 @@
             position: absolute;
         }
 
-        @include respond-to("sm-tablet") {
+        @include respond-to("tablet") {
             display: none;
         }
     }
