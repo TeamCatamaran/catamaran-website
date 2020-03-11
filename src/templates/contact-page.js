@@ -36,7 +36,7 @@ export const ContactPageTemplate = ({
                 <div className="c-contact container">
                     <TypeformContact
                         embed={embed}
-                        header={type.heading}
+                        heading={type.heading}
                         types={type.types} />
                     <div className="c-contact__social">
                         <p>{social.heading}</p>
@@ -67,8 +67,8 @@ export const ContactPageTemplate = ({
                         )
                     })}
                 </div>
-                <div className="c-contactFooter__wavey">
-                    <img src={footer} alt="footer icons" />
+                <div className="c-indexFooterShapes container">
+                    <img className="c-indexFooter__wavey" src={footer} alt="footer icons" />
                 </div>
             </div>
         </div>

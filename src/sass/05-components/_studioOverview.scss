@@ -11,7 +11,7 @@
                 $height-2                         // Line Height
             );
 
-            @include respond-to("sm-tablet") {
+            @include respond-to("tablet") {
                 @include grid-column(12);
             }
         }
@@ -27,19 +27,19 @@
 
             &:first-of-type p {
                 padding-right: 25px;
-                @include respond-to("sm-tablet") {
+                @include respond-to("tablet") {
                     padding-right: 0;
                 }
             }
             &:last-of-type p {
                 padding-left: 25px;
-                @include respond-to("sm-tablet") {
+                @include respond-to("tablet") {
                     padding-left: 0;
                     padding-top: 20px;
                 }
             }
 
-            @include respond-to("sm-tablet") {
+            @include respond-to("tablet") {
                 @include grid-column(12);
             }
         }
@@ -52,7 +52,7 @@
     &__detail {
         @include grid-column(4);
 
-        @include respond-to("sm-tablet") {
+        @include respond-to("tablet") {
             @include grid-column(12);
             & + .c-studioOverview__detail {
                 margin-top: 40px;

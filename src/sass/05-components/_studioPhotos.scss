@@ -2,9 +2,13 @@
     margin-top: 200px;
     position: relative;
 
+    @include respond-to("tablet") {
+        margin-top: 100px;
+    }
+
     &__photo1 {
         @include grid-column(8);
-        height: 355px;
+        // height: 355px;
         margin-top: 100px;
         position: relative;
         z-index: 2;
@@ -12,6 +16,18 @@
 
         img {
             width: calc(100% - 30px);
+        }
+
+        @include respond-to("tablet") {
+            margin-top: 25px;
+            margin-left: 0;
+            width: 100%;
+            float: none;
+            // height: auto;
+
+            img {
+                width: 100%;
+            }
         }
     }
 
@@ -24,6 +40,10 @@
 
         img {
             width: 100%;
+        }
+
+        @include respond-to("tablet") {
+            display: none;
         }
     }
 
@@ -38,6 +58,11 @@
         img {
             width: 100%;
         }
+
+        @include respond-to("tablet") {
+            margin-left: 25px;
+            bottom: -44px;
+        }
     }
 
     &__element2 {
@@ -51,6 +76,11 @@
         img {
             width: 100%;
         }
+
+        @include respond-to("tablet") {
+            top: -30px;
+            right: -108px;
+        }
     }
 
     &__element3 {
@@ -63,6 +93,10 @@
 
         img {
             width: 100%;
+        }
+
+        @include respond-to("tablet") {
+            display: none;
         }
     }
 }
