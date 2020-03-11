@@ -5,6 +5,7 @@ import Layout from '../components/Layout'
 import Header from '../components/Header'
 import SocialIcons from '../components/SocialIcons'
 import FluidImage from '../components/FluidImage'
+import croppedMap from '../img/cropped-map.png'
 import TypeformContact from '../components/TypeformContact'
 import dotGrid from '../img/dotgrid.png'
 import circleWave from '../img/circlewave.png'
@@ -52,6 +53,9 @@ export const ContactPageTemplate = ({
                         <FluidImage
                             alt={map.alt || "Catamaran location map"}
                             image={map.src} />
+                    </div>
+                    <div>
+                        <img src={croppedMap} alt="cropped Map" className="c-location__croppedMap" />
                     </div>
                     <img src={dotGrid} alt="dot grid" className="c-location__dotGrid" />
 
