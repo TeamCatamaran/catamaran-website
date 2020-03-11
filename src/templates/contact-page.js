@@ -1,14 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
-
 import Layout from '../components/Layout'
 import Header from '../components/Header'
 import SocialIcons from '../components/SocialIcons'
 import FluidImage from '../components/FluidImage'
 import TypeformContact from '../components/TypeformContact'
-
-
+import dotGrid from '../img/dotgrid.png'
+import circleWave from '../img/circlewave.png'
 import footer from '../img/footer-shapes.png'
 import { types } from '../types/types';
 
@@ -40,7 +39,7 @@ export const ContactPageTemplate = ({
                         types={type.types} />
                     <div className="c-contact__social">
                         <p>{social.heading}</p>
-                        <div >
+                        <div className="c-contact__icons">
                             <SocialIcons
                                 style="dark" />
                         </div>
@@ -49,11 +48,18 @@ export const ContactPageTemplate = ({
                 {
                     map != null &&
                     <div className="c-location container">
+                        <div>
+                            <img src={circleWave} alt="circle Wave" className="c-location__circleWave" />
+                        </div>
                         <div className="c-location__map">
                             <FluidImage
                                 alt={map.alt || "Catamaran location map"}
                                 image={map.src} />
                         </div>
+                        <div>
+                            <img src={dotGrid} alt="dot grid" />
+                        </div>
+
                     </div>
                 }
                 <div className="c-location container">
