@@ -26,6 +26,7 @@
                 line-height: 48px;
             }
         }
+        margin-bottom: 199px;
     }
     &__social{
         @include grid-column(4);
@@ -39,5 +40,8 @@
             );
             letter-spacing: 2px;
         }
+    }
+    &__icons {
+        justify-content: start;
     }
 }
