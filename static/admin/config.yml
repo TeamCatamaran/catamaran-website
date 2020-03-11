@@ -365,6 +365,12 @@ collections:
                     allow_multiple: false,
                   },
                   {
+                    label: Logo Dark,
+                    name: logoDark,
+                    widget: file,
+                    allow_multiple: false,
+                  },
+                  {
                     label: Image,
                     name: image,
                     widget: object,
@@ -1551,8 +1557,8 @@ collections:
                 ],
             }
           - {
-              label: Slider,
-              name: slider,
+              label: Testimonials,
+              name: testimonials,
               widget: list,
               fields:
                 [
@@ -1562,6 +1568,12 @@ collections:
                   {
                     label: Logo,
                     name: logo,
+                    widget: file,
+                    allow_multiple: false,
+                  },
+                  {
+                    label: Logo Dark,
+                    name: logoDark,
                     widget: file,
                     allow_multiple: false,
                   },

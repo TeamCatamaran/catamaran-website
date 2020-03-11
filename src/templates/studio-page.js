@@ -441,6 +441,13 @@ query StudioPage($id: String!) {
             }
           }
         }
+        logoDark {
+            childImageSharp {
+              fluid(maxWidth: 2048, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
         image {
           src {
             childImageSharp {

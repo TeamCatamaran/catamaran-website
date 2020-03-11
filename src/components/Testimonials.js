@@ -41,8 +41,10 @@ const Testimonials = class extends React.Component {
                         {
                             companies.map((c, key) => {
                                 let className = "c-testimonials__logo";
+                                let image = c.logoDark;
                                 if (c.isSelected) {
                                     className += " -selected";
+                                    image = c.logo;
                                 }
                                 return (
                                     <div
@@ -51,7 +53,7 @@ const Testimonials = class extends React.Component {
                                         <FluidImage
                                             alt={c.name}
                                             className="c-testimonials__logo__image"
-                                            image={c.logo} />
+                                            image={image} />
                                     </div>
                                 );
                             })
@@ -61,6 +63,7 @@ const Testimonials = class extends React.Component {
                         {
                             companies.map((c, key) => {
                                 let className = "c-testimonials__image";
+                                let image
                                 if (c.isSelected) {
                                     className += " -selected";
                                 }

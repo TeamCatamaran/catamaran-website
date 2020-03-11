@@ -20,8 +20,8 @@ const ProcessSlider = class extends React.Component {
         }
 
         return (
-            <div className="c-processSlider">
-                <div className="c-processSlider__fill"></div>
+            <div className="c-processSlider container">
+                <div className="c-processSlider__fill container-overflow"></div>
                 <div className="c-processSlider__header">
                     <h2 className="c-processSlider__header__title">{this.props.content.heading}</h2>
                     <p className="c-processSlider__header__intro">{this.props.content.intro}</p>

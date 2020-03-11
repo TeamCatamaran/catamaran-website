@@ -1,14 +1,16 @@
 .c-studioPhotos {
     margin-top: 200px;
     position: relative;
+    padding: 0 20px;
 
     @include respond-to("tablet") {
         margin-top: 100px;
+        padding: 0;
     }
 
     &__photo1 {
-        @include grid-column(8);
-        // height: 355px;
+        width: calc(70% - 30px);
+        float: left;
         margin-top: 100px;
         position: relative;
         z-index: 2;
@@ -32,9 +34,9 @@
     }
 
     &__photo2 {
-        @include grid-column(4);
+        width: 30%;
+        float: right;
         position: relative;
-        height: 500px;
         overflow: hidden;
         z-index: 2;
 
@@ -50,8 +52,8 @@
     &__element1 {
         width: 239px;
         height: 88px;
-        @include grid-push(2);
-        bottom: 15px;
+        bottom: 20px;
+        left: 16%;
         position: absolute;
         z-index: 3;
 
@@ -61,6 +63,7 @@
 
         @include respond-to("tablet") {
             margin-left: 25px;
+            left: 0;
             bottom: -44px;
         }
     }
@@ -68,18 +71,20 @@
     &__element2 {
         width: 315px;
         height: 315px;
-        @include grid-push(5);
+        left: 48%;
         top: 30px;
         position: absolute;
         z-index: 1;
 
         img {
-            width: 100%;
+            width: 315px;
         }
 
         @include respond-to("tablet") {
             top: -30px;
-            right: -108px;
+            left: 55%;
+            width: 45%;
+            overflow: hidden;
         }
     }
 
