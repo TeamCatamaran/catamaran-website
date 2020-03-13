@@ -4,6 +4,10 @@
     padding-bottom: 50px;
     max-height: 900px;
 
+    @include respond-to("phone") {
+        height: auto;
+    }
+
     &.-collapse {
         height: auto;
         padding: 120px 0 80px;

@@ -7,6 +7,10 @@ $heading-grid: (
     margin-top: 100px;
     margin-bottom: 150px;
 
+    @include respond-to("tablet") {
+        margin-bottom: 50px;
+    }
+
     &__header {
         margin-bottom: 75px;
         @include grid-column(12);
@@ -34,6 +38,10 @@ $heading-grid: (
             $weight-normal,                 // Font Weight
             $height-p                         // Line Height
         );
+
+        @include respond-to("tablet") {
+            @include grid-column(12, $heading-grid);
+        }
     }
 
     &__list {
@@ -48,8 +56,8 @@ $heading-grid: (
         position: relative;
         overflow: hidden;
 
-        &.-large {
-            @include grid-column(8);
+        @include respond-to("tablet") {
+            @include grid-column(6);
         }
 
         &__name {
@@ -62,6 +70,11 @@ $heading-grid: (
                 $weight-normal,                     // Font Weight
                 $height-p                         // Line Height
             );
+
+            @include respond-to("tablet") {
+                line-height: 20px;
+                font-size: 18px;
+            }
         }
 
         &__title {
@@ -76,6 +89,11 @@ $heading-grid: (
                 $weight-bold,                     // Font Weight
                 $height-4                         // Line Height
             );
+
+            @include respond-to("tablet") {
+                line-height: 18px;
+                font-size: 14px;
+            }
         }
 
         &__photo {

@@ -34,6 +34,10 @@ $heading-grid: (
             $weight-normal,                 // Font Weight
             $height-p                         // Line Height
         );
+
+        @include respond-to("tablet") {
+            @include grid-column(12, $heading-grid);
+        }
     }
 
     &__topImage {
@@ -42,6 +46,18 @@ $heading-grid: (
         right: -70px;
         width: 225px;
         height: 225px;
+
+        &__asset {
+            width: 225px;
+            height: 225px;
+        }
+
+        @include respond-to("tablet") {
+            right: 0;
+            top: -180px;
+            width: 85px;
+            overflow: hidden;
+        }
     }
 
     &__bottomImage {
@@ -64,8 +80,8 @@ $heading-grid: (
         position: relative;
         overflow: hidden;
 
-        &.-large {
-            @include grid-column(8);
+        @include respond-to("tablet") {
+            @include grid-column(6);
         }
 
         &__name {
@@ -78,6 +94,11 @@ $heading-grid: (
                 $weight-normal,                     // Font Weight
                 $height-p                         // Line Height
             );
+
+            @include respond-to("tablet") {
+                line-height: 20px;
+                font-size: 18px;
+            }
         }
 
         &__title {
@@ -90,8 +111,13 @@ $heading-grid: (
                 $size-4,                          // Font Size
                 $grey-light,                            // Font Color
                 $weight-bold,                     // Font Weight
-                $height-4                         // Line Height
+                20px                         // Line Height
             );
+
+            @include respond-to("tablet") {
+                line-height: 18px;
+                font-size: 14px;
+            }
         }
 
         &__photo {

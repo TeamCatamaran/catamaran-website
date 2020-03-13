@@ -57,12 +57,12 @@ export const AboutPageTemplate = ({
                 <div className="c-values__header">
                     <h2 className="c-values__heading">{values.heading}</h2>
                     <p className="c-values__description">{values.description}</p>
-                </div>
-                <div className="c-values__header">
-                    <img
-                        className="c-values__image -default"
-                        alt={values.heading}
-                        src={aboutValuesCollage} />
+                    <div className="c-values__image"> 
+                        <img
+                            className="c-values__image__asset"
+                            alt={values.heading}
+                            src={aboutValuesCollage} />
+                    </div>
                 </div>
                 {
                     values.values != null &&
@@ -84,10 +84,12 @@ export const AboutPageTemplate = ({
                 <div className="c-team__header">
                     <h2 className="c-team__heading">{team.heading}</h2>
                     <p className="c-team__description">{team.description}</p>
-                    <img
-                        className="c-team__topImage -default"
-                        alt={team.heading}
-                        src={donut} />
+                    <div className="c-team__topImage">
+                        <img
+                            className="c-team__topImage__asset"
+                            alt={team.heading}
+                            src={donut} />
+                    </div>
                 </div>
                 {
                     team.people != null &&
@@ -111,7 +113,7 @@ export const AboutPageTemplate = ({
                     </div>
                 }
                 <img
-                    className="c-team__bottomImage -default"
+                    className="c-team__bottomImage"
                     alt={team.heading}
                     image={plus} />
             </div>

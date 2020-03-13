@@ -9,6 +9,12 @@ $values-grid: (
 
     &__header {
         @include grid-column(6);
+
+        @include respond-to("tablet") {
+            @include grid-column(12);
+            margin-top: 50px;
+            overflow-y: hidden;
+        }
     }
 
     &__heading {
@@ -33,9 +39,24 @@ $values-grid: (
     }
 
     &__image {
-        margin: 24px 0 0 134px;
+        position: absolute;
+        top: 50px;
+        right: 80px;
         width: 391px;
         height: 91px;
+
+        &__asset {
+            width: 391px;
+            height: 91px;
+        }
+
+        @include respond-to("tablet") {
+            right: auto;
+            top: -100px;
+            left: 25px;
+            width: calc(100vw - 25px);
+            overflow: hidden;
+        }
     }
 
     &__list {
@@ -50,6 +71,10 @@ $values-grid: (
         &__item {
             @include grid-column(4, $values-grid);
             margin-bottom: 74px;
+
+            @include respond-to("tablet") {
+                @include grid-column(12, $values-grid);
+            }
 
             label {
                 display: block;

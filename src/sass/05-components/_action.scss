@@ -11,6 +11,23 @@
     &__footer {
         background-color: $grey-dark;
         height: 125px;
+
+        @include respond-to("tablet") {
+            height: 100px;
+        }
+    }
+
+    &__heading {
+        @include grid-column(4);
+        padding: 30px;
+        height: 410px;
+        position: relative;
+
+        @include respond-to("tablet") {
+            @include grid-column(12);
+            height: auto;
+            padding: 30px 0;
+        }
     }
 
     &__item {
@@ -18,6 +35,14 @@
         padding: 30px;
         height: 410px;
         position: relative;
+
+        @include respond-to("tablet") {
+            @include grid-column(12);
+        }
+
+        &:not(:first-of-type) {
+            display: none;
+        }
 
         &__content {
             bottom: -80px;
@@ -29,7 +54,7 @@
         }
 
         &.-background {
-            background-size: contain;
+            background-size: cover;
             overflow-y: hidden;
 
             &:hover {
@@ -66,6 +91,10 @@
 
     &.-footer-overlay {
         margin-bottom: -125px;
+
+        @include respond-to("tablet") {
+            margin-bottom: 80px;
+        }
     }
 }
 

@@ -3,10 +3,18 @@
 .c-mission {
     &__leftCol {
         @include grid-column(6);
+
+        @include respond-to("tablet") {
+            @include grid-column(12);
+        }
     }
 
     &__rightCol {
         @include grid-column(6);
+
+        @include respond-to("tablet") {
+            @include grid-column(12);
+        }
     }
 
     &__heading {
@@ -23,13 +31,26 @@
         margin: 90px 0 0 75px;
         width: 288px;
         height: 198px;
+
+        @include respond-to("tablet") {
+            display: none;
+        }
     }
 
     &__section {
         margin: 12px 0 0 80px;
 
+        @include respond-to("tablet") {
+            margin: 12px 0 0 0;
+        }
+
         &:not(:last-of-type) {
             margin-bottom: 80px;
+
+            @include respond-to("tablet") {
+                margin-top: 70px;
+                margin-bottom: 70px;
+            }
         }
 
         &__title {
