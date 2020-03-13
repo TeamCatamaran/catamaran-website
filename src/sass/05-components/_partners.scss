@@ -6,6 +6,9 @@ $logo-grid: (
 
 .c-partners {
     padding-bottom: 200px;
+    @include respond-to("phone") {
+        padding-bottom: 100px;
+    }
 
     &__logos {
         @include grid-container;
@@ -13,6 +16,9 @@ $logo-grid: (
         &__item {
             display: block;
             @include grid-column(3, $logo-grid);
+            @include respond-to("phone") {
+                @include grid-column(6, $logo-grid);
+            }
             background-color: #EAE9E3;
             margin-bottom: 7px;
             transition: background-color .16s ease-in-out;
@@ -39,6 +45,12 @@ $logo-grid: (
 
         &__section {
             @include grid-column(4);
+            @include respond-to("phone") {
+                @include grid-column(12);
+                .c-partners__list__section + & {
+                    margin-top: 100px;
+                }
+            }
 
             &__heading {
                 letter-spacing: .24em;
