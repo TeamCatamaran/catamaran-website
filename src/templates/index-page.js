@@ -38,7 +38,7 @@ export const IndexPageTemplate = ({
               return (null);
             }
             return (
-              <Link to={f.link.url} rel={f.link.rel} className="c-focus__item" key={key}>
+              <Link to={f.link.url} rel={f.link.rel} className="c-focus__item" data-aos="fade-up" data-aos-duration="2000" key={key}>
                 {
                   f.image != null &&
                   <FluidImage
@@ -67,7 +67,7 @@ export const IndexPageTemplate = ({
           <img className="c-focus__image" src={spiral} alt="abstract design element" />
         </div>
       </div>
-      <div className="c-intro container" data-aos="fade-up" data-aos-duration="2000">
+      <div className="c-intro container" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="1000">
         <p className="intro">{intro}</p>
       </div>
       <Breakdown
