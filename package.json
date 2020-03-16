@@ -5,6 +5,7 @@
   "author": "Catamaran",
   "dependencies": {
     "@babel/core": "^7.8.4",
+    "aos": "^2.3.4",
     "bourbon-neat": "^4.0.0",
     "bulma": "^0.8.0",
     "gatsby": "^2.19.12",

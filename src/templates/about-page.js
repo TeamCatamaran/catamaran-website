@@ -1,6 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 import Layout from '../components/Layout'
 import Header from '../components/Header'
@@ -12,6 +14,8 @@ import aboutValuesCollage from '../img/about-values-collage.png'
 import donut from '../img/donut.png'
 import plus from '../img/plus.png'
 import { types } from '../types/types';
+
+AOS.init();
 
 export const AboutPageTemplate = ({
     section,
@@ -32,7 +36,7 @@ export const AboutPageTemplate = ({
                 section={section}
             />
             <div className="c-intro container">
-                <p>{intro}</p>
+                <p data-aos="fade-down">{intro}</p>
             </div>
             <div className="c-mission container">
                 <div className="c-mission__leftCol">
