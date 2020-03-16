@@ -25,7 +25,7 @@ const Breakdown = class extends React.Component {
 
         return (
             <div className="c-breakdown container">
-                <div className="c-breakdown__title" data-aos="fade-up" data-aos-duration="2000">
+                <div className="c-breakdown__title" data-aos="fade-right" data-aos-duration="2000" data-aos-delay="1000">
                     <h3>{this.props.content.heading}</h3>
                     {
                         this.props.content.image != null &&
