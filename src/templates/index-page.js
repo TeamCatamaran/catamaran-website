@@ -1,6 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link, graphql } from 'gatsby'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 import FluidImage from '../components/FluidImage'
 import Header from '../components/Header'
@@ -10,6 +12,8 @@ import Testimonials from '../components/Testimonials'
 import spiral from '../img/home-spiral.png'
 
 import { types } from '../types/types';
+
+AOS.init();
 
 export const IndexPageTemplate = ({
   section,
@@ -64,7 +68,7 @@ export const IndexPageTemplate = ({
         </div>
       </div>
       <div className="c-intro container">
-        <p className="intro">{intro}</p>
+        <p data-aos="fade-down" className="intro">{intro}</p>
       </div>
       <Breakdown
         content={process} />
