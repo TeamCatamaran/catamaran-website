@@ -5,12 +5,16 @@ import Navbar from '../components/Navbar'
 import '../sass/app.scss'
 import useSiteMetadata from './SiteMetadata'
 import { withPrefix } from 'gatsby'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const TemplateWrapper = ({ bodyClass, seo, footerHasShapes, children }) => {
     const { title, description } = useSiteMetadata()
     if (seo == null) {
         seo = {}
     }
+
+    AOS.init();
 
     return (
         <div>
