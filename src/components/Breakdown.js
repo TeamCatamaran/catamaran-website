@@ -25,7 +25,7 @@ const Breakdown = class extends React.Component {
 
         return (
             <div className="c-breakdown container">
-                <div className="c-breakdown__title">
+                <div className="c-breakdown__title" data-aos="fade-up" data-aos-duration="2000">
                     <h3>{this.props.content.heading}</h3>
                     {
                         this.props.content.image != null &&
@@ -41,7 +41,7 @@ const Breakdown = class extends React.Component {
                         <div className="container -collapse">
                             {this.props.content.items.map((item, key) => {
                                 return (
-                                    <div className="c-breakdown__item" key={key}>
+                                    <div className="c-breakdown__item" data-aos="fade-left" data-aos-duration="2000" key={key}>
                                         <img src={icons[item.icon]} alt={`${item.icon} icon`} />
                                         <label className="">{item.title}</label>
                                         <p>{item.description}</p>

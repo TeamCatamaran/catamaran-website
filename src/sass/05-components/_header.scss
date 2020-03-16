@@ -21,6 +21,8 @@
             @include respond-to("phone") {
                 margin-top: -20px;
             }
+            display:block;
+            margin-top: 14%;
         }
     }
     label.-large {

@@ -25,7 +25,7 @@ export const IndexPageTemplate = ({
 }) => {
   return (
     <div>
-      <Header
+      <Header 
         collageType="home"
         heading={heading}
         section={section}
@@ -67,8 +67,8 @@ export const IndexPageTemplate = ({
           <img className="c-focus__image" src={spiral} alt="abstract design element" />
         </div>
       </div>
-      <div className="c-intro container">
-        <p data-aos="fade-up" className="intro">{intro}</p>
+      <div className="c-intro container" data-aos="fade-up" data-aos-duration="2000">
+        <p className="intro">{intro}</p>
       </div>
       <Breakdown
         content={process} />
