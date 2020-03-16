@@ -68,7 +68,7 @@ export const IndexPageTemplate = ({
         </div>
       </div>
       <div className="c-intro container">
-        <p data-aos="fade-down" className="intro">{intro}</p>
+        <p data-aos="fade-up" className="intro">{intro}</p>
       </div>
       <Breakdown
         content={process} />
