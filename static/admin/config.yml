@@ -15,227 +15,6 @@ media_folder: static/img
 public_folder: /img
 
 collections:
-  - name: "journal"
-    label: "Journal"
-    folder: "src/collections/blog"
-    create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    fields:
-      - {
-          label: "Template Key",
-          name: "templateKey",
-          widget: "hidden",
-          default: "journal-post",
-        }
-      - {
-          label: Category,
-          name: category,
-          widget: select,
-          options: [Thoughts, "Startup Story", Press, Sandbox, Events],
-        }
-      - { label: Publish Date, name: date, widget: datetime }
-      - { label: Heading, name: heading, widget: string }
-      - { label: Subheading, name: subheading, widget: string }
-      - {
-          label: Image,
-          name: image,
-          widget: object,
-          fields:
-            [
-              { label: Image, name: src, widget: image },
-              { label: "Alt Text", name: alt, widget: string, required: false },
-            ],
-        }
-      - { label: Introduction, name: introduction, widget: text }
-      - { label: Body, name: body, widget: markdown }
-      - {
-          label: SEO,
-          name: seo,
-          widget: object,
-          fields:
-            [
-              { label: Title, name: title, widget: string },
-              {
-                label: Description,
-                name: description,
-                widget: string,
-                required: false,
-              },
-              {
-                label: "OG Title",
-                name: ogTitle,
-                widget: string,
-                required: false,
-              },
-              {
-                label: "OG Type",
-                name: ogType,
-                widget: string,
-                required: false,
-              },
-              {
-                label: "OG Description",
-                name: ogDescription,
-                widget: string,
-                required: false,
-              },
-              {
-                label: "OG Image",
-                name: ogImage,
-                widget: image,
-                required: false,
-              },
-              { label: "OG Url", name: ogUrl, widget: string, required: false },
-              { label: Robots, name: robots, widget: string, required: false },
-              {
-                label: "Canonical URL",
-                name: canonical,
-                widget: string,
-                required: false,
-              },
-            ],
-        }
-
-  - name: "venture"
-    label: "Ventures"
-    folder: "src/collections/ventures/"
-    create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    fields:
-      - {
-          label: "Template Key",
-          name: "templateKey",
-          widget: "hidden",
-          default: "ventures-post",
-        }
-      - { label: Company, name: company, widget: string }
-      - { label: Heading, name: heading, widget: string }
-      - { label: Timeframe, name: timeframe, widget: string }
-      - {
-          label: Image,
-          name: image,
-          widget: object,
-          fields:
-            [
-              { label: Image, name: src, widget: image },
-              { label: "Alt Text", name: alt, widget: string, required: false },
-            ],
-        }
-      - { label: Video, name: video, widget: file, required: false }
-      - { label: Publish Date, name: date, widget: datetime }
-      - { label: Intro, name: intro, widget: text }
-      - {
-          label: Participants,
-          name: participants,
-          widget: list,
-          fields:
-            [
-              { label: Name, name: name, widget: string },
-              {
-                label: Image,
-                name: image,
-                widget: object,
-                fields:
-                  [
-                    { label: Image, name: src, widget: image },
-                    {
-                      label: "Alt Text",
-                      name: alt,
-                      widget: string,
-                      required: false,
-                    },
-                  ],
-              },
-              { label: Title, name: title, widget: string },
-            ],
-        }
-      - {
-          label: Links,
-          name: links,
-          widget: list,
-          fields:
-            [
-              { label: Name, name: name, widget: string },
-              {
-                label: Link,
-                name: link,
-                widget: object,
-                fields:
-                  [
-                    { label: Url, name: url, widget: string },
-                    {
-                      label: Relationship,
-                      name: rel,
-                      widget: string,
-                      required: false,
-                    },
-                  ],
-              },
-              {
-                label: Category,
-                name: category,
-                widget: select,
-                options:
-                  [
-                    Website,
-                    Facebook,
-                    Linkedin,
-                    Twitter,
-                    Instagram,
-                    Pinterest,
-                    Youtube,
-                  ],
-              },
-            ],
-        }
-      - {
-          label: SEO,
-          name: seo,
-          widget: object,
-          fields:
-            [
-              { label: Title, name: title, widget: string },
-              {
-                label: Description,
-                name: description,
-                widget: string,
-                required: false,
-              },
-              {
-                label: "OG Title",
-                name: ogTitle,
-                widget: string,
-                required: false,
-              },
-              {
-                label: "OG Type",
-                name: ogType,
-                widget: string,
-                required: false,
-              },
-              {
-                label: "OG Description",
-                name: ogDescription,
-                widget: string,
-                required: false,
-              },
-              {
-                label: "OG Image",
-                name: ogImage,
-                widget: image,
-                required: false,
-              },
-              { label: "OG Url", name: ogUrl, widget: string, required: false },
-              { label: Robots, name: robots, widget: string, required: false },
-              {
-                label: "Canonical URL",
-                name: canonical,
-                widget: string,
-                required: false,
-              },
-            ],
-        }
-
   - name: "pages"
     label: "Pages"
     files:
@@ -2384,3 +2163,224 @@ collections:
                   },
                 ],
             }
+
+  - name: "journal"
+    label: "Journal"
+    folder: "src/collections/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "journal-post",
+        }
+      - {
+          label: Category,
+          name: category,
+          widget: select,
+          options: [Thoughts, "Startup Story", Press, Sandbox, Events],
+        }
+      - { label: Publish Date, name: date, widget: datetime }
+      - { label: Heading, name: heading, widget: string }
+      - { label: Subheading, name: subheading, widget: string }
+      - {
+          label: Image,
+          name: image,
+          widget: object,
+          fields:
+            [
+              { label: Image, name: src, widget: image },
+              { label: "Alt Text", name: alt, widget: string, required: false },
+            ],
+        }
+      - { label: Introduction, name: introduction, widget: text }
+      - { label: Body, name: body, widget: markdown }
+      - {
+          label: SEO,
+          name: seo,
+          widget: object,
+          fields:
+            [
+              { label: Title, name: title, widget: string },
+              {
+                label: Description,
+                name: description,
+                widget: string,
+                required: false,
+              },
+              {
+                label: "OG Title",
+                name: ogTitle,
+                widget: string,
+                required: false,
+              },
+              {
+                label: "OG Type",
+                name: ogType,
+                widget: string,
+                required: false,
+              },
+              {
+                label: "OG Description",
+                name: ogDescription,
+                widget: string,
+                required: false,
+              },
+              {
+                label: "OG Image",
+                name: ogImage,
+                widget: image,
+                required: false,
+              },
+              { label: "OG Url", name: ogUrl, widget: string, required: false },
+              { label: Robots, name: robots, widget: string, required: false },
+              {
+                label: "Canonical URL",
+                name: canonical,
+                widget: string,
+                required: false,
+              },
+            ],
+        }
+
+  - name: "venture"
+    label: "Ventures"
+    folder: "src/collections/ventures/"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "ventures-post",
+        }
+      - { label: Company, name: company, widget: string }
+      - { label: Heading, name: heading, widget: string }
+      - { label: Timeframe, name: timeframe, widget: string }
+      - {
+          label: Image,
+          name: image,
+          widget: object,
+          fields:
+            [
+              { label: Image, name: src, widget: image },
+              { label: "Alt Text", name: alt, widget: string, required: false },
+            ],
+        }
+      - { label: Video, name: video, widget: file, required: false }
+      - { label: Publish Date, name: date, widget: datetime }
+      - { label: Intro, name: intro, widget: text }
+      - {
+          label: Participants,
+          name: participants,
+          widget: list,
+          fields:
+            [
+              { label: Name, name: name, widget: string },
+              {
+                label: Image,
+                name: image,
+                widget: object,
+                fields:
+                  [
+                    { label: Image, name: src, widget: image },
+                    {
+                      label: "Alt Text",
+                      name: alt,
+                      widget: string,
+                      required: false,
+                    },
+                  ],
+              },
+              { label: Title, name: title, widget: string },
+            ],
+        }
+      - {
+          label: Links,
+          name: links,
+          widget: list,
+          fields:
+            [
+              { label: Name, name: name, widget: string },
+              {
+                label: Link,
+                name: link,
+                widget: object,
+                fields:
+                  [
+                    { label: Url, name: url, widget: string },
+                    {
+                      label: Relationship,
+                      name: rel,
+                      widget: string,
+                      required: false,
+                    },
+                  ],
+              },
+              {
+                label: Category,
+                name: category,
+                widget: select,
+                options:
+                  [
+                    Website,
+                    Facebook,
+                    Linkedin,
+                    Twitter,
+                    Instagram,
+                    Pinterest,
+                    Youtube,
+                  ],
+              },
+            ],
+        }
+      - {
+          label: SEO,
+          name: seo,
+          widget: object,
+          fields:
+            [
+              { label: Title, name: title, widget: string },
+              {
+                label: Description,
+                name: description,
+                widget: string,
+                required: false,
+              },
+              {
+                label: "OG Title",
+                name: ogTitle,
+                widget: string,
+                required: false,
+              },
+              {
+                label: "OG Type",
+                name: ogType,
+                widget: string,
+                required: false,
+              },
+              {
+                label: "OG Description",
+                name: ogDescription,
+                widget: string,
+                required: false,
+              },
+              {
+                label: "OG Image",
+                name: ogImage,
+                widget: image,
+                required: false,
+              },
+              { label: "OG Url", name: ogUrl, widget: string, required: false },
+              { label: Robots, name: robots, widget: string, required: false },
+              {
+                label: "Canonical URL",
+                name: canonical,
+                widget: string,
+                required: false,
+              },
+            ],
+        }
