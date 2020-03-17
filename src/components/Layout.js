@@ -8,65 +8,76 @@ import { withPrefix } from 'gatsby'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-const TemplateWrapper = ({ bodyClass, seo, footerHasShapes, children }) => {
-    const { title, description } = useSiteMetadata()
-    if (seo == null) {
-        seo = {}
+const TemplateWrapper = class extends React.Component {
+
+    constructor(props) {
+        super(props)
     }
 
-    AOS.init();
+    componentDidMount() {
+        AOS.init();
+    }
 
-    return (
-        <div>
-            <Helmet
-                bodyAttributes={{
-                    class: bodyClass
-                }}>
-                <html lang="en" />
-                <title>{seo.title || title}</title>
-                <meta name="description" content={seo.description || description} />
+    render() {
+        const { bodyClass, footerHasShapes, children } = this.props
+        const { title, description } = useSiteMetadata()
+        let { seo } = this.props
+        if (seo == null) {
+            seo = {}
+        }
 
-                <link
-                    rel="apple-touch-icon"
-                    sizes="180x180"
-                    href={`${withPrefix('/')}img/apple-touch-icon.png`}
-                />
-                <link
-                    rel="icon"
-                    type="image/png"
-                    href={`${withPrefix('/')}img/favicon-32x32.png`}
-                    sizes="32x32"
-                />
-                <link
-                    rel="icon"
-                    type="image/png"
-                    href={`${withPrefix('/')}img/favicon-16x16.png`}
-                    sizes="16x16"
-                />
+        return (
+            <div>
+                <Helmet
+                    bodyAttributes={{
+                        class: bodyClass
+                    }}>
+                    <html lang="en" />
+                    <title>{seo.title || title}</title>
+                    <meta name="description" content={seo.description || description} />
 
-                <link
-                    rel="mask-icon"
-                    href={`${withPrefix('/')}img/safari-pinned-tab.svg`}
-                    color="#ff4400"
-                />
-                <meta name="theme-color" content="#fff" />
+                    <link
+                        rel="apple-touch-icon"
+                        sizes="180x180"
+                        href={`${withPrefix('/')}img/apple-touch-icon.png`}
+                    />
+                    <link
+                        rel="icon"
+                        type="image/png"
+                        href={`${withPrefix('/')}img/favicon-32x32.png`}
+                        sizes="32x32"
+                    />
+                    <link
+                        rel="icon"
+                        type="image/png"
+                        href={`${withPrefix('/')}img/favicon-16x16.png`}
+                        sizes="16x16"
+                    />
 
-                <meta property="og:type" content={seo.ogType || "business.business"} />
-                <meta property="og:title" content={seo.ogTitle || seo.title || title} />
-                <meta property="og:url" content={seo.ogUrl || "/"} />
-                <meta
-                    property="og:image"
-                    content={`${withPrefix('/')}img/og-image.jpg`}
-                />
-            </Helmet>
-            <Navbar />
-            <main role="main">
-                {children}
-            </main>
-            <Footer
-                hasShapes={footerHasShapes} />
-        </div>
-    )
+                    <link
+                        rel="mask-icon"
+                        href={`${withPrefix('/')}img/safari-pinned-tab.svg`}
+                        color="#ff4400"
+                    />
+                    <meta name="theme-color" content="#fff" />
+
+                    <meta property="og:type" content={seo.ogType || "business.business"} />
+                    <meta property="og:title" content={seo.ogTitle || seo.title || title} />
+                    <meta property="og:url" content={seo.ogUrl || "/"} />
+                    <meta
+                        property="og:image"
+                        content={`${withPrefix('/')}img/og-image.jpg`}
+                    />
+                </Helmet>
+                <Navbar />
+                <main role="main">
+                    {children}
+                </main>
+                <Footer
+                    hasShapes={footerHasShapes} />
+            </div>
+        )
+    }
 }
 
 export default TemplateWrapper
