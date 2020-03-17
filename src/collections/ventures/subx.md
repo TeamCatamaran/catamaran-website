@@ -3,7 +3,7 @@ templateKey: ventures-post
 company: SUBX
 heading: Changing how contractors connect
 timeframe: Fall 2018 / Catamaran Season 2
-logo:
+image:
   src: /img/studio.png
   alt: ''
 video: ''

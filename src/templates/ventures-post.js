@@ -11,7 +11,7 @@ export const VenturesPostTemplate = ({
     company,
     heading,
     timeframe,
-    logo,
+    image,
     video,
     intro,
     participants,
@@ -25,10 +25,10 @@ export const VenturesPostTemplate = ({
                     {heading}<br />
                     {timeframe}<br />
                     {
-                        logo != null &&
+                        image != null &&
                         <FluidImage
-                            alt={logo.alt || company}
-                            image={logo.src} />
+                            alt={image.alt || company}
+                            image={image.src} />
                     }
                     {
                         video != null &&
@@ -67,7 +67,7 @@ VenturesPostTemplate.propTypes = {
     company: PropTypes.string,
     heading: PropTypes.string,
     timeframe: PropTypes.string,
-    logo: types.imageProps,
+    image: types.imageProps,
     video: PropTypes.string,
     intro: PropTypes.string,
     participants: PropTypes.arrayOf(
@@ -97,7 +97,7 @@ const VenturesPost = ({ data }) => {
                 company={frontmatter.company}
                 heading={frontmatter.heading}
                 timeframe={frontmatter.timeframe}
-                logo={frontmatter.logo}
+                image={frontmatter.image}
                 video={frontmatter.video}
                 intro={frontmatter.intro}
                 participants={frontmatter.participants}
@@ -125,7 +125,7 @@ export const pageQuery = graphql`
         company
         heading
         timeframe
-        logo {
+        image {
           src {
             childImageSharp {
               fluid(maxWidth: 2048, quality: 100) {
