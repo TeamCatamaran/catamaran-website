@@ -7,6 +7,7 @@ import Header from '../components/Header'
 import ActionCallout from '../components/ActionCallout'
 
 import { types } from '../types/types'
+import FluidImage from '../components/FluidImage'
 
 export const VenturesPageTemplate = ({
     section,
@@ -14,7 +15,6 @@ export const VenturesPageTemplate = ({
     ventures,
     action,
 }) => {
-
     return (
         <div>
             <Header
@@ -28,7 +28,7 @@ export const VenturesPageTemplate = ({
                     {ventures.map((v) => {
                         return (
                             <p>
-                                {v.title}
+                                {v.company}<br />{v.heading}<br /><FluidImage alt={v.image.alt} image={v.image.src} />
                             </p>
                         )
                     })}
@@ -88,11 +88,22 @@ export default VenturesPage;
 
 export const venturesPageQuery = graphql`
 query VenturesPage($id: String!) {
-  ventures: allMarkdownRemark(filter: {fields: {collection: {eq: "blog"}}}) {
+  ventures: allMarkdownRemark(filter: {fields: {collection: {eq: "ventures"}}}) {
     edges {
       node {
         frontmatter {
-          title
+          company
+          heading
+          image {
+            src {
+              childImageSharp {
+                fluid(maxWidth: 2048, quality: 100) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+            alt
+          }
         }
       }
     }
