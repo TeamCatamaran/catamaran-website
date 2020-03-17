@@ -9,7 +9,7 @@ backend:
     deleteMedia: "[skip ci] Delete “{{path}}”"
 
 # Uncomment for local Netlify CMS development
-# local_backend: true
+local_backend: true
 
 media_folder: static/img
 public_folder: /img
@@ -731,8 +731,8 @@ collections:
                 ],
             }
           - {
-              label: "What to Expect",
-              name: expect,
+              label: Process,
+              name: process,
               widget: object,
               fields:
                 [
@@ -920,8 +920,8 @@ collections:
                 ],
             }
           - {
-              label: "What to Expect",
-              name: expect,
+              label: Process,
+              name: process,
               widget: object,
               fields:
                 [

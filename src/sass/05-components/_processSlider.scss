@@ -144,7 +144,7 @@
         }
     }
 
-    
+
 
 
     &__controls {
@@ -211,7 +211,7 @@ body.-pink {
         background-color: $pink;
     }
     .c-processSlider__controls__zebra__svg path {
-        fill: $pink
+        fill: $pink;
     }
 }
 
@@ -226,7 +226,7 @@ body.-purple {
         background-color: $purple;
     }
     .c-processSlider__controls__zebra__svg path {
-        fill: $purple
+        fill: $purple;
     }
 }
 
@@ -241,6 +241,27 @@ body.-orange {
         background-color: $orange;
     }
     .c-processSlider__controls__zebra__svg path {
-        fill: $orange
+        fill: $orange;
+    }
+}
+
+body.-green {
+    .c-processSlider__count__current {
+        color: $green;
+    }
+    .c-processSlider__quote__name {
+        color: $green;
+    }
+    .c-processSlider__controls__button {
+        background-color: $green;
+    }
+    .c-processSlider__controls__zebra__svg path {
+        fill: $green;
+    }
+    .c-processSlider__header__title {
+        color: $green;
+    }
+    .c-processSlider__step__title {
+        color: $green;
     }
 }

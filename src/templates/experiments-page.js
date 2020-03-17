@@ -7,19 +7,33 @@ import ActionCallout from '../components/ActionCallout'
 import Header from '../components/Header'
 import Layout from '../components/Layout'
 import FluidImage from '../components/FluidImage'
+import ProcessSlider from '../components/ProcessSlider'
 
 import { types } from '../types/types';
+import Tabs from '../components/Tabs'
 
 export const ExperimentsPageTemplate = ({
     tab,
     section,
     heading,
     overview,
-    expect,
+    process,
     examples,
     launch,
     action,
 }) => {
+
+    const pages = [{
+        name: "lab",
+        label: "The Lab",
+        url: "experiments/lab",
+        rel: "",
+    }, {
+        name: "enterprise",
+        label: "Enterprise Innovation",
+        url: "experiments/enterprise",
+        rel: "",
+    }]
 
     return (
         <div>
@@ -28,23 +42,25 @@ export const ExperimentsPageTemplate = ({
                 heading={heading}
                 section={section}
             />
-            <div>
-                Selected Tab: {tab}
-            </div>
-            <div>
-                {overview.intro}<br />{overview.leftContent}<br />{overview.rightContent}
+            <Tabs
+                activeTab={tab}
+                pages={pages} />
+            <div className="c-overview container">
+                <div className="c-overview__intro">
+                    <p className="c-overview__intro__p">{overview.intro}</p>
+                </div>
+                <div className="c-overview__row">
+                    <div className="c-overview__row__col">
+                        <p>{overview.leftContent}</p>
+                    </div>
+                    <div className="c-overview__row__col">
+                        <p>{overview.rightContent}</p>
+                    </div>
+                </div>
             </div>
             {
-                expect != null &&
-                <div>
-                    {expect.heading}<br />{expect.intro}{expect.steps.map((s) => {
-                        return (
-                            <p>
-                                {s.heading}<br />{s.intro}<br />{s.description}
-                            </p>
-                        )
-                    })}
-                </div>
+                process != null &&
+                <ProcessSlider content={process} />
             }
             {
                 examples != null &&
@@ -135,7 +151,7 @@ const ExperimentsPage = ({ data }) => {
                 section={frontmatter.section}
                 heading={frontmatter.heading}
                 overview={frontmatter.overview}
-                expect={frontmatter.expect}
+                process={frontmatter.process}
                 examples={frontmatter.how}
                 launch={frontmatter.launch}
                 action={frontmatter.action}
@@ -163,7 +179,7 @@ query ExperimentsPage($id: String!) {
         leftContent
         rightContent
       }
-      expect {
+      process {
         heading
         intro
         steps {

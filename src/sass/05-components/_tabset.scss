@@ -1,7 +1,37 @@
 .c-tabset {
     background: $grey-lightest;
     margin-bottom: 200px;
-    
+
+    &.-one {
+        .c-tabset__tab {
+            width: 100%;
+        }
+    }
+
+    &.-two {
+        .c-tabset__tab {
+            width: 50%;
+        }
+    }
+
+    &.-three {
+        .c-tabset__tab {
+            width: 33%;
+        }
+    }
+
+    &.-four {
+        .c-tabset__tab {
+            width: 25%;
+        }
+    }
+
+    &.-five {
+        .c-tabset__tab {
+            width: 20%;
+        }
+    }
+
     &__wrapper {
         display: flex;
         flex-direction: row;
@@ -13,7 +43,6 @@
     &__tab {
         position: relative;
         display: block;
-        width: 33%;
         text-align: center;
         text-transform: uppercase;
         letter-spacing: .2em;
@@ -99,7 +128,7 @@
             }
         }
 
-        
+
     }
 }
 

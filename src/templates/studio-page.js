@@ -20,6 +20,7 @@ import triangle from '../img/triangle.png'
 import warpbox from '../img/warpbox.png'
 import waves from '../img/waves.png'
 import { types } from '../types/types'
+import Tabs from '../components/Tabs'
 
 export const StudioPageTemplate = ({
     tab,
@@ -61,46 +62,29 @@ export const StudioPageTemplate = ({
                 heading={heading}
                 section={section}
             />
-            <div className="c-tabset">
-                <div className="container">
-                    <div className="c-tabset__wrapper">
-                        {
-                            pages.map((p, key) => {
-                                let className = "c-tabset__tab";
-                                if (tab === p.name) {
-                                    className += " -active";
-                                }
-                                if (p.url == null) {
-                                    return (null);
-                                }
-                                return (
-                                    <Link key={"tab-" + key} to={p.url} rel={p.rel} className={className}>{p.label}</Link>
-                                );
-                            })
-                        }
-                    </div>
+            <Tabs
+                activeTab={tab}
+                pages={pages} />
+            <div className="c-overview container">
+                <div className="c-overview__intro">
+                    <p className="c-overview__intro__p">{overview.intro}</p>
                 </div>
-            </div>
-            <div className="c-studioOverview container">
-                <div className="c-studioOverview__intro">
-                    <p className="c-studioOverview__intro__p">{overview.intro}</p>
-                </div>
-                <div className="c-studioOverview__row">
-                    <div className="c-studioOverview__row__col">
+                <div className="c-overview__row">
+                    <div className="c-overview__row__col">
                         <p>{overview.leftContent}</p>
                     </div>
-                    <div className="c-studioOverview__row__col">
+                    <div className="c-overview__row__col">
                         <p>{overview.rightContent}</p>
                     </div>
                 </div>
                 {
                     overview.details != null && overview.details.length > 0 &&
-                    <div className="c-studioOverview__details">
+                    <div className="c-overview__details">
                         {overview.details.map((d) => {
                             return (
-                                <div className="c-studioOverview__detail">
-                                    <label className="c-studioOverview__detail__title">{d.heading}</label>
-                                    <p className="c-studioOverview__detail__description">{d.description}</p>
+                                <div className="c-overview__detail">
+                                    <label className="c-overview__detail__title">{d.heading}</label>
+                                    <p className="c-overview__detail__description">{d.description}</p>
                                 </div>
                             )
                         })}

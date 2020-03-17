@@ -10,7 +10,7 @@ overview:
     test
   rightContent: >-
     test
-expect:
+process:
   heading: test
   intro: >-
     test

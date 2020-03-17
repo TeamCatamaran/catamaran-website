@@ -1,63 +1,81 @@
 ---
 templateKey: experiments-page
 tab: lab
-section: TEST
-heading: Test
+section: EXPERIMENTS
+heading: Lorem ipsum dolor sit amet ipsum dolor
 overview:
   intro: >-
-    test
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua.
   leftContent: >-
-    test
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud. Sed do eiusmod tempor incididunt ut labore et dolore magna
+    aliqua. Ut enim ad minim veniam, quis nostrud.
   rightContent: >-
-    test
-expect:
-  heading: test
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud. Sed do eiusmod tempor incididunt ut labore et dolore magna
+    aliqua. Ut enim ad minim veniam, quis nostrud.
+process:
+  heading: How We Do It
   intro: >-
-    test
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua.
   steps:
-    - heading: test
-      intro: >-
-        test
-      description: >-
-        test
-    - heading: test
-      intro: >-
-        test
-      description: >-
-        test
+    - description: >-
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et. Lorem ipsum dolor sit amet, consectetur
+        adipiscing elit, sed do eiusmod tempor incididunt ut labore et.
+      heading: 01 / 04
+      intro: Absorb
+    - description: test
+      heading: test
+      intro: test
 examples:
-  heading: test
+  heading: Need Some Examples?
   intro: >-
-    test
+    A bit past the idea stage? Not the time to dive into the Launch Program?
+    Just need that one thing? Don’t worry, we’ve still got you covered.
   steps:
-    - heading: test1
-      description: desc
+    - description: >-
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud. Sed do eiusmod tempor incididunt ut labore et
+        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.
+      heading: 01 / 02
       image:
-        src: /img/studio.png
         alt: ''
-    - heading: test2
-      description: desc
+        src: /img/andgo.png
+    - description: >-
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud. Sed do eiusmod tempor incididunt ut labore et
+        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.
+      heading: 02 / 02
       image:
-        src: /img/studio.png
         alt: ''
+        src: /img/cca.png
 action:
   heading: Where the action is
   pages:
-    - title: Journal Entry
-      description: From Business Accelerator to Startup Studio
-      link:
-        url: test
-        rel: ''
+    - description: From Business Accelerator to Startup Studio
       image:
-        src: /img/studio.png
         alt: ''
-    - title: Press
-      description: Harrisburg Landmark Has a New Owner
+        src: /img/studio.png
       link:
-        url: test
         rel: ''
+        url: test
+      title: Journal Entry
+    - description: Harrisburg Landmark Has a New Owner
       image:
-        src: /img/studio.png
         alt: ''
+        src: /img/studio.png
+      link:
+        rel: ''
+        url: test
+      title: Press
+seo:
+  title: Lab Experiments
 ---
 
