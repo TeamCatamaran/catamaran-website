@@ -63,8 +63,11 @@ VenturesPageTemplate.propTypes = {
 
 const VenturesPage = ({ data }) => {
     const { frontmatter } = data.markdownRemark
-    const ventures = data.ventures.edges.map((e) => e.node.frontmatter);
-    console.log(ventures);
+    const ventures = data.ventures.edges.map((e) => {
+        const content = e.node.frontmatter
+        content.url = `/ventures${e.node.fields.slug}`
+        return content;
+    });
 
     return (
         <Layout
@@ -104,6 +107,9 @@ query VenturesPage($id: String!) {
             }
             alt
           }
+        }
+        fields {
+          slug
         }
       }
     }
