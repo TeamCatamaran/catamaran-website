@@ -21,6 +21,7 @@
             @include respond-to("phone") {
                 margin-top: -20px;
             }
+            
         }
     }
     label.-large {
@@ -623,6 +624,8 @@
     &__text {
         @include grid-column(6);
         transform: translateY(50%);
+        display:block;
+        margin-top: 14%;
 
         @include respond-to("phone") {
             @include grid-column(12);

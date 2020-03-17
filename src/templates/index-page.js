@@ -1,6 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link, graphql } from 'gatsby'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 import FluidImage from '../components/FluidImage'
 import Header from '../components/Header'
@@ -10,6 +12,8 @@ import Testimonials from '../components/Testimonials'
 import spiral from '../img/home-spiral.png'
 
 import { types } from '../types/types';
+
+AOS.init();
 
 export const IndexPageTemplate = ({
   section,
@@ -21,7 +25,7 @@ export const IndexPageTemplate = ({
 }) => {
   return (
     <div>
-      <Header
+      <Header 
         collageType="home"
         heading={heading}
         section={section}
@@ -34,7 +38,7 @@ export const IndexPageTemplate = ({
               return (null);
             }
             return (
-              <Link to={f.link.url} rel={f.link.rel} className="c-focus__item" key={key}>
+              <Link to={f.link.url} rel={f.link.rel} className="c-focus__item" data-aos="fade-up" data-aos-duration="2000" key={key}>
                 {
                   f.image != null &&
                   <FluidImage
@@ -65,7 +69,7 @@ export const IndexPageTemplate = ({
           </div>
         </div>
       </div>
-      <div className="c-intro container">
+      <div className="c-intro container" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="1000">
         <p className="intro">{intro}</p>
       </div>
       <Breakdown
