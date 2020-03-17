@@ -1,0 +1,30 @@
+
+
+.c-ventures {
+    margin-top: 150px;
+    list-style: none;
+
+    &__venture {
+        @include grid-column(4);
+        background-color: #EAE9E3;
+        height: 340px;
+        margin-bottom: 20px;
+        
+
+        &__link {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            height: 340px;
+        }
+    }
+}
+
+body.-pink {
+    .c-mission {
+        &__heading, &__title {
+            color: $pink;
+        }
+    }
+}
