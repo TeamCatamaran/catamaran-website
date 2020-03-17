@@ -60,7 +60,9 @@ export const IndexPageTemplate = ({
               </Link>
             )
           })}
-          <img className="c-focus__image" src={spiral} alt="abstract design element" />
+          <div className="c-focus__image">
+            <img className="c-focus__image__asset" src={spiral} alt="abstract design element" />
+          </div>
         </div>
       </div>
       <div className="c-intro container">

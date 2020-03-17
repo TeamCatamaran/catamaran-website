@@ -139,9 +139,15 @@
         width: 207px;
         bottom: -130px;
         right: -65px;
+        overflow: hidden;
+
+        &__asset {
+            width: 207px;
+        }
 
         @include respond-to("tablet") {
-            
+            right: 0;
+            width: 142px;
         }
     }
 }

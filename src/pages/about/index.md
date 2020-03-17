@@ -64,7 +64,7 @@ team:
     - name: Abdullah Amir
       title: Something
       photo:
-        src: /img/phil.jpg
+        src: /img/abdullah.jpg
         alt: ''
 leadership:
   heading: Some Title for Them
@@ -74,22 +74,22 @@ leadership:
     - name: Dave Hickethier
       title: Something
       photo:
-        src: /img/amanda.jpg
+        src: /img/dave.jpg
         alt: ''
     - name: Josh Benton
       title: Something
       photo:
-        src: /img/alex.jpg
+        src: /img/josh.jpg
         alt: ''
     - name: Evan Keller
       title: Something
       photo:
-        src: /img/kate.jpg
+        src: /img/evan.jpg
         alt: ''
     - name: Shane Shearer
       title: Something
       photo:
-        src: /img/phil.jpg
+        src: /img/shane.jpg
         alt: ''
 action:
   heading: Where the action is
