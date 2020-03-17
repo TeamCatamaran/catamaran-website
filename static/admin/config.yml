@@ -1121,6 +1121,7 @@ collections:
             }
           - { label: Section, name: section, widget: string }
           - { label: Heading, name: heading, widget: string }
+          - { label: Intro, name: intro, widget: text }
           - {
               label: Action,
               name: action,

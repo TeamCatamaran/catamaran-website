@@ -1,25 +1,7 @@
 ---
 templateKey: ventures-page
-section: TEST
-heading: Test
-action:
-  heading: Where the action is
-  pages:
-    - title: Journal Entry
-      description: From Business Accelerator to Startup Studio
-      link:
-        url: test
-        rel: ''
-      image:
-        src: /img/studio.png
-        alt: ''
-    - title: Press
-      description: Harrisburg Landmark Has a New Owner
-      link:
-        url: test
-        rel: ''
-      image:
-        src: /img/studio.png
-        alt: ''
+section: Ventures
+heading: We spend our time in good company
+intro: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.
 ---
 
