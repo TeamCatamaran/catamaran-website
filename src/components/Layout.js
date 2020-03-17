@@ -3,7 +3,6 @@ import { Helmet } from 'react-helmet'
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
 import '../sass/app.scss'
-import useSiteMetadata from './SiteMetadata'
 import { withPrefix } from 'gatsby'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -20,7 +19,8 @@ const TemplateWrapper = class extends React.Component {
 
     render() {
         const { bodyClass, footerHasShapes, children } = this.props
-        const { title, description } = useSiteMetadata()
+        const title = 'Catamaran'
+        const description = 'Facilitating a tightly-knit, vibrant, and dynamic community of flourishing startups in Central PA.'
         let { seo } = this.props
         if (seo == null) {
             seo = {}
