@@ -115,7 +115,7 @@ export const AboutPageTemplate = ({
                 <img
                     className="c-team__bottomImage"
                     alt={team.heading}
-                    image={plus} />
+                    src={plus} />
             </div>
             <div className="c-leadership container">
                 <div className="c-leadership__header">
