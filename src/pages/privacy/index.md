@@ -2,9 +2,11 @@
 templateKey: privacy-page
 section: LEGAL
 heading: Lorem Ipsum Dolor
-intro: >+
+intro: >
   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
   incididunt ut labore et dolore. Lorem ipsum dolor sit amet.
+seo:
+  title: Privacy Policy
 ---
 ### How did you become an entrepreneur?
 
