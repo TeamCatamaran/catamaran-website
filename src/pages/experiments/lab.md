@@ -38,21 +38,19 @@ examples:
     A bit past the idea stage? Not the time to dive into the Launch Program?
     Just need that one thing? Don’t worry, we’ve still got you covered.
   steps:
-    - description: >-
+    - content: >-
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
         veniam, quis nostrud. Sed do eiusmod tempor incididunt ut labore et
         dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.
-      heading: 01 / 02
       image:
         alt: ''
         src: /img/andgo.png
-    - description: >-
+    - content: >-
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
         veniam, quis nostrud. Sed do eiusmod tempor incididunt ut labore et
         dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.
-      heading: 02 / 02
       image:
         alt: ''
         src: /img/cca.png

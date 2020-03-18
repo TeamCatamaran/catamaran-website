@@ -22,7 +22,6 @@ export const ExperimentsPageTemplate = ({
     launch,
     action,
 }) => {
-
     const pages = [{
         name: "lab",
         label: "The Lab",
@@ -60,16 +59,30 @@ export const ExperimentsPageTemplate = ({
             </div>
             {
                 process != null &&
-                <ProcessSlider content={process} />
+                <ProcessSlider
+                    content={process}
+                    type='experiments' />
             }
             {
                 examples != null &&
-                <div>
-                    {examples.heading}<br />{examples.intro}{examples.steps.map((s) => {
+                <div className="c-examples container">
+                    <div className="c-examples__header">
+                        <h2>{examples.heading}</h2>
+                        <p>{examples.intro}</p>
+                    </div>
+                    {examples.steps.map((s, key) => {
                         return (
-                            <p>
-                                {s.heading}<br />{s.description}<br /><FluidImage alt={s.image.alt || s.heading} image={s.image.src} />
-                            </p>
+                            <div className="c-examples__item" key={`experiments-${key}`}>
+                                <FluidImage alt={s.image.alt || s.heading} image={s.image.src} />
+                                <div className="c-examples__content">
+                                    <label>
+                                        <span>{(key + 1).toString().padStart(2, '0')}</span> / {examples.steps.length.toString().padStart(2, '0')}
+                                    </label>
+                                    <p>
+                                        {s.content}<br />
+                                    </p>
+                                </div>
+                            </div>
                         )
                     })}
                 </div>
@@ -114,8 +127,7 @@ ExperimentsPageTemplate.propTypes = {
         intro: PropTypes.string,
         steps: PropTypes.arrayOf(
             PropTypes.shape({
-                heading: PropTypes.string,
-                description: PropTypes.string,
+                content: PropTypes.string,
                 image: types.imageProps,
             }),
         ),
@@ -152,7 +164,7 @@ const ExperimentsPage = ({ data }) => {
                 heading={frontmatter.heading}
                 overview={frontmatter.overview}
                 process={frontmatter.process}
-                examples={frontmatter.how}
+                examples={frontmatter.examples}
                 launch={frontmatter.launch}
                 action={frontmatter.action}
             />
@@ -192,8 +204,7 @@ query ExperimentsPage($id: String!) {
         heading
         intro
         steps {
-          heading
-          description
+          content
           image {
             src {
               childImageSharp {

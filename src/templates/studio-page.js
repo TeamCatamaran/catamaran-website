@@ -129,7 +129,9 @@ export const StudioPageTemplate = ({
             }
             {
                 process != null &&
-                <ProcessSlider content={process} />
+                <ProcessSlider
+                    content={process}
+                    type='studio' />
             }
             {
                 criteria != null &&

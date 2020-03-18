@@ -9,7 +9,7 @@ backend:
     deleteMedia: "[skip ci] Delete “{{path}}”"
 
 # Uncomment for local Netlify CMS development
-local_backend: true
+# local_backend: true
 
 media_folder: static/img
 public_folder: /img
@@ -767,8 +767,7 @@ collections:
                     allow_add: false,
                     fields:
                       [
-                        { label: Heading, name: heading, widget: string },
-                        { label: Description, name: description, widget: text },
+                        { label: Content, name: content, widget: text },
                         {
                           label: Image,
                           name: image,
@@ -956,8 +955,7 @@ collections:
                     allow_add: false,
                     fields:
                       [
-                        { label: Heading, name: heading, widget: string },
-                        { label: Description, name: description, widget: text },
+                        { label: Content, name: content, widget: text },
                         {
                           label: Image,
                           name: image,

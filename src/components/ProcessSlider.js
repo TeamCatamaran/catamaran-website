@@ -3,7 +3,8 @@ import React from 'react'
 import FluidImage from './FluidImage'
 
 import spiral from '../img/spiral.png'
-import absorb from '../img/studio-absorb.png'
+import experimentsAbsorb from '../img/experiments-absorb.png'
+import studioAbsorb from '../img/studio-absorb.png'
 
 const ProcessSlider = class extends React.Component {
     constructor(props) {
@@ -15,8 +16,13 @@ const ProcessSlider = class extends React.Component {
     }
 
     render() {
+        let absorb = studioAbsorb
+        if (this.props.type != null && this.props.type === 'experiments') {
+            absorb = experimentsAbsorb
+        }
+
         if (this.props.content.steps == null || this.props.content.steps.length === 0) {
-            return (null);
+            return (null)
         }
 
         return (

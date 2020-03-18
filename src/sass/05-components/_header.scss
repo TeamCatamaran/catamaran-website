@@ -21,7 +21,7 @@
             @include respond-to("phone") {
                 margin-top: -20px;
             }
-            
+
         }
     }
     label.-large {
@@ -659,6 +659,14 @@ body.-orange {
     .c-header {
         label.-large {
             color: $orange;
+        }
+    }
+}
+
+body.-green {
+    .c-header {
+        label.-large {
+            color: $green;
         }
     }
 }

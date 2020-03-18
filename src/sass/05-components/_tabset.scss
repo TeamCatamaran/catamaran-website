@@ -137,3 +137,9 @@ body.-orange {
         background-color: $orange;
     }
 }
+
+body.-green {
+    .c-tabset__tab.-active::after {
+        background-color: $green;
+    }
+}
