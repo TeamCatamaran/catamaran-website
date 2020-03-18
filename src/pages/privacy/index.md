@@ -3,8 +3,8 @@ templateKey: privacy-page
 section: LEGAL
 heading: Lorem Ipsum Dolor
 intro: >
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-  incididunt ut labore et dolore. Lorem ipsum dolor sit amet.
+  Your privacy is important to us and we have prepared this Privacy Policy to
+  explain to you how we collect, use and share your personal information.
 seo:
   title: Privacy Policy
 ---
