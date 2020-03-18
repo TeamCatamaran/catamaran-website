@@ -1112,7 +1112,7 @@ collections:
         name: ventures
         fields:
           - {
-              label: "Template Key",
+              label: "Template Key",z
               name: "templateKey",
               widget: "hidden",
               default: "ventures-page",
@@ -1120,56 +1120,6 @@ collections:
           - { label: Section, name: section, widget: string }
           - { label: Heading, name: heading, widget: string }
           - { label: Intro, name: intro, widget: text }
-          - {
-              label: Action,
-              name: action,
-              widget: object,
-              fields:
-                [
-                  { label: Heading, name: heading, widget: string },
-                  {
-                    label: Pages,
-                    name: pages,
-                    widget: list,
-                    allow_add: false,
-                    fields:
-                      [
-                        { label: Title, name: title, widget: string },
-                        { label: Description, name: description, widget: text },
-                        {
-                          label: Link,
-                          name: link,
-                          widget: object,
-                          fields:
-                            [
-                              { label: Url, name: url, widget: string },
-                              {
-                                label: Relationship,
-                                name: rel,
-                                widget: string,
-                                required: false,
-                              },
-                            ],
-                        },
-                        {
-                          label: Image,
-                          name: image,
-                          widget: object,
-                          fields:
-                            [
-                              { label: Image, name: src, widget: image },
-                              {
-                                label: "Alt Text",
-                                name: alt,
-                                widget: string,
-                                required: false,
-                              },
-                            ],
-                        },
-                      ],
-                  },
-                ],
-            }
           - {
               label: SEO,
               name: seo,
@@ -2325,13 +2275,13 @@ collections:
                 widget: select,
                 options:
                   [
-                    Website,
-                    Facebook,
-                    Linkedin,
-                    Twitter,
-                    Instagram,
-                    Pinterest,
-                    Youtube,
+                    website,
+                    facebook,
+                    linkedin,
+                    twitter,
+                    instagram,
+                    pinterest,
+                    youtube,
                   ],
               },
             ],

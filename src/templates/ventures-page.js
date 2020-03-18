@@ -31,7 +31,7 @@ export const VenturesPageTemplate = ({
                     ventures.map((v) => {
                         return (
                             <li className="c-ventures__venture">
-                                <Link className="c-ventures__venture__link" to={"/"} rel={""}>
+                                <Link className="c-ventures__venture__link" to={v.url} rel={""}>
                                     <FluidImage className="c-ventures__venture__asset" alt={v.image.alt} image={v.image.src} />
                                 </Link>
                             </li>

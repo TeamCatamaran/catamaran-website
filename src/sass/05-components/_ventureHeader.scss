@@ -1,0 +1,118 @@
+.c-ventureHeader {
+    background-color: $grey-lightest;
+    margin-bottom: 150px;
+
+    @include respond-to("tablet") {
+        height: auto;
+        margin-bottom: 75px;
+    }
+
+    &__text {
+        @include grid-column(6);
+        display:block;
+        margin-top: 10%;
+
+        @include respond-to("tablet") {
+            @include grid-column(12);
+            margin-top: calc(50vh + 50px);
+            transform: none;
+        }
+    }
+
+    &__company {
+        text-transform: uppercase;
+        margin-bottom:24px;
+        display: block;
+
+        @include respond-to("tablet") {
+            margin-bottom: 16px;
+        }
+    }
+
+    &__heading {
+        margin-bottom: 60px;
+
+        @include respond-to("tablet") {
+            font-size: 48px;
+            line-height: 60px;
+            margin-bottom: 25px;
+        }
+    }
+
+    &__timeframe {
+        text-transform: uppercase;
+        letter-spacing: .2em;
+
+        @include font-style(
+            $font-accent,                     // Font Family
+            $size-4,                          // Font Size
+            $grey-light,                            // Font Color
+            $weight-bold,                 // Font Weight
+            $height-4                         // Line Height
+        );
+    }
+
+    &__media {
+        @include grid-column(6);
+        display:block;
+        margin-top: 10%;
+        position: relative;
+
+        @include respond-to("tablet") {
+            @include grid-column(12);
+            transform: none;
+            position: absolute;
+            top: -50px;
+        }
+
+        &__container {
+            position: absolute;
+            right: 0;
+            width: 490px;
+            height: 490px;
+            background-color: #EAE9E3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            @include respond-to("tablet") {
+                width: calc(100vw - 50px);
+                height: 50vh;
+            }
+        }
+
+        &__image {
+            width: 100%;
+            max-width: 300px;
+            max-height: 300px;
+        }
+
+        &__video {
+            position: absolute;
+            left: 25px;
+            bottom: 25px;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background-color: $purple;
+            color: $white;
+            box-shadow: 0 0 24px 0 rgba(87,0,239,0.65);
+            border: none;
+            outline: none;
+            transition: all .16s ease-in-out;
+
+            &:hover {
+                bottom: 28px;
+                box-shadow: 0 3px 32px 0 rgba(87,0,239,0.5);
+            }
+        }
+    }
+}
+
+body.-purple {
+    .c-ventureHeader {
+        &__company {
+            color: $purple;
+        }
+    }
+}

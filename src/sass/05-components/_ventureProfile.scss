@@ -1,0 +1,123 @@
+.c-ventureProfile {
+    background-color: $grey-lightest;
+    margin-top: 300px;
+
+    &::before {
+        display: block;
+        content: "";
+        height: 1px;
+        background-color: $grey-light;
+        opacity: .5;
+        position: absolute;
+        top: -150px;
+        left: 20px;
+        right: 20px;
+    }
+
+    @include respond-to("tablet") {
+        margin-top: 150px;
+
+        &::before {
+            top: -100px;
+        }
+    }
+
+    &__participantsList {
+        @include grid-column(8);
+        list-style: none;
+
+        @include respond-to("tablet") {
+            @include grid-column(12);
+        }
+
+        &__item {
+            margin-bottom: 60px;
+        }
+    }
+
+    &__participant {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        &__photo {
+            width: 124px;
+            height: 124px;
+            border-radius: 50%;
+            overflow: hidden;
+            background-color: $grey;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        &__text {
+            margin-left: 25px;
+        }
+
+        &__name {
+            @include font-style(
+                $font-normal,                     // Font Family
+                $size-2,                          // Font Size
+                $grey,                            // Font Color
+                $weight-light,                 // Font Weight
+                $height-3                         // Line Height
+            );
+        }
+
+        &__title {
+            text-transform: uppercase;
+            letter-spacing: .2em;
+            @include font-style(
+                $font-accent,                     // Font Family
+                $size-4,                          // Font Size
+                $grey-light,                            // Font Color
+                $weight-bold,                 // Font Weight
+                $height-4                         // Line Height
+            );
+        }
+    }
+
+    &__linksList {
+        @include grid-column(4);
+        list-style: none;
+
+        @include respond-to("tablet") {
+            @include grid-column(12);
+            margin-top: 50px;
+        }
+
+        &__item {
+            margin-bottom: 36px;
+        }
+    }
+
+    &__link {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        &:hover {
+            text-decoration: none;
+        }
+
+        &__icon {
+            width: 36px;
+            height: 36px;
+        }
+
+        &__text {
+            margin-left: 15px;
+            text-transform: uppercase;
+            letter-spacing: .2em;
+            @include font-style(
+                $font-accent,                     // Font Family
+                $size-4,                          // Font Size
+                $grey,                            // Font Color
+                $weight-bold,                 // Font Weight
+                $height-4                         // Line Height
+            );
+        }
+    }
+}

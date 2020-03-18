@@ -25,11 +25,31 @@ participants:
     name: Will Lewis
     title: Tech Co-Founder
 links:
-  - category: Website
+  - category: website
     link:
       url: 'https://findgoodsubs.com'
       rel: ''
     name: findgoodsubs.com
+  - category: facebook
+    link:
+      url: 'https://findgoodsubs.com'
+      rel: ''
+    name: '@subxinc'
+  - category: linkedin
+    link:
+      url: 'https://findgoodsubs.com'
+      rel: ''
+    name: '@subxinc'
+  - category: twitter
+    link:
+      url: 'https://findgoodsubs.com'
+      rel: ''
+    name: '@subxinc'
+  - category: instagram
+    link:
+      url: 'https://findgoodsubs.com'
+      rel: ''
+    name: '@subxinc'
 seo:
   canonical: ''
   description: ''
