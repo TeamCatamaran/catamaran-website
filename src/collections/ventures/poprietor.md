@@ -25,7 +25,7 @@ participants:
     name: Will Lewis
     title: Tech Co-Founder
 links:
-  - category: Website
+  - category: website
     link:
       url: 'https://findgoodsubs.com'
       rel: ''

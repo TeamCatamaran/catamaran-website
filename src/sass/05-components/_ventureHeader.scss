@@ -1,0 +1,89 @@
+.c-ventureHeader {
+    background-color: $grey-lightest;
+    margin-bottom: 150px;
+
+    @include respond-to("phone") {
+        height: auto;
+    }
+
+    &.-collapse {
+        height: auto;
+        padding: 120px 0 80px;
+
+        .c-header__text {
+            transform: none;
+
+            h1 {
+                padding-top: 30px;
+            }
+            @include respond-to("phone") {
+                margin-top: -20px;
+            }
+            
+        }
+    }
+    
+
+    &__text {
+        @include grid-column(6);
+        display:block;
+        margin-top: 10%;
+
+        @include respond-to("phone") {
+            @include grid-column(12);
+            margin-top: 50vh;
+            transform: none;
+        }
+    }
+
+    &__company {
+        text-transform: uppercase;
+        margin-bottom:24px;
+        display: block;
+    }
+
+    &__heading {
+        margin-bottom: 60px;
+    }
+
+    &__timeframe {
+        text-transform: uppercase;
+        letter-spacing: .2em;
+
+        @include font-style(
+            $font-accent,                     // Font Family
+            $size-4,                          // Font Size
+            $grey-light,                            // Font Color
+            $weight-bold,                 // Font Weight
+            $height-4                         // Line Height
+        );
+    }
+
+    &__video {
+        @include grid-column(6);
+        display:block;
+        margin-top: 10%;
+        position: relative;
+
+        @include respond-to("phone") {
+            @include grid-column(12);
+            transform: none;
+        }
+
+        &__container {
+            position: absolute;
+            right: 0;
+            width: 490px;
+            height: 490px;
+            background-color: #EAE9E3;
+        }
+    }
+}
+
+body.-purple {
+    .c-ventureHeader {
+        &__company {
+            color: $purple;
+        }
+    }
+}
