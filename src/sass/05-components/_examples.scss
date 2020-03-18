@@ -1,6 +1,10 @@
 .c-examples {
     margin-bottom: 200px;
 
+    @include respond-to("tablet") {
+        margin-bottom: 60px;
+    }
+
     &__content {
         padding-top: 14px;
 
@@ -60,6 +64,12 @@
 
         img {
             width: 100%;
+        }
+
+        @include respond-to("tablet") {
+            @include grid-column(12);
+            padding-left: 0;
+            padding-right: 0;
         }
     }
 }
