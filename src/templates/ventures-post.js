@@ -32,14 +32,20 @@ export const VenturesPostTemplate = ({
                         <h1 className="c-ventureHeader__heading">{heading}</h1>
                         <label className="c-ventureHeader__timeframe">{timeframe}</label>
                     </div>
-                    <div className="c-ventureHeader__video">
+                    <div className="c-ventureHeader__media">
+                        <div className="c-ventureHeader__media__container">
                         {
-                        video != null &&
-                        <div className="c-ventureHeader__video__container">
-                            <ReactPlayer
-                                url={video} />
-                        </div>   
+                            image != null &&
+                            <FluidImage
+                                alt={image.alt}
+                                className="c-ventureHeader__media__image"
+                                image={image.src} /> 
                         }
+                        {
+                            video != null &&
+                            <button className="c-ventureHeader__media__video">></button>   
+                        }
+                        </div>
                     </div>
                 </div>
             </div>
