@@ -2,36 +2,19 @@
     background-color: $grey-lightest;
     margin-bottom: 150px;
 
-    @include respond-to("phone") {
+    @include respond-to("tablet") {
         height: auto;
+        margin-bottom: 75px;
     }
-
-    &.-collapse {
-        height: auto;
-        padding: 120px 0 80px;
-
-        .c-header__text {
-            transform: none;
-
-            h1 {
-                padding-top: 30px;
-            }
-            @include respond-to("phone") {
-                margin-top: -20px;
-            }
-            
-        }
-    }
-    
 
     &__text {
         @include grid-column(6);
         display:block;
         margin-top: 10%;
 
-        @include respond-to("phone") {
+        @include respond-to("tablet") {
             @include grid-column(12);
-            margin-top: 50vh;
+            margin-top: calc(50vh + 50px);
             transform: none;
         }
     }
@@ -40,10 +23,20 @@
         text-transform: uppercase;
         margin-bottom:24px;
         display: block;
+
+        @include respond-to("tablet") {
+            margin-bottom: 16px;
+        }
     }
 
     &__heading {
         margin-bottom: 60px;
+
+        @include respond-to("tablet") {
+            font-size: 48px;
+            line-height: 60px;
+            margin-bottom: 25px;
+        }
     }
 
     &__timeframe {
@@ -65,9 +58,11 @@
         margin-top: 10%;
         position: relative;
 
-        @include respond-to("phone") {
+        @include respond-to("tablet") {
             @include grid-column(12);
             transform: none;
+            position: absolute;
+            top: -50px;
         }
 
         &__container {
@@ -79,6 +74,11 @@
             display: flex;
             justify-content: center;
             align-items: center;
+
+            @include respond-to("tablet") {
+                width: calc(100vw - 50px);
+                height: 50vh;
+            }
         }
 
         &__image {
