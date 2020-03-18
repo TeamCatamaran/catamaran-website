@@ -26,18 +26,18 @@ export const VenturesPageTemplate = ({
                 <p>{intro}</p>
             </div>
             <ul className="c-ventures container">
-            {
-                ventures != null && ventures.length > 0 &&
-                ventures.map((v) => {
-                  return (
-                    <li className="c-ventures__venture">
-                      <Link className="c-ventures__venture__link" to={"/"} rel={""}>
-                        <FluidImage className="c-ventures__venture__asset" alt={v.image.alt} image={v.image.src} />
-                      </Link>
-                    </li>
-                  )
-                })
-            }
+                {
+                    ventures != null && ventures.length > 0 &&
+                    ventures.map((v) => {
+                        return (
+                            <li className="c-ventures__venture">
+                                <Link className="c-ventures__venture__link" to={"/"} rel={""}>
+                                    <FluidImage className="c-ventures__venture__asset" alt={v.image.alt} image={v.image.src} />
+                                </Link>
+                            </li>
+                        )
+                    })
+                }
             </ul>
         </div>
     )
@@ -54,7 +54,7 @@ const VenturesPage = ({ data }) => {
     const { frontmatter } = data.markdownRemark
     const ventures = data.ventures.edges.map((e) => {
         const content = e.node.frontmatter
-        content.url = `/ventures${e.node.fields.slug}`
+        content.url = `/${e.node.fields.collection}${e.node.fields.slug}`
         return content;
     });
 
@@ -97,6 +97,7 @@ query VenturesPage($id: String!) {
           }
         }
         fields {
+          collection
           slug
         }
       }
