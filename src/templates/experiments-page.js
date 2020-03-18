@@ -4,6 +4,7 @@ import { graphql } from 'gatsby'
 
 
 import ActionCallout from '../components/ActionCallout'
+import Cta from '../components/Cta'
 import Header from '../components/Header'
 import Layout from '../components/Layout'
 import FluidImage from '../components/FluidImage'
@@ -89,9 +90,8 @@ export const ExperimentsPageTemplate = ({
             }
             {
                 launch != null &&
-                <div>
-                    {launch.content}<br />{launch.text}<br />{launch.link.url}<br />{launch.link.rel}
-                </div>
+                <Cta
+                    content={launch} />
             }
             {
                 action != null &&

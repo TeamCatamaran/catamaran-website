@@ -14,9 +14,6 @@ const Cta = class extends React.Component {
             return (null);
         }
 
-        console.log("Variant: ");
-        console.log(this.props.variant);
-
         return (
             <div className="c-cta">
                 <div className="c-cta__wrapper" style={{ backgroundImage: `url(${ctaBG})` }}>
