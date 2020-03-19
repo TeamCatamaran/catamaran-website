@@ -103,3 +103,11 @@ body.-pink {
         background-image: linear-gradient(180deg, transparent 0%, $pink 100%);
     }
 }
+
+body.-dark {
+    .c-action__heading {
+        h2 {
+            color: $white;
+        }
+    }
+}

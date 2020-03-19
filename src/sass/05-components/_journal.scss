@@ -1,0 +1,45 @@
+.c-journal {
+
+    &.-list {
+        list-style: none;
+    }
+
+    &__post {
+        @include grid-column(4);
+        padding-bottom: 80px;
+
+        &__link {
+
+            &:hover {
+                text-decoration: none;
+            }
+
+            h2 {
+                white-space: pre-line;
+                font-weight: $weight-light;
+            }
+
+            label {
+                display: inline-block;
+                margin: 20px 0 25px;
+                font-family: $font-accent;
+                color: $grey-lightest;
+                font-weight: $weight-bold;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+            }
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+}
+
+body.-dark {
+    .c-journal__post {
+        h2 {
+            color: $white;
+        }
+    }
+}

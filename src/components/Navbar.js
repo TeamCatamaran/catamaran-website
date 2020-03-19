@@ -3,8 +3,10 @@ import { Link } from 'gatsby'
 import Logo from '../components/Logo'
 import defaultImg from '../img/default.jpg'
 import close from '../img/icon-close.png'
-import menu from '../img/icon-menu.png'
-import search from '../img/icon-search.png'
+import menuDark from '../img/icon-menu.png'
+import menuLight from '../img/icon-menu-light.png'
+import searchDark from '../img/icon-search.png'
+import searchLight from '../img/icon-search-light.png'
 import waterworks from '../img/waterworks.jpg'
 import arrowDark from '../img/icon-arrow-dark.png'
 import { gsap, Power1, Power3, Power4 } from 'gsap';
@@ -41,16 +43,20 @@ const Navbar = class extends React.Component {
 
     render() {
         const navbarActiveClass = this.state.isActive ? '-active' : ''
+        const navClass = this.props.className || ''
+        const isDark = navClass.indexOf('dark') > -1
+        const menu = isDark ? menuLight : menuDark
+        const search = isDark ? searchLight : searchDark
 
         return (
             <nav
-                className="c-navbar"
+                className={`c-navbar ${navClass}`}
                 role="navigation"
                 aria-label="main-navigation"
             >
                 <div className="container">
                     <Link to="/" className="c-navbar__logo" title="Logo">
-                        <Logo fill="#3e3d3f" />
+                        <Logo fill={isDark ? "#ffffff" : "#3e3d3f"} />
                     </Link>
                     <div className="c-navbar__navigation">
                         {/* <div

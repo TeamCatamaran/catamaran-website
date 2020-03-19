@@ -2142,6 +2142,7 @@ collections:
           options: [Thoughts, "Startup Story", Press, Sandbox, Events],
         }
       - { label: Publish Date, name: date, widget: datetime }
+
       - { label: Heading, name: heading, widget: string }
       - { label: Subheading, name: subheading, widget: string }
       - {
@@ -2152,6 +2153,30 @@ collections:
             [
               { label: Image, name: src, widget: image },
               { label: "Alt Text", name: alt, widget: string, required: false },
+            ],
+        }
+      - {
+          label: "Index Page",
+          name: index,
+          widget: object,
+          fields:
+            [
+              { label: Title, name: title, widget: string },
+              {
+                label: Image,
+                name: image,
+                widget: object,
+                fields:
+                  [
+                    { label: Image, name: src, widget: image },
+                    {
+                      label: "Alt Text",
+                      name: alt,
+                      widget: string,
+                      required: false,
+                    },
+                  ],
+              },
             ],
         }
       - { label: Introduction, name: introduction, widget: text }

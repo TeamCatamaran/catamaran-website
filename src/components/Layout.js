@@ -69,7 +69,8 @@ const TemplateWrapper = class extends React.Component {
                         content={`${withPrefix('/')}img/og-image.jpg`}
                     />
                 </Helmet>
-                <Navbar />
+                <Navbar
+                    className={bodyClass} />
                 <main role="main">
                     {children}
                 </main>

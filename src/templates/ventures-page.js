@@ -4,10 +4,9 @@ import { Link, graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
 import Header from '../components/Header'
-import ActionCallout from '../components/ActionCallout'
+import FluidImage from '../components/FluidImage'
 
 import { types } from '../types/types'
-import FluidImage from '../components/FluidImage'
 
 export const VenturesPageTemplate = ({
     section,
