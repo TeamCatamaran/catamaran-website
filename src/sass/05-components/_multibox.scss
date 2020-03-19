@@ -22,6 +22,10 @@
         grid-template-rows: repeat(3, 33.33%);
     }
 
+    @include respond-to("phone") {
+        grid-template-rows: repeat(2, 50%);
+    }
+
     &.-active {
         pointer-events: auto;
         transition: opacity 0s;
@@ -120,6 +124,10 @@
 
             @include respond-to("tablet") {
                 grid-area: auto;
+            }
+
+            @include respond-to("phone") {
+                display: none;
             }
         }
 
