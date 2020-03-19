@@ -11,24 +11,40 @@
     &.-two {
         .c-tabset__tab {
             width: 50%;
+
+            @include respond-to("phone") {
+                width: auto;
+            }
         }
     }
 
     &.-three {
         .c-tabset__tab {
             width: 33%;
+
+            @include respond-to("tablet") {
+                width: auto;
+            }
         }
     }
 
     &.-four {
         .c-tabset__tab {
             width: 25%;
+
+            @include respond-to("tablet") {
+                width: auto;
+            }
         }
     }
 
     &.-five {
         .c-tabset__tab {
             width: 20%;
+
+            @include respond-to("tablet") {
+                width: auto;
+            }
         }
     }
 
