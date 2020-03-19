@@ -670,3 +670,17 @@ body.-green {
         }
     }
 }
+
+body.-dark {
+    .c-header {
+        background-color: $grey-background;
+
+        h1 {
+            color: $white;
+        }
+
+        label.-large {
+            color: $grey-lightest;
+        }
+    }
+}

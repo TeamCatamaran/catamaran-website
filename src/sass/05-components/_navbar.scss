@@ -166,3 +166,9 @@
         }
     }
 }
+
+body.-dark {
+    .c-navbar {
+        background-color: $grey-background;
+    }
+}

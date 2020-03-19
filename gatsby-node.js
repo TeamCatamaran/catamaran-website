@@ -112,7 +112,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   if (node.internal.type === `MarkdownRemark`) {
     const parentNode = getNode(node.parent)
     const value = createFilePath({ node, getNode })
-    //console.log(parentNode);
+    const publishDate = node.frontmatter.date || ""
     createNodeField({
       name: `slug`,
       node,
@@ -122,6 +122,11 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       name: 'collection',
       node,
       value: parentNode.sourceInstanceName,
+    })
+    createNodeField({
+      name: 'publishDate',
+      node,
+      value: publishDate,
     })
     createNodeField({
       name: 'filename',

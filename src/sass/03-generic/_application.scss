@@ -15,6 +15,12 @@ body {
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
 
+    &.-dark {
+        main {
+            background-color: $grey-background;
+        }
+    }
+
     &.-interior {
         main {
             background-color: $grey-lightest;

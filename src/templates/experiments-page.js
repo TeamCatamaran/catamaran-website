@@ -62,7 +62,8 @@ export const ExperimentsPageTemplate = ({
                 process != null &&
                 <ProcessSlider
                     content={process}
-                    type='experiments' />
+                    type='experiments'
+                    layout={tab} />
             }
             {
                 examples != null &&
@@ -196,8 +197,8 @@ query ExperimentsPage($id: String!) {
         intro
         steps {
           heading
-          intro
           description
+          list
         }
       }
       examples {

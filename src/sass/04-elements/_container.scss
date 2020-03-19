@@ -10,10 +10,12 @@
 
         @include respond-to("desktop") {
             @include grid-column(12);
+            @include grid-collapse;
         }
 
         @include respond-to("tablet") {
             margin-left: 0;
+            width: 100vw;
         }
     }
 }

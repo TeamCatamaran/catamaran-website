@@ -12,8 +12,8 @@ const ExperimentsPagePreview = ({ entry, widgetFor }) => {
                 section={data.section}
                 heading={data.heading}
                 overview={data.overview}
-                expect={data.expect}
-                examples={data.how}
+                process={data.process}
+                examples={data.examples}
                 launch={data.launch}
                 action={data.action}
             />

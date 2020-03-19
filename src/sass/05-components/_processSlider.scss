@@ -10,6 +10,68 @@
         padding-bottom: 200px;
     }
 
+    &.-enterprise {
+        height: auto;
+        margin-bottom: 180px;
+
+        @include respond-to("tablet") {
+            padding-bottom: 90px;
+            margin-bottom: 70px;
+        }
+
+        .c-processSlider {
+            &__count,
+            &__controls,
+            &__image,
+            &__spiral {
+                display: none;
+            }
+
+            &__triangledots,
+            &__quartercircle {
+                display: block;
+            }
+
+            &__step {
+                @include grid-column(6);
+                display: block;
+                padding: 0 75px 95px;
+
+                &:nth-child(2n+1) {
+                    padding-left: 25px;
+
+                    @include respond-to("tablet") {
+                        padding: 0;
+                    }
+                }
+
+                &:nth-child(2n) {
+                    padding-right: 25px;
+
+                    @include respond-to("tablet") {
+                        padding: 0;
+                    }
+                }
+
+                @include respond-to("tablet") {
+                    @include grid-column(12);
+                    padding: 0;
+                }
+
+                &__title {
+                    font-size: $size-p;
+                    line-height: $height-p;
+                }
+            }
+
+            &__steps {
+                @include grid-column(12);
+                @include site-container;
+                margin-top: 20px;
+            }
+        }
+    }
+
     &__fill {
         position: absolute;
         z-index: -1;
@@ -20,12 +82,11 @@
 
 
     &__header {
-        padding-top: 75px;
-        padding-left: 95px;
+        @include grid-column(12);
+        padding: 75px 75px 0;
 
         @include respond-to("tablet") {
-            padding-top: 100px;
-            padding-left: 20px;
+            padding: 100px 0 0;
         }
         &__title {
             @include font-style(
@@ -126,7 +187,7 @@
             @include font-style(
                 $font-normal,                     // Font Family
                 $size-2,                          // Font Size
-                $orange,                            // Font Color
+                $orange,                          // Font Color
                 $weight-semibold,                 // Font Weight
                 $height-2                         // Line Height
             );
@@ -137,15 +198,24 @@
             @include font-style(
                 $font-normal,                     // Font Family
                 $size-p,                          // Font Size
-                $white,                            // Font Color
-                $weight-medium,                 // Font Weight
+                $white,                           // Font Color
+                $weight-medium,                   // Font Weight
+                $height-p                         // Line Height
+            );
+        }
+
+        &__list {
+            margin-top: 20px;
+            white-space: pre-line;
+            @include font-style(
+                $font-normal,                     // Font Family
+                $size-p,                          // Font Size
+                $grey-light,                      // Font Color
+                $weight-medium,                   // Font Weight
                 $height-p                         // Line Height
             );
         }
     }
-
-
-
 
     &__controls {
         position: absolute;
@@ -184,9 +254,23 @@
         }
     }
 
+    &__quartercircle {
+        display: none;
+        position: absolute;
+        width: 188px;
+        right: 0;
+        bottom: -213px;
+
+        @include respond-to("tablet") {
+            width: 132px;
+            right: 30px;
+            bottom: -144px;
+        }
+    }
+
     &__spiral {
         position: absolute;
-        bottom: -145px;
+        bottom: -83px;
         width: 167px;
         height: 167px;
         right: 0;
@@ -194,8 +278,20 @@
         @include respond-to("tablet") {
             width: 86px;
             height: 86px;
-            bottom: -245px;
+            bottom: -43px;
             right: 25px;
+        }
+    }
+
+    &__triangledots {
+        display: none;
+        position: absolute;
+        width: 130px;
+        top: -78px;
+        right: 80px;
+
+        @include respond-to("tablet") {
+            right: 0;
         }
     }
 }
