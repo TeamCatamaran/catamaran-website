@@ -2140,7 +2140,7 @@ collections:
           label: Category,
           name: category,
           widget: select,
-          options: [Thoughts, "Startup Story", Press, Sandbox, Events],
+          options: [Thoughts, "Startup Stories", Press, Sandbox, Events],
         }
       - { label: Heading, name: heading, widget: string }
       - { label: Subheading, name: subheading, widget: string }

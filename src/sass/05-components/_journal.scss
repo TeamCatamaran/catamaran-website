@@ -1,12 +1,90 @@
 .c-journal {
 
+    &.-category {
+        padding: 0 10px 80px;
+
+        @include respond-to("laptop") {
+            &::before {
+                content: "";
+                display: block;
+                width: 30px;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                background-image: linear-gradient(to right, rgba(61,60,62,1) 0, rgba(61,60,62,0) 100%);
+                z-index: 2;
+            }
+
+            &::after {
+                content: "";
+                display: block;
+                width: 30px;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                background-image: linear-gradient(to left, rgba(61,60,62,1) 0, rgba(61,60,62,0) 100%);
+                z-index: 2;
+            }
+        }
+
+        @include respond-to("tablet") {
+            padding-bottom: 0;
+        }
+    }
+
     &.-list {
         list-style: none;
+    }
+
+    &.-more {
+        margin-bottom: 200px;
+    }
+
+    &__category {
+        display: inline-block;
+        padding: 20px 10px;
+
+        .c-button {
+            white-space: nowrap;
+        }
+
+        &__wrapper {
+            display: flex;
+            flex-direction: row;
+            align-items: stretch;
+
+            @include respond-to("laptop") {
+                width: 100%;
+                overflow: scroll;
+            }
+        }
+    }
+
+    &__more {
+        text-align: center;
+
+        .c-button.-outline {
+            margin: 20px;
+        }
     }
 
     &__post {
         @include grid-column(4);
         padding-bottom: 80px;
+
+        &.-no-results {
+            color: $white;
+        }
+
+        @include respond-to("tablet") {
+            @include grid-column(6);
+        }
+
+        @include respond-to("phone") {
+            @include grid-column(12);
+        }
 
         &__link {
 
@@ -34,11 +112,72 @@
             }
         }
     }
+
+    &__content {
+        @include grid-column(12);
+        margin-bottom: 200px;
+
+        @include respond-to("tablet") {
+            margin-bottom: 120px;
+        }
+
+        @include respond-to("phone") {
+            margin-bottom: 60px;
+        }
+
+        h1 {
+            margin-top: 120px;
+        }
+
+        h2 {
+            margin-top: 80px;
+        }
+
+        h3 {
+            margin-top: 60px;
+        }
+
+        h4,
+        h5,
+        h6 {
+            margin-top: 30px;
+        }
+
+        * + p {
+            margin-top: 20px;
+        }
+
+        p {
+            line-height: 36px;
+        }
+    }
+
+    .c-header {
+        label:not(.-large) {
+            display: inline-block;
+            margin-top: 20px;
+            font-family: $font-accent;
+            letter-spacing: 2px;
+            color: $grey-darker;
+        }
+    }
 }
 
 body.-dark {
     .c-journal__post {
         h2 {
+            color: $white;
+        }
+    }
+
+    .c-journal__content {
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p {
             color: $white;
         }
     }

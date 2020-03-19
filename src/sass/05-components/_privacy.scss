@@ -1,0 +1,29 @@
+.c-privacy{
+    &__content{
+        @include grid-column(12);
+        padding-top: 5px;
+        padding-bottom: 349px;
+        white-space: pre-line;
+    }
+
+    h3 {
+         @include font-style(
+                $font-accent,                     // Font Family
+                $size-4,                          // Font Size
+                $purple,                            // Font Color
+                $weight-bold,                    // Font Weight
+                $height-label
+        )
+        letter-spacing: 1.5px;
+    }
+    p {
+        @include font-style(
+            $font-normal,                     // Font Family
+            $size-p,                          // Font Size
+            $grey,                            // Font Color
+            $weight-medium,                    // Font Weight
+            $height-p
+        )
+        padding-bottom: 50px;
+    }
+}
