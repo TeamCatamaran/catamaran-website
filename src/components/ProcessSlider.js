@@ -2,9 +2,12 @@ import React from 'react'
 
 import FluidImage from './FluidImage'
 
-import spiral from '../img/spiral.png'
+import experimentsDonut from '../img/experiments-donut.png'
+import studioSpiral from '../img/spiral.png'
 import experimentsAbsorb from '../img/experiments-absorb.png'
+import quarterCircle from '../img/quartercircle.png'
 import studioAbsorb from '../img/studio-absorb.png'
+import triangleDots from '../img/triangledots.png'
 
 const ProcessSlider = class extends React.Component {
     constructor(props) {
@@ -17,17 +20,28 @@ const ProcessSlider = class extends React.Component {
 
     render() {
         let absorb = studioAbsorb
+        let spiral = studioSpiral
         if (this.props.type != null && this.props.type === 'experiments') {
             absorb = experimentsAbsorb
+            spiral = experimentsDonut
         }
 
         if (this.props.content.steps == null || this.props.content.steps.length === 0) {
             return (null)
         }
 
+        let className = 'c-processSlider container'
+        if (this.props.layout != null) {
+            className += ` -${this.props.layout}`
+        }
+
         return (
-            <div className="c-processSlider container">
+            <div className={className}>
                 <div className="c-processSlider__fill container-overflow"></div>
+                <img
+                    className="c-processSlider__triangledots"
+                    alt="triangle dots"
+                    src={triangleDots} />
                 <div className="c-processSlider__header">
                     <h2 className="c-processSlider__header__title">{this.props.content.heading}</h2>
                     <p className="c-processSlider__header__intro">{this.props.content.intro}</p>
@@ -55,6 +69,12 @@ const ProcessSlider = class extends React.Component {
                                         key={"quote-" + key}>
                                         <h3 className="c-processSlider__step__title">{s.heading}</h3>
                                         <p className="c-processSlider__step__description">{s.description}</p>
+                                        {
+                                            s.list != null && s.list.length > 0 &&
+                                            <p className="c-processSlider__step__list">
+                                                {s.list}
+                                            </p>
+                                        }
                                     </div>
                                 );
                             })
@@ -68,6 +88,10 @@ const ProcessSlider = class extends React.Component {
                         className="c-processSlider__spiral"
                         alt="geometric design"
                         src={spiral} />
+                    <img
+                        className="c-processSlider__quartercircle"
+                        alt="quarter circle"
+                        src={quarterCircle} />
                 </div>
             </div>
         )

@@ -21,8 +21,10 @@ process:
         tempor incididunt ut labore et. Lorem ipsum dolor sit amet, consectetur
         adipiscing elit, sed do eiusmod tempor incididunt ut labore et.
       heading: Absorb
+      list: Absorb
     - description: test
       heading: test
+      list: test
 examples:
   heading: Need Some Examples?
   intro: >-

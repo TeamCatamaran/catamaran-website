@@ -747,6 +747,7 @@ collections:
                       [
                         { label: Heading, name: heading, widget: string },
                         { label: Description, name: description, widget: text },
+                        { label: List, name: list, widget: text },
                       ],
                   },
                 ],
@@ -934,6 +935,7 @@ collections:
                       [
                         { label: Heading, name: heading, widget: string },
                         { label: Description, name: description, widget: text },
+                        { label: List, name: list, widget: text },
                       ],
                   },
                 ],
