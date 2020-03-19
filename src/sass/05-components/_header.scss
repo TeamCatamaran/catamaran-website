@@ -10,10 +10,11 @@
 
     &.-collapse {
         height: auto;
-        padding: 120px 0 80px;
+        padding: 0 0 80px;
 
         .c-header__text {
             transform: none;
+            width: 100%;
 
             h1 {
                 padding-top: 30px;

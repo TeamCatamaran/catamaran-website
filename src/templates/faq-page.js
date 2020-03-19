@@ -6,6 +6,7 @@ import Layout from '../components/Layout'
 import Header from '../components/Header'
 
 import { types } from '../types/types';
+import Accordion from '../components/Accordion'
 
 export const FAQPageTemplate = ({
     section,
@@ -19,16 +20,7 @@ export const FAQPageTemplate = ({
                 heading={heading}
                 section={section}
             />
-            {
-                faqs != null &&
-                <div>
-                    {faqs.map((f) => {
-                        return (
-                            <p>{f.question}<br />{f.answer}</p>
-                        )
-                    })}
-                </div>
-            }
+            <Accordion items={faqs} />
         </div>
     )
 }
@@ -46,16 +38,25 @@ FAQPageTemplate.propTypes = {
 }
 
 const FAQPage = ({ data }) => {
-    const { frontmatter } = data.markdownRemark
+    const { frontmatter } = data.markdownRemark;
+
+    const faqs = [];
+    for (let i = 0; i < frontmatter.faqs.length; i++) {
+        faqs.push({
+            heading: frontmatter.faqs[i].question,
+            body: frontmatter.faqs[i].answer,
+        })
+    }
 
     return (
         <Layout
             bodyClass="-purple -interior"
+            footerHasShapes={true}
             seo={frontmatter.seo}>
             <FAQPageTemplate
                 section={frontmatter.section}
                 heading={frontmatter.heading}
-                faqs={frontmatter.faqs}
+                faqs={faqs}
             />
         </Layout>
     )

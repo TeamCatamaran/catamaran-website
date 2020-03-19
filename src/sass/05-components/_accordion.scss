@@ -1,0 +1,67 @@
+
+
+.c-accordion {
+    &__list {
+        list-style: none;
+        @include grid-column(12);
+    }
+    
+
+    &__item {
+        border-bottom: 1px solid rgba(61,60,62,.2);
+        padding: 45px 0;
+
+        &__header {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            border: none;
+            outline: none;
+            background-color: transparent;
+            text-align: left;
+            cursor: pointer;
+        }
+
+        &__title {
+            flex-grow: 1;
+            text-transform: uppercase;
+            letter-spacing: .2em;
+            @include font-style(
+                $font-accent,                     // Font Family
+                $size-4,                          // Font Size
+                $purple,                            // Font Color
+                $weight-bold,                 // Font Weight
+                $height-4                         // Line Height
+            );
+        }
+
+        &__button {
+
+            img {
+                height: 15px;
+            }
+        }
+
+        &__body {
+            margin-top: 0;
+            height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: all .16s ease-in-out;
+        }
+
+        &.-active {
+
+            .c-accordion__item__body {
+                margin-top: 25px;
+                height: auto;
+                opacity: 1;
+            }
+        }
+    }
+}
+
+body.-purple {
+    
+}
