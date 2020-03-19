@@ -20,11 +20,9 @@ process:
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et. Lorem ipsum dolor sit amet, consectetur
         adipiscing elit, sed do eiusmod tempor incididunt ut labore et.
-      heading: 01 / 04
-      intro: Absorb
+      heading: Absorb
     - description: test
       heading: test
-      intro: test
 examples:
   heading: Need Some Examples?
   intro: >-

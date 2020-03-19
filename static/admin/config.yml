@@ -746,7 +746,6 @@ collections:
                     fields:
                       [
                         { label: Heading, name: heading, widget: string },
-                        { label: Intro, name: intro, widget: text },
                         { label: Description, name: description, widget: text },
                       ],
                   },
@@ -934,7 +933,6 @@ collections:
                     fields:
                       [
                         { label: Heading, name: heading, widget: string },
-                        { label: Intro, name: intro, widget: text },
                         { label: Description, name: description, widget: text },
                       ],
                   },
@@ -1112,7 +1110,7 @@ collections:
         name: ventures
         fields:
           - {
-              label: "Template Key",z
+              label: "Template Key",
               name: "templateKey",
               widget: "hidden",
               default: "ventures-page",

@@ -196,7 +196,6 @@ query ExperimentsPage($id: String!) {
         intro
         steps {
           heading
-          intro
           description
         }
       }
