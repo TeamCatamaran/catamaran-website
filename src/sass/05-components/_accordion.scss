@@ -1,6 +1,11 @@
 
 
 .c-accordion {
+    @include respond-to("tablet") {
+        padding-bottom: 25px;
+        margin-top: -25px;
+    }
+
     &__list {
         list-style: none;
         @include grid-column(12);
@@ -27,6 +32,7 @@
             flex-grow: 1;
             text-transform: uppercase;
             letter-spacing: .2em;
+            margin-right: 40px;
             @include font-style(
                 $font-accent,                     // Font Family
                 $size-4,                          // Font Size

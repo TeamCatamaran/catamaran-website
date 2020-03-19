@@ -10,15 +10,12 @@
 
     &.-collapse {
         height: auto;
-        padding: 0 0 80px;
+        padding: 120px 0 80px;
 
         .c-header__text {
             transform: none;
-            width: 100%;
-
-            h1 {
-                padding-top: 30px;
-            }
+            margin-top: 0;
+            width: auto;
 
             @include respond-to("phone") {
                 margin-top: -20px;
@@ -26,22 +23,8 @@
 
         }
     }
-
-    &.-journal {
-        padding: 60px 0;
-
-        .c-header__text {
-            transform: none;
-            margin-top: 0;
-
-            @include respond-to("sm-tablet") {
-                @include grid-column(12);
-            }
-        }
-    }
-
     label.-large {
-        margin-bottom:24px;
+        margin-bottom: 24px;
         display: block;
     }
 
@@ -634,29 +617,6 @@
                 65%  { transform: translate(0, 50px); }
                 to   { transform: translate(0, -0px); }
             }
-        }
-    }
-
-    &__image {
-        @include grid-column(5);
-        @include grid-push(1);
-        float: right;
-        margin-right: 20px;
-
-        @include respond-to("tablet") {
-            @include grid-column(6);
-            float: right;
-        }
-
-        @include respond-to("sm-tablet") {
-            @include grid-column(12);
-            float: left;
-            margin-right: 0;
-            margin-bottom: 40px;
-        }
-
-        img {
-            width: 100%;
         }
     }
 
