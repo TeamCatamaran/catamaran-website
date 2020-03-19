@@ -84,15 +84,15 @@ const ProcessSlider = class extends React.Component {
                             <button onClick={this.nextSlide.bind(this)} className="c-processSlider__controls__button -next">&#62;</button>
                         </div>
                     </div>
-                    <img
-                        className="c-processSlider__spiral"
-                        alt="geometric design"
-                        src={spiral} />
-                    <img
-                        className="c-processSlider__quartercircle"
-                        alt="quarter circle"
-                        src={quarterCircle} />
                 </div>
+                <img
+                    className="c-processSlider__spiral"
+                    alt="geometric design"
+                    src={spiral} />
+                <img
+                    className="c-processSlider__quartercircle"
+                    alt="quarter circle"
+                    src={quarterCircle} />
             </div>
         )
     }

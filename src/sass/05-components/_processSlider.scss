@@ -270,7 +270,7 @@
 
     &__spiral {
         position: absolute;
-        bottom: -145px;
+        bottom: -83px;
         width: 167px;
         height: 167px;
         right: 0;
@@ -278,7 +278,7 @@
         @include respond-to("tablet") {
             width: 86px;
             height: 86px;
-            bottom: -245px;
+            bottom: -43px;
             right: 25px;
         }
     }
