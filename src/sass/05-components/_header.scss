@@ -23,6 +23,25 @@
 
         }
     }
+
+    &.-journal {
+        height: auto;
+        padding: 60px 0;
+
+        .c-header__text {
+            transform: none;
+            margin-top: 10%;
+
+            @include respond-to("tablet") {
+                margin-top: 0;
+            }
+
+            @include respond-to("sm-tablet") {
+                @include grid-column(12);
+            }
+        }
+    }
+
     label.-large {
         margin-bottom: 24px;
         display: block;
@@ -634,6 +653,30 @@
 
         label {
             text-transform: uppercase;
+        }
+    }
+
+    &__image {
+        @include grid-column(5);
+        @include grid-push(1);
+        float: right;
+        margin-right: 20px;
+
+        @include respond-to("tablet") {
+            @include grid-column(6);
+            margin-left: 0;
+            float: right;
+        }
+
+        @include respond-to("sm-tablet") {
+            @include grid-column(12);
+            float: left;
+            margin-right: 0;
+            margin-bottom: 40px;
+        }
+
+        img {
+            width: 100%;
         }
     }
 }

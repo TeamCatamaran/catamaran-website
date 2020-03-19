@@ -21,7 +21,7 @@ export const JournalPostTemplate = ({
 
     return (
         <section className="c-journal container">
-            <header className='c-header -collapse -journal'>
+            <header className='c-header -journal'>
                 {
                     image != null &&
                     <div className="c-header__image">
