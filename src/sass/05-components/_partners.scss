@@ -12,12 +12,16 @@ $logo-grid: (
 
     &__logos {
         @include grid-container;
+        @include respond-to("phone") {
+            margin-top: 100px;
+        }
 
         &__item {
             display: block;
             @include grid-column(3, $logo-grid);
             @include respond-to("phone") {
-                @include grid-column(6, $logo-grid);
+                @include grid-column(6);
+                column-gap: 49px;
             }
             background-color: #EAE9E3;
             margin-bottom: 7px;
@@ -42,6 +46,9 @@ $logo-grid: (
 
     &__list {
         margin-top: 200px;
+        @include respond-to("phone") {
+            margin-top: 100px;
+        }
 
         &__section {
             @include grid-column(4);
