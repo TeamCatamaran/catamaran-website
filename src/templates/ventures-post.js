@@ -34,17 +34,17 @@ export const VenturesPostTemplate = ({
                     </div>
                     <div className="c-ventureHeader__media">
                         <div className="c-ventureHeader__media__container">
-                        {
-                            image != null &&
-                            <FluidImage
-                                alt={image.alt}
-                                className="c-ventureHeader__media__image"
-                                image={image.src} /> 
-                        }
-                        {
-                            video != null &&
-                            <button className="c-ventureHeader__media__video">></button>   
-                        }
+                            {
+                                image != null &&
+                                <FluidImage
+                                    alt={image.alt}
+                                    className="c-ventureHeader__media__image"
+                                    image={image.src} />
+                            }
+                            {
+                                video != null &&
+                                <button className="c-ventureHeader__media__video">></button>
+                            }
                         </div>
                     </div>
                 </div>
@@ -62,11 +62,11 @@ export const VenturesPostTemplate = ({
                                         <FluidImage alt={p.image.alt || p.name} image={p.image.src} />
                                     </div>
                                     <div className="c-ventureProfile__participant__text">
-                                        <p className="c-ventureProfile__participant__name">{ p.name }</p>
-                                        <label className="c-ventureProfile__participant__title">{ p.title }</label>
+                                        <p className="c-ventureProfile__participant__name">{p.name}</p>
+                                        <label className="c-ventureProfile__participant__title">{p.title}</label>
                                     </div>
                                 </div>
-                                
+
                             </li>
                         )
                     })}
@@ -100,7 +100,7 @@ export const VenturesPostTemplate = ({
                             <li className="c-ventureProfile__linksList__item">
                                 <a className="c-ventureProfile__link" href={l.link.url} rel={l.link.rel} target="_blank">
                                     <img className="c-ventureProfile__link__icon" src={icon} alt="icon" />
-                                    <p className="c-ventureProfile__link__text">{ l.name }</p>
+                                    <p className="c-ventureProfile__link__text">{l.name}</p>
                                 </a>
                             </li>
                         )
@@ -171,7 +171,6 @@ export const pageQuery = graphql`
       id
       html
       frontmatter {
-        date(formatString: "MMMM DD, YYYY")
         company
         heading
         timeframe

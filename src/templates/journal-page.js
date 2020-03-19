@@ -9,44 +9,114 @@ import FluidImage from '../components/FluidImage'
 
 import { types } from '../types/types';
 
-export const JournalPageTemplate = ({
-    section,
-    heading,
-    journals,
-    action,
-}) => {
+export const JournalPageTemplate = class extends React.Component {
+    constructor(props) {
+        super(props)
 
-    return (
-        <div>
-            <Header
-                collageType="journal"
-                heading={heading}
-                section={section}
-            />
-            {
-                journals != null && journals.length > 0 &&
-                <ul className="c-journal -list container">
-                    {journals.map((b) => {
-                        return (
-                            <li className="c-journal__post">
-                                <Link className="c-journal__post__link" to={b.url} rel={""}>
-                                    <FluidImage className="c-journal__post__asset" alt={b.index.image.alt} image={b.index.image.src} />
-                                    <label>{b.category}</label>
-                                    <h2>{b.index.title}</h2>
-                                </Link>
-                            </li>
-                        )
-                    })}
-                </ul>
-            }
-            {
-                action != null &&
-                <ActionCallout
-                    heading={action.heading}
-                    pages={action.pages} />
-            }
-        </div>
-    )
+        this.categories = ['All', 'Thoughts', 'Startup Stories', 'Press', 'Sandbox', 'Events']
+
+        this.state = {
+            count: 6,
+            journals: this.props.journals,
+            totalCount: this.props.journals.length,
+            selectedCategory: 0
+        }
+
+        this._handleCategoryClick = this._handleCategoryClick.bind(this)
+        this._handleSeeMoreClick = this._handleSeeMoreClick.bind(this)
+    }
+
+    render() {
+        const { section, heading, action } = this.props
+
+        let journals = this.props.journals
+        if (this.state.selectedCategory > 0) {
+            journals = this.props.journals.filter((j) => j.category === this.categories[this.state.selectedCategory])
+        }
+        journals = journals.slice(0, this.state.count);
+
+        return (
+            <div>
+                <Header
+                    collageType="journal"
+                    heading={heading}
+                    section={section}
+                />
+                <div className="c-journal -category container">
+                    <div className="c-journal__category__wrapper">
+                        {this.categories.map((c, key) => {
+                            return (
+                                <div className="c-journal__category" key={`journal-category-${key}`} onClick={(e) => this._handleCategoryClick(e, key)}>
+                                    <button className={`c-button -outline ${key === this.state.selectedCategory ? '' : '-deselected'}`}>{c}</button>
+                                </div>
+                            )
+                        }, this)}
+                    </div>
+                </div>
+                {
+                    journals != null && journals.length > 0 &&
+                    <ul className="c-journal -list container">
+                        {journals.map((b, key) => {
+                            return (
+                                <li className="c-journal__post" key={`journal-post-${key}`}>
+                                    <Link className="c-journal__post__link" to={b.url} rel={""}>
+                                        <FluidImage className="c-journal__post__asset" alt={b.index.image.alt} image={b.index.image.src} />
+                                        <label>{b.category}</label>
+                                        <h2>{b.index.title}</h2>
+                                    </Link>
+                                </li>
+                            )
+                        })}
+                    </ul>
+                }
+                {
+                    (journals == null || journals.length === 0) &&
+                    <div className="c-journal container">
+                        <p className="c-journal__post -no-results">
+                            No Entries
+                        </p>
+                    </div>
+                }
+                {
+                    this.state.totalCount > this.state.count &&
+                    <div className="c-journal -more container">
+                        <div className="c-journal__more" onClick={this._handleSeeMoreClick}>
+                            <button className="c-button -outline">See More</button>
+                        </div>
+                    </div>
+                }
+                {
+                    action != null &&
+                    <ActionCallout
+                        heading={action.heading}
+                        pages={action.pages} />
+                }
+            </div>
+        )
+    }
+
+    _handleCategoryClick(e, key) {
+        e.preventDefault()
+
+        let totalCount = this.state.journals.length
+        if (key > 0) {
+            totalCount = this.props.journals.filter((j) => j.category === this.categories[key]).length
+        }
+
+        this.setState({
+            count: 6,
+            selectedCategory: key,
+            totalCount: totalCount
+        })
+    }
+
+    _handleSeeMoreClick(e) {
+        e.preventDefault()
+
+        this.setState({
+            count: this.state.count + 6
+        })
+    }
 }
 
 JournalPageTemplate.propTypes = {

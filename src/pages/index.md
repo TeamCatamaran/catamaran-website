@@ -64,7 +64,7 @@ testimonials:
       src: /img/scott.png
       alt: ''
     logo: /img/pledgeit-light.png
-    logoDark: /img/pledgeit-dark.png
+    logoDark: /img/pledgeit-medium.png
     name: Scott Shirley
     quote: >-
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
@@ -74,7 +74,7 @@ testimonials:
       src: /img/scott.png
       alt: ''
     logo: /img/subx-light.png
-    logoDark: /img/subx-dark.png
+    logoDark: /img/subx-medium.png
     name: Some Name
     quote: >-
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
@@ -85,7 +85,7 @@ testimonials:
       src: /img/scott.png
       alt: ''
     logo: /img/cope-light.png
-    logoDark: /img/cope-dark.png
+    logoDark: /img/cope-medium.png
     name: Another Name
     quote: >-
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod

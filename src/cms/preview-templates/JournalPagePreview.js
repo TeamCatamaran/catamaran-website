@@ -10,6 +10,7 @@ const JournalPagePreview = ({ entry, widgetFor }) => {
             <JournalPageTemplate
                 section={data.section}
                 heading={data.heading}
+                journals={[]}
                 action={data.action}
             />
         )

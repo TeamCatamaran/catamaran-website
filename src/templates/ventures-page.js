@@ -80,7 +80,7 @@ export default VenturesPage;
 
 export const venturesPageQuery = graphql`
 query VenturesPage($id: String!) {
-  ventures: allMarkdownRemark(filter: {fields: {collection: {eq: "ventures"}}}) {
+  ventures: allMarkdownRemark(filter: {fields: {collection: {eq: "ventures"}}}, sort: {fields: frontmatter___date, order: DESC}) {
     edges {
       node {
         frontmatter {
