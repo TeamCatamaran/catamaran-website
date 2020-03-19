@@ -1,6 +1,6 @@
 ---
 templateKey: journal-post
-category: Startup Story
+category: Startup Stories
 date: 2020-02-25T21:01:44.125Z
 index:
   image:

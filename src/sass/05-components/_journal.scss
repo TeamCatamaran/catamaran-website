@@ -1,12 +1,37 @@
 .c-journal {
 
+    &.-category {
+        padding: 0 10px 80px;
+    }
+
     &.-list {
         list-style: none;
+    }
+
+    &.-more {
+        margin-bottom: 200px;
+    }
+
+    &__category {
+        display: inline-block;
+        padding: 20px 10px;
+    }
+
+    &__more {
+        text-align: center;
+
+        .c-button.-outline {
+            margin: 20px;
+        }
     }
 
     &__post {
         @include grid-column(4);
         padding-bottom: 80px;
+
+        &.-no-results {
+            color: $white;
+        }
 
         &__link {
 
