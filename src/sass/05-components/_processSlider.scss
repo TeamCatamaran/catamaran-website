@@ -67,6 +67,7 @@
             &__steps {
                 @include grid-column(12);
                 @include site-container;
+                margin-top: 20px;
             }
         }
     }

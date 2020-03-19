@@ -5,11 +5,18 @@ section: EXPERIMENTS
 heading: Lorem ipsum dolor sit amet ipsum dolor
 overview:
   intro: >-
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua.
   leftContent: >-
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud. Sed do eiusmod tempor incididunt ut labore et dolore magna
+    aliqua. Ut enim ad minim veniam, quis nostrud.
   rightContent: >-
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud. Sed do eiusmod tempor incididunt ut labore et dolore magna
+    aliqua. Ut enim ad minim veniam, quis nostrud.
 process:
   heading: What to expect
   intro: >-
@@ -21,10 +28,21 @@ process:
         tempor incididunt ut labore et. Lorem ipsum dolor sit amet, consectetur
         adipiscing elit, sed do eiusmod tempor incididunt ut labore et.
       heading: Absorb
-      list: Absorb
-    - description: test
-      heading: test
-      list: test
+      list: |-
+        Lorem ipsum dolor 
+        Lorem ipsum dolor sit amet
+        Lorem ipsum 
+        Lorem ipsum dolor sit
+    - description: >-
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et. Lorem ipsum dolor sit amet, consectetur
+        adipiscing elit, sed do eiusmod tempor incididunt ut labore et.
+      heading: Absorb
+      list: |-
+        Lorem ipsum dolor 
+        Lorem ipsum dolor sit amet
+        Lorem ipsum 
+        Lorem ipsum dolor sit
 examples:
   heading: Need Some Examples?
   intro: >-
@@ -49,28 +67,30 @@ examples:
         src: /img/cca.png
 launch:
   content: Ready to Shake Things Up?
-  text: Let's Go
   link:
-    url: https://google.com
     rel: ''
+    url: 'https://google.com'
+  text: Let's Go
 action:
   heading: Where the action is
   pages:
-    - title: Journal Entry
-      description: From Business Accelerator to Startup Studio
-      link:
-        url: test
-        rel: ''
+    - description: From Business Accelerator to Startup Studio
       image:
-        src: /img/studio.png
         alt: ''
-    - title: Press
-      description: Harrisburg Landmark Has a New Owner
+        src: /img/studio.png
       link:
-        url: test
         rel: ''
+        url: test
+      title: Journal Entry
+    - description: Harrisburg Landmark Has a New Owner
       image:
-        src: /img/studio.png
         alt: ''
+        src: /img/studio.png
+      link:
+        rel: ''
+        url: test
+      title: Press
+seo:
+  title: Enterprise
 ---
 
