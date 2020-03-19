@@ -2135,14 +2135,13 @@ collections:
           widget: "hidden",
           default: "journal-post",
         }
+      - { label: Publish Date, name: date, widget: datetime }
       - {
           label: Category,
           name: category,
           widget: select,
           options: [Thoughts, "Startup Story", Press, Sandbox, Events],
         }
-      - { label: Publish Date, name: date, widget: datetime }
-
       - { label: Heading, name: heading, widget: string }
       - { label: Subheading, name: subheading, widget: string }
       - {
@@ -2241,6 +2240,7 @@ collections:
           widget: "hidden",
           default: "ventures-post",
         }
+      - { label: Publish Date, name: date, widget: datetime }
       - { label: Company, name: company, widget: string }
       - { label: Heading, name: heading, widget: string }
       - { label: Timeframe, name: timeframe, widget: string }

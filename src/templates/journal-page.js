@@ -23,10 +23,10 @@ export const JournalPageTemplate = ({
                 heading={heading}
                 section={section}
             />
-            <ul className="c-journal -list container">
-                {
-                    journals != null && journals.length > 0 &&
-                    journals.map((b) => {
+            {
+                journals != null && journals.length > 0 &&
+                <ul className="c-journal -list container">
+                    {journals.map((b) => {
                         return (
                             <li className="c-journal__post">
                                 <Link className="c-journal__post__link" to={b.url} rel={""}>
@@ -36,9 +36,9 @@ export const JournalPageTemplate = ({
                                 </Link>
                             </li>
                         )
-                    })
-                }
-            </ul>
+                    })}
+                </ul>
+            }
             {
                 action != null &&
                 <ActionCallout
@@ -96,7 +96,7 @@ export default JournalPage;
 
 export const journalPageQuery = graphql`
 query JournalPage($id: String!) {
-  journals: allMarkdownRemark(filter: {fields: {collection: {eq: "blog"}}}) {
+  journals: allMarkdownRemark(filter: {fields: {collection: {eq: "blog"}}}, sort: {fields: frontmatter___date, order: DESC}) {
     edges {
       node {
         frontmatter {
