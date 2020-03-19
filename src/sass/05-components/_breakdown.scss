@@ -1,5 +1,6 @@
 .c-breakdown {
     padding-top: 115px;
+    overflow-x: hidden;
 
     @include respond-to("tablet") {
         padding-top: 50px;

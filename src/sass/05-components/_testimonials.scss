@@ -78,6 +78,7 @@
              bottom: auto;
              top: 100px;
              left: 25px;
+             width: auto;
         }
     }
 
@@ -328,7 +329,7 @@ body.-orange {
     }
     .c-testimonials__quote__name {
         color: $orange;
-        
+
         @include respond-to("tablet") {
             color: $white;
         }
