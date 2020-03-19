@@ -7,6 +7,9 @@ import Header from '../components/Header'
 import ActionCallout from '../components/ActionCallout'
 import FluidImage from '../components/FluidImage'
 
+import dots from '../img/journal-dots.png'
+import squares from '../img/journal-squares.png'
+import waves from '../img/journal-waves.png'
 import { types } from '../types/types';
 
 export const JournalPageTemplate = class extends React.Component {
@@ -35,6 +38,12 @@ export const JournalPageTemplate = class extends React.Component {
         }
         journals = journals.slice(0, this.state.count);
 
+        const icons = {
+            dots: dots,
+            squares: squares,
+            waves: waves,
+        };
+
         return (
             <div>
                 <Header
@@ -60,7 +69,8 @@ export const JournalPageTemplate = class extends React.Component {
                             return (
                                 <li className="c-journal__post" key={`journal-post-${key}`}>
                                     <Link className="c-journal__post__link" to={b.url} rel={""}>
-                                        <FluidImage className="c-journal__post__asset" alt={b.index.image.alt} image={b.index.image.src} />
+                                        <FluidImage className="c-journal__post__asset" alt={b.image.alt} image={b.image.src} />
+                                        {/* <img src={icons[b.index.overlay]} alt="journal image overlay" /> */}
                                         <label>{b.category}</label>
                                         <h2>{b.index.title}</h2>
                                     </Link>
@@ -182,16 +192,7 @@ query JournalPage($id: String!) {
           }
           index {
             title
-            image {
-              src {
-                childImageSharp {
-                  fluid(maxWidth: 2048, quality: 100) {
-                    ...GatsbyImageSharpFluid
-                  }
-                }
-              }
-              alt
-            }
+            overlay
           }
           category
         }
