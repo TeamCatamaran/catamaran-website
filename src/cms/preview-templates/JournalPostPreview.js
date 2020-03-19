@@ -13,7 +13,7 @@ const JournalPostPreview = ({ entry, widgetFor }) => {
                 heading={data.heading}
                 subheading={data.subheading}
                 image={data.image}
-                introduction={data.introduction}
+                intro={data.introduction}
                 content={widgetFor('body')}
             />
         )
