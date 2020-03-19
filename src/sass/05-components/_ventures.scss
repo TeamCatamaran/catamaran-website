@@ -4,6 +4,11 @@
     margin-top: 150px;
     list-style: none;
 
+    @include respond-to("tablet") {
+        margin-top: 75px;
+        padding-bottom: 50px;
+    }
+
     &__venture {
         @include grid-column(4);
         height: 340px;
@@ -44,7 +49,8 @@
         }
 
         &__asset {
-            max-width: 100%;
+            width: 100%;
+            max-width: 220px;
             transition: opacity .16s ease-in-out;
         }
     }

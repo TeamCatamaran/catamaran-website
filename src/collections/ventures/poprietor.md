@@ -4,7 +4,7 @@ company: Poprietor
 heading: Changing how contractors connect
 timeframe: Fall 2018 / Catamaran Season 2
 image:
-  src: /img/subx.png
+  src: /img/poprietor-dark.png
   alt: ''
 video: ''
 date: 2020-03-09T04:00:00.000Z
