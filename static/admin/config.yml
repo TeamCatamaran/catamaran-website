@@ -2145,14 +2145,10 @@ collections:
       - { label: Heading, name: heading, widget: string }
       - { label: Subheading, name: subheading, widget: string }
       - {
-          label: Image,
-          name: image,
-          widget: object,
-          fields:
-            [
-              { label: Image, name: src, widget: image },
-              { label: "Alt Text", name: alt, widget: string, required: false },
-            ],
+          label: "Image Overlay",
+          name: overlay,
+          widget: select,
+          options: [Waves, Squares, Dots],
         }
       - {
           label: "Index Page",

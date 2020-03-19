@@ -129,10 +129,10 @@ const HeaderCollage = class extends React.Component {
 
         return (
             <div className="c-header__background -home">
-                <img className="home-layer-four" src={home4} alt="Home Collage Layer 4" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="300"/>
-                <img className="home-layer-three" src={home3} alt="Home Collage Layer 3" data-aos="fade-right" data-aos-duration="2000" />
-                <img className="home-layer-two" src={home2} alt="Home Collage Layer 2" data-aos="fade-down" data-aos-duration="2000" />
-                <img className="home-layer-one" src={home1} alt="Home Collage Layer 1"data-aos="fade-left" data-aos-duration="2000" />
+                <img className="home-layer-four" src={home4} alt="Home Collage Layer 4" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300" />
+                <img className="home-layer-three" src={home3} alt="Home Collage Layer 3" data-aos="fade-right" data-aos-duration="1000" />
+                <img className="home-layer-two" src={home2} alt="Home Collage Layer 2" data-aos="fade-down" data-aos-duration="1000" />
+                <img className="home-layer-one" src={home1} alt="Home Collage Layer 1" data-aos="fade-left" data-aos-duration="1000" />
             </div>
         );
     }

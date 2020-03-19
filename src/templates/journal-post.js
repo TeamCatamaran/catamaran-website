@@ -30,7 +30,7 @@ export const JournalPostTemplate = ({
                             image={image.src} />
                     </div>
                 }
-                <div className="c-header__text" data-aos="fade-up" data-aos-duration="2000" >
+                <div className="c-header__text" data-aos="fade-up" data-aos-duration="1000" >
                     <label className="-large">{category}</label>
                     <h1>{heading}</h1>
                     <label>{subheading}</label>

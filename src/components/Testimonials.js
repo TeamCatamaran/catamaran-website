@@ -32,7 +32,7 @@ const Testimonials = class extends React.Component {
         companies.push(companies.shift());
 
         return (
-            <div className="c-testimonials -quotes container" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="1000">
+            <div className="c-testimonials -quotes container" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1000">
                 <div className="c-testimonials__companies">
                     <div className="c-testimonials__count">
                         <span className="c-testimonials__count__current">{(this.state.selectedIndex + 1).toString().padStart(2, '0')}</span> / {totalItems.toString().padStart(2, '0')}
