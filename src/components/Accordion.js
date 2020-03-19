@@ -18,7 +18,7 @@ const Accordion = class extends React.Component {
         }
 
         return (
-            <div className="c-accordion container" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1000">
+            <div className="c-accordion container" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="500">
                 <ul className="c-accordion__list">
                     {
                         this.props.items.map((i, key) => {
