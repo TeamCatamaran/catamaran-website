@@ -9,7 +9,7 @@ const Cta = ({
     variant,
 }) => {
 
-    if (this.props.content == null) {
+    if (content == null) {
         return (null);
     }
 
