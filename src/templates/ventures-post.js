@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
-import ReactPlayer from 'react-player'
 
 import Layout from '../components/Layout'
 import FluidImage from '../components/FluidImage'
@@ -93,6 +92,9 @@ export const VenturesPostTemplate = ({
                                 break;
                             case "instagram":
                                 icon = instagramIcon;
+                                break;
+                            default:
+                                icon = websiteIcon;
                                 break;
                         }
 

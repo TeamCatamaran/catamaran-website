@@ -9,7 +9,6 @@ import croppedMap from '../img/cropped-map.png'
 import TypeformContact from '../components/TypeformContact'
 import dotGrid from '../img/dotgrid.png'
 import circleWave from '../img/circlewave.png'
-import footer from '../img/footer-shapes.png'
 import { types } from '../types/types';
 
 export const ContactPageTemplate = ({
@@ -41,7 +40,7 @@ export const ContactPageTemplate = ({
                     <p>{social.heading}</p>
                     <div className="c-contact__icons">
                         <SocialIcons
-                            style="dark" />
+                            isDark={true} />
                     </div>
                 </div>
             </div>

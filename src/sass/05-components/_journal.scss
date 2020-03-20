@@ -43,11 +43,21 @@
     }
 
     &__category {
+        background: none;
+        border: none;
+        outline: none;
         display: inline-block;
         padding: 20px 10px;
 
         .c-button {
             white-space: nowrap;
+        }
+
+        &:hover,
+        &:focus {
+            .c-button.-deselected {
+                border-color: $grey-light;
+            }
         }
 
         &__wrapper {
@@ -63,10 +73,20 @@
     }
 
     &__more {
+        border: none;
+        background: none;
+        display: block;
+        outline: none;
         text-align: center;
+        width: 100%;
 
         .c-button.-outline {
             margin: 20px;
+        }
+
+        &:hover,
+        &:focus {
+            border-color: $grey-light;
         }
     }
 

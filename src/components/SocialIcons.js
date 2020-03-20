@@ -29,7 +29,7 @@ const SocialIcons = class extends React.Component {
         let instagramIcon = instagram;
         let linkedinIcon = linkedin;
 
-        if (this.props.style === "dark") {
+        if (this.props.isDark) {
             dribbbleIcon = dribbbleDark;
             twitterIcon = twitterDark;
             facebookIcon = facebookDark;

@@ -55,9 +55,15 @@ export const JournalPageTemplate = class extends React.Component {
                     <div className="c-journal__category__wrapper">
                         {this.categories.map((c, key) => {
                             return (
-                                <div className="c-journal__category" key={`journal-category-${key}`} onClick={(e) => this._handleCategoryClick(e, key)}>
-                                    <button className={`c-button -outline ${key === this.state.selectedCategory ? '' : '-deselected'}`}>{c}</button>
-                                </div>
+                                <button
+                                    className="c-journal__category"
+                                    key={`journal-category-${key}`}
+                                    onClick={(e) => this._handleCategoryClick(e, key)}>
+                                    <span
+                                        className={`c-button -outline ${key === this.state.selectedCategory ? '' : '-deselected'}`}>
+                                        {c}
+                                    </span>
+                                </button>
                             )
                         }, this)}
                     </div>
@@ -90,9 +96,9 @@ export const JournalPageTemplate = class extends React.Component {
                 {
                     this.state.totalCount > this.state.count &&
                     <div className="c-journal -more container">
-                        <div className="c-journal__more" onClick={this._handleSeeMoreClick}>
-                            <button className="c-button -outline">See More</button>
-                        </div>
+                        <button className="c-journal__more" onClick={this._handleSeeMoreClick}>
+                            <span className="c-button -outline">See More</span>
+                        </button>
                     </div>
                 }
                 {

@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 
 import ActionCallout from '../components/ActionCallout'
 import Header from '../components/Header'
@@ -140,14 +140,14 @@ export const StudioPageTemplate = ({
             }
             {
                 services != null &&
-                <div className={"c-services container " + "tab-" + tab}>
+                <div className={`c-services container tab-${tab}`}>
                     <div className="c-services__header">
                         <div className="c-services__header__wrapper">
                             <h2 className="c-services__heading">{services.heading}</h2>
                             <p className="c-services__intro">{services.intro}</p>
                         </div>
                         {
-                            tab == "startup" &&
+                            tab === "startup" &&
                             <div className="c-services__header__images">
                                 <img
                                     className="c-services__header__images__circlelines"
@@ -182,7 +182,7 @@ export const StudioPageTemplate = ({
                             })
                         }
                         {
-                            tab == "upstarts" &&
+                            tab === "upstarts" &&
                             <img
                                 className="c-services__list__image"
                                 alt="diamonds"
@@ -323,7 +323,6 @@ const StudioPage = ({ data }) => {
                 overview={frontmatter.overview}
                 photos={frontmatter.photos}
                 process={frontmatter.process}
-                services={frontmatter.services}
                 services={frontmatter.services}
                 upstarts={frontmatter.upstarts}
                 criteria={frontmatter.criteria}
