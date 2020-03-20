@@ -11,6 +11,7 @@ import waterworks from '../img/waterworks.jpg'
 import arrowDark from '../img/icon-arrow-dark.png'
 import { gsap, Power1, Power3, Power4 } from 'gsap';
 
+
 const Navbar = class extends React.Component {
 
     constructor(props) {
@@ -63,7 +64,16 @@ const Navbar = class extends React.Component {
                             className={`c-navbar__search`}
                         >
                             <img src={search} alt="Search" style={{ width: '25px' }} />
-                        </button> */}
+                        </div> */}
+                        <div className="c-navbar__contrast">
+                            <label htmlFor="contrast">Contrast</label>
+                            <input
+                                id="contrast"
+                                className="c-navbar__contrast__checkbox"
+                                checked={this.props.highContrast}
+                                type="checkbox"
+                                onChange={this.props.toggleContrast} />
+                        </div>
                         <button
                             className={`c-navbar__burger action--menu ${navbarActiveClass}`}
                             data-target="navMenu"

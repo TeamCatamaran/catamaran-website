@@ -101,3 +101,21 @@ body.-orange {
         }
     }
 }
+
+body.-contrast {
+    .c-breakdown {
+        h3 {
+            color: $grey-darkest !important;
+        }
+
+        &__item {
+            label {
+                color: $grey-darkest !important;
+            }
+
+            p {
+                color: $grey-darkest !important;
+            }
+        }
+    }
+}

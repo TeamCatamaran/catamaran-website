@@ -341,3 +341,32 @@ body.-orange {
         fill: $orange
     }
 }
+
+body.-contrast {
+    .c-testimonials__count {
+        color: $grey-darkest !important;
+    }
+    .c-testimonials__count__current {
+        color: $grey-darkest !important;
+    }
+    .c-testimonials__quote__name {
+        color: $grey-darkest !important;
+
+        @include respond-to("tablet") {
+            color: $white !important;
+        }
+    }
+    .c-testimonials__quote__title {
+        color: $grey-darkest !important;
+
+        @include respond-to("tablet") {
+            color: $white !important;
+        }
+    }
+    .c-testimonials__controls__button {
+        background-color: $grey-darkest !important;
+    }
+    .c-testimonials__controls__zebra__svg path {
+        fill: $grey-darkest !important;
+    }
+}

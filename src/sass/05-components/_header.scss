@@ -726,3 +726,15 @@ body.-dark {
         }
     }
 }
+
+body.-contrast {
+    .c-header {
+        h1 {
+            color: $grey-darkest !important;
+        }
+
+        label.-large {
+            color: $grey-darkest !important;
+        }
+    }
+}

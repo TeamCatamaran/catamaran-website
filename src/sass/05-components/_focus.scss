@@ -44,7 +44,7 @@
             color: $grey-light;
             font-size: 20px;
             line-height: 30px;
-            margin: 14px 0 30px;
+            margin: 14px 0 36px;
             transition: all 0.2s;
 
             @include respond-to("tablet") {
@@ -57,6 +57,7 @@
         @include grid-column(6);
         position: relative;
         z-index: 2;
+        overflow: hidden;
 
         &:hover {
             label.-large {
@@ -87,6 +88,7 @@
         img {
             transition: all 0.5s;
             width: 100%;
+            display: block;
 
             &.-hover {
                 opacity: 0;
@@ -161,6 +163,53 @@ body.-purple {
                 @include respond-to("tablet") {
                     color: $white;
                 }
+            }
+        }
+    }
+}
+
+body.-contrast {
+    .c-focus {
+        &__content {
+            p {
+                color: $grey-darkest !important;
+
+                @include respond-to("tablet") {
+                    color: $white !important;
+                }
+            }
+        }
+
+        &__item:not(:hover) {
+            label.-large {
+                color: $grey-darkest !important;
+
+                @include respond-to("tablet") {
+                    color: $white !important;
+                }
+            }
+
+            img.-hover {
+                @include respond-to("tablet") {
+                    opacity: .5 !important;
+                }
+            }
+
+            @include respond-to("tablet") {
+                background-color: $grey-darkest !important;
+                margin-bottom: 5px;
+            }
+        }
+
+        &__item:hover {
+            background-color: $grey-darkest !important;
+
+            p {
+                color: $white !important;
+            }
+
+            img.-hover {
+                opacity: .5 !important;
             }
         }
     }

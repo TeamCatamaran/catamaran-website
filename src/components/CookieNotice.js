@@ -41,7 +41,7 @@ const CookieNotice = class extends React.Component {
                 </div>
                 <div className="c-gdpr__actions">
                     <button className="c-gdpr__action__accept c-button -outline" onClick={this._handleAcceptNoticeClick}>
-                        Accept
+                        Got It
                     </button>
                 </div>
             </div>

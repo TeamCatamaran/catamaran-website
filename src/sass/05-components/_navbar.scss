@@ -12,8 +12,86 @@
         padding: 36px 36px 20px;
     }
 
-    &__menu {
+    &__contrast {
+        position: relative;
+        display: inline-block;
+        padding: 36px 36px 20px 68px;
 
+        @include respond-to("tablet") {
+            padding: 36px 36px 20px 36px;
+        }
+
+        label {
+            text-transform: uppercase;
+            letter-spacing: .2em;
+            margin-right: 10px;
+            position: relative;
+            bottom: 5px;
+            cursor: pointer;
+            @include font-style(
+                $font-accent,                     // Font Family
+                $size-4,                          // Font Size
+                $grey,                            // Font Color
+                $weight-bold,                 // Font Weight
+                $size-4                         // Line Height
+            );
+
+            @include respond-to("tablet") {
+                display: none;
+            }
+        }
+
+        &__checkbox {
+            position: absolute;
+            top: -500px;
+            cursor: pointer;
+
+            &::before {
+                position: absolute;
+                top: 529px;
+                width: 45px;
+                border-radius: 12px;
+                content: "";
+                border: 2.5px solid $grey;
+                height: 24px;
+                transition: all .16s ease-in-out;
+
+                @include respond-to("tablet") {
+                    top: 532px;
+                }
+            }
+
+            &::after {
+                content: "";
+                background-color: $grey;
+                position: absolute;
+                top: 534px;
+                left: 5px;
+                height: 14px;
+                width: 14px;
+                border-radius: 7px;
+                transition: all .16s ease-in-out;
+
+                @include respond-to("tablet") {
+                    top: 537px;
+                }
+            }
+
+            &:checked {
+                &::before {
+                    border-color: $black;
+                    background-color: $black;
+                }
+
+                &::after {
+                    left: 25px;
+                    background-color: $white;
+                }
+            }
+        }
+    }
+
+    &__menu {
         &__close {
             display: block;
             background: none;
@@ -170,9 +248,17 @@
     &__navigation {
         float: right;
 
+        @include respond-to("tablet") {
+            margin-top: 4px;
+        }
+
         & > button {
             display: inline-block;
-            padding: 36px 36px 20px;
+            padding: 36px 36px 20px 68px;
+
+            @include respond-to("tablet") {
+                padding: 36px 36px 20px 36px;
+            }
         }
     }
 }
