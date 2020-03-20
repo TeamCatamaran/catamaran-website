@@ -12,7 +12,7 @@ const Header = ({
             <HeaderCollage
                 type={collageType} />
             <div className="container">
-                <div className="c-header__text" data-aos="fade-up" data-aos-duration="1500" >
+                <div className="c-header__text" data-aos={collageType === "404" ? "" : "fade-up"} data-aos-duration="1500" >
                     <label className="-large">{section}</label>
                     <h1>{heading}</h1>
                 </div>

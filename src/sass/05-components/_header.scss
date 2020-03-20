@@ -427,7 +427,12 @@
         }
 
         &.-notFound {
-            .fourfour-layer-one {
+            @include grid-column(10);
+            @include grid-push(1);
+            position: relative;
+            height: auto;
+
+            .notFound-layer-one {
                 z-index: 1;
                 position: relative;
                 width: 70%;
@@ -437,64 +442,64 @@
                 display: inline-block;
             }
 
-            .fourfour-layer-two {
+            .notFound-layer-two {
                 z-index: 2;
                 position: absolute;
                 width: 60%;
                 margin-left: 20%;
                 margin-right: 20%;
-                -webkit-animation: fourfour-floating 3s ease-in-out infinite alternate-reverse both;
-                animation: fourfour-floating 3s ease-in-out infinite alternate-reverse both;
+                -webkit-animation: notFound-floating 3s ease-in-out infinite alternate-reverse both;
+                animation: notFound-floating 3s ease-in-out infinite alternate-reverse both;
             }
 
-            @-webkit-keyframes fourfour-floating {
+            @-webkit-keyframes notFound-floating {
                 from { transform: translate(0,  0px); }
                 65%  { transform: translate(0, 15px); }
                 to   { transform: translate(0, -0px); }
             }
 
-            @keyframes fourfour-floating {
+            @keyframes notFound-floating {
                 from { transform: translate(0,  0px); }
                 65%  { transform: translate(0, 15px); }
                 to   { transform: translate(0, -0px); }
             }
 
-            .fourfour-layer-three {
+            .notFound-layer-three {
                 z-index: 3;
                 position: absolute;
                 width: 188px;
-                right: 320px;
-                -webkit-animation: fourfour-rotation 3s ease-in-out infinite alternate-reverse both;
-                animation: fourfour-rotation 3s ease-in-out infinite alternate-reverse both;
+                right: 220px;
+                -webkit-animation: notFound-rotation 3s ease-in-out infinite alternate-reverse both;
+                animation: notFound-rotation 3s ease-in-out infinite alternate-reverse both;
             }
 
-            @-webkit-keyframes fourfour-rotation {
+            @-webkit-keyframes notFound-rotation {
                 from { transform: rotate(0deg); }
                 to { transform: rotate(359deg); }
             }
 
-            @keyframes fourfour-rotation {
+            @keyframes notFound-rotation {
                 from { transform: rotate(0deg); }
                 to { transform: rotate(359deg); }
             }
 
-            .fourfour-layer-four {
+            .notFound-layer-four {
                 z-index: 4;
                 position: absolute;
                 width: 60%;
-                top: 210px;
+                top: 100px;
                 margin-left: 20%;
                 margin-right: 20%;
-                -webkit-animation: fourfour-wave 3s ease-in-out infinite alternate-reverse both;
-                        animation: fourfour-wave 3s ease-in-out infinite alternate-reverse both;
+                -webkit-animation: notFound-wave 3s ease-in-out infinite alternate-reverse both;
+                        animation: notFound-wave 3s ease-in-out infinite alternate-reverse both;
             }
 
-            @-webkit-keyframes fourfour-wave {
+            @-webkit-keyframes notFound-wave {
                 0% { transform: translateX(-100); }
                 100% { transform: translateX(50px); }
             }
 
-            @keyframes fourfour-wave {
+            @keyframes notFound-wave {
                 0% { transform: translateX(-100); }
                 100% { transform: translateX(50px); }
             }
