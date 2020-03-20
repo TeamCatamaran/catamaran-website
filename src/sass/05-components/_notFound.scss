@@ -1,0 +1,12 @@
+.c-notFound {
+
+    &__textLand {
+        @include font-style(
+            $font-normal,                     // Font Family
+            $size-3,                          // Font Size
+            $purple,                            // Font Color
+            $weight-semibold,                    // Font Weight
+            $height-label
+        )
+    }
+}
