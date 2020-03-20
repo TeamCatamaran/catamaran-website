@@ -11,14 +11,18 @@ const CookieNotice = class extends React.Component {
         super(props)
 
         this.state = {
-            acceptGdpr: this._getPreferences().acceptGdpr,
+            acceptGdpr: null,
         }
-
-        console.log(this._getPreferences())
 
         this._getPreferences = this._getPreferences.bind(this)
         this._handleAcceptNoticeClick = this._handleAcceptNoticeClick.bind(this)
         this._handleRejectNoticeClick = this._handleRejectNoticeClick.bind(this)
+    }
+
+    componentDidMount() {
+        this.setState({
+            acceptGdpr: this._getPreferences().acceptGdpr
+        })
     }
 
     render() {
