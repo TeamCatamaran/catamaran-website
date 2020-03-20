@@ -2,6 +2,7 @@ import React from 'react'
 import { Helmet } from 'react-helmet'
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
+import CookieNotice from '../components/CookieNotice'
 import '../sass/app.scss'
 import { withPrefix } from 'gatsby'
 import AOS from 'aos';
@@ -70,6 +71,7 @@ const TemplateWrapper = class extends React.Component {
                 <main role="main">
                     {children}
                 </main>
+                <CookieNotice />
                 <Footer
                     hasShapes={footerHasShapes} />
             </div>

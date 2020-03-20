@@ -1,0 +1,66 @@
+.c-gdpr {
+    background-color: $grey-dark;
+    border-top: 1px solid $grey-lightest;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 68px;
+    padding: 15px 40px;
+    z-index: 500;
+
+    &__actions {
+        float: right;
+        padding: 5px 0;
+    }
+
+    &__action {
+        &__accept {
+            &.c-button.-outline {
+                padding: 6px 35px;
+            }
+        }
+
+        &__reject {
+            background: none;
+            border: none;
+            cursor: pointer;
+            outline: none;
+            margin-left: 40px;
+            width: 17px;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+    &__content {
+        display: inline-block;
+
+        .c-logo {
+            width: 27px;
+            margin-right: 40px;
+        }
+
+        &__text {
+            display: inline-block;
+            vertical-align: top;
+
+            a {
+                text-decoration: underline;
+
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+
+            a,
+            p {
+                color: $white;
+                font-size: 14px;
+                line-height: 16px;
+                text-transform: uppercase;
+            }
+        }
+    }
+}
