@@ -63,7 +63,6 @@ const Testimonials = class extends React.Component {
                         {
                             companies.map((c, key) => {
                                 let className = "c-testimonials__image";
-                                let image
                                 if (c.isSelected) {
                                     className += " -selected";
                                 }

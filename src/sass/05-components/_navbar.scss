@@ -1,6 +1,12 @@
 .c-navbar {
     background-color: $grey-lightest;
 
+    &__burger {
+        background: none;
+        border: none;
+        outline: none;
+    }
+
     &__logo {
         display: inline-block;
         padding: 36px 36px 20px;
@@ -9,6 +15,10 @@
     &__menu {
 
         &__close {
+            display: block;
+            background: none;
+            border: none;
+            outline: none;
             padding: 30px 35px;
             position: absolute;
             top: 0;
@@ -160,7 +170,7 @@
     &__navigation {
         float: right;
 
-        & > div {
+        & > button {
             display: inline-block;
             padding: 36px 36px 20px;
         }

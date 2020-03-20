@@ -1,9 +1,6 @@
 import React from 'react'
 
 const TypeformContact = class extends React.Component {
-    constructor(props) {
-        super(props)
-    }
 
     componentDidMount() {
         const script = document.getElementById('typeformScript');
@@ -24,6 +21,7 @@ const TypeformContact = class extends React.Component {
                                 className="typeform-share button"
                                 data-mode="drawer_right"
                                 target="_blank"
+                                rel="noopener noreferrer"
                                 href={`https://catamaran.typeform.com/to/${t.id}`}>
                                 {t.name}
                             </a>

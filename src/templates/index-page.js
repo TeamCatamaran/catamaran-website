@@ -15,10 +15,6 @@ import { types } from '../types/types';
 
 export const IndexPageTemplate = class extends React.Component {
 
-    constructor(props) {
-        super(props)
-    }
-
     componentDidMount() {
         AOS.init();
     }

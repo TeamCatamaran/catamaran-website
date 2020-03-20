@@ -9,10 +9,6 @@ import 'aos/dist/aos.css';
 
 const TemplateWrapper = class extends React.Component {
 
-    constructor(props) {
-        super(props)
-    }
-
     componentDidMount() {
         AOS.init();
     }

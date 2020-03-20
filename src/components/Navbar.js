@@ -59,17 +59,17 @@ const Navbar = class extends React.Component {
                         <Logo fill={isDark ? "#ffffff" : "#3e3d3f"} />
                     </Link>
                     <div className="c-navbar__navigation">
-                        {/* <div
+                        {/* <button
                             className={`c-navbar__search`}
                         >
                             <img src={search} alt="Search" style={{ width: '25px' }} />
-                        </div> */}
-                        <div
+                        </button> */}
+                        <button
                             className={`c-navbar__burger action--menu ${navbarActiveClass}`}
                             data-target="navMenu"
                             onClick={() => this.toggleMenu('open')}>
                             <img src={menu} alt="Menu" style={{ width: '25px' }} />
-                        </div>
+                        </button>
                     </div>
                     <div
                         id="navMenu"
@@ -154,7 +154,7 @@ const Navbar = class extends React.Component {
                                 }}></div>
                             </div>
                         </div>
-                        <div
+                        <button
                             className={`c-navbar__menu__close action--close ${navbarActiveClass}`}
                             data-target="navMenu"
                             onClick={() => this.toggleMenu('close')}>
@@ -162,7 +162,7 @@ const Navbar = class extends React.Component {
                                 src={close}
                                 alt="Close Menu action--close"
                                 style={{ width: '25px' }} />
-                        </div>
+                        </button>
                     </div>
                 </div>
             </nav>

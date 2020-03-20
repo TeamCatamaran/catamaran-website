@@ -1,7 +1,5 @@
 import React from 'react'
 
-import FluidImage from './FluidImage'
-
 import experimentsDonut from '../img/experiments-donut.png'
 import studioSpiral from '../img/spiral.png'
 import experimentsAbsorb from '../img/experiments-absorb.png'

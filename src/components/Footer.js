@@ -124,7 +124,7 @@ const Footer = class extends React.Component {
                         <SocialIcons className="c-footer__section -social" />
                         <div className="c-footer__section -family">
                             <p className="c-footer__family">
-                                part of the <a title="andculture family" href="https://andculture.com" target="_blank">andculture</a> family
+                                part of the <a title="andculture family" href="https://andculture.com" target="_blank" rel="noopener noreferrer">andculture</a> family
                             </p>
                         </div>
                         <div className="c-footer__section -copyright">
