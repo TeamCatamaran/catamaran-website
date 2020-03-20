@@ -16,7 +16,6 @@ const CookieNotice = class extends React.Component {
 
         this._getPreferences = this._getPreferences.bind(this)
         this._handleAcceptNoticeClick = this._handleAcceptNoticeClick.bind(this)
-        this._handleRejectNoticeClick = this._handleRejectNoticeClick.bind(this)
     }
 
     componentDidMount() {
@@ -44,9 +43,6 @@ const CookieNotice = class extends React.Component {
                     <button className="c-gdpr__action__accept c-button -outline" onClick={this._handleAcceptNoticeClick}>
                         Accept
                     </button>
-                    <button className="c-gdpr__action__reject" onClick={this._handleRejectNoticeClick}>
-                        <img src={iconClose} alt="Close" />
-                    </button>
                 </div>
             </div>
         )
@@ -67,14 +63,6 @@ const CookieNotice = class extends React.Component {
             acceptGdpr: true
         })
     }
-
-    _handleRejectNoticeClick(e) {
-        e.preventDefault()
-
-        window.history.back()
-    }
-
-
 }
 
 export default CookieNotice
