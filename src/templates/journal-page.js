@@ -38,6 +38,17 @@ export const JournalPageTemplate = class extends React.Component {
         }
         journals = journals.slice(0, this.state.count);
 
+        const activeCategories = [...new Set(this.props.journals.map((j) => j.category))].map((c) => {
+            return {
+                key: this.categories.indexOf(c),
+                category: c
+            }
+        })
+        activeCategories.unshift({
+            key: 0,
+            category: this.categories[0]
+        })
+
         const icons = {
             dots: dots,
             squares: squares,
@@ -53,15 +64,15 @@ export const JournalPageTemplate = class extends React.Component {
                 />
                 <div className="c-journal -category container">
                     <div className="c-journal__category__wrapper">
-                        {this.categories.map((c, key) => {
+                        {activeCategories.map((c) => {
                             return (
                                 <button
                                     className="c-journal__category"
-                                    key={`journal-category-${key}`}
-                                    onClick={(e) => this._handleCategoryClick(e, key)}>
+                                    key={`journal-category-${c.key}`}
+                                    onClick={(e) => this._handleCategoryClick(e, c.key)}>
                                     <span
-                                        className={`c-button -outline ${key === this.state.selectedCategory ? '' : '-deselected'}`}>
-                                        {c}
+                                        className={`c-button -outline ${c.key === this.state.selectedCategory ? '' : '-deselected'}`}>
+                                        {c.category}
                                     </span>
                                 </button>
                             )
@@ -75,8 +86,7 @@ export const JournalPageTemplate = class extends React.Component {
                             return (
                                 <li className="c-journal__post" key={`journal-post-${key}`}>
                                     <Link className="c-journal__post__link" to={b.url} rel={""}>
-                                        <FluidImage className="c-journal__post__asset" alt={b.image.alt} image={b.image.src} />
-                                        {/* <img src={icons[b.index.overlay]} alt="journal image overlay" /> */}
+                                        <FluidImage className="c-journal__post__asset" alt={b.index.image.alt} image={b.index.image.src} />
                                         <label>{b.category}</label>
                                         <h2>{b.index.title}</h2>
                                     </Link>
@@ -186,19 +196,18 @@ query JournalPage($id: String!) {
     edges {
       node {
         frontmatter {
-          image {
-            src {
-              childImageSharp {
-                fluid(maxWidth: 2048, quality: 100) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-            alt
-          }
           index {
             title
-            overlay
+            image {
+                src {
+                  childImageSharp {
+                    fluid(maxWidth: 2048, quality: 100) {
+                      ...GatsbyImageSharpFluid
+                    }
+                  }
+                }
+                alt
+              }
           }
           category
         }

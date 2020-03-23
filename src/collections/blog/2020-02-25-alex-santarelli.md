@@ -8,7 +8,9 @@ image:
   alt: ''
   src: /img/post-placeholder1.jpg
 index:
-  overlay: dots
+  image:
+    alt: ''
+    src: /img/post-placeholder1.jpg
   title: |-
     Alex Santarelli
     Co-Founder NoiseHub

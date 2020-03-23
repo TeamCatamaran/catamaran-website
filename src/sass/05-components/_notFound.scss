@@ -1,0 +1,43 @@
+.c-notFound {
+    .c-header {
+        height: auto;
+
+        .c-header__text {
+            @include grid-column(6);
+            @include grid-push(3);
+            margin-top: 0;
+            transform: none;
+            text-align: center;
+        }
+    }
+
+    .c-cta {
+        margin-top: 100px;
+        margin-bottom: 0px;
+
+        .c-cta__images{
+            display: none;
+        }
+    }
+
+    &__link {
+        @include grid-column(4);
+
+        .c-button {
+            color: $purple;
+            border-color: $purple;
+            padding: 8px 35px 8px 35px;
+        }
+
+        .c-label {
+            font-family: $font-accent;
+            letter-spacing: 2px;
+            color: $purple;
+            text-transform: uppercase;
+        }
+
+        p {
+            margin: 20px 0px 30px 0px;
+        }
+    }
+}

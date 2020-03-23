@@ -39,12 +39,13 @@
         }
     }
     &__map {
-        display: inline;
         position: relative;
         z-index: 10;
+
         img {
             width: 100%;
         }
+
         @include respond-to("phone") {
             visibility: hidden;
         }
@@ -63,7 +64,7 @@
         white-space: pre-line;
     }
 
-    p+p {
+    p + p {
         margin-top: 15px;
     }
 
