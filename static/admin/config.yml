@@ -2155,17 +2155,26 @@ collections:
             ],
         }
       - {
-          label: "Index Page",
+          label: "List Page",
           name: index,
           widget: object,
           fields:
             [
               { label: Title, name: title, widget: string },
               {
-                label: "Image Overlay",
-                name: overlay,
-                widget: select,
-                options: [waves, squares, dots],
+                label: Image,
+                name: image,
+                widget: object,
+                fields:
+                  [
+                    { label: Image, name: src, widget: image },
+                    {
+                      label: "Alt Text",
+                      name: alt,
+                      widget: string,
+                      required: false,
+                    },
+                  ],
               },
             ],
         }
