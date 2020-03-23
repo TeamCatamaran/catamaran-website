@@ -29,9 +29,9 @@ export const ContactPageTemplate = ({
                 section={section}
             />
             <div className="c-intro container">
-                <p className="-left">{intro}</p>
+                <p className="-left" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500">{intro}</p>
             </div>
-            <div className="c-contact container">
+            <div className="c-contact container" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500">
                 <TypeformContact
                     embed={embed}
                     heading={type.heading}
@@ -46,7 +46,7 @@ export const ContactPageTemplate = ({
             </div>
             {
                 map != null &&
-                <div className="c-location container">
+                <div className="c-location container" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500">
                     <img src={circleWave} alt="circle Wave" className="c-location__circleWave" />
                     <div className="c-location__map container-overflow">
                         <FluidImage
@@ -60,7 +60,7 @@ export const ContactPageTemplate = ({
 
                 </div>
             }
-            <div className="c-location container">
+            <div className="c-location container" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500">
                 <label className="c-location__heading">{locations.heading}</label>
                 {locations.addresses.map((l, key) => {
                     return (

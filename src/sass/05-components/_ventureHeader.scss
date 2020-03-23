@@ -116,3 +116,21 @@ body.-purple {
         }
     }
 }
+
+body.-contrast {
+    .c-ventureHeader {
+        &__company, &__timeframe {
+            color: $grey-darkest !important;
+        }
+
+        &__media__video {
+            background-color: $grey-darkest !important;
+            box-shadow: 0 0 24px 0 rgba(0,0,0,0.65);
+
+            &:hover {
+                bottom: 28px;
+                box-shadow: 0 3px 32px 0 rgba(0,0,0,0.5);
+            }
+        }
+    }
+}

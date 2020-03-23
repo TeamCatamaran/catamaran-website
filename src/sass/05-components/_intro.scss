@@ -42,7 +42,7 @@ body.-dark {
     }
 }
 
-body.-contrast {
+body.-contrast:not(.-dark) {
     .c-intro {
         p {
             color: $grey-darkest !important;

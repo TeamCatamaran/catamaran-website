@@ -35,23 +35,24 @@ const ProcessSlider = class extends React.Component {
 
         return (
             <div className={className}>
-                <div className="c-processSlider__fill container-overflow"></div>
+                <div className="c-processSlider__fill container-overflow" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500"></div>
                 <img
+                    data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500"
                     className="c-processSlider__triangledots"
                     alt="triangle dots"
                     src={triangleDots} />
-                <div className="c-processSlider__header">
+                <div className="c-processSlider__header" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500">
                     <h2 className="c-processSlider__header__title">{this.props.content.heading}</h2>
                     <p className="c-processSlider__header__intro">{this.props.content.intro}</p>
                 </div>
-                <div className="c-processSlider__content">
+                <div className="c-processSlider__content" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500">
                     <div className="c-processSlider__image">
                         <img
                             className="c-processSlider__image__asset"
                             alt="geometric design"
                             src={absorb} />
                     </div>
-                    <div className="c-processSlider__steps">
+                    <div className="c-processSlider__steps" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500">
                         <div className="c-processSlider__count">
                             <span className="c-processSlider__count__current">{(this.state.selectedIndex + 1).toString().padStart(2, '0')}</span> / {this.props.content.steps.length.toString().padStart(2, '0')}
                         </div>
@@ -77,17 +78,19 @@ const ProcessSlider = class extends React.Component {
                                 );
                             })
                         }
-                        <div className="c-processSlider__controls">
+                        <div className="c-processSlider__controls" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500">
                             <button onClick={this.prevSlide.bind(this)} className="c-processSlider__controls__button -prev">&#60;</button>
                             <button onClick={this.nextSlide.bind(this)} className="c-processSlider__controls__button -next">&#62;</button>
                         </div>
                     </div>
                 </div>
                 <img
+                    data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500"
                     className="c-processSlider__spiral"
                     alt="geometric design"
                     src={spiral} />
                 <img
+                    data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500"
                     className="c-processSlider__quartercircle"
                     alt="quarter circle"
                     src={quarterCircle} />

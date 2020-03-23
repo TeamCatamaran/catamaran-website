@@ -35,3 +35,11 @@
         }
     }
 }
+
+body.-contrast {
+    .c-upstartLogos {
+        &__heading {
+            color: $grey-darkest !important;
+        }
+    }
+}

@@ -65,7 +65,7 @@ export const StudioPageTemplate = ({
             <Tabs
                 activeTab={tab}
                 pages={pages} />
-            <div className="c-overview container">
+            <div className="c-overview container" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500">
                 <div className="c-overview__intro">
                     <p className="c-overview__intro__p">{overview.intro}</p>
                 </div>
@@ -82,7 +82,7 @@ export const StudioPageTemplate = ({
                     <div className="c-overview__details">
                         {overview.details.map((d) => {
                             return (
-                                <div className="c-overview__detail">
+                                <div className="c-overview__detail" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500">
                                     <label className="c-overview__detail__title">{d.heading}</label>
                                     <p className="c-overview__detail__description">{d.description}</p>
                                 </div>
@@ -94,7 +94,7 @@ export const StudioPageTemplate = ({
             {
                 photos != null &&
                 <div className="c-studioPhotos container">
-                    <div className="c-studioPhotos__photo1">
+                    <div className="c-studioPhotos__photo1" data-aos="fade-right" data-aos-duration="1500" data-aos-delay="500">
                         {
                             photos[0] != null &&
                             <FluidImage
@@ -102,7 +102,7 @@ export const StudioPageTemplate = ({
                                 image={photos[0].src} />
                         }
                     </div>
-                    <div className="c-studioPhotos__photo2">
+                    <div className="c-studioPhotos__photo2" data-aos="fade-left" data-aos-duration="1500" data-aos-delay="500">
                         {
                             photos[1] != null &&
                             <FluidImage
@@ -110,17 +110,17 @@ export const StudioPageTemplate = ({
                                 image={photos[1].src} />
                         }
                     </div>
-                    <div className="c-studioPhotos__element1">
+                    <div className="c-studioPhotos__element1" data-aos="fade-right" data-aos-duration="1500" data-aos-delay="500">
                         <img
                             alt={"abstract geometric design element"}
                             src={waves} />
                     </div>
-                    <div className="c-studioPhotos__element2">
+                    <div className="c-studioPhotos__element2" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500">
                         <img
                             alt={"abstract geometric design element"}
                             src={angles} />
                     </div>
-                    <div className="c-studioPhotos__element3">
+                    <div className="c-studioPhotos__element3" data-aos="fade-left" data-aos-duration="1500" data-aos-delay="500">
                         <img
                             alt={"abstract geometric design element"}
                             src={scribble} />
@@ -142,13 +142,13 @@ export const StudioPageTemplate = ({
                 services != null &&
                 <div className={`c-services container tab-${tab}`}>
                     <div className="c-services__header">
-                        <div className="c-services__header__wrapper">
+                        <div className="c-services__header__wrapper" data-aos="fade-right" data-aos-duration="1500" data-aos-delay="500">
                             <h2 className="c-services__heading">{services.heading}</h2>
                             <p className="c-services__intro">{services.intro}</p>
                         </div>
                         {
                             tab === "startup" &&
-                            <div className="c-services__header__images">
+                            <div className="c-services__header__images" data-aos="fade-left" data-aos-duration="1500" data-aos-delay="500">
                                 <img
                                     className="c-services__header__images__circlelines"
                                     alt="circlelines"
@@ -164,7 +164,7 @@ export const StudioPageTemplate = ({
                         {
                             services.list.map((i, key) => {
                                 return (
-                                    <div className="c-services__listItem" key={"listItem-" + key}>
+                                    <div className="c-services__listItem" key={"listItem-" + key} data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500">
                                         {
                                             i.heading != null &&
                                             <h3 className="c-services__listItem__heading">{i.heading}</h3>
@@ -184,6 +184,7 @@ export const StudioPageTemplate = ({
                         {
                             tab === "upstarts" &&
                             <img
+                                data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500"
                                 className="c-services__list__image"
                                 alt="diamonds"
                                 src={diamonds} />
@@ -193,7 +194,7 @@ export const StudioPageTemplate = ({
             }
             {
                 upstarts != null &&
-                <div className="c-upstartLogos container">
+                <div className="c-upstartLogos container" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500">
                     <h2 className="c-upstartLogos__heading">{upstarts.heading}</h2>
                     <div className="c-upstartLogos__list">
                         {

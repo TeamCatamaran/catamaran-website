@@ -266,5 +266,33 @@
 body.-dark {
     .c-navbar {
         background-color: $grey-background;
+
+        &__contrast {
+            label {
+                color: $grey-lightest;
+            }
+    
+            &__checkbox {
+                &::before {
+                    border-color: $grey-lightest;
+                }
+    
+                &::after {
+                    background-color: $grey-lightest;
+                }
+
+                &:checked {
+                    &::before {
+                        border-color: $white;
+                        background-color: $white;
+                    }
+    
+                    &::after {
+                        left: 25px;
+                        background-color: $grey-darkest;
+                    }
+                }
+            }
+        }
     }
 }

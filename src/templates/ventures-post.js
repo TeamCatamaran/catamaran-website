@@ -48,14 +48,14 @@ export const VenturesPostTemplate = ({
                     </div>
                 </div>
             </div>
-            <div className="c-intro container">
+            <div className="c-intro container" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500">
                 <p className="-left">{intro}</p>
             </div>
-            <div className="c-ventureProfile container">
+            <div className="c-ventureProfile container" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500">
                 <ul className="c-ventureProfile__participantsList">
                     {participants.map((p) => {
                         return (
-                            <li className="c-ventureProfile__participantsList__item">
+                            <li className="c-ventureProfile__participantsList__item" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500">
                                 <div className="c-ventureProfile__participant">
                                     <div className="c-ventureProfile__participant__photo">
                                         <FluidImage alt={p.image.alt || p.name} image={p.image.src} />
@@ -99,7 +99,7 @@ export const VenturesPostTemplate = ({
                         }
 
                         return (
-                            <li className="c-ventureProfile__linksList__item">
+                            <li className="c-ventureProfile__linksList__item" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500">
                                 <a className="c-ventureProfile__link" href={l.link.url} rel={l.link.rel} target="_blank">
                                     <img className="c-ventureProfile__link__icon" src={icon} alt="icon" />
                                     <p className="c-ventureProfile__link__text">{l.name}</p>

@@ -83,3 +83,18 @@ body.-green {
         }
     }
 }
+
+body.-contrast {
+    .c-examples {
+        &__header h2 {
+            color: $grey-darkest !important;
+        }
+        &__content {
+            label {
+                span {
+                    color: $grey-darkest !important;
+                }
+            }
+        }
+    }
+}
