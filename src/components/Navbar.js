@@ -136,13 +136,13 @@ const Navbar = class extends React.Component {
                                     <span className="-underline">Network</span>
                                 </Link>
                                 <span className="-divider">-</span>
-                                <Link className="c-navbar__menu__item" to="/faqs">
+                                <Link className="c-navbar__menu__item" to="/faq">
                                     <span className="-underline">FAQs</span>
                                 </Link>
-                                <span className="-divider">-</span>
+                                {/* <span className="-divider">-</span>
                                 <Link className="c-navbar__menu__item" to="/jobs">
                                     <span className="-underline">Jobs</span>
-                                </Link>
+                                </Link> */}
                                 <span className="-divider">-</span>
                                 <Link className="c-navbar__menu__item" to="/contact">
                                     <span className="-underline">Contact</span>
