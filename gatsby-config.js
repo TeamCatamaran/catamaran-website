@@ -94,9 +94,12 @@ module.exports = {
         dataLayer: {
           gaPropertyId: 'UA-110528549-1',
         },
+        tagmanager: {
+          id: 'GTM-T365VSD'
+        },
         analytics: {
           id: 'UA-110528549-1'
-        }
+        },
       }
     },
     {
