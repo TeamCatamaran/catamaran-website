@@ -112,3 +112,11 @@ body.-pink {
         }
     }
 }
+
+body.-contrast {
+    .c-leadership {
+        &__heading, &__description, &__member__name, &__member__title {
+            color: $grey-darkest !important;
+        }
+    }
+}

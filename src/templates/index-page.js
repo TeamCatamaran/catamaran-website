@@ -55,7 +55,7 @@ export const IndexPageTemplate = class extends React.Component {
                                     <div className="c-focus__content">
                                         <label className="-large">{f.title}</label>
                                         <p>{f.description}</p>
-                                        {
+                                      {
                                             f.link != null &&
                                             <div className="c-button">Lets Go</div>
                                         }

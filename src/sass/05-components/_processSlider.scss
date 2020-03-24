@@ -219,7 +219,7 @@
 
     &__controls {
         position: absolute;
-        bottom: 0;
+        bottom: -75px;
         height: 45px;
         display: flex;
         align-items: stretch;
@@ -359,5 +359,30 @@ body.-green {
     }
     .c-processSlider__step__title {
         color: $green;
+    }
+}
+
+body.-contrast {
+    .c-processSlider__fill {
+        background-color: $grey-darkest;
+    }
+    .c-processSlider__count__current {
+        color: $white !important;
+    }
+    .c-processSlider__quote__name {
+        color: $white !important;
+    }
+    .c-processSlider__controls__button {
+        color: $grey-darkest !important;
+        background-color: $white !important;
+    }
+    .c-processSlider__controls__zebra__svg path {
+        fill: $white !important;
+    }
+    .c-processSlider__header__title {
+        color: $white !important;
+    }
+    .c-processSlider__step__title {
+        color: $white !important;
     }
 }

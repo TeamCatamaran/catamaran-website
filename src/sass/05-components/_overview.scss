@@ -83,3 +83,15 @@
         }
     }
 }
+
+body.-contrast {
+    .c-overview {
+        &__detail__title {
+            color: $grey-darkest !important;
+        }
+
+        &__detail__description {
+            color: $grey-darkest !important;
+        }
+    }
+}

@@ -4,14 +4,28 @@ import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
 import CookieNotice from '../components/CookieNotice'
 import '../sass/app.scss'
+import { localStorageUtils } from '../utilities/localStorage';
 import { withPrefix } from 'gatsby'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 const TemplateWrapper = class extends React.Component {
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            highContrast: false
+        }
+
+        this._toggleContrast = this._toggleContrast.bind(this)
+    }
 
     componentDidMount() {
         AOS.init();
+
+        this.setState({
+            highContrast: localStorageUtils.getUserPreferences().highContrast,
+        })
     }
 
     render() {
@@ -27,7 +41,7 @@ const TemplateWrapper = class extends React.Component {
             <div>
                 <Helmet
                     bodyAttributes={{
-                        class: bodyClass
+                        class: `${bodyClass}${this.state.highContrast ? ' -contrast' : ''}`
                     }}>
                     <html lang="en" />
                     <title>{seo.title || title}</title>
@@ -67,7 +81,9 @@ const TemplateWrapper = class extends React.Component {
                     />
                 </Helmet>
                 <Navbar
-                    className={bodyClass} />
+                    className={bodyClass}
+                    highContrast={this.state.highContrast}
+                    toggleContrast={this._toggleContrast} />
                 <main role="main">
                     {children}
                 </main>
@@ -76,6 +92,13 @@ const TemplateWrapper = class extends React.Component {
                     hasShapes={footerHasShapes} />
             </div>
         )
+    }
+
+    _toggleContrast = () => {
+        const newState = !this.state.highContrast;
+
+        this.setState({ highContrast: newState });
+        localStorageUtils.saveUserPreferences({ highContrast: newState, })
     }
 }
 

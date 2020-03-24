@@ -177,3 +177,11 @@ body.-dark {
         background-color: $grey-background;
     }
 }
+
+body.-contrast {
+    .c-footer__menu.-secondary {
+        a {
+            color: $grey-lightest !important;
+        }
+    }
+}

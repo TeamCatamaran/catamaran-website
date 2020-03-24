@@ -31,18 +31,18 @@ export const AboutPageTemplate = ({
                 heading={heading}
                 section={section}
             />
-            <div className="c-intro container">
-                <p data-aos="fade-up">{intro}</p>
+            <div className="c-intro container" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500">
+                <p>{intro}</p>
             </div>
             <div className="c-mission container">
-                <div className="c-mission__leftCol">
+                <div className="c-mission__leftCol" data-aos="fade-right" data-aos-duration="1500" data-aos-delay="500">
                     <h2 className="c-mission__heading">{mission.heading}</h2>
                     <img
                         className="c-mission__image -default"
                         alt="todo"
                         src={aboutIntroCollage} />
                 </div>
-                <div className="c-mission__rightCol">
+                <div className="c-mission__rightCol" data-aos="fade-left" data-aos-duration="1500" data-aos-delay="500">
                     {mission.sections.map((s) => {
                         return (
                             <div className="c-mission__section">
@@ -55,9 +55,9 @@ export const AboutPageTemplate = ({
             </div>
             <div className="c-values container">
                 <div className="c-values__header">
-                    <h2 className="c-values__heading">{values.heading}</h2>
-                    <p className="c-values__description">{values.description}</p>
-                    <div className="c-values__image"> 
+                    <h2 className="c-values__heading" data-aos="fade-right" data-aos-duration="1500" data-aos-delay="500">{values.heading}</h2>
+                    <p className="c-values__description" data-aos="fade-right" data-aos-duration="1500" data-aos-delay="500">{values.description}</p>
+                    <div className="c-values__image" data-aos="fade-left" data-aos-duration="1500" data-aos-delay="500"> 
                         <img
                             className="c-values__image__asset"
                             alt={values.heading}
@@ -67,7 +67,7 @@ export const AboutPageTemplate = ({
                 {
                     values.values != null &&
                     <div className="c-values__list">
-                        <div className="c-values__list__container">
+                        <div className="c-values__list__container" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500">
                             {values.values.map((v) => {
                                 return (
                                     <div className="c-values__list__item">
@@ -82,9 +82,9 @@ export const AboutPageTemplate = ({
             </div>
             <div className="c-team container">
                 <div className="c-team__header">
-                    <h2 className="c-team__heading">{team.heading}</h2>
-                    <p className="c-team__description">{team.description}</p>
-                    <div className="c-team__topImage">
+                    <h2 className="c-team__heading" data-aos="fade-right" data-aos-duration="1500" data-aos-delay="500">{team.heading}</h2>
+                    <p className="c-team__description" data-aos="fade-right" data-aos-duration="1500" data-aos-delay="500">{team.description}</p>
+                    <div className="c-team__topImage" data-aos="fade-left" data-aos-duration="1500" data-aos-delay="500">
                         <img
                             className="c-team__topImage__asset"
                             alt={team.heading}
@@ -97,7 +97,7 @@ export const AboutPageTemplate = ({
                         {team.people.map((p) => {
                             let className = "c-team__member";
                             return (
-                                <div className={className}>
+                                <div className={className} data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500">
                                     {
                                         p.photo != null &&
                                         <FluidImage
@@ -119,8 +119,8 @@ export const AboutPageTemplate = ({
             </div>
             <div className="c-leadership container">
                 <div className="c-leadership__header">
-                    <h2 className="c-leadership__heading">{leadership.heading}</h2>
-                    <p className="c-leadership__description">{leadership.description}</p>
+                    <h2 className="c-leadership__heading" data-aos="fade-right" data-aos-duration="1500" data-aos-delay="500">{leadership.heading}</h2>
+                    <p className="c-leadership__description" data-aos="fade-right" data-aos-duration="1500" data-aos-delay="500">{leadership.description}</p>
                 </div>
                 {
                     leadership.people != null &&
@@ -128,7 +128,7 @@ export const AboutPageTemplate = ({
                         {leadership.people.map((p) => {
                             let className = "c-leadership__member";
                             return (
-                                <div className={className}>
+                                <div className={className} data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500">
                                     {
                                         p.photo != null &&
                                         <FluidImage

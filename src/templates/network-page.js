@@ -36,7 +36,7 @@ export const NetworkPageTemplate = ({
                 heading={heading}
                 section={section}
             />
-            <div className="c-intro container">
+            <div className="c-intro container" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500">
                 <p className="c-intro__network">{intro}</p>
             </div>
             <div className="c-partners container">
@@ -47,6 +47,7 @@ export const NetworkPageTemplate = ({
                         }
                         return (
                             <a
+                                data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500"
                                 className="c-partners__logos__item"
                                 key={"logoPartner-" + key}
                                 href={p.link.url}
@@ -64,7 +65,7 @@ export const NetworkPageTemplate = ({
                         );
                     })}
                 </div>
-                <div className="c-partners__list">
+                <div className="c-partners__list" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500">
                     <div className="c-partners__list__section">
                         <h4 className="c-partners__list__section__heading">Coworking</h4>
                         <ul className="c-partners__list__section__list">

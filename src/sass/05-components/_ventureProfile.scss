@@ -121,3 +121,11 @@
         }
     }
 }
+
+body.-contrast {
+    .c-ventureProfile {
+        &__participant__name, &__participant__title {
+            color: $grey-darkest !important;
+        }
+    }
+}

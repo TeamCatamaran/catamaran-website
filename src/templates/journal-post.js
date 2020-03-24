@@ -21,7 +21,7 @@ export const JournalPostTemplate = ({
 
     return (
         <section className="c-journal container">
-            <header className='c-header -journal'>
+            <header className='c-header -journal' data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500">
                 {
                     image != null &&
                     <div className="c-header__image">
@@ -36,10 +36,10 @@ export const JournalPostTemplate = ({
                     <label>{subheading}</label>
                 </div>
             </header>
-            <div className="c-intro">
+            <div className="c-intro" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500">
                 <p className="intro -left">{intro}</p>
             </div>
-            <div className="c-journal__content">
+            <div className="c-journal__content" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500">
                 <PostContent content={content} />
             </div>
         </section>

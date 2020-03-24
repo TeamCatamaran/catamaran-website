@@ -130,9 +130,17 @@ $heading-grid: (
 }
 
 body.-pink {
-    .c-values {
+    .c-team {
         &__heading, &__list__item label {
             color: $pink;
+        }
+    }
+}
+
+body.-contrast {
+    .c-team {
+        &__heading, &__description, &__member__name, &__member__title {
+            color: $grey-darkest !important;
         }
     }
 }

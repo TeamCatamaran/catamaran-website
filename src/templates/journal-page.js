@@ -84,7 +84,7 @@ export const JournalPageTemplate = class extends React.Component {
                     <ul className="c-journal -list container">
                         {journals.map((b, key) => {
                             return (
-                                <li className="c-journal__post" key={`journal-post-${key}`}>
+                                <li className="c-journal__post" key={`journal-post-${key}`} data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500">
                                     <Link className="c-journal__post__link" to={b.url} rel={""}>
                                         <FluidImage className="c-journal__post__asset" alt={b.index.image.alt} image={b.index.image.src} />
                                         <label>{b.category}</label>
@@ -97,7 +97,7 @@ export const JournalPageTemplate = class extends React.Component {
                 }
                 {
                     (journals == null || journals.length === 0) &&
-                    <div className="c-journal container">
+                    <div className="c-journal container" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500">
                         <p className="c-journal__post -no-results">
                             No Entries
                         </p>
@@ -105,7 +105,7 @@ export const JournalPageTemplate = class extends React.Component {
                 }
                 {
                     this.state.totalCount > this.state.count &&
-                    <div className="c-journal -more container">
+                    <div className="c-journal -more container" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500">
                         <button className="c-journal__more" onClick={this._handleSeeMoreClick}>
                             <span className="c-button -outline">See More</span>
                         </button>

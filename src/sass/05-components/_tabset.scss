@@ -159,3 +159,15 @@ body.-green {
         background-color: $green;
     }
 }
+
+body.-contrast {
+    .c-tabset {
+        &__tab {
+            color: $grey-darkest !important;
+
+            &.-active::after {
+                background-color: $grey-darkest !important;
+            }
+        }
+    }
+}

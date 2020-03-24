@@ -46,10 +46,10 @@ export const ExperimentsPageTemplate = ({
                 activeTab={tab}
                 pages={pages} />
             <div className="c-overview container">
-                <div className="c-overview__intro">
+                <div className="c-overview__intro" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500">
                     <p className="c-overview__intro__p">{overview.intro}</p>
                 </div>
-                <div className="c-overview__row">
+                <div className="c-overview__row" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500">
                     <div className="c-overview__row__col">
                         <p>{overview.leftContent}</p>
                     </div>
@@ -68,13 +68,13 @@ export const ExperimentsPageTemplate = ({
             {
                 examples != null &&
                 <div className="c-examples container">
-                    <div className="c-examples__header">
+                    <div className="c-examples__header" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500">
                         <h2>{examples.heading}</h2>
                         <p>{examples.intro}</p>
                     </div>
                     {examples.steps.map((s, key) => {
                         return (
-                            <div className="c-examples__item" key={`experiments-${key}`}>
+                            <div className="c-examples__item" key={`experiments-${key}`} data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500">
                                 <FluidImage alt={s.image.alt || s.heading} image={s.image.src} />
                                 <div className="c-examples__content">
                                     <label>

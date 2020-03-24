@@ -41,3 +41,11 @@ body.-dark {
         }
     }
 }
+
+body.-contrast:not(.-dark) {
+    .c-intro {
+        p {
+            color: $grey-darkest !important;
+        }
+    }
+}

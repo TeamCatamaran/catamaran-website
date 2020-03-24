@@ -720,14 +720,26 @@ body.-green {
 
 body.-dark {
     .c-header {
-        background-color: $grey-background;
+    background-color: $grey-background;
 
         h1 {
             color: $white;
         }
 
-        label.-large {
-            color: $grey-lightest;
+        label {
+            color: $grey-lightest !important;
+        }
+    }
+}
+
+body.-contrast:not(.-dark) {
+    .c-header {
+        h1 {
+            color: $grey-darkest !important;
+        }
+
+        label {
+            color: $grey-darkest !important;
         }
     }
 }

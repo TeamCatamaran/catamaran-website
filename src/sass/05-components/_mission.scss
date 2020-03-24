@@ -1,6 +1,8 @@
 
 
 .c-mission {
+    margin-top: 100px;
+
     &__leftCol {
         @include grid-column(6);
 
@@ -80,8 +82,16 @@
 
 body.-pink {
     .c-mission {
-        &__heading, &__title {
+        &__heading, &__section__title {
             color: $pink;
+        }
+    }
+}
+
+body.-contrast {
+    .c-mission {
+        &__heading, &__section__title, p {
+            color: $grey-darkest !important;
         }
     }
 }

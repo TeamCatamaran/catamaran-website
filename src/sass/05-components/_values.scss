@@ -111,3 +111,11 @@ body.-pink {
         }
     }
 }
+
+body.-contrast {
+    .c-values {
+        &__heading, &__list__item label, p {
+            color: $grey-darkest !important;
+        }
+    }
+}
