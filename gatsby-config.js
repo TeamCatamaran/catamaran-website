@@ -100,6 +100,7 @@ module.exports = {
         analytics: {
           id: 'UA-110528549-1'
         },
+        includeInDevelopment: true,
       }
     },
     {
