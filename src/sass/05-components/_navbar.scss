@@ -16,14 +16,13 @@
         }
     }
 
-    &__contrast {
-        position: relative;
+    &__item {
         display: inline-block;
-        padding: 36px 36px 20px 68px;
+        padding: 30px 36px 20px 68px;
         vertical-align: top;
 
         @include respond-to("tablet") {
-            padding: 32px 36px;
+            padding: 20px;
         }
 
         label {
@@ -45,6 +44,15 @@
                 display: none;
             }
         }
+    }
+
+    &__contrast {
+        position: relative;
+        padding-top: 38px;
+
+        @include respond-to("tablet") {
+            padding: 32px 36px;
+        }
 
         &__checkbox {
             position: absolute;
@@ -53,7 +61,7 @@
 
             &::before {
                 position: absolute;
-                top: 529px;
+                top: 531px;
                 width: 45px;
                 border-radius: 12px;
                 content: "";
@@ -70,7 +78,7 @@
                 content: "";
                 background-color: $grey;
                 position: absolute;
-                top: 534px;
+                top: 536px;
                 left: 5px;
                 height: 14px;
                 width: 14px;
@@ -255,16 +263,6 @@
 
         @include respond-to("tablet") {
             margin-top: 4px;
-        }
-
-        & > button {
-            display: inline-block;
-            padding: 36px 36px 20px 68px;
-            vertical-align: top;
-
-            @include respond-to("tablet") {
-                padding: 20px;
-            }
         }
     }
 }

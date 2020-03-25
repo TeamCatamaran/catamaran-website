@@ -62,7 +62,7 @@ const Navbar = class extends React.Component {
                         >
                             <img src={search} alt="Search" style={{ width: '25px' }} />
                         </div> */}
-                        <div className="c-navbar__contrast">
+                        <div className="c-navbar__contrast c-navbar__item">
                             <label htmlFor="contrast">Contrast</label>
                             <input
                                 id="contrast"
@@ -71,12 +71,16 @@ const Navbar = class extends React.Component {
                                 type="checkbox"
                                 onChange={this.props.toggleContrast} />
                         </div>
-                        <button
-                            className={`c-navbar__burger action--menu ${navbarActiveClass}`}
-                            data-target="navMenu"
-                            onClick={() => this.toggleMenu('open')}>
-                            <img src={menu} alt="Menu" style={{ width: '25px' }} />
-                        </button>
+                        <div className="c-navbar__item">
+                            <label htmlFor="menu">Menu</label>
+                            <button
+                                id="menu"
+                                className={`c-navbar__burger action--menu ${navbarActiveClass}`}
+                                data-target="navMenu"
+                                onClick={() => this.toggleMenu('open')}>
+                                <img src={menu} alt="Menu" style={{ width: '25px' }} />
+                            </button>
+                        </div>
                     </div>
                     <div
                         id="navMenu"
