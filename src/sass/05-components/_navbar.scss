@@ -10,15 +10,20 @@
     &__logo {
         display: inline-block;
         padding: 36px 36px 20px;
+
+        @include respond-to("tablet") {
+            padding: 15px 20px;
+        }
     }
 
     &__contrast {
         position: relative;
         display: inline-block;
         padding: 36px 36px 20px 68px;
+        vertical-align: top;
 
         @include respond-to("tablet") {
-            padding: 36px 36px 20px 36px;
+            padding: 32px 36px;
         }
 
         label {
@@ -57,7 +62,7 @@
                 transition: all .16s ease-in-out;
 
                 @include respond-to("tablet") {
-                    top: 532px;
+                    top: 520px;
                 }
             }
 
@@ -73,7 +78,7 @@
                 transition: all .16s ease-in-out;
 
                 @include respond-to("tablet") {
-                    top: 537px;
+                    top: 525px;
                 }
             }
 
@@ -255,9 +260,10 @@
         & > button {
             display: inline-block;
             padding: 36px 36px 20px 68px;
+            vertical-align: top;
 
             @include respond-to("tablet") {
-                padding: 36px 36px 20px 36px;
+                padding: 20px;
             }
         }
     }
@@ -271,12 +277,12 @@ body.-dark {
             label {
                 color: $grey-lightest;
             }
-    
+
             &__checkbox {
                 &::before {
                     border-color: $grey-lightest;
                 }
-    
+
                 &::after {
                     background-color: $grey-lightest;
                 }
@@ -286,7 +292,7 @@ body.-dark {
                         border-color: $white;
                         background-color: $white;
                     }
-    
+
                     &::after {
                         left: 25px;
                         background-color: $grey-darkest;
