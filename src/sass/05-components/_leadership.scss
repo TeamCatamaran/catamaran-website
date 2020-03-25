@@ -9,6 +9,7 @@ $heading-grid: (
 
     @include respond-to("tablet") {
         margin-bottom: 50px;
+        overflow-x: hidden;
     }
 
     &__header {
@@ -16,7 +17,7 @@ $heading-grid: (
         @include grid-column(12);
         @include grid-container;
     }
-    
+
 
     &__heading {
         @include font-style(

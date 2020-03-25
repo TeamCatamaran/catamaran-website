@@ -8,6 +8,10 @@
             margin-top: 0;
             transform: none;
             text-align: center;
+
+            @include respond-to("tablet") {
+                @include grid-column(12);
+            }
         }
     }
 
@@ -22,6 +26,15 @@
 
     &__link {
         @include grid-column(4);
+
+        @include respond-to("phone") {
+            @include grid-column(12);
+            margin-bottom: 40px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
 
         .c-button {
             color: $purple;

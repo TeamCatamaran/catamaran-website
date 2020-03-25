@@ -2,13 +2,13 @@
     margin-top: 200px;
 
     @include respond-to("tablet") {
+        margin-top: 100px;
+        overflow-x: hidden;
+        padding-top: 100px;
 
         &.tab-startup {
             background-color: $grey-lightest;
         }
-
-        margin-top: 100px;
-        padding-top: 100px;
     }
 
     &__header {
@@ -54,7 +54,7 @@
                     right: 55px;
                     z-index: 2;
                 }
-    
+
                 &__warpbox {
                     position: absolute;
                     top: 0;

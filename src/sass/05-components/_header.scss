@@ -49,10 +49,12 @@
 
     &__background {
         width: 50%;
-        height: 90vh;
+        height: 80vh;
         float: right;
         position: absolute;
-        overflow: hidden;
+        overflow-x: hidden;
+        overflow-y: visible;
+        pointer-events: none;
         right: 0;
 
         @include respond-to("phone") {
@@ -60,7 +62,6 @@
             width: 75vw;
             max-width: 500px;
             float: none;
-            overflow-y: visible;
         }
 
         &.-about {
@@ -170,6 +171,11 @@
                 width: 300px;
                 -webkit-animation: experiments-rotation 1.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite alternate-reverse both;
                 animation: experiments-rotation 1.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite alternate-reverse both;
+
+                @include respond-to("phone") {
+                    left: 56px;
+                    width: 200px;
+                }
             }
 
             @-webkit-keyframes experiments-rotation {
@@ -311,6 +317,11 @@
                 left: 20px;
                 -webkit-animation: journal-rotation 2.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite alternate-reverse both;
                 animation: journal-rotation 2.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite alternate-reverse both;
+
+                @include respond-to("tablet") {
+                    top: 145px;
+                    left: 90px;
+                }
             }
 
             @-webkit-keyframes journal-rotation {
@@ -432,6 +443,12 @@
             position: relative;
             height: auto;
 
+            @include respond-to("phone") {
+                width: 100%;
+                margin-left: 0;
+                padding-bottom: 60px;
+            }
+
             .notFound-layer-one {
                 z-index: 1;
                 position: relative;
@@ -471,6 +488,15 @@
                 right: 220px;
                 -webkit-animation: notFound-rotation 3s ease-in-out infinite alternate-reverse both;
                 animation: notFound-rotation 3s ease-in-out infinite alternate-reverse both;
+
+                @include respond-to("tablet") {
+                    right: 120px;
+                    width: 124px;
+                }
+                @include respond-to("phone") {
+                    right: 80px;
+                    width: 94px;
+                }
             }
 
             @-webkit-keyframes notFound-rotation {
@@ -649,6 +675,11 @@
         transform: translateY(50%);
         display:block;
         margin-top: 14%;
+        padding-right: 30px;
+
+        @include respond-to("tablet") {
+            padding-right: 0;
+        }
 
         @include respond-to("phone") {
             @include grid-column(12);

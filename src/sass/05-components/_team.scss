@@ -7,12 +7,16 @@ $heading-grid: (
     margin-top: 100px;
     margin-bottom: 150px;
 
+    @include respond-to("tablet") {
+        overflow: hidden;
+    }
+
     &__header {
         margin-bottom: 75px;
         @include grid-column(12);
         @include grid-container;
     }
-    
+
 
     &__heading {
         @include font-style(

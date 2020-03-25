@@ -16,6 +16,7 @@
         @include respond-to("tablet") {
             margin-left: 0;
             width: 100%;
+            overflow-x: hidden;
         }
     }
 }

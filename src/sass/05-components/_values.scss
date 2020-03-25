@@ -7,6 +7,10 @@ $values-grid: (
 .c-values {
     margin-top: 150px;
 
+    @include respond-to("tablet") {
+        overflow: hidden;
+    }
+
     &__header {
         @include grid-column(6);
 
@@ -89,7 +93,7 @@ $values-grid: (
                     $height-4                         // Line Height
                 );
             }
-    
+
             p {
                 @include font-style(
                     $font-normal,                     // Font Family
@@ -100,7 +104,7 @@ $values-grid: (
                 );
             }
         }
-        
+
     }
 }
 

@@ -49,11 +49,11 @@
     }
 
     &__wrapper {
+        @include grid-column(12);
         display: flex;
         flex-direction: row;
         height: 60px;
         align-items: stretch;
-        @include grid-column(12);
     }
 
     &__tab {
@@ -91,6 +91,10 @@
                 background-color: $purple;
             }
         }
+
+        &.-spacer {
+            display: none;
+        }
     }
 
     @include respond-to("tablet") {
@@ -109,6 +113,7 @@
             left: 0;
             background-image: linear-gradient(to right, rgba(244,243,237,1) 0, rgba(244,243,237,0) 100%);
             z-index: 2;
+            pointer-events: none;
         }
 
         &::after {
@@ -121,6 +126,7 @@
             right: 0;
             background-image: linear-gradient(to left, rgba(244,243,237,1) 0, rgba(244,243,237,0) 100%);
             z-index: 2;
+            pointer-events: none;
         }
 
         &__container {
@@ -132,7 +138,6 @@
             float: none;
             overflow: scroll;
             margin-left: 0;
-            padding-left: 20px;
         }
 
         &__tab {
@@ -141,6 +146,15 @@
 
             & + .c-tabset__tab {
                 margin-left: 70px;
+            }
+
+            &:first-child {
+                margin-left: 20px;
+            }
+
+            &.-spacer {
+                display: block;
+                margin-left: 20px;
             }
         }
 

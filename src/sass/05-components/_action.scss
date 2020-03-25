@@ -1,6 +1,10 @@
 .c-action {
     height: 410px;
 
+    @include respond-to("tablet") {
+        overflow-x: hidden;
+    }
+
     h2 {
         color: $grey;
         font-size: 48px;

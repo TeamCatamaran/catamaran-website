@@ -80,9 +80,9 @@ export const StudioPageTemplate = ({
                 {
                     overview.details != null && overview.details.length > 0 &&
                     <div className="c-overview__details">
-                        {overview.details.map((d) => {
+                        {overview.details.map((d, key) => {
                             return (
-                                <div className="c-overview__detail" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500">
+                                <div className="c-overview__detail" key={`overview-${key}`} data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500">
                                     <label className="c-overview__detail__title">{d.heading}</label>
                                     <p className="c-overview__detail__description">{d.description}</p>
                                 </div>

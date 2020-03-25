@@ -35,7 +35,7 @@ const CookieNotice = class extends React.Component {
                     <Logo fill="#ffffff" />
                     <div className="c-gdpr__content__text">
                         <p>
-                            This website uses cookies to ensure you<br />get the best experience. <Link to="/privacy" title="Our Privacy Policy">Privacy Policy</Link>
+                            This website uses cookies to ensure you get the best experience. <Link to="/privacy" title="Our Privacy Policy">Privacy Policy</Link>
                         </p>
                     </div>
                 </div>

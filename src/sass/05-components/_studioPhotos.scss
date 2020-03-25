@@ -5,6 +5,7 @@
 
     @include respond-to("tablet") {
         margin-top: 100px;
+        overflow-x: hidden;
         padding: 0;
     }
 

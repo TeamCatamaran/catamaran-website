@@ -3,6 +3,7 @@
 
     @include respond-to("tablet") {
         margin-bottom: 60px;
+        overflow: hidden;
     }
 
     &__content {

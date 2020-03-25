@@ -9,6 +9,7 @@
         margin-top: 0;
         margin-bottom: 0;
         height: 320px;
+        overflow-x: hidden;
 
         .c-studioOverview + & {
             margin-top: 100px;
@@ -35,7 +36,7 @@
 
     &__content {
         flex-grow: 1;
-        
+
         @include respond-to("tablet") {
 
             flex-grow: 0;
@@ -66,7 +67,7 @@
         text-transform: uppercase;
         letter-spacing: .15em;
         background-color: $orange;
-        
+
         &:hover {
             text-decoration: none;
         }
