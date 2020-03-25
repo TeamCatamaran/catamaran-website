@@ -27,9 +27,9 @@ export const VenturesPageTemplate = ({
             <ul className="c-ventures container">
                 {
                     ventures != null && ventures.length > 0 &&
-                    ventures.map((v) => {
+                    ventures.map((v, key) => {
                         return (
-                            <li className="c-ventures__venture" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500">
+                            <li className="c-ventures__venture" key={`ventures-${key}`} data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500">
                                 <Link className="c-ventures__venture__link" to={v.url} rel={""}>
                                     <FluidImage className="c-ventures__venture__asset" alt={v.image.alt} image={v.image.src} />
                                 </Link>
