@@ -168,12 +168,13 @@
                 z-index: 3;
                 position: absolute;
                 width: 300px;
+                left: 56px;
+                top: 56px;
                 -webkit-animation: experiments-rotation 1.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite alternate-reverse both;
                 animation: experiments-rotation 1.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite alternate-reverse both;
 
                 @include respond-to("phone") {
-                    left: 56px;
-                    width: 200px;
+                    width: 100px;
                 }
             }
 
@@ -190,11 +191,16 @@
             .experiments-layer-four {
                 z-index: 4;
                 position: absolute;
-                width: 48%;
-                top: 30px;
+                width: 45%;
+                top: 28px;
                 left: 170px;
                   -webkit-animation: experiments-wave 2s ease-in-out infinite alternate-reverse both;
                 animation: experiments-wave 2s ease-in-out infinite alternate-reverse both;
+
+                @include respond-to("phone") {
+                    left: 50px;
+                    top: 25px;
+                }
             }
 
             @-webkit-keyframes experiments-wave {
@@ -245,6 +251,17 @@
                 width: 217px;
                 -webkit-animation: home-rotation 8s infinite linear;
                 left: 120px;
+
+                @include respond-to("tablet") {
+                    width: 140px;
+                    left: 40px;
+                }
+
+                @include respond-to("phone") {
+                    width: 80px;
+                    left: 24px;
+                    top: 0;
+                }
             }
 
             @-webkit-keyframes home-rotation {
@@ -266,6 +283,11 @@
                 left: 60px;
                 -webkit-animation: home-bump 3s ease-in-out infinite alternate-reverse both;
                         animation: home-bump 3s ease-in-out infinite alternate-reverse both;
+
+                @include respond-to("phone") {
+                    top: 40px;
+                    left: 20px;
+                }
             }
 
             @-webkit-keyframes home-bump {
@@ -285,7 +307,6 @@
                 position: absolute;
                 height: 100%;
                 max-height: 800px;
-                top: -30px;
             }
 
             .journal-layer-two {
@@ -321,6 +342,12 @@
                     top: 145px;
                     left: 90px;
                 }
+
+                @include respond-to("phone") {
+                    top: 25px;
+                    width: 100px;
+                    left: 100px;
+                }
             }
 
             @-webkit-keyframes journal-rotation {
@@ -352,6 +379,11 @@
                 left: 90px;
                   -webkit-animation: journal-wave 2.5s ease-in-out infinite alternate-reverse both;
                   animation: journal-wave 2.5s ease-in-out infinite alternate-reverse both;
+
+                @include respond-to("phone") {
+                    top: 40px;
+                    left: 40px;
+                }
             }
 
             @-webkit-keyframes journal-wave {
@@ -379,6 +411,10 @@
                 width: 140%;
                 -webkit-animation: network-floating 3s ease-in-out infinite alternate-reverse both;
                 animation: network-floating 3s ease-in-out infinite alternate-reverse both;
+
+                @include respond-to("phone") {
+                    width: 120%;
+                }
             }
 
             @-webkit-keyframes network-floating {
@@ -401,6 +437,16 @@
                 left: 60px;
                 -webkit-animation: network-rotation 4s ease-in-out infinite alternate-reverse both;
                 animation: network-rotation 4s ease-in-out infinite alternate-reverse both;
+
+                @include respond-to("tablet") {
+                    top: 200px;
+                }
+
+                @include respond-to("phone") {
+                    top: 70px;
+                    width: 100px;
+                    left: 10px;
+                }
             }
 
             @-webkit-keyframes network-rotation {
@@ -423,6 +469,10 @@
                 left: 60px;
                   -webkit-animation: network-wave 2s ease-in-out infinite alternate-reverse both;
                 animation: network-wave 2s ease-in-out infinite alternate-reverse both;
+
+                @include respond-to("phone") {
+                    top: 70px;
+                }
             }
 
             @-webkit-keyframes network-wave {
@@ -564,6 +614,12 @@
                 width: 217px;
                 -webkit-animation: studio-rotation 3s ease-in-out infinite alternate-reverse both;
                 animation: studio-rotation 3s ease-in-out infinite alternate-reverse both;
+
+                @include respond-to("tablet") {
+                    width: 120px;
+                    top: 22px;
+                    left: 22px;
+                }
             }
 
             @-webkit-keyframes studio-rotation {
@@ -584,6 +640,11 @@
                 left: 40px;
                   -webkit-animation: studio-wave 2s ease-in-out infinite alternate-reverse both;
                   animation: studio-wave 2s ease-in-out infinite alternate-reverse both;
+
+                @include respond-to("phone") {
+                    top: 50px;
+                    left: 55px;
+                }
             }
 
             @-webkit-keyframes studio-wave {
@@ -611,6 +672,10 @@
                 width: 140%;
                 -webkit-animation: ventures-floating 3s ease-in-out infinite alternate-reverse both;
                 animation: ventures-floating 3s ease-in-out infinite alternate-reverse both;
+
+                @include respond-to("phone") {
+                    width: 120%;
+                }
             }
 
             @-webkit-keyframes ventures-floating {
@@ -633,6 +698,12 @@
                 left: 80px;
                 -webkit-animation: ventures-rotation 3s ease-in-out infinite alternate-reverse both;
                         animation: ventures-rotation 3s ease-in-out infinite alternate-reverse both;
+
+                @include respond-to("phone") {
+                    top: 80px;
+                    width: 100px;
+                    left: 30px;
+                }
             }
 
             @-webkit-keyframes ventures-rotation {
@@ -653,6 +724,14 @@
                 left: 210px;
                   -webkit-animation: ventures-wave 4s ease-in-out infinite alternate-reverse both;
                 animation: ventures-wave 4s ease-in-out infinite alternate-reverse both;
+
+                @include respond-to("phone") {
+                    left: auto;
+                    right: 70px;
+                    top: 0;
+                    width: auto;
+                    height: 76%;
+                }
             }
 
             @-webkit-keyframes ventures-wave {
