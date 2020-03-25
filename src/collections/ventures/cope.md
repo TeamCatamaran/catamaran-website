@@ -1,6 +1,6 @@
 ---
 templateKey: ventures-post
-company: Cope Mosiac
+title: Cope Mosiac
 heading: Changing how contractors connect
 timeframe: Fall 2018 / Catamaran Season 2
 image:

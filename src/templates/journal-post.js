@@ -67,9 +67,8 @@ const JournalPost = ({ data }) => {
             footerHasShapes={true}
             seo={post.frontmatter.seo}>
             <JournalPostTemplate
-                title={post.frontmatter.title}
                 category={post.frontmatter.category}
-                heading={post.frontmatter.heading}
+                heading={post.frontmatter.title}
                 subheading={post.frontmatter.subheading}
                 image={post.frontmatter.image}
                 intro={post.frontmatter.introduction}
@@ -96,7 +95,6 @@ export const pageQuery = graphql`
       frontmatter {
         title
         category
-        heading
         subheading
         image {
           src {

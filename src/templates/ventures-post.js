@@ -146,7 +146,7 @@ const VenturesPost = ({ data }) => {
             footerHasShapes={true}
             seo={frontmatter.seo}>
             <VenturesPostTemplate
-                company={frontmatter.company}
+                company={frontmatter.title}
                 heading={frontmatter.heading}
                 timeframe={frontmatter.timeframe}
                 image={frontmatter.image}
@@ -173,7 +173,7 @@ export const pageQuery = graphql`
       id
       html
       frontmatter {
-        company
+        title
         heading
         timeframe
         image {

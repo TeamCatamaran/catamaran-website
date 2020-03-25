@@ -2,7 +2,7 @@
 templateKey: journal-post
 date: 2020-02-25T21:01:44.125Z
 category: Startup Stories
-heading: Alex Santarelli
+title: Alex Santarelli
 subheading: CEO / Co-Founder Noisehub
 image:
   alt: ''

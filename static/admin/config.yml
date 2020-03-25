@@ -2142,7 +2142,7 @@ collections:
           widget: select,
           options: [Thoughts, "Startup Stories", Press, Sandbox, Events],
         }
-      - { label: Heading, name: heading, widget: string }
+      - { label: Heading, name: title, widget: string }
       - { label: Subheading, name: subheading, widget: string }
       - {
           label: Image,
@@ -2241,7 +2241,7 @@ collections:
           default: "ventures-post",
         }
       - { label: Publish Date, name: date, widget: datetime }
-      - { label: Company, name: company, widget: string }
+      - { label: Company, name: title, widget: string }
       - { label: Heading, name: heading, widget: string }
       - { label: Timeframe, name: timeframe, widget: string }
       - {
