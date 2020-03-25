@@ -7,11 +7,13 @@ const FAQPagePreview = ({ entry, widgetFor }) => {
 
     if (data) {
         return (
-            <FAQPageTemplate
-                section={data.section}
-                heading={data.heading}
-                faqs={data.faqs}
-            />
+            <div className="-editor">
+                <FAQPageTemplate
+                    section={data.section}
+                    heading={data.heading}
+                    faqs={data.faqs}
+                />
+            </div>
         )
     } else {
         return <div>Loading...</div>

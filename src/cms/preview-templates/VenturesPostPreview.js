@@ -7,16 +7,18 @@ const VenturesPostPreview = ({ entry, widgetFor }) => {
 
     if (data) {
         return (
-            <VenturesPostTemplate
-                company={data.company}
-                heading={data.heading}
-                timeframe={data.timeframe}
-                logo={data.logo}
-                video={data.video}
-                intro={data.intro}
-                participants={data.participants}
-                links={data.links}
-            />
+            <div className="-editor">
+                <VenturesPostTemplate
+                    company={data.company}
+                    heading={data.heading}
+                    timeframe={data.timeframe}
+                    logo={data.logo}
+                    video={data.video}
+                    intro={data.intro}
+                    participants={data.participants}
+                    links={data.links}
+                />
+            </div>
         )
     } else {
         return <div>Loading...</div>

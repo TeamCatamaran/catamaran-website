@@ -7,11 +7,13 @@ const VenturesPagePreview = ({ entry, widgetFor }) => {
 
     if (data) {
         return (
-            <VenturesPageTemplate
-                section={data.section}
-                heading={data.heading}
-                action={data.action}
-            />
+            <div className="-editor">
+                <VenturesPageTemplate
+                    section={data.section}
+                    heading={data.heading}
+                    action={data.action}
+                />
+            </div>
         )
     } else {
         return <div>Loading...</div>

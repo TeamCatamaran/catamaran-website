@@ -7,20 +7,22 @@ const StudioPagePreview = ({ entry, widgetFor }) => {
 
     if (data) {
         return (
-            <StudioPageTemplate
-                tab={data.tab}
-                section={data.section}
-                heading={data.heading}
-                overview={data.overview}
-                photos={data.photos}
-                how={data.how}
-                upstarts={data.upstarts}
-                criteria={data.criteria}
-                expect={data.expect}
-                testimonials={data.testimonials}
-                launch={data.launch}
-                action={data.action}
-            />
+            <div className="-editor">
+                <StudioPageTemplate
+                    tab={data.tab}
+                    section={data.section}
+                    heading={data.heading}
+                    overview={data.overview}
+                    photos={data.photos}
+                    how={data.how}
+                    upstarts={data.upstarts}
+                    criteria={data.criteria}
+                    expect={data.expect}
+                    testimonials={data.testimonials}
+                    launch={data.launch}
+                    action={data.action}
+                />
+            </div>
         )
     } else {
         return <div>Loading...</div>

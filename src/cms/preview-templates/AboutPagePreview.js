@@ -7,16 +7,18 @@ const AboutPagePreview = ({ entry, widgetFor }) => {
 
     if (data) {
         return (
-            <AboutPageTemplate
-                heading={data.heading}
-                section={data.section}
-                intro={data.intro}
-                image={data.image}
-                mission={data.mission}
-                values={data.values}
-                team={data.team}
-                action={data.action}
-            />
+            <div className="-editor">
+                <AboutPageTemplate
+                    heading={data.heading}
+                    section={data.section}
+                    intro={data.intro}
+                    image={data.image}
+                    mission={data.mission}
+                    values={data.values}
+                    team={data.team}
+                    action={data.action}
+                />
+            </div>
         )
     } else {
         return <div>Loading...</div>

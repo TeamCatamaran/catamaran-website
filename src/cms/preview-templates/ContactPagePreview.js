@@ -7,16 +7,18 @@ const ContactPagePreview = ({ entry, widgetFor }) => {
 
     if (data) {
         return (
-            <ContactPageTemplate
-                section={data.section}
-                heading={data.heading}
-                intro={data.intro}
-                type={data.type}
-                embed={data.embed}
-                social={data.social}
-                map={data.map}
-                locations={data.locations}
-            />
+            <div className="-editor">
+                <ContactPageTemplate
+                    section={data.section}
+                    heading={data.heading}
+                    intro={data.intro}
+                    type={data.type}
+                    embed={data.embed}
+                    social={data.social}
+                    map={data.map}
+                    locations={data.locations}
+                />
+            </div>
         )
     } else {
         return <div>Loading...</div>

@@ -7,12 +7,14 @@ const NetworkPagePreview = ({ entry, widgetFor }) => {
 
     if (data) {
         return (
-            <NetworkPageTemplate
-                heading={data.heading}
-                section={data.section}
-                intro={data.intro}
-                partners={data.partners || []}
-            />
+            <div className="-editor">
+                <NetworkPageTemplate
+                    heading={data.heading}
+                    section={data.section}
+                    intro={data.intro}
+                    partners={data.partners || []}
+                />
+            </div>
         )
     } else {
         return <div>Loading...</div>

@@ -7,14 +7,16 @@ const IndexPagePreview = ({ entry, getAsset }) => {
 
     if (data) {
         return (
-            <IndexPageTemplate
-                section={data.section}
-                heading={data.heading}
-                focus={data.focus || []}
-                intro={data.intro}
-                process={data.process || { steps: [] }}
-                testimonials={data.testimonials || []}
-            />
+            <div className="-editor">
+                <IndexPageTemplate
+                    section={data.section}
+                    heading={data.heading}
+                    focus={data.focus || []}
+                    intro={data.intro}
+                    process={data.process || { steps: [] }}
+                    testimonials={data.testimonials || []}
+                />
+            </div>
         )
     } else {
         return <div>Loading...</div>

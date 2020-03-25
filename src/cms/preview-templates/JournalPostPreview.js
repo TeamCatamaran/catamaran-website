@@ -7,15 +7,17 @@ const JournalPostPreview = ({ entry, widgetFor }) => {
 
     if (data) {
         return (
-            <JournalPostTemplate
-                title={data.title}
-                category={data.category}
-                heading={data.heading}
-                subheading={data.subheading}
-                image={data.image}
-                intro={data.introduction}
-                content={widgetFor('body')}
-            />
+            <div className="-editor">
+                <JournalPostTemplate
+                    title={data.title}
+                    category={data.category}
+                    heading={data.heading}
+                    subheading={data.subheading}
+                    image={data.image}
+                    intro={data.introduction}
+                    content={widgetFor('body')}
+                />
+            </div>
         )
     } else {
         return <div>Loading...</div>

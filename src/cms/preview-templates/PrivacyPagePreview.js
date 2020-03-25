@@ -7,12 +7,14 @@ const PrivacyPagePreview = ({ entry, widgetFor }) => {
 
     if (data) {
         return (
-            <PrivacyPageTemplate
-                section={data.section}
-                heading={data.heading}
-                intro={data.intro}
-                content={widgetFor('body')}
-            />
+            <div className="-editor">
+                <PrivacyPageTemplate
+                    section={data.section}
+                    heading={data.heading}
+                    intro={data.intro}
+                    content={widgetFor('body')}
+                />
+            </div>
         )
     } else {
         return <div>Loading...</div>

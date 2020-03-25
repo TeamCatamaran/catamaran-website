@@ -7,12 +7,14 @@ const JournalPagePreview = ({ entry, widgetFor }) => {
 
     if (data) {
         return (
-            <JournalPageTemplate
-                section={data.section}
-                heading={data.heading}
-                journals={[]}
-                action={data.action}
-            />
+            <div className="-editor">
+                <JournalPageTemplate
+                    section={data.section}
+                    heading={data.heading}
+                    journals={[]}
+                    action={data.action}
+                />
+            </div>
         )
     } else {
         return <div>Loading...</div>

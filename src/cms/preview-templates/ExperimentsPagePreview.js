@@ -7,16 +7,18 @@ const ExperimentsPagePreview = ({ entry, widgetFor }) => {
 
     if (data) {
         return (
-            <ExperimentsPageTemplate
-                tab={data.tab}
-                section={data.section}
-                heading={data.heading}
-                overview={data.overview}
-                process={data.process}
-                examples={data.examples}
-                launch={data.launch}
-                action={data.action}
-            />
+            <div className="-editor">
+                <ExperimentsPageTemplate
+                    tab={data.tab}
+                    section={data.section}
+                    heading={data.heading}
+                    overview={data.overview}
+                    process={data.process}
+                    examples={data.examples}
+                    launch={data.launch}
+                    action={data.action}
+                />
+            </div>
         )
     } else {
         return <div>Loading...</div>
