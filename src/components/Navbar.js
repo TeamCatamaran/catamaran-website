@@ -29,11 +29,8 @@ const Navbar = class extends React.Component {
         const DOM = {
             el: document.querySelector('.c-multibox'),
         };
-        // DOM.openCtrl = DOM.el.querySelector('.action--menu');
         DOM.closeCtrl = DOM.el.querySelector('.action--close');
         DOM.items = Array.from(DOM.el.querySelectorAll('.c-multibox__item'));
-        DOM.mainLinks = DOM.el.querySelectorAll('.c-multibox__item.-primary > a.c-navbar__menu__item');
-        DOM.sidemenuLinks = DOM.el.querySelectorAll('.c-multibox__item.-secondary > a.c-navbar__menu__item');
         DOM.menulink = DOM.el.querySelector('.menu__item-link');
 
         this.setState({
@@ -279,37 +276,6 @@ const Navbar = class extends React.Component {
                     opacity: this.state.isActive ? 1 : 0,
                     rotation: this.state.isActive ? 180 : 270
                 });
-                // gsap.to(this.state.DOM.openCtrl, {
-                //     duration: this.state.isActive ? 0.6 : 0.3,
-                //     delay: this.state.isActive ? 0 : 0.3,
-                //     ease: this.state.isActive ? Power4.easeOut : Power1.easeOut,
-                //     opacity: this.state.isActive ? 0 : 1
-                // });
-
-                // Main links animation.
-                gsap.to(this.state.DOM.mainLinks, {
-                    duration: this.state.isActive ? 0.9 : 0.2,
-                    ease: this.state.isActive ? Power4.easeOut : Power3.easeInOut,
-                    startAt: this.state.isActive ? { y: '50%', opacity: 0 } : null,
-                    y: this.state.isActive ? '0%' : '50%',
-                    opacity: this.state.isActive ? 1 : 0
-                }, this.state.isActive ? 0.1 : -0.1);
-
-                // Sidemenu links animation.
-                gsap.to(this.state.DOM.sidemenuLinks, {
-                    duration: this.state.isActive ? 0.5 : 0.2,
-                    ease: this.state.isActive ? Power4.easeInOut : Power3.easeInOut,
-                    startAt: this.state.isActive ? { y: '100%' } : null,
-                    y: this.state.isActive ? '0%' : '100%'
-                }, this.state.isActive ? 0.05 : -0.05);
-
-                // The "Learn how to participate" menu link.
-                // gsap.to(this.state.DOM.menulink, {
-                //     duration: this.state.isActive ? 0.9 : 0.6,
-                //     ease: this.state.isActive ? Power4.easeOut : Power3.easeInOut,
-                //     startAt: this.state.isActive ? { x: '10%' } : null,
-                //     x: this.state.isActive ? '0%' : '10%'
-                // });
             }
         )
     }
