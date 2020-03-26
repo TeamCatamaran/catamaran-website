@@ -48,28 +48,53 @@ const TemplateWrapper = class extends React.Component {
                     <meta name="description" content={seo.description || description} />
 
                     <link
-                        rel="apple-touch-icon"
-                        sizes="180x180"
-                        href={`${withPrefix('/')}img/apple-touch-icon.png`}
+                        rel="icon"
+                        type="image/png"
+                        href={`${withPrefix('/')}img/favicon/favicon-196.png`}
+                        sizes="196x196"
                     />
                     <link
                         rel="icon"
                         type="image/png"
-                        href={`${withPrefix('/')}img/favicon-32x32.png`}
+                        href={`${withPrefix('/')}img/favicon/favicon-192.png`}
+                        sizes="192x192"
+                    />
+                    <link
+                        rel="apple-touch-icon"
+                        sizes="180x180"
+                        href={`${withPrefix('/')}img/favicon/apple-touch-icon.png`}
+                    />
+                    <link
+                        rel="icon"
+                        type="image/png"
+                        href={`${withPrefix('/')}img/favicon/favicon-167.png`}
+                        sizes="167x167"
+                    />
+                    <link
+                        rel="icon"
+                        type="image/png"
+                        href={`${withPrefix('/')}img/favicon/favicon-152.png`}
+                        sizes="152x152"
+                    />
+                    <link
+                        rel="icon"
+                        type="image/png"
+                        href={`${withPrefix('/')}img/favicon/favicon-128.png`}
+                        sizes="128x128"
+                    />
+                    <link
+                        rel="icon"
+                        type="image/png"
+                        href={`${withPrefix('/')}img/favicon/favicon-32.png`}
                         sizes="32x32"
                     />
                     <link
                         rel="icon"
                         type="image/png"
-                        href={`${withPrefix('/')}img/favicon-16x16.png`}
+                        href={`${withPrefix('/')}img/favicon/favicon-16.png`}
                         sizes="16x16"
                     />
 
-                    <link
-                        rel="mask-icon"
-                        href={`${withPrefix('/')}img/safari-pinned-tab.svg`}
-                        color="#ff4400"
-                    />
                     <meta name="theme-color" content="#fff" />
 
                     <meta property="og:type" content={seo.ogType || "business.business"} />
