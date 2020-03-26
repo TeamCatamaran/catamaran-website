@@ -461,7 +461,7 @@ query StudioPage($id: String!) {
           image {
             src {
               childImageSharp {
-                fluid(maxWidth: 2048, quality: 100) {
+                fluid(maxWidth: 500, quality: 80) {
                   ...GatsbyImageSharpFluid
                 }
               }

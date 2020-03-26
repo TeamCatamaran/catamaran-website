@@ -14,167 +14,167 @@ import { types } from '../types/types';
 import Tabs from '../components/Tabs'
 
 export const ExperimentsPageTemplate = ({
-    tab,
-    section,
-    heading,
-    overview,
-    process,
-    examples,
-    launch,
-    action,
+  tab,
+  section,
+  heading,
+  overview,
+  process,
+  examples,
+  launch,
+  action,
 }) => {
-    const pages = [{
-        name: "lab",
-        label: "The Lab",
-        url: "experiments/lab",
-        rel: "",
-    }, {
-        name: "enterprise",
-        label: "Enterprise Innovation",
-        url: "experiments/enterprise",
-        rel: "",
-    }]
+  const pages = [{
+    name: "lab",
+    label: "The Lab",
+    url: "experiments/lab",
+    rel: "",
+  }, {
+    name: "enterprise",
+    label: "Enterprise Innovation",
+    url: "experiments/enterprise",
+    rel: "",
+  }]
 
-    return (
-        <div>
-            <Header
-                collageType="experiments"
-                heading={heading}
-                section={section}
-            />
-            <Tabs
-                activeTab={tab}
-                pages={pages} />
-            <div className="c-overview container">
-                <div className="c-overview__intro" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500">
-                    <p className="c-overview__intro__p">{overview.intro}</p>
-                </div>
-                <div className="c-overview__row" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500">
-                    <div className="c-overview__row__col">
-                        <p>{overview.leftContent}</p>
-                    </div>
-                    <div className="c-overview__row__col">
-                        <p>{overview.rightContent}</p>
-                    </div>
-                </div>
-            </div>
-            {
-                process != null &&
-                <ProcessSlider
-                    content={process}
-                    type='experiments'
-                    layout={tab} />
-            }
-            {
-                examples != null &&
-                <div className="c-examples container">
-                    <div className="c-examples__header" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500">
-                        <h2>{examples.heading}</h2>
-                        <p>{examples.intro}</p>
-                    </div>
-                    {examples.steps.map((s, key) => {
-                        return (
-                            <div className="c-examples__item" key={`experiments-${key}`} data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500">
-                                <FluidImage alt={s.image.alt || s.heading} image={s.image.src} />
-                                <div className="c-examples__content">
-                                    <label>
-                                        <span>{(key + 1).toString().padStart(2, '0')}</span> / {examples.steps.length.toString().padStart(2, '0')}
-                                    </label>
-                                    <p>
-                                        {s.content}<br />
-                                    </p>
-                                </div>
-                            </div>
-                        )
-                    })}
-                </div>
-            }
-            {
-                launch != null &&
-                <Cta
-                    content={launch} />
-            }
-            {
-                action != null &&
-                <ActionCallout
-                    heading={action.heading}
-                    pages={action.pages} />
-            }
+  return (
+    <div>
+      <Header
+        collageType="experiments"
+        heading={heading}
+        section={section}
+      />
+      <Tabs
+        activeTab={tab}
+        pages={pages} />
+      <div className="c-overview container">
+        <div className="c-overview__intro" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500">
+          <p className="c-overview__intro__p">{overview.intro}</p>
         </div>
-    )
+        <div className="c-overview__row" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500">
+          <div className="c-overview__row__col">
+            <p>{overview.leftContent}</p>
+          </div>
+          <div className="c-overview__row__col">
+            <p>{overview.rightContent}</p>
+          </div>
+        </div>
+      </div>
+      {
+        process != null &&
+        <ProcessSlider
+          content={process}
+          type='experiments'
+          layout={tab} />
+      }
+      {
+        examples != null &&
+        <div className="c-examples container">
+          <div className="c-examples__header" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500">
+            <h2>{examples.heading}</h2>
+            <p>{examples.intro}</p>
+          </div>
+          {examples.steps.map((s, key) => {
+            return (
+              <div className="c-examples__item" key={`experiments-${key}`} data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500">
+                <FluidImage alt={s.image.alt || s.heading} image={s.image.src} />
+                <div className="c-examples__content">
+                  <label>
+                    <span>{(key + 1).toString().padStart(2, '0')}</span> / {examples.steps.length.toString().padStart(2, '0')}
+                  </label>
+                  <p>
+                    {s.content}<br />
+                  </p>
+                </div>
+              </div>
+            )
+          })}
+        </div>
+      }
+      {
+        launch != null &&
+        <Cta
+          content={launch} />
+      }
+      {
+        action != null &&
+        <ActionCallout
+          heading={action.heading}
+          pages={action.pages} />
+      }
+    </div>
+  )
 }
 
 ExperimentsPageTemplate.propTypes = {
-    section: PropTypes.string,
+  section: PropTypes.string,
+  heading: PropTypes.string,
+  overview: PropTypes.shape({
+    intro: PropTypes.string,
+    leftContent: PropTypes.string,
+    rightContent: PropTypes.string,
+  }),
+  expect: PropTypes.shape({
     heading: PropTypes.string,
-    overview: PropTypes.shape({
-        intro: PropTypes.string,
-        leftContent: PropTypes.string,
-        rightContent: PropTypes.string,
-    }),
-    expect: PropTypes.shape({
+    intro: PropTypes.string,
+    steps: PropTypes.arrayOf(
+      PropTypes.shape({
         heading: PropTypes.string,
         intro: PropTypes.string,
-        steps: PropTypes.arrayOf(
-            PropTypes.shape({
-                heading: PropTypes.string,
-                intro: PropTypes.string,
-                description: PropTypes.string,
-            }),
-        ),
-    }),
-    examples: PropTypes.shape({
-        heading: PropTypes.string,
-        intro: PropTypes.string,
-        steps: PropTypes.arrayOf(
-            PropTypes.shape({
-                content: PropTypes.string,
-                image: types.imageProps,
-            }),
-        ),
-    }),
-    launch: PropTypes.shape({
+        description: PropTypes.string,
+      }),
+    ),
+  }),
+  examples: PropTypes.shape({
+    heading: PropTypes.string,
+    intro: PropTypes.string,
+    steps: PropTypes.arrayOf(
+      PropTypes.shape({
         content: PropTypes.string,
-        text: PropTypes.string,
+        image: types.imageProps,
+      }),
+    ),
+  }),
+  launch: PropTypes.shape({
+    content: PropTypes.string,
+    text: PropTypes.string,
+    link: types.linkProps,
+  }),
+  action: PropTypes.shape({
+    heading: PropTypes.string,
+    pages: PropTypes.arrayOf(
+      PropTypes.shape({
+        title: PropTypes.string,
+        description: PropTypes.string,
+        image: types.imageProps,
         link: types.linkProps,
-    }),
-    action: PropTypes.shape({
-        heading: PropTypes.string,
-        pages: PropTypes.arrayOf(
-            PropTypes.shape({
-                title: PropTypes.string,
-                description: PropTypes.string,
-                image: types.imageProps,
-                link: types.linkProps,
-            })
-        )
-    }),
-    seo: types.seoProps,
+      })
+    )
+  }),
+  seo: types.seoProps,
 }
 
 const ExperimentsPage = ({ data }) => {
-    const { frontmatter } = data.markdownRemark
+  const { frontmatter } = data.markdownRemark
 
-    return (
-        <Layout
-            bodyClass="-green"
-            seo={frontmatter.seo}>
-            <ExperimentsPageTemplate
-                tab={frontmatter.tab}
-                section={frontmatter.section}
-                heading={frontmatter.heading}
-                overview={frontmatter.overview}
-                process={frontmatter.process}
-                examples={frontmatter.examples}
-                launch={frontmatter.launch}
-                action={frontmatter.action}
-            />
-        </Layout>
-    )
+  return (
+    <Layout
+      bodyClass="-green"
+      seo={frontmatter.seo}>
+      <ExperimentsPageTemplate
+        tab={frontmatter.tab}
+        section={frontmatter.section}
+        heading={frontmatter.heading}
+        overview={frontmatter.overview}
+        process={frontmatter.process}
+        examples={frontmatter.examples}
+        launch={frontmatter.launch}
+        action={frontmatter.action}
+      />
+    </Layout>
+  )
 }
 
 ExperimentsPage.propTypes = {
-    data: PropTypes.object.isRequired,
+  data: PropTypes.object.isRequired,
 }
 
 export default ExperimentsPage;
@@ -209,7 +209,7 @@ query ExperimentsPage($id: String!) {
           image {
             src {
               childImageSharp {
-                fluid(maxWidth: 2048, quality: 100) {
+                fluid(maxWidth: 980, quality: 80) {
                   ...GatsbyImageSharpFluid
                 }
               }
@@ -234,7 +234,7 @@ query ExperimentsPage($id: String!) {
           image {
             src {
               childImageSharp {
-                fluid(maxWidth: 2048, quality: 100) {
+                fluid(maxWidth: 500, quality: 80) {
                   ...GatsbyImageSharpFluid
                 }
               }

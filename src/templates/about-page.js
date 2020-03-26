@@ -57,7 +57,7 @@ export const AboutPageTemplate = ({
                 <div className="c-values__header">
                     <h2 className="c-values__heading" data-aos="fade-right" data-aos-duration="1500" data-aos-delay="500">{values.heading}</h2>
                     <p className="c-values__description" data-aos="fade-right" data-aos-duration="1500" data-aos-delay="500">{values.description}</p>
-                    <div className="c-values__image" data-aos="fade-left" data-aos-duration="1500" data-aos-delay="500"> 
+                    <div className="c-values__image" data-aos="fade-left" data-aos-duration="1500" data-aos-delay="500">
                         <img
                             className="c-values__image__asset"
                             alt={values.heading}
@@ -272,7 +272,7 @@ export const aboutPageQuery = graphql`
             photo {
               src {
                 childImageSharp {
-                  fluid(maxWidth: 2048, quality: 100) {
+                  fluid(maxWidth: 480, quality: 80) {
                     ...GatsbyImageSharpFluid
                   }
                 }
@@ -290,7 +290,7 @@ export const aboutPageQuery = graphql`
               photo {
                 src {
                   childImageSharp {
-                    fluid(maxWidth: 2048, quality: 100) {
+                    fluid(maxWidth: 480, quality: 80) {
                       ...GatsbyImageSharpFluid
                     }
                   }
@@ -307,7 +307,7 @@ export const aboutPageQuery = graphql`
             image {
               src {
                 childImageSharp {
-                  fluid(maxWidth: 2048, quality: 100) {
+                  fluid(maxWidth: 500, quality: 80) {
                     ...GatsbyImageSharpFluid
                   }
                 }

@@ -87,7 +87,7 @@ query VenturesPage($id: String!) {
           image {
             src {
               childImageSharp {
-                fluid(maxWidth: 2048, quality: 100) {
+                fluid(maxWidth: 480, quality: 80) {
                   ...GatsbyImageSharpFluid
                 }
               }

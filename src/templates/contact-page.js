@@ -155,7 +155,7 @@ query ContactPage($id: String!) {
       map {
         src {
           childImageSharp {
-            fluid(maxWidth: 2048, quality: 100) {
+            fluid(maxWidth: 1800, quality: 70) {
               ...GatsbyImageSharpFluid
             }
           }

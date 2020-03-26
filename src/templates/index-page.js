@@ -156,7 +156,7 @@ export const pageQuery = graphql`
           image {
             src {
               childImageSharp {
-                fluid(maxWidth: 2048, quality: 100) {
+                fluid(maxWidth: 560, quality: 80) {
                   ...GatsbyImageSharpFluid
                 }
               }
@@ -166,7 +166,7 @@ export const pageQuery = graphql`
           hover {
             src {
               childImageSharp {
-                fluid(maxWidth: 2048, quality: 100) {
+                fluid(maxWidth: 560, quality: 80) {
                   ...GatsbyImageSharpFluid
                 }
               }
@@ -180,7 +180,7 @@ export const pageQuery = graphql`
           image {
             src {
               childImageSharp {
-                fluid(maxWidth: 2048, quality: 100) {
+                fluid(maxWidth: 460, quality: 70) {
                   ...GatsbyImageSharpFluid
                 }
               }
@@ -199,14 +199,14 @@ export const pageQuery = graphql`
           quote
           logo {
             childImageSharp {
-              fluid(maxWidth: 2048, quality: 100) {
+              fluid(maxWidth: 150, quality: 70) {
                 ...GatsbyImageSharpFluid
               }
             }
           }
           logoDark {
             childImageSharp {
-              fluid(maxWidth: 2048, quality: 100) {
+              fluid(maxWidth: 150, quality: 70) {
                 ...GatsbyImageSharpFluid
               }
             }
@@ -214,7 +214,7 @@ export const pageQuery = graphql`
           image {
             src {
               childImageSharp {
-                fluid(maxWidth: 2048, quality: 100) {
+                fluid(maxWidth: 230, quality: 80) {
                   ...GatsbyImageSharpFluid
                 }
               }
