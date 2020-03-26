@@ -5,11 +5,11 @@ category: Startup Stories
 title: Michael Bridgman
 subheading: Cofounder MajorMega
 image:
-  src: /img/phil.jpg
+  src: /img/Micheal Bridgman styled.jpg
 index:
   title: 'Virtual Reality and Immersive Entrepreneurship '
   image:
-    src: /img/phil.jpg
+    src: /img/Micheal Bridgman styled.jpg
 introduction: >-
   Michael Bridgman is cofounder of MajorMega, a Lancaster tech company
   specializing in Virtual Reality experiences. Their new product Hyperland
