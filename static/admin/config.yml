@@ -2178,7 +2178,12 @@ collections:
               },
             ],
         }
-      - { label: Introduction, name: introduction, widget: text }
+      - {
+          label: Introduction,
+          name: introduction,
+          widget: text,
+          required: false,
+        }
       - { label: Body, name: body, widget: markdown }
       - {
           label: SEO,
