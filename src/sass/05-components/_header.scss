@@ -52,7 +52,7 @@
         height: 80vh;
         float: right;
         position: absolute;
-        overflow: hidden;
+        // overflow: hidden; This was causing elements to be hidden when they moved
         pointer-events: none;
         right: 0;
 
