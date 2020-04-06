@@ -95,8 +95,10 @@
 
         &.-newsletter {
             label.-large {
+                font-family: $font-accent;
+                font-weight: $weight-bold;
                 color: $grey-lightest;
-                letter-spacing: 2px;
+                letter-spacing: .2em;
                 text-transform: uppercase;
             }
 
