@@ -54,7 +54,7 @@ const Navbar = class extends React.Component {
             >
                 <div className="container">
                     <Link to="/" className="c-navbar__logo" title="Logo">
-                        <Logo fill={isDark ? "#ffffff" : "#3e3d3f"} />
+                        <Logo fill={isDark ? "#ffffff" : "#3e3d3f"} weight="heavy" />
                     </Link>
                     <div className="c-navbar__navigation">
                         {/* <button

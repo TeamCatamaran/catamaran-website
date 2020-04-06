@@ -48,9 +48,11 @@
             a,
             p {
                 color: $white;
-                font-size: 14px;
+                font-size: 12px;
                 line-height: 16px;
                 text-transform: uppercase;
+                font-weight: 600;
+                letter-spacing: 2px;
             }
         }
     }
