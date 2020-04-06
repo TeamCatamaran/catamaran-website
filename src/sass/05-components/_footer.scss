@@ -39,6 +39,11 @@
         a {
             color: $grey-light;
             text-decoration: underline;
+            transition: color .16s ease-in-out;
+
+            &:hover {
+                color: $white;
+            }
         }
     }
 
