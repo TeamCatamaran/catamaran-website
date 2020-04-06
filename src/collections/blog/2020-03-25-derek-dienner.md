@@ -5,7 +5,7 @@ category: Startup Stories
 title: Derek Dienner
 subheading: 'Owner, Creative Director of MAKE Films'
 image:
-  src: /img/phil.jpg
+  src: /img/Derek Dienner styled.jpg
 index:
   title: 'Trust, Vision, and Letting Go'
   image:

@@ -5,7 +5,7 @@ category: Startup Stories
 title: Will Kiefer
 subheading: Founder / Executive Director Bench Mark Program
 image:
-  src: /img/phil.jpg
+  src: /img/will kiefer styled.jpg
 index:
   title: Connecting Community in the Gym
   image:

@@ -5,7 +5,7 @@ category: Startup Stories
 title: Scott Shirley
 subheading: Tech Entrepreneur & Non-profit Executive
 image:
-  src: /img/phil.jpg
+  src: /img/scott shirley styled.jpg
 index:
   title: Entrepreneurship and Everyday Heroes
   image:

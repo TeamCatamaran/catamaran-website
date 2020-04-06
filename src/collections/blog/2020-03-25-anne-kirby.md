@@ -7,7 +7,7 @@ subheading: >-
   Founder of The Candy Factory, coworking in Lancaster. The Sweet Core, Perkup &
   Co & Kick Ass Female Entrepreneurs.
 image:
-  src: /img/phil.jpg
+  src: /img/Anne Kirby styled.jpg
 index:
   title: No Agenda Other Than Connection
   image:

@@ -5,7 +5,7 @@ category: Startup Stories
 title: Kedren Crosby
 subheading: President of Work Wisdom
 image:
-  src: /img/phil.jpg
+  src: /img/Kedren Crosby styled.jpg
 index:
   title: 'Selling Bon Jovi Shirts at an Enya Concert: Lessons Learned'
   image:
