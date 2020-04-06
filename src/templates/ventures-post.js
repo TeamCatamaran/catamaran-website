@@ -6,11 +6,11 @@ import Layout from '../components/Layout'
 import FluidImage from '../components/FluidImage'
 import { types } from '../types/types';
 
-import websiteIcon from '../img/venture-website.png'
-import facebookIcon from '../img/venture-facebook.png'
-import linkedinIcon from '../img/venture-linkedin.png'
-import twitterIcon from '../img/venture-twitter.png'
-import instagramIcon from '../img/venture-instagram.png'
+import websiteIcon from '../img/venture-website.svg'
+import facebookIcon from '../img/venture-facebook.svg'
+import linkedinIcon from '../img/venture-linkedin.svg'
+import twitterIcon from '../img/venture-twitter.svg'
+import instagramIcon from '../img/venture-instagram.svg'
 
 export const VenturesPostTemplate = ({
     company,
