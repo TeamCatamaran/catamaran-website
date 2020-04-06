@@ -10,7 +10,7 @@ index:
   title: 'Fake It Till You Make It: Honing Your Craft'
   image:
     src: /img/phil.jpg
-introduction: n/a
+introduction: 'Fake It Till You Make It: Honing Your Craft'
 seo:
   title: Scott Appel
 ---
