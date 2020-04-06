@@ -36,7 +36,6 @@ locations:
         Harrisburg, PA 17102
       number: 717-686-4314
     - address: >-
-
         We also have a satellite office in Denver. Lorem ipsum dolor sit amet,
         consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
         et.
