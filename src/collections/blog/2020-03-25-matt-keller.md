@@ -5,7 +5,7 @@ category: Startup Stories
 title: Matt Keller
 subheading: PGA Golf Professional
 image:
-  src: /img/phil.jpg
+  src: /img/Matt Keller styled.jpg
 index:
   title: Entrepreneurship on the (Indoor) Golf Course
   image:
