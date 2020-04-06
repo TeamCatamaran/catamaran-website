@@ -11,6 +11,7 @@ import facebookIcon from '../img/venture-facebook.svg'
 import linkedinIcon from '../img/venture-linkedin.svg'
 import twitterIcon from '../img/venture-twitter.svg'
 import instagramIcon from '../img/venture-instagram.svg'
+import playIcon from '../img/play.png'
 
 export const VenturesPostTemplate = ({
     company,
@@ -42,7 +43,9 @@ export const VenturesPostTemplate = ({
                             }
                             {
                                 video != null &&
-                                <button className="c-ventureHeader__media__video">></button>
+                                <button className="c-ventureHeader__media__video">
+                                    <img src={playIcon} alt="play button" width="15px" />
+                                </button>
                             }
                         </div>
                     </div>

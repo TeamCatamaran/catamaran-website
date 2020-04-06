@@ -100,6 +100,8 @@
             border: none;
             outline: none;
             transition: all .16s ease-in-out;
+            display: flex;
+            justify-content: center;
 
             &:hover {
                 bottom: 28px;
