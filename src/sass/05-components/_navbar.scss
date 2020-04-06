@@ -5,6 +5,7 @@
         background: none;
         border: none;
         outline: none;
+        cursor: pointer;
     }
 
     &__logo {
@@ -18,8 +19,9 @@
 
     &__item {
         display: inline-block;
-        padding: 30px 36px 20px 68px;
+        margin: 30px 36px 20px 68px;
         vertical-align: top;
+        cursor: pointer;
 
         @include respond-to("tablet") {
             padding: 20px;
@@ -44,14 +46,18 @@
                 display: none;
             }
         }
+
+        img {
+            pointer-events: none;
+        }
     }
 
     &__contrast {
         position: relative;
-        padding-top: 38px;
+        margin-top: 38px;
 
         @include respond-to("tablet") {
-            padding: 32px 36px;
+            margin: 32px 36px;
         }
 
         &__checkbox {
@@ -61,7 +67,7 @@
 
             &::before {
                 position: absolute;
-                top: 531px;
+                top: 492px;
                 width: 45px;
                 border-radius: 12px;
                 content: "";
@@ -78,7 +84,7 @@
                 content: "";
                 background-color: $grey;
                 position: absolute;
-                top: 536px;
+                top: 497px;
                 left: 5px;
                 height: 14px;
                 width: 14px;
