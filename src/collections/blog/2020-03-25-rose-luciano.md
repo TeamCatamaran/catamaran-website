@@ -5,7 +5,7 @@ category: Startup Stories
 title: Rose Luciano
 subheading: Community Facilitator
 image:
-  src: /img/phil.jpg
+  src: /img/Rose Luciano styled.jpg
 index:
   title: Diversity in Entrepreneurship
   image:
