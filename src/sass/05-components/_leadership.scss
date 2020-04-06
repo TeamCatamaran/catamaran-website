@@ -85,7 +85,7 @@ $heading-grid: (
             display: block;
             @include font-style(
                 $font-accent,                     // Font Family
-                $size-4,                          // Font Size
+                14px,                          // Font Size
                 $grey-light,                            // Font Color
                 $weight-bold,                     // Font Weight
                 $height-4                         // Line Height
