@@ -140,7 +140,7 @@
                 58px,                             // Font Size
                 $white,                           // Font Color
                 $weight-light,                    // Font Weight
-                100px                             // Line Height
+                50px                             // Line Height
             );
             display: block;
             letter-spacing: 4px;
@@ -209,8 +209,9 @@
                 font-size: 16px;
                 letter-spacing: 2px;
                 padding-right: 6px;
-                line-height: 70px;
+                line-height: 24px;
                 vertical-align: top;
+                font-weight: $weight-semibold;
 
                 @include respond-to("tablet") {
                     display: none;
@@ -218,6 +219,7 @@
             }
 
             span.-underline {
+                line-height: 50px;
                 border-bottom: 2px solid transparent;
                 transition: border-color 0.5s;
             }

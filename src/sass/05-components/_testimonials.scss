@@ -178,11 +178,12 @@
         &__title {
             display: block;
             margin-top: 8px;
+            letter-spacing: 1px;
             @include font-style(
                 $font-normal,                       // Font Family
                 $size-p,                            // Font Size
                 $grey-light,                        // Font Color
-                $weight-medium,                     // Font Weight
+                $weight-semibold,                   // Font Weight
                 $height-p                           // Line Height
             );
 
