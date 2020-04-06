@@ -10,7 +10,7 @@ index:
   title: 'No Limits: Taking Risks and Dreaming Big'
   image:
     src: /img/phil.jpg
-introduction: n/a
+introduction: 'No Limits: Taking Risks and Dreaming Big'
 seo:
   title: Peter Sobotta
 ---

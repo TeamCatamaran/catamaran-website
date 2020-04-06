@@ -10,7 +10,7 @@ index:
   title: 'Patience, Patience, Patience: Success '
   image:
     src: /img/phil.jpg
-introduction: n/a
+introduction: 'Patience, Patience, Patience: Success '
 seo:
   title: Keith Verner
 ---

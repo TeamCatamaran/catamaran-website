@@ -10,7 +10,7 @@ index:
   title: 'Selling Bon Jovi Shirts at an Enya Concert: Lessons Learned'
   image:
     src: /img/phil.jpg
-introduction: n/a
+introduction: 'Selling Bon Jovi Shirts at an Enya Concert: Lessons Learned'
 seo:
   title: Kedren Crosby
 ---

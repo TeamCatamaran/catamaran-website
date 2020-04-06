@@ -12,7 +12,7 @@ index:
   title: No Agenda Other Than Connection
   image:
     src: /img/phil.jpg
-introduction: n/a
+introduction: No Agenda Other Than Connection
 seo:
   title: Anne Kirby
 ---
