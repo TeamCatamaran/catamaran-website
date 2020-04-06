@@ -24,7 +24,7 @@ export const VenturesPostTemplate = ({
     links,
 }) => {
     return (
-        <div>
+        <div className="c-venturePost">
             <div className="c-ventureHeader">
                 <div className="container" data-aos="fade-up" data-aos-duration="1500">
                     <div className="c-ventureHeader__text">
