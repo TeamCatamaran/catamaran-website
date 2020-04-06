@@ -31,9 +31,9 @@ export const JournalPostTemplate = ({
           </div>
         }
         <div className="c-header__text" data-aos="fade-up" data-aos-duration="1500" >
-          <label className="-large">{category}</label>
-          <h1>{heading}</h1>
-          <label>{subheading}</label>
+          <label className="c-header__category -large">{category}</label>
+          <h1 className="c-header__heading">{heading}</h1>
+          <label className="c-header__subheading">{subheading}</label>
         </div>
       </header>
       {

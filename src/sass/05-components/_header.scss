@@ -829,14 +829,23 @@ body.-green {
 
 body.-dark {
     .c-header {
-    background-color: $grey-background;
+        background-color: $grey-background;
 
         h1 {
             color: $white;
         }
 
         label {
-            color: $grey-lightest !important;
+            color: $grey-light;
+        }
+
+        .c-header__category {
+            color: #909093;
+        }
+
+        .c-header__subheading {
+            color: #141414;
+            letter-spacing: 4px;
         }
     }
 }
