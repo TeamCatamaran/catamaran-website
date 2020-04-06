@@ -5,7 +5,7 @@ category: Startup Stories
 title: Keith Verner
 subheading: President of LabLearner
 image:
-  src: /img/phil.jpg
+  src: /img/Keith Verner styled.jpg
 index:
   title: 'Patience, Patience, Patience: Success '
   image:
