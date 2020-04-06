@@ -5,7 +5,7 @@ category: Startup Stories
 title: Rodney Hess
 subheading: 'Owners, GrowlerGrips'
 image:
-  src: /img/phil.jpg
+  src: /img/Rodney Hess styled.jpg
 index:
   title: 'Time, Money, Patience...and Better Beer'
   image:
