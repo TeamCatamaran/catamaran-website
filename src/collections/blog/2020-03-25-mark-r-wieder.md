@@ -5,7 +5,7 @@ category: Startup Stories
 title: Mark R. Wieder
 subheading: Social Innovator / POPrietor
 image:
-  src: /img/phil.jpg
+  src: /img/Mark r wieder styled.jpg
 index:
   title: Cooking Up A Social Enterprise
   image:
