@@ -5,7 +5,7 @@ category: Startup Stories
 title: Adam Porter
 subheading: Co-Founder at st@rtup & Co-Founder at Provisions
 image:
-  src: /img/phil.jpg
+  src: /img/Adam Porter Styled.jpg
 index:
   title: Supporting Harrisburg Startups
   image:
