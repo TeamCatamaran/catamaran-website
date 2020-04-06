@@ -5,7 +5,7 @@ category: Startup Stories
 title: Joe Chiarella
 subheading: 'Sculptor of companies, products and relationships.'
 image:
-  src: /img/phil.jpg
+  src: /img/Joe chiarella styled.jpg
 index:
   title: 35 Years of Entrepreneurship
   image:
