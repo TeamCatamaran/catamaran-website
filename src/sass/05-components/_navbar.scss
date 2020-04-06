@@ -279,10 +279,13 @@ body.-dark {
     .c-navbar {
         background-color: $grey-background;
 
-        &__contrast {
+        &__item {
             label {
                 color: $grey-lightest;
             }
+        }
+
+        &__contrast {
 
             &__checkbox {
                 &::before {
@@ -306,5 +309,7 @@ body.-dark {
                 }
             }
         }
+
+
     }
 }
