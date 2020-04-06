@@ -36,7 +36,7 @@ $heading-grid: (
             $size-3,                          // Font Size
             $grey,                            // Font Color
             $weight-normal,                 // Font Weight
-            $height-p                         // Line Height
+            36px                         // Line Height
         );
 
         @include respond-to("tablet") {
