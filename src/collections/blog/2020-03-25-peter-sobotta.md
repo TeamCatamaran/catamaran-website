@@ -5,7 +5,7 @@ category: Startup Stories
 title: Peter Sobotta
 subheading: Founder and CEO of Return Logic
 image:
-  src: /img/phil.jpg
+  src: /img/peter sobotta styled.jpg
 index:
   title: 'No Limits: Taking Risks and Dreaming Big'
   image:
