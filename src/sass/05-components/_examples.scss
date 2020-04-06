@@ -23,15 +23,11 @@
         h2 {
             @include font-style(
                 $font-normal,                     // Font Family
-                48px,                             // Font Size
+                30px,                             // Font Size
                 $green,                           // Font Color
-                $weight-light,                    // Font Weight
-                70px                              // Line Height
+                $weight-bold,                    // Font Weight
+                48px                              // Line Height
             );
-
-            @include respond-to("tablet") {
-                font-size: 36px;
-            }
         }
 
         p {
@@ -56,11 +52,12 @@
         padding: 70px 30px 40px;
 
         &:nth-child(2n+1) {
-            padding-left: 0;
+            padding-top: 76px;
+            padding-left: 30px;
         }
 
         &:nth-child(2n) {
-            padding-right: 0;
+            padding-right: 30px;
         }
 
         img {
