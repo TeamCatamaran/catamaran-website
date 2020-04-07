@@ -7,6 +7,7 @@ import Header from '../components/Header'
 import Layout from '../components/Layout'
 import Breakdown from '../components/Breakdown'
 import Testimonials from '../components/Testimonials'
+import JournalTile from '../components/JournalTile'
 import spiral from '../img/home-spiral.png'
 
 import { types } from '../types/types';
@@ -72,6 +73,14 @@ export const IndexPageTemplate = ({
                 content={process} />
             <Testimonials
                 items={testimonials} />
+            <JournalTile
+                category    = "Startup Story"
+                title       = "Alex Santarelli: Co-Founder of NoiseHub"
+                postLink    = "/"
+                postRel     = ""
+                allLink     = "/journal"
+                allRel      = ""
+            />
         </div>
     )
 }
@@ -117,6 +126,7 @@ const IndexPage = ({ data }) => {
         <Layout
             bodyClass="-purple"
             footerHasShapes={true}
+            footerHasPadding={true}
             seo={frontmatter.seo}>
             <IndexPageTemplate
                 section={frontmatter.section}

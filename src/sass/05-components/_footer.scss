@@ -2,6 +2,11 @@
     background-color: $grey-dark;
     padding: 100px 0 20px;
 
+
+    &.-padding {
+        padding-top: 300px;
+    }
+
     &__shapes {
         padding-top: 35px;
         overflow: hidden;

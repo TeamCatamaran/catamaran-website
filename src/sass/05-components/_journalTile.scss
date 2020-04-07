@@ -1,0 +1,59 @@
+.c-journalTile {
+    background-color: $white;
+    padding: 75px;
+    min-height: 380px;
+    margin-top: 200px;
+    margin-bottom: -350px;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &__details {
+        display: flex;
+        justify-content: space-between;
+
+        label {
+            font-family: $font-accent;
+            text-transform: uppercase;
+            letter-spacing: .2em;
+            color: $grey-light;
+            font-weight: $weight-bold;
+            font-size: 16px;
+            line-height: 16px;
+        }
+    }
+
+    &__title {
+        font-size: 48px;
+        line-height: 70px;
+        color: $grey;
+        font-weight: $weight-light;
+    }
+
+    &__actions {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: -50px;
+
+        a {
+            font-family: $font-accent;
+            text-transform: uppercase;
+            letter-spacing: .2em;
+            color: $purple;
+            font-weight: $weight-bold;
+            font-size: 16px;
+            line-height: 16px;
+        }
+    }
+
+    &__footer {
+        background-color: $grey-dark;
+        height: 125px;
+
+        @include respond-to("tablet") {
+            height: 100px;
+        }
+    }
+}

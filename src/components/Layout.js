@@ -29,7 +29,7 @@ const TemplateWrapper = class extends React.Component {
     }
 
     render() {
-        const { bodyClass, footerHasShapes, children } = this.props
+        const { bodyClass, footerHasShapes, footerHasPadding, children } = this.props
         const title = 'Catamaran'
         const description = 'Facilitating a tightly-knit, vibrant, and dynamic community of flourishing startups in Central PA.'
         let { seo } = this.props
@@ -114,7 +114,8 @@ const TemplateWrapper = class extends React.Component {
                 </main>
                 <CookieNotice />
                 <Footer
-                    hasShapes={footerHasShapes} />
+                    hasShapes={footerHasShapes}
+                    hasPadding={footerHasPadding}/>
             </div>
         )
     }

@@ -15,6 +15,7 @@ const Footer = class extends React.Component {
     }
 
     render() {
+        const className = this.props.hasPadding ? " -padding" : "";
         return (
             <div>
                 {
@@ -28,7 +29,7 @@ const Footer = class extends React.Component {
                         </div>
                     </div>
                 }
-                <footer className="c-footer">
+                <footer className={"c-footer" + className}>
                     <div className="c-footer__row">
                         <div className="c-footer__section">
                             <section>
