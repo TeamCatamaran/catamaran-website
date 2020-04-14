@@ -1,6 +1,6 @@
 .c-footer {
     background-color: $grey-dark;
-    padding: 100px 0 20px;
+    padding: 50px 0 20px;
 
 
     &.-padding {
@@ -35,10 +35,12 @@
         letter-spacing: 2.4px;
         line-height: 60px;
         text-transform: uppercase;
+        text-align: right;
 
         @include respond-to("phone") {
             font-size: 12px;
             line-height: 40px;
+            text-align: center;
         }
 
         a {
@@ -53,25 +55,21 @@
     }
 
     &__section {
-        @include grid-column(4);
+        @include grid-column(6);
 
         @include respond-to("tablet") {
-            @include grid-column(6);
-        }
-
-        @include respond-to("phone") {
             @include grid-column(12);
-        }
 
-        &.-family {
-            @include respond-to("tablet") {
-                @include grid-column(12);
+            &.-family p {
+                text-align: center;
             }
-        }
-
-        &.-logo {
-            @include respond-to("tablet") {
+    
+            &.-logo {
                 padding-bottom: 15px;
+                a {
+                    display: block;
+                    text-align: center;
+                }
             }
         }
 
