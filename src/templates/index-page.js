@@ -22,15 +22,15 @@ export const IndexPageTemplate = () => {
             />
             <div className="c-intro container">
                 <p className="intro">
-                Catamaran invests creative capital in startups. Because we believe creativity is the superpower behind every great startup.
+                    Catamaran invests creative capital in startups. Because we believe creativity is the superpower behind every great startup.
                 </p>
                 <p>
-                Founded in 2017, Catamaran partners startup founders with a kick-ass team of designers, engineers, and strategists. We are your unofficial co-founder — taking a hands-on approach from ideation, validation to launch.
+                    Founded in 2017, Catamaran partners startup founders with a kick-ass team of designers, engineers, and strategists. We are your unofficial co-founder — taking a hands-on approach from ideation, validation to launch.
                 </p>
                 <p>
-                We’re excited to launch our new website soon. In the meantime, drop us a line — we’d love to hear from you!
+                    We’re excited to launch our new website soon. In the meantime, drop us a line — we’d love to hear from you!
                 </p>
-                <a href="mailto:amanda@catamaran.cc" className="c-button">Contact Us</a>
+                <a href="mailto:hello@catamaran.cc" className="c-button">Contact Us</a>
             </div>
         </div>
     )
