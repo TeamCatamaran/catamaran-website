@@ -44,8 +44,8 @@ const TemplateWrapper = class extends React.Component {
                         class: `${bodyClass}${this.state.highContrast ? ' -contrast' : ''}`
                     }}>
                     <html lang="en" />
-                    <title>{seo.title || title}</title>
-                    <meta name="description" content={seo.description || description} />
+                    <title>Catamaran - We invest creative capital in startups</title>
+                    <meta name="description" content="Think of us as your co-founder for hire. We partner tech startup founders and entrepreneurs with a hands-on team to ideate, validate, and launch your startup." />
 
                     <link
                         rel="icon"
@@ -98,7 +98,8 @@ const TemplateWrapper = class extends React.Component {
                     <meta name="theme-color" content="#fff" />
 
                     <meta property="og:type" content={seo.ogType || "business.business"} />
-                    <meta property="og:title" content={seo.ogTitle || seo.title || title} />
+                    <meta property="og:title" content="Catamaran - We invest creative capital in startups" />
+                    <meta property="og:description" content="Think of us as your co-founder for hire. We partner tech startup founders and entrepreneurs with a hands-on team to ideate, validate, and launch your startup." />
                     <meta property="og:url" content={seo.ogUrl || "/"} />
                     <meta
                         property="og:image"

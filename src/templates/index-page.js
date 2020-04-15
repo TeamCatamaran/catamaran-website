@@ -12,33 +12,28 @@ import spiral from '../img/home-spiral.png'
 
 import { types } from '../types/types';
 
-export const IndexPageTemplate = ({
-    section,
-    heading,
-    focus,
-    intro,
-    process,
-    testimonials,
-}) => {
+export const IndexPageTemplate = () => {
     return (
         <div>
             <Header
                 collageType="home"
-                heading={heading}
-                section={section}
+                heading="Built for Startups"
+                section="Catamaran"
             />
             <div className="c-intro container">
-                <p className="intro">{intro}</p>
+                <p className="intro">
+                Catamaran invests creative capital in startups. Because we believe creativity is the superpower behind every great startup.
+                </p>
+                <p>
+                Founded in 2017, Catamaran partners startup founders with a kick-ass team of designers, engineers, and strategists. We are your unofficial co-founder — taking a hands-on approach from ideation, validation to launch.
+                </p>
+                <p>
+                We’re excited to launch our new website soon. In the meantime, drop us a line — we’d love to hear from you!
+                </p>
                 <a href="mailto:amanda@catamaran.cc" className="c-button">Contact Us</a>
             </div>
         </div>
     )
-}
-
-IndexPageTemplate.propTypes = {
-    section: PropTypes.string,
-    heading: PropTypes.string,
-    intro: PropTypes.string,
 }
 
 const IndexPage = ({ data }) => {
@@ -49,11 +44,7 @@ const IndexPage = ({ data }) => {
             bodyClass="-purple"
             footerHasShapes={true}
             seo={frontmatter.seo}>
-            <IndexPageTemplate
-                section={frontmatter.section}
-                heading={frontmatter.heading}
-                intro={frontmatter.intro}
-            />
+            <IndexPageTemplate />
         </Layout>
     )
 }
@@ -72,9 +63,6 @@ export const pageQuery = graphql`
   query IndexPageTemplate {
     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
       frontmatter {
-        section
-        heading
-        intro
         seo {
           title
           description
