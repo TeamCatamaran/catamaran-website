@@ -30,8 +30,6 @@ const TemplateWrapper = class extends React.Component {
 
     render() {
         const { bodyClass, footerHasShapes, footerHasPadding, children } = this.props
-        const title = 'Catamaran'
-        const description = 'Facilitating a tightly-knit, vibrant, and dynamic community of flourishing startups in Central PA.'
         let { seo } = this.props
         if (seo == null) {
             seo = {}
