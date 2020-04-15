@@ -29,7 +29,7 @@ const TemplateWrapper = class extends React.Component {
     }
 
     render() {
-        const url = typeof window !== 'undefined' ? window.location.href : '';
+        const url = typeof window !== 'undefined' ? window.location.href : 'https://catamaran.cc';
         const { bodyClass, footerHasShapes, footerHasPadding, children } = this.props
         let { seo } = this.props
         if (seo == null) {
