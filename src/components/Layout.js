@@ -112,7 +112,6 @@ const TemplateWrapper = class extends React.Component {
                 <main role="main">
                     {children}
                 </main>
-                <CookieNotice />
                 <Footer
                     hasShapes={footerHasShapes}
                     hasPadding={footerHasPadding} />
