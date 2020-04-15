@@ -29,6 +29,7 @@ const TemplateWrapper = class extends React.Component {
     }
 
     render() {
+        const url = typeof window !== 'undefined' ? window.location.href : '';
         const { bodyClass, footerHasShapes, footerHasPadding, children } = this.props
         let { seo } = this.props
         if (seo == null) {
@@ -98,10 +99,10 @@ const TemplateWrapper = class extends React.Component {
                     <meta property="og:type" content={seo.ogType || "business.business"} />
                     <meta property="og:title" content="Catamaran - We invest creative capital in startups" />
                     <meta property="og:description" content="Think of us as your co-founder for hire. We partner tech startup founders and entrepreneurs with a hands-on team to ideate, validate, and launch your startup." />
-                    <meta property="og:url" content={seo.ogUrl || "/"} />
+                    <meta property="og:url" content={seo.ogUrl || url} />
                     <meta
                         property="og:image"
-                        content={`${withPrefix('/')}img/og-image.jpg`}
+                        content={`${url}img/og.jpg`}
                     />
                 </Helmet>
                 <Navbar
@@ -114,7 +115,7 @@ const TemplateWrapper = class extends React.Component {
                 <CookieNotice />
                 <Footer
                     hasShapes={footerHasShapes}
-                    hasPadding={footerHasPadding}/>
+                    hasPadding={footerHasPadding} />
             </div>
         )
     }
