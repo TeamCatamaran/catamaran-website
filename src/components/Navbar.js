@@ -26,6 +26,7 @@ const Navbar = class extends React.Component {
     }
 
     componentDidMount() {
+        return;
         const DOM = {
             el: document.querySelector('.c-multibox'),
         };
