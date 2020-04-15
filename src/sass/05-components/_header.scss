@@ -12,7 +12,19 @@
         h1 {
             font-size: 7rem;
             line-height: 1;
+
+            @include respond-to("tablet") {
+                font-size: 6rem;
+            }
+
+            @include respond-to("phone") {
+                font-size: 4rem;
+            }
+
+            
         }
+
+        
     }
 
     &.-collapse {
